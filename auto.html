@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seguro de Auto — GFG Finanzas | Cotiza sin costo</title>
+  <meta name="description" content="Protege tu vehículo comparando las mejores aseguradoras de auto en México. Asesoría 100% gratuita, sin compromiso — GFG Finanzas." />
+  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+  :root {
+    --rosa:#B76E79; --rosa-dark:#9a5862; --rosa-light:#d4929c;
+    --navy:#222D44; --navy-deep:#161e2e;
+    --terracota:#C48F7F; --salvia:#9FB8A6;
+    --hueso:#EAE9E5; --rosa-claro:#F4DDD5;
+    --white:#FFFFFF; --texto:#1e1e2e;
+    --texto-mid:#4a4a5a; --texto-soft:#5c5c6c;
+    --amarillo:#f9d67a;
+    --f-head:'Cormorant Garamond',Georgia,serif;
+    --f-body:'Poppins',sans-serif;
+    --w:1100px;
+    --r-sm:12px; --r-md:20px; --r-lg:32px; --r-xl:48px;
+    --shadow-sm:0 2px 12px rgba(34,45,68,.07);
+    --shadow-md:0 8px 32px rgba(34,45,68,.12);
+    --shadow-lg:0 20px 64px rgba(34,45,68,.18);
+    --t:.28s cubic-bezier(.4,0,.2,1);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{font-size:16px;}
+  @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth;}}
+  body{font-family:var(--f-body);color:var(--texto);background:var(--hueso);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  img{display:block;max-width:100%;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+    [data-reveal]{opacity:1!important;transform:none!important;}
+  }
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px;}
+
+  /* UTILS */
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+  .tag{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:50px;color:var(--rosa);background:rgba(183,110,121,.1);border:1px solid rgba(183,110,121,.22);margin-bottom:14px;}
+  .tag-light{color:rgba(255,255,255,.85);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);}
+  .h-display{font-family:var(--f-head);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.01em;}
+  .h-section{font-family:var(--f-head);font-size:clamp(1.9rem,4vw,2.9rem);font-weight:600;line-height:1.15;}
+  .sub{font-size:clamp(.9rem,1.8vw,1.02rem);color:var(--texto-mid);line-height:1.85;margin-top:12px;}
+  em{font-style:italic;background:linear-gradient(135deg,var(--rosa) 0%,var(--terracota) 55%,var(--rosa-dark) 100%);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gshift 5s ease infinite;}
+  @keyframes gshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:60px;font-size:.88rem;font-weight:700;border:none;cursor:pointer;transition:var(--t);position:relative;overflow:hidden;white-space:nowrap;}
+  .btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);opacity:0;transition:var(--t);}
+  .btn:hover::after{opacity:1;}
+  .btn:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;}
+  .btn-primary{background:linear-gradient(135deg,var(--rosa) 0%,#c4727d 100%);color:var(--white);box-shadow:0 4px 20px rgba(183,110,121,.4);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(183,110,121,.55);}
+  .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:shimmer 3.5s ease-in-out infinite;}
+  @keyframes shimmer{0%{left:-100%}40%,100%{left:160%}}
+  .btn-ghost{background:rgba(34,45,68,.06);color:var(--navy);border:1.5px solid rgba(34,45,68,.12);}
+  .btn-ghost:hover{background:rgba(34,45,68,.1);transform:translateY(-2px);}
+  .btn-wa{background:#25D366;color:white;}
+  .btn-wa:hover{background:#1fbe5a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.4);}
+  .btn-full{width:100%;justify-content:center;}
+  .btn-lg{padding:17px 36px;font-size:.95rem;}
+
+  /* URGENCY BAR */
+  #urgency-bar{background:linear-gradient(90deg,var(--navy-deep),#2a3550);color:rgba(255,255,255,.9);padding:10px 0;text-align:center;font-size:.8rem;font-weight:500;position:relative;z-index:1001;border-bottom:1px solid rgba(255,255,255,.06);}
+  .bar-inner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .pulse-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 2px rgba(74,222,128,.3);flex-shrink:0;}
+  @media(prefers-reduced-motion:no-preference){.pulse-dot{animation:pdot 1.5s infinite;}}
+  @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}
+  #urgency-bar strong{color:var(--amarillo);}
+  .bar-close{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.45);font-size:.95rem;cursor:pointer;padding:6px;min-width:32px;min-height:32px;}
+
+  /* NAV */
+  #nav{position:sticky;top:0;z-index:1000;background:rgba(234,233,229,.9);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(183,110,121,.1);transition:box-shadow var(--t);}
+  #nav.shadow{box-shadow:0 4px 32px rgba(34,45,68,.1);}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .nav-logo img{height:44px;width:auto;object-fit:contain;}
+  .nav-phone{display:flex;align-items:center;gap:7px;font-size:.8rem;font-weight:600;color:var(--navy);}
+  .nav-phone i{color:var(--rosa);}
+  .nav-right{display:flex;align-items:center;gap:14px;}
+  @media(max-width:640px){.nav-phone{display:none;}}
+
+  /* HERO */
+  #hero{background:linear-gradient(155deg,var(--navy-deep) 0%,#1a2535 55%,#1f2a1a 100%);padding:clamp(56px,10vh,96px) 0 clamp(48px,8vh,80px);position:relative;overflow:hidden;}
+  #hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 85% 15%,rgba(159,184,166,.18) 0%,transparent 55%),radial-gradient(ellipse 50% 50% at 10% 85%,rgba(183,110,121,.14) 0%,transparent 50%),radial-gradient(ellipse 40% 40% at 50% 50%,rgba(196,143,127,.08) 0%,transparent 55%);}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,72px);align-items:center;position:relative;z-index:1;}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(159,184,166,.15);border:1px solid rgba(159,184,166,.3);border-radius:50px;padding:6px 18px;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px;}
+  .hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--salvia);}
+  .hero-title{color:var(--white);margin-bottom:18px;}
+  .hero-lead{color:rgba(255,255,255,.62);font-size:clamp(.9rem,1.8vw,1.05rem);line-height:1.85;margin-bottom:32px;max-width:520px;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;}
+  .hero-proof{display:flex;gap:20px;flex-wrap:wrap;}
+  .hproof-item{display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,.55);}
+  .hproof-item i{color:var(--salvia);font-size:.72rem;}
+  /* Cotizador visual right */
+  .hero-cot-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(28px,4vw,40px);box-shadow:0 32px 80px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.06);}
+  .cot-title{font-family:var(--f-head);font-size:1.45rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .cot-sub{font-size:.78rem;color:var(--texto-soft);margin-bottom:22px;}
+  /* Tipo de cobertura selector */
+  .cover-selector{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+  .cover-opt{border:1.5px solid rgba(34,45,68,.12);border-radius:var(--r-md);padding:14px;cursor:pointer;transition:var(--t);text-align:center;}
+  .cover-opt:hover{border-color:rgba(183,110,121,.3);background:rgba(183,110,121,.04);}
+  .cover-opt.selected{border-color:var(--rosa);background:rgba(183,110,121,.07);box-shadow:0 0 0 3px rgba(183,110,121,.1);}
+  .cover-opt input{position:absolute;opacity:0;width:0;height:0;}
+  .cover-opt-ico{font-size:1.4rem;margin-bottom:6px;}
+  .cover-opt-name{font-size:.8rem;font-weight:700;color:var(--navy);}
+  .cover-opt-desc{font-size:.68rem;color:var(--texto-soft);margin-top:2px;line-height:1.4;}
+  /* Form fields */
+  .form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .form-group label{font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;}
+  .form-group input,.form-group select{padding:12px 16px;border:1.5px solid rgba(34,45,68,.1);border-radius:10px;font-family:var(--f-body);font-size:.9rem;color:var(--texto);background:var(--hueso);outline:none;transition:var(--t);}
+  .form-group select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B76E79' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;}
+  .form-group input:focus,.form-group select:focus{border-color:var(--rosa);box-shadow:0 0 0 3px rgba(183,110,121,.1);background:var(--white);}
+  .form-note{font-size:.73rem;color:var(--texto-soft);margin-top:3px;}
+  .form-error{font-size:.8rem;color:#c94444;font-weight:600;min-height:16px;margin-bottom:10px;}
+  /* Result */
+  .quote-result{margin-top:18px;padding:18px;border-radius:var(--r-md);background:var(--hueso);border:1.5px solid rgba(34,45,68,.07);}
+  .quote-result[hidden]{display:none;}
+  .qr-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--texto-soft);margin-bottom:6px;}
+  .qr-value{font-family:var(--f-head);font-size:1.5rem;font-weight:700;color:var(--rosa);line-height:1;margin-bottom:4px;}
+  .qr-note{font-size:.78rem;color:var(--texto-mid);line-height:1.6;padding:10px 12px;background:rgba(183,110,121,.06);border-radius:var(--r-sm);border-left:3px solid var(--rosa);margin:10px 0 14px;}
+  .guarantee-badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px;}
+  .gb{display:flex;align-items:center;gap:5px;font-size:.72rem;color:var(--texto-soft);}
+  .gb i{color:var(--salvia);font-size:.68rem;}
+
+  /* PROOF STRIP */
+  #proof-strip{background:var(--white);border-bottom:1px solid rgba(34,45,68,.07);}
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+  .proof-item{text-align:center;padding:clamp(20px,3vh,30px) 16px;border-right:1px solid rgba(34,45,68,.07);}
+  .proof-item:last-child{border-right:none;}
+  .proof-num{font-family:var(--f-head);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--rosa);line-height:1;}
+  .proof-label{font-size:.78rem;color:var(--texto-soft);margin-top:4px;line-height:1.5;}
+
+  /* COBERTURAS */
+  #coberturas{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+  .sec-header{margin-bottom:clamp(40px,6vh,60px);}
+  .sec-header.center{text-align:center;}
+  .sec-header.center .sub{margin:12px auto 0;}
+  .planes-auto{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .plan-auto{border-radius:var(--r-lg);padding:clamp(28px,3vw,36px);border:2px solid rgba(34,45,68,.08);transition:var(--t);position:relative;overflow:hidden;}
+  .plan-auto::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.08) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
+  .plan-auto:hover::before{opacity:1;}
+  .plan-auto:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+  .plan-auto.featured{background:var(--navy);color:white;border-color:var(--navy);}
+  .plan-auto:not(.featured){background:var(--hueso);}
+  .plan-tag{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:4px 12px;border-radius:50px;margin-bottom:14px;}
+  .plan-auto:not(.featured) .plan-tag{background:rgba(183,110,121,.1);color:var(--rosa);border:1px solid rgba(183,110,121,.2);}
+  .plan-auto.featured .plan-tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.15);}
+  .plan-auto h3{font-family:var(--f-head);font-size:1.5rem;font-weight:700;margin-bottom:8px;}
+  .plan-auto:not(.featured) h3{color:var(--navy);}
+  .plan-auto.featured h3{color:white;}
+  .plan-auto p{font-size:.83rem;line-height:1.7;margin-bottom:20px;}
+  .plan-auto:not(.featured) p{color:var(--texto-soft);}
+  .plan-auto.featured p{color:rgba(255,255,255,.6);}
+  .plan-features{display:flex;flex-direction:column;gap:9px;}
+  .pf{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;line-height:1.5;}
+  .plan-auto:not(.featured) .pf{color:var(--texto-mid);}
+  .plan-auto.featured .pf{color:rgba(255,255,255,.75);}
+  .pf i.yes{color:var(--salvia);}
+  .pf i.no{color:rgba(34,45,68,.2);}
+  .plan-auto.featured .pf i.yes{color:var(--salvia);}
+  .plan-auto.featured .pf i.no{color:rgba(255,255,255,.2);}
+
+  /* BENEFICIOS */
+  #beneficios{padding:clamp(64px,11vh,100px) 0;background:var(--hueso);}
+  .ben-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(40px,6vw,72px);align-items:center;}
+  .ben-photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+  .ben-photo img{width:100%;height:clamp(360px,48vh,500px);object-fit:cover;object-position:center center;}
+  .ben-copy .h-section{color:var(--navy);margin-bottom:14px;}
+  .ben-copy .sub{max-width:100%;}
+  .check-list{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .check-item{display:flex;align-items:flex-start;gap:12px;}
+  .check-ico{width:26px;height:26px;border-radius:50%;flex-shrink:0;margin-top:2px;background:rgba(183,110,121,.12);color:var(--rosa);display:flex;align-items:center;justify-content:center;font-size:.7rem;}
+  .check-item p{font-size:.9rem;color:var(--texto-mid);line-height:1.65;}
+  .check-item strong{color:var(--navy);}
+
+  /* MARCAS */
+  #marcas{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+  .brands-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
+  .brand-card{background:var(--hueso);border-radius:var(--r-md);padding:24px 18px;text-align:center;border:1.5px solid rgba(34,45,68,.07);display:flex;flex-direction:column;align-items:center;gap:10px;transition:var(--t);position:relative;overflow:hidden;}
+  .brand-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.07) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
+  .brand-card:hover::before{opacity:1;}
+  .brand-card:hover{border-color:rgba(183,110,121,.28);box-shadow:var(--shadow-md);transform:translateY(-4px);}
+  .brand-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+  .ico-rosa{background:rgba(183,110,121,.1);color:var(--rosa);}
+  .ico-navy{background:rgba(34,45,68,.08);color:var(--navy);}
+  .ico-terra{background:rgba(196,143,127,.15);color:var(--terracota);}
+  .ico-salvia{background:rgba(159,184,166,.2);color:#5a8a6a;}
+  .brand-name{font-family:var(--f-head);font-size:1.15rem;font-weight:700;color:var(--navy);}
+  .brand-esp{font-size:.73rem;color:var(--texto-soft);line-height:1.4;}
+  .brand-badge{font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:50px;background:rgba(159,184,166,.2);color:#4a7a5a;letter-spacing:.06em;text-transform:uppercase;}
+
+  /* PROCESO */
+  #proceso{padding:clamp(64px,11vh,100px) 0;background:var(--hueso);}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:48px;}
+  .steps-grid::before{content:'';position:absolute;top:28px;left:calc(12.5%);right:calc(12.5%);height:2px;background:linear-gradient(90deg,var(--rosa) 0%,var(--salvia) 100%);opacity:.2;z-index:0;}
+  .step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 16px;position:relative;z-index:1;}
+  .step-num{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--f-head);font-size:1.4rem;font-weight:700;margin-bottom:16px;border:2px solid transparent;}
+  .step:nth-child(1) .step-num{background:rgba(183,110,121,.1);color:var(--rosa);border-color:rgba(183,110,121,.2);}
+  .step:nth-child(2) .step-num{background:rgba(34,45,68,.07);color:var(--navy);border-color:rgba(34,45,68,.12);}
+  .step:nth-child(3) .step-num{background:rgba(196,143,127,.12);color:var(--terracota);border-color:rgba(196,143,127,.2);}
+  .step:nth-child(4) .step-num{background:rgba(159,184,166,.18);color:#5a8a6a;border-color:rgba(159,184,166,.3);}
+  .step h3{font-family:var(--f-head);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:7px;}
+  .step p{font-size:.82rem;color:var(--texto-soft);line-height:1.65;}
+
+  /* FAQ */
+  #faq{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+  .faq-list{max-width:720px;margin:40px auto 0;display:flex;flex-direction:column;gap:10px;}
+  .faq-item{background:var(--hueso);border-radius:var(--r-md);border:1px solid rgba(34,45,68,.08);overflow:hidden;}
+  .faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;cursor:pointer;list-style:none;font-size:.9rem;font-weight:600;color:var(--navy);user-select:none;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.72rem;color:var(--rosa);flex-shrink:0;transition:transform var(--t);}
+  .faq-item[open] summary::after{transform:rotate(-180deg);}
+  .faq-item[open]{border-color:rgba(183,110,121,.22);}
+  .faq-item[open] summary{color:var(--rosa);border-bottom:1px solid rgba(183,110,121,.1);}
+  .faq-body{padding:14px 22px 18px;font-size:.88rem;color:var(--texto-mid);line-height:1.8;}
+
+  /* CTA */
+  #cta-final{padding:clamp(64px,11vh,100px) 0;background:linear-gradient(155deg,var(--navy-deep) 0%,#1a2535 60%,#1f2a1a 100%);position:relative;overflow:hidden;text-align:center;}
+  #cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 65% at 50% 50%,rgba(159,184,166,.12) 0%,transparent 60%);}
+  .cta-inner{position:relative;z-index:1;}
+  .cta-inner .h-section{color:white;margin-bottom:14px;}
+  .cta-inner .sub{color:rgba(255,255,255,.58);margin:0 auto 40px;text-align:center;}
+  .cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .cta-note{font-size:.78rem;color:rgba(255,255,255,.38);margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px;}
+  .cta-note i{color:var(--salvia);font-size:.7rem;}
+
+  /* FOOTER */
+  footer{background:var(--navy-deep);color:rgba(255,255,255,.45);padding:28px 0;text-align:center;font-size:.78rem;}
+  footer p+p{margin-top:7px;}
+  footer a{color:var(--rosa-light);}
+
+  /* WA FLOAT */
+  .wa-float{position:fixed;bottom:24px;right:24px;width:54px;height:54px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:1.45rem;z-index:890;box-shadow:0 6px 24px rgba(37,211,102,.4);transition:var(--t);}
+  .wa-float:hover{transform:scale(1.1);}
+
+  /* REVEAL */
+  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+  [data-reveal].is-visible{opacity:1;transform:translateY(0);}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .ben-grid{grid-template-columns:1fr;}
+    .planes-auto{grid-template-columns:1fr;}
+  }
+  @media(max-width:768px){
+    .proof-grid{grid-template-columns:repeat(2,1fr);}
+    .proof-item{border-right:none;border-bottom:1px solid rgba(34,45,68,.07);}
+    .brands-grid{grid-template-columns:repeat(2,1fr);}
+    .steps-grid{grid-template-columns:repeat(2,1fr);gap:28px;}
+    .steps-grid::before{display:none;}
+    .cover-selector{grid-template-columns:1fr;}
+  }
+  @media(max-width:480px){.steps-grid{grid-template-columns:1fr;}}
+  
+  /* === LEAD FORM SECTION === */
+  #lead-section{padding:clamp(64px,11vh,100px) 0;background:linear-gradient(160deg,var(--hueso) 0%,var(--rosa-claro) 100%);position:relative;overflow:hidden;}
+  #lead-section::before{content:"";position:absolute;bottom:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(183,110,121,.12) 0%,transparent 70%);pointer-events:none;}
+  .lead-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(32px,5vw,72px);align-items:start;position:relative;z-index:1;}
+  .lead-copy .h-section{color:var(--navy);margin-bottom:14px;}
+  .lead-copy .sub{max-width:100%;}
+  .lead-proofs{display:flex;flex-direction:column;gap:13px;margin-top:28px;}
+  .lp-item{display:flex;align-items:center;gap:12px;font-size:.87rem;color:var(--texto-mid);}
+  .lp-ico{width:32px;height:32px;border-radius:50%;background:rgba(183,110,121,.12);color:var(--rosa);display:flex;align-items:center;justify-content:center;font-size:.76rem;flex-shrink:0;}
+  .lead-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(28px,4vw,44px);box-shadow:0 24px 72px rgba(34,45,68,.12);}
+  .lc-title{font-family:var(--f-head);font-size:1.7rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .lc-sub{font-size:.82rem;color:var(--texto-soft);margin-bottom:22px;}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .lf-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .lf-group label{font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;}
+  .lf-group input{padding:12px 16px;border:1.5px solid rgba(34,45,68,.1);border-radius:10px;font-family:var(--f-body);font-size:.9rem;color:var(--texto);background:var(--hueso);outline:none;transition:var(--t);}
+  .lf-group input:focus{border-color:var(--rosa);box-shadow:0 0 0 3px rgba(183,110,121,.1);background:var(--white);}
+  .lf-group input.lferr{border-color:#e05c5c;}
+  .lf-err{font-size:.72rem;color:#c94444;margin-top:2px;display:none;}
+  .lf-err.show{display:block;}
+  .lf-privacy{display:flex;gap:9px;align-items:flex-start;font-size:.76rem;color:var(--texto-soft);margin-bottom:16px;}
+  .lf-privacy input{width:14px;height:14px;margin-top:2px;accent-color:var(--rosa);flex-shrink:0;}
+  .lf-badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px;}
+  .lf-badge{display:flex;align-items:center;gap:5px;font-size:.73rem;color:var(--texto-soft);}
+  .lf-badge i{color:var(--salvia);font-size:.68rem;}
+  .lf-success{display:none;text-align:center;padding:20px 0;}
+  .lfs-ico{font-size:2.8rem;color:var(--salvia);margin-bottom:12px;}
+  .lf-success h4{font-family:var(--f-head);font-size:1.6rem;color:var(--navy);margin-bottom:8px;}
+  .lf-success p{font-size:.88rem;color:var(--texto-soft);margin-bottom:18px;}
+  @media(max-width:900px){.lead-wrap{grid-template-columns:1fr;}}
+  @media(max-width:540px){.lf-row{grid-template-columns:1fr;}.lead-card{padding:24px 18px;}}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","TU_PIXEL_ID");fbq("track","PageView");</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div id="urgency-bar" role="note">
+  <div class="bar-inner">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    <span>Solo quedan <strong>4 lugares</strong> para asesoría gratuita esta semana — <a href="#cta-final" style="color:var(--rosa-light);font-weight:700;text-decoration:underline;">Cotiza ahora →</a></span>
+  </div>
+  <button class="bar-close" id="bar-close" aria-label="Cerrar">✕</button>
+</div>
+
+<!-- NAV -->
+<nav id="nav" aria-label="Navegación">
+  <div class="wrap nav-wrap">
+    <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
+      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="44" />
+    </a>
+    <div class="nav-right">
+      <a href="tel:+527717021729" class="nav-phone">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        <span>771 702 1729</span>
+      </a>
+      <a href="#cta-final" class="btn btn-primary" style="padding:10px 20px;font-size:.82rem;">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+        Asesoría gratuita
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO + COTIZADOR RÁPIDO -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- Left: copy -->
+      <div>
+        <div class="hero-eyebrow">
+          <span class="dot" aria-hidden="true"></span>
+          Seguro de Auto
+        </div>
+        <h1 class="h-display hero-title" id="hero-title">
+          Tu auto protegido.<br/>Tu bolsillo, <em>también</em>.
+        </h1>
+        <p class="hero-lead">
+          Comparamos 8 aseguradoras para encontrar el mejor seguro de auto para tu vehículo, uso y presupuesto. No trabajamos para una sola aseguradora — trabajamos para ti.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta-final" class="btn btn-primary btn-lg">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i>
+            Quiero mi cotización gratis
+          </a>
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20cotizar%20mi%20seguro%20de%20auto" class="btn btn-wa btn-lg" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            WhatsApp
+          </a>
+        </div>
+        <div class="hero-proof">
+          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>8 aseguradoras comparadas</div>
+          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo ni compromiso</div>
+          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Respuesta en 24 horas</div>
+        </div>
+      </div>
+
+      <!-- Right: cotizador rápido -->
+      <div class="hero-cot-card">
+        <div class="cot-title">Cotiza tu seguro en 2 minutos</div>
+        <div class="cot-sub">Selecciona el tipo de cobertura que necesitas y cuéntanos sobre tu auto.</div>
+
+        <!-- Selector de tipo -->
+        <div class="cover-selector" role="group" aria-label="Tipo de cobertura">
+          <label class="cover-opt selected">
+            <input type="radio" name="cover" value="amplia" checked />
+            <div class="cover-opt-ico">🛡️</div>
+            <div class="cover-opt-name">Amplia</div>
+            <div class="cover-opt-desc">Daños propios, robo y RC</div>
+          </label>
+          <label class="cover-opt">
+            <input type="radio" name="cover" value="rc" />
+            <div class="cover-opt-ico">⚡</div>
+            <div class="cover-opt-name">RC Limitada</div>
+            <div class="cover-opt-desc">Solo daños a terceros</div>
+          </label>
+        </div>
+
+        <form id="autoForm" novalidate>
+          <div class="form-group">
+            <label for="marca-auto">Marca del vehículo</label>
+            <select id="marca-auto" name="marca">
+              <option value="" disabled selected>Selecciona la marca</option>
+              <option>Nissan</option><option>Chevrolet</option><option>Toyota</option>
+              <option>Volkswagen</option><option>Honda</option><option>Ford</option>
+              <option>Kia</option><option>Hyundai</option><option>Mazda</option>
+              <option>Otra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="anio-auto">Año del vehículo</label>
+            <input type="number" id="anio-auto" name="anio" min="2000" max="2025" placeholder="Ej. 2020" inputmode="numeric" />
+            <div class="form-note">Vehículos del 2000 en adelante</div>
+          </div>
+          <div class="form-group">
+            <label for="uso-auto">Uso del vehículo</label>
+            <select id="uso-auto" name="uso">
+              <option value="" disabled selected>Selecciona el uso</option>
+              <option value="particular">Particular</option>
+              <option value="uber">Plataformas (Uber / DiDi)</option>
+              <option value="comercial">Comercial / Empresarial</option>
+            </select>
+          </div>
+          <div id="autoFormError" class="form-error" role="alert" aria-live="polite"></div>
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            Ver opciones para mi auto
+          </button>
+        </form>
+
+        <div id="autoResult" class="quote-result" hidden>
+          <div class="qr-label">Resultado estimado</div>
+          <div class="qr-value" id="qrValue">Desde $X / mes</div>
+          <div class="qr-note" id="qrNote"></div>
+          <a id="qrWA" href="#" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Enviar datos a Guadalupe
+          </a>
+          <div class="guarantee-badges">
+            <span class="gb"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo</span>
+            <span class="gb"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div id="proof-strip">
+  <div class="wrap">
+    <div class="proof-grid" role="list">
+      <div class="proof-item" role="listitem"><div class="proof-num">+500</div><div class="proof-label">Familias<br/>protegidas</div></div>
+      <div class="proof-item" role="listitem"><div class="proof-num">8</div><div class="proof-label">Aseguradoras<br/>comparadas</div></div>
+      <div class="proof-item" role="listitem"><div class="proof-num">+8</div><div class="proof-label">Años de<br/>experiencia</div></div>
+      <div class="proof-item" role="listitem"><div class="proof-num">24h</div><div class="proof-label">Cotización<br/>personalizada</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PLANES DE AUTO -->
+<section id="coberturas" aria-labelledby="cob-title">
+  <div class="wrap">
+    <div class="sec-header center" data-reveal>
+      <span class="tag"><i class="fas fa-car-side" aria-hidden="true"></i>Tipos de cobertura</span>
+      <h2 class="h-section" id="cob-title">El plan correcto para<br/>cada auto y cada <em>bolsillo</em></h2>
+      <p class="sub">No todos los autos ni todos los conductores necesitan lo mismo. Te ayudamos a elegir la cobertura que protege lo que realmente importa.</p>
+    </div>
+    <div class="planes-auto">
+      <div class="plan-auto" data-reveal>
+        <div class="plan-tag">Cobertura básica</div>
+        <h3>RC Limitada</h3>
+        <p>La opción más económica. Cubre los daños que puedas causarle a terceros — personas, vehículos o propiedades — en caso de accidente.</p>
+        <div class="plan-features">
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Responsabilidad civil a terceros</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Gastos médicos a ocupantes</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Asistencia en carretera básica</div>
+          <div class="pf"><i class="fas fa-times-circle no" aria-hidden="true"></i>Daños a tu propio vehículo</div>
+          <div class="pf"><i class="fas fa-times-circle no" aria-hidden="true"></i>Robo del vehículo</div>
+        </div>
+      </div>
+      <div class="plan-auto featured" data-reveal>
+        <div class="plan-tag">Más popular</div>
+        <h3>Cobertura Amplia</h3>
+        <p>La protección completa para tu auto y para los demás. Cubre daños propios, robo, responsabilidad civil y asistencia sin límite.</p>
+        <div class="plan-features">
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Daños materiales a tu vehículo</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Robo total del vehículo</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Responsabilidad civil ampliada</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Gastos médicos a ocupantes</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Asistencia en carretera 24/7</div>
+        </div>
+      </div>
+      <div class="plan-auto" data-reveal>
+        <div class="plan-tag">Alta gama</div>
+        <h3>Amplia Plus</h3>
+        <p>Para quienes quieren la mayor tranquilidad posible. Suma coberturas adicionales como auto sustituto, cristales y accidentes del conductor.</p>
+        <div class="plan-features">
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Todo lo de Cobertura Amplia</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Auto sustituto incluido</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Rotura de cristales</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Accidentes del conductor</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>RC ampliada hasta $5M</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS + FOTO -->
+<section id="beneficios" aria-labelledby="ben-title">
+  <div class="wrap">
+    <div class="ben-grid">
+      <div class="ben-photo" data-reveal>
+        <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora de seguros de auto GFG Finanzas" loading="lazy" />
+      </div>
+      <div class="ben-copy" data-reveal>
+        <span class="tag"><i class="fas fa-scale-balanced" aria-hidden="true"></i>Por qué asesorarte con GFG</span>
+        <h2 class="h-section" id="ben-title">Comparamos para que<br/>tú <em>elijas lo mejor</em></h2>
+        <p class="sub">Al ir directo con una aseguradora solo ves sus tarifas. Con GFG Finanzas comparamos 8 y encontramos la que más conviene a tu auto, uso y presupuesto.</p>
+        <div class="check-list">
+          <div class="check-item">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Análisis personalizado</strong> — modelo, año, zona, uso y perfil del conductor antes de recomendar nada.</p>
+          </div>
+          <div class="check-item">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Comparativa de 8 aseguradoras</strong> — cobertura, deducibles, primas y servicio lado a lado.</p>
+          </div>
+          <div class="check-item">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Acompañamiento en siniestros</strong> — si lo necesitas, te guío en el proceso de reclamación paso a paso.</p>
+          </div>
+          <div class="check-item">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Sin letra chica</strong> — te explico cada exclusión y condición antes de que firmes cualquier cosa.</p>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20cotizar%20mi%20seguro%20de%20auto" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Cotizar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASEGURADORAS -->
+<section id="marcas" aria-labelledby="marcas-title">
+  <div class="wrap">
+    <div class="sec-header center" data-reveal>
+      <span class="tag"><i class="fas fa-handshake" aria-hidden="true"></i>Aseguradoras aliadas</span>
+      <h2 class="h-section" id="marcas-title">Trabajamos con las <em>mejores</em><br/>aseguradoras de auto en México</h2>
+    </div>
+    <div class="brands-grid" data-reveal role="list">
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-rosa"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><div class="brand-name">GNP Kaiser</div><div class="brand-esp">Auto Plus con asistencia vial y cobertura nacional</div><div class="brand-badge">Auto Plus</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-navy"><i class="fas fa-star" aria-hidden="true"></i></div><div class="brand-name">AXA Seguros</div><div class="brand-esp">Planes con auto sustituto y servicio 24/7</div><div class="brand-badge">Smart · Total</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-terra"><i class="fas fa-landmark" aria-hidden="true"></i></div><div class="brand-name">MetLife</div><div class="brand-esp">Cobertura integral con atención rápida en siniestros</div><div class="brand-badge">Amplia · Plus</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-salvia"><i class="fas fa-gem" aria-hidden="true"></i></div><div class="brand-name">SURA</div><div class="brand-esp">Innovación en coberturas y experiencia digital</div><div class="brand-badge">Auto Flex</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-navy"><i class="fas fa-circle-check" aria-hidden="true"></i></div><div class="brand-name">Allianz</div><div class="brand-esp">130 años de confianza con cobertura premium</div><div class="brand-badge">Global Auto</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-rosa"><i class="fas fa-building-columns" aria-hidden="true"></i></div><div class="brand-name">Banorte</div><div class="brand-esp">Cobertura accesible con la solidez del banco más mexicano</div><div class="brand-badge">Auto Protege</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-terra"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div><div class="brand-name">Mapfre</div><div class="brand-esp">Experiencia global y cobertura robusta en toda la república</div><div class="brand-badge">Auto Total</div></div>
+      <div class="brand-card" role="listitem"><div class="brand-ico ico-salvia"><i class="fas fa-coins" aria-hidden="true"></i></div><div class="brand-name">Principal</div><div class="brand-esp">Protección combinada con beneficios adicionales de salud</div><div class="brand-badge">Auto Salud</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" aria-labelledby="proc-title">
+  <div class="wrap">
+    <div class="sec-header center" data-reveal>
+      <span class="tag"><i class="fas fa-route" aria-hidden="true"></i>Cómo funciona</span>
+      <h2 class="h-section" id="proc-title">De la cotización a tu <em>póliza activa</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step" data-reveal><div class="step-num">1</div><h3>Cotización gratuita</h3><p>Nos compartes los datos de tu vehículo y uso. Sin costo, sin compromiso, en minutos.</p></div>
+      <div class="step" data-reveal><div class="step-num">2</div><h3>Comparativa real</h3><p>Comparamos 8 aseguradoras y te presentamos las mejores opciones con cobertura y precio claros.</p></div>
+      <div class="step" data-reveal><div class="step-num">3</div><h3>Tú decides</h3><p>Sin presión. Elige el plan que más te convenza — o no eliges nada. La asesoría siempre es gratuita.</p></div>
+      <div class="step" data-reveal><div class="step-num">4</div><h3>Póliza en 24h</h3><p>Una vez que decides, gestionamos todo. Tu póliza activa en menos de 24 horas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec-header center" data-reveal>
+      <span class="tag"><i class="fas fa-circle-question" aria-hidden="true"></i>Preguntas frecuentes</span>
+      <h2 class="h-section" id="faq-title">Todo sobre tu <em>seguro de auto</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" data-reveal>
+        <summary>¿Cuánto cuesta un seguro de auto en México?</summary>
+        <div class="faq-body">Depende del modelo, año, zona de circulación, tipo de cobertura y perfil del conductor. Un seguro de RC básico puede arrancar desde $4,000 MXN anuales; una cobertura amplia para un vehículo reciente puede ser $8,000–$20,000+ al año. En tu cotización gratuita te damos precios reales.</div>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>¿Qué diferencia hay entre RC Limitada y Cobertura Amplia?</summary>
+        <div class="faq-body">La RC Limitada solo cubre los daños que le causes a terceros (personas o vehículos). La Cobertura Amplia además cubre los daños a tu propio vehículo y el robo total. Para autos recientes o de valor, casi siempre conviene la amplia.</div>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>¿Puedo asegurar un auto usado o de varios años?</summary>
+        <div class="faq-body">Sí. La mayoría de aseguradoras cubren vehículos desde el año 2000 en adelante. Para autos muy antiguos o de colección, hay opciones específicas. Te asesoramos según el modelo y año de tu vehículo.</div>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>¿Qué pasa si tengo un accidente el primer día de mi póliza?</summary>
+        <div class="faq-body">La cobertura es efectiva desde el momento en que tu póliza es emitida y pagada. No hay períodos de espera para accidentes de auto. Sí puede haber espera para algunas coberturas adicionales dependiendo de la aseguradora.</div>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>¿Puedo usar mi seguro en otro estado o en carretera?</summary>
+        <div class="faq-body">Sí. Los seguros de auto en México tienen cobertura en toda la república. Algunos planes también incluyen cobertura en Estados Unidos y Canadá. Te indicamos las condiciones exactas de cada aseguradora.</div>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>¿Me conviene cambiarme si ya tengo seguro con otra empresa?</summary>
+        <div class="faq-body">Puede que sí. Revisamos tu póliza actual sin costo y comparamos coberturas y precio. Muchos clientes descubren que pueden tener mejor cobertura pagando igual o menos. Si tu póliza actual es la mejor opción, te lo decimos honestamente.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta-inner">
+      <span class="tag tag-light"><i class="fas fa-car-side" aria-hidden="true"></i>Siguiente paso</span>
+      <h2 class="h-section" id="cta-title">Tu auto merece el mejor seguro.<br/><em>Cotiza hoy, sin costo.</em></h2>
+      <p class="sub">Comparte los datos de tu vehículo y en menos de 24 horas tienes una comparativa real de las 8 mejores opciones del mercado.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20cotizar%20mi%20seguro%20de%20auto" class="btn btn-wa btn-lg" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          Cotizar por WhatsApp
+        </a>
+        <a href="tel:+527717021729" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.08);color:white;border-color:rgba(255,255,255,.2);">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          771 702 1729
+        </a>
+      </div>
+      <div class="cta-note">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        Asesoría 100% gratuita · Sin compromiso · Sin letra chica
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================
+     FORMULARIO DE LEADS
+==================================================== -->
+<section id="lead-section" aria-labelledby="lead-form-title">
+  <div class="wrap">
+    <div class="lead-wrap">
+      <div class="lead-copy">
+        <span class="tag" style="margin-bottom:14px;"><i class="fas fa-paper-plane"></i>Primer paso</span>
+        <h2 class="h-section" id="lead-form-title">Solicita tu asesoría<br/>gratuita <em>hoy</em></h2>
+        <p class="sub">Sin costo, sin compromiso. Completa el formulario y Guadalupe te contacta en menos de 24 horas con un plan personalizado para ti.</p>
+        <div class="lead-proofs">
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Te contactamos en menos de 24 horas</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-users" aria-hidden="true"></i></div><span>+500 familias protegidas con GFG Finanzas</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas para encontrar el mejor plan</span></div>
+        </div>
+      </div>
+      <div class="lead-card">
+        <div class="lc-title">Agenda tu asesoría gratuita</div>
+        <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
+        <form id="mainLeadForm" novalidate>
+          <div class="lf-row">
+            <div class="lf-group">
+              <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input type="text" id="lf-nombre" placeholder="Tu nombre completo" required autocomplete="given-name" />
+              <span class="lf-err" id="err-lf-nombre" role="alert">Ingresa tu nombre.</span>
+            </div>
+            <div class="lf-group">
+              <label for="lf-edad">Edad <span aria-hidden="true">*</span></label>
+              <input type="number" id="lf-edad" placeholder="Tu edad" min="18" max="75" required inputmode="numeric" />
+              <span class="lf-err" id="err-lf-edad" role="alert">Ingresa tu edad (18–75).</span>
+            </div>
+          </div>
+          <div class="lf-row">
+            <div class="lf-group">
+              <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+              <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
+            </div>
+            <div class="lf-group">
+              <label for="lf-wa">WhatsApp <span aria-hidden="true">*</span></label>
+              <input type="tel" id="lf-wa" placeholder="10 dígitos" required inputmode="numeric" autocomplete="tel" />
+              <span class="lf-err" id="err-lf-wa" role="alert">Ingresa 10 dígitos válidos.</span>
+            </div>
+          </div>
+          <div class="lf-privacy">
+            <input type="checkbox" id="lf-priv" required />
+            <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Quiero mi asesoría gratuita
+          </button>
+          <div class="lf-badges">
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo</span>
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</span>
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</span>
+          </div>
+        </form>
+        <div class="lf-success" id="mainLeadSuccess">
+          <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+          <h4>¡Listo! Solicitud enviada</h4>
+          <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            También escríbenos ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
+    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/527717021729" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<script>
+/* Nav */
+(function(){if(localStorage.getItem('gfg-auto-bar')==='1'){const b=document.getElementById('urgency-bar');if(b)b.style.display='none';}})();
+document.getElementById('bar-close').addEventListener('click',()=>{document.getElementById('urgency-bar').style.display='none';localStorage.setItem('gfg-auto-bar','1');});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('shadow',scrollY>20),{passive:true});
+
+/* Cover selector */
+document.querySelectorAll('.cover-opt').forEach(opt=>{
+  opt.addEventListener('click',()=>{
+    document.querySelectorAll('.cover-opt').forEach(o=>o.classList.remove('selected'));
+    opt.classList.add('selected');
+  });
+});
+
+/* Cotizador rápido */
+const rangeRef = {
+  amplia: { min:800, max:1800 },
+  rc:     { min:400, max:900  },
+};
+document.getElementById('autoForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const marca = document.getElementById('marca-auto').value;
+  const anio  = parseInt(document.getElementById('anio-auto').value);
+  const uso   = document.getElementById('uso-auto').value;
+  const cover = (document.querySelector('input[name="cover"]:checked') || {}).value || 'amplia';
+  const err   = document.getElementById('autoFormError');
+
+  if (!marca){ err.textContent = 'Selecciona la marca de tu vehículo.'; return; }
+  if (!anio || anio < 2000 || anio > 2025){ err.textContent = 'Ingresa un año válido entre 2000 y 2025.'; return; }
+  if (!uso){ err.textContent = 'Selecciona el uso del vehículo.'; return; }
+  err.textContent = '';
+
+  const age   = 2025 - anio;
+  const range = rangeRef[cover];
+  const base  = range.min + Math.floor((range.max - range.min) * (age / 25));
+  const mult  = uso === 'uber' ? 1.4 : uso === 'comercial' ? 1.2 : 1;
+  const from  = Math.round(base * mult / 10) * 10;
+  const to    = Math.round(from * 1.35 / 10) * 10;
+  const fmt   = n => new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:0}).format(n);
+
+  document.getElementById('qrValue').textContent = `${fmt(from)} – ${fmt(to)} / mes`;
+  document.getElementById('qrNote').textContent  = `Referencia estimada para ${marca} ${anio} con cobertura ${cover === 'amplia' ? 'Amplia' : 'RC Limitada'}. La prima final depende de la aseguradora, deducible y condiciones exactas de tu vehículo.`;
+
+  const msg = `Hola Guadalupe, quiero cotizar mi seguro de auto:\nMarca: ${marca}\nAño: ${anio}\nUso: ${uso}\nCobertura: ${cover === 'amplia' ? 'Amplia' : 'RC Limitada'}`;
+  document.getElementById('qrWA').href = `https://wa.me/527717021729?text=${encodeURIComponent(msg)}`;
+  document.getElementById('autoResult').hidden = false;
+  document.getElementById('autoResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+});
+
+/* Reveal */
+if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});},{threshold:0.12});
+  document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+}else{document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-visible'));}
+
+/* 3D tilt */
+if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
+  document.querySelectorAll('.plan-auto,.brand-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      const rx=((y-r.height/2)/(r.height/2))*-5,ry=((x-r.width/2)/(r.width/2))*5;
+      card.style.transition='transform .08s ease,box-shadow .15s ease';
+      card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+      card.style.setProperty('--mx',(x/r.width*100)+'%');
+      card.style.setProperty('--my',(y/r.height*100)+'%');
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.transition='transform .5s cubic-bezier(.2,0,0,1),box-shadow .5s cubic-bezier(.2,0,0,1)';
+      card.style.transform='perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+      setTimeout(()=>{card.style.transition='';card.style.transform='';},510);
+    });
+  });
+}
+
+var FUENTE_PAGE = "auto";
+const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
+
+/* ===== LEAD FORM ===== */
+(function() {
+  var form = document.getElementById("mainLeadForm");
+  var success = document.getElementById("mainLeadSuccess");
+  if (!form) return;
+  function vf(id,errId,fn){var el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);el.classList.toggle("lferr",!ok);err.classList.toggle("show",!ok);return ok;}
+  function validateAll(){
+    var n=vf("lf-nombre","err-lf-nombre",function(el){return el.value.trim().length>=2;});
+    var e=vf("lf-edad","err-lf-edad",function(el){var v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=75;});
+    var c=vf("lf-correo","err-lf-correo",function(el){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value);});
+    var w=vf("lf-wa","err-lf-wa",function(el){return /^\\d{10}$/.test(el.value.replace(/\\s/g,""));});
+    return n&&e&&c&&w&&document.getElementById("lf-priv").checked;
+  }
+  ["lf-nombre","lf-edad","lf-correo","lf-wa"].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.addEventListener("input",function(){el.classList.remove("lferr");var err=document.getElementById("err-"+id);if(err)err.classList.remove("show");});
+  });
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!validateAll()) return;
+    var data={nombre:document.getElementById("lf-nombre").value.trim(),edad:document.getElementById("lf-edad").value.trim(),correo:document.getElementById("lf-correo").value.trim(),whatsapp:document.getElementById("lf-wa").value.trim()};
+    try{var db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);db.from("leads").insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:"Nuevo",notas:""}]).then(function(){}).catch(function(){});}catch(_){}
+    if(typeof fbq==="function") fbq("track","Lead",{content_name:FUENTE_PAGE,content_category:"Seguros"});
+    form.style.display="none";
+    success.style.display="block";
+    success.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+})();
+</script>
+</body>
+</html>

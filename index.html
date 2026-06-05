@@ -43,7 +43,7 @@
         "url": "https://gfgfinanzas.com",
         "logo": "https://gfgfinanzas.com/img/logo.jpeg",
         "image": "https://gfgfinanzas.com/img/perfil.jpeg",
-        "telephone": "+52-352-164-1060",
+        "telephone": "+52-771-702-1729",
         "priceRange": "Consulta gratuita",
         "areaServed": "México",
         "hasOfferCatalog": {
@@ -81,6 +81,14 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','TU_PIXEL_ID');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
   <style>
   /* ============================================================
@@ -502,18 +510,23 @@
   .bcard:hover::before { opacity: 1; }
 
   /* Borde degradado animado en hover para cada card */
-  .bcard-seguros:hover   { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.4); }
-  .bcard-inversion:hover { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.3); }
-  .bcard-ahorro:hover    { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.3); }
+  .bcard-vida:hover      { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.4); }
+  .bcard-gmm:hover       { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.3); }
+  .bcard-auto:hover      { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(196,143,127,.35); }
+  .bcard-ahorro-inv:hover{ box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.3); }
   .bcard-retiro:hover    { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(196,143,127,.4); }
-  .bcard-empresa:hover   { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(159,184,166,.45); }
   .bcard-cta:hover       { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.35); }
-  .bcard-seguros   { grid-column: span 3; grid-row: span 2; background: var(--navy); color: white; }
-  .bcard-inversion { grid-column: span 3; background: var(--rosa-claro); }
-  .bcard-ahorro    { grid-column: span 3; background: var(--white); }
-  .bcard-retiro    { grid-column: span 2; background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%); color: white; }
-  .bcard-empresa   { grid-column: span 2; background: rgba(159,184,166,.2); }
-  .bcard-cta       { grid-column: span 2; background: var(--navy-deep); color: white; }
+  /* Layout nuevo 6 columnas */
+  .bcard-vida      { grid-column: span 2; grid-row: span 2; background: var(--navy); color: white; }
+  .bcard-gmm       { grid-column: span 2; background: var(--rosa-claro); }
+  .bcard-auto      { grid-column: span 2; background: var(--white); }
+  .bcard-ahorro-inv{ grid-column: span 4; background: var(--hueso); }
+  .bcard-retiro    { grid-column: span 3; background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%); color: white; }
+  .bcard-cta       { grid-column: span 3; background: var(--navy-deep); color: white; }
+  /* Ahorro+Inversión layout interno */
+  .ahorro-inv-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 100%; }
+  .ai-divider { width: 1px; background: rgba(34,45,68,.1); align-self: stretch; display: none; }
+  .bcard-vida .bcard-bg-num { color: white; opacity: .05; }
   .bcard-icon {
     width: 52px; height: 52px; border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
@@ -546,6 +559,16 @@
     border: none; cursor: pointer;
   }
   .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
+  .btn-more-info {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 22px;
+    font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.75);
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    padding-bottom: 2px; transition: var(--t); text-decoration: none;
+  }
+  .btn-more-info i { font-size: .75rem; transition: transform var(--t); }
+  .btn-more-info:hover { color: white; border-color: rgba(255,255,255,.7); }
+  .btn-more-info:hover i { transform: translateX(4px); }
+  .btn-more-info:focus-visible { outline: 2px solid var(--rosa); outline-offset: 4px; border-radius: 2px; }
 
   /* ============================================================
      STATS
@@ -861,12 +884,13 @@
   ============================================================ */
   @media (max-width: 1024px) {
     .bento { grid-template-columns: repeat(2,1fr); }
-    .bcard-seguros   { grid-column: span 2; grid-row: span 1; }
-    .bcard-inversion { grid-column: span 1; }
-    .bcard-ahorro    { grid-column: span 1; }
+    .bcard-vida      { grid-column: span 2; grid-row: span 1; }
+    .bcard-gmm       { grid-column: span 1; }
+    .bcard-auto      { grid-column: span 1; }
+    .bcard-ahorro-inv{ grid-column: span 2; }
+    .ahorro-inv-inner{ grid-template-columns: 1fr 1fr; }
     .bcard-retiro    { grid-column: span 1; }
-    .bcard-empresa   { grid-column: span 1; }
-    .bcard-cta       { grid-column: span 2; }
+    .bcard-cta       { grid-column: span 1; }
     .stats-grid      { grid-template-columns: repeat(2,1fr); }
     .stat            { border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
     .testi-grid      { grid-template-columns: 1fr 1fr; }
@@ -886,8 +910,9 @@
     .hero-grid     { grid-template-columns: 1fr; }
     .hero-visual   { display: none; }
     .bento         { grid-template-columns: 1fr; }
-    .bcard-seguros, .bcard-inversion, .bcard-ahorro,
-    .bcard-retiro,  .bcard-empresa,   .bcard-cta { grid-column: span 1; }
+    .bcard-vida, .bcard-gmm, .bcard-auto,
+    .bcard-ahorro-inv, .bcard-retiro, .bcard-cta { grid-column: span 1; grid-row: span 1; }
+    .ahorro-inv-inner { grid-template-columns: 1fr; }
     .stats-grid    { grid-template-columns: 1fr 1fr; }
     .testi-grid    { grid-template-columns: 1fr; }
     .cf-steps      { grid-template-columns: 1fr; }
@@ -950,9 +975,9 @@
         <li><a href="#faq">FAQ</a></li>
       </ul>
       <div class="nav-right">
-        <a href="tel:+523521641060" class="nav-phone" aria-label="Llamar a GFG Finanzas">
+        <a href="tel:+527717021729" class="nav-phone" aria-label="Llamar a GFG Finanzas">
           <i class="fas fa-phone" aria-hidden="true"></i>
-          <span>352 164 1060</span>
+          <span>771 702 1729</span>
         </a>
         <a href="#contacto" class="btn btn-primary">Asesoría gratuita</a>
       </div>
@@ -1105,52 +1130,95 @@
       <p class="sub">Desde proteger lo que ya construiste hasta planear el mañana que mereces.</p>
     </div>
     <div class="bento" role="list">
-      <article class="bcard bcard-seguros reveal" role="listitem">
+
+      <!-- 01 · SEGURO DE VIDA -->
+      <article class="bcard bcard-vida reveal" role="listitem">
         <div class="bcard-icon bi-light"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
-        <h3>Seguros</h3>
-        <p>Protección real para ti y tu familia ante lo inesperado. Encontramos el plan que se adapta a tu vida y presupuesto.</p>
-        <ul class="bcard-list bcard-list-light" aria-label="Tipos de seguros">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Gastos médicos mayores</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Seguro de vida y dotación</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Seguro de auto</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Seguros empresariales</li>
+        <h3>Seguro de Vida</h3>
+        <p>Protege el ingreso y el futuro de tu familia con un plan diseñado exactamente para tu etapa de vida y presupuesto.</p>
+        <ul class="bcard-list bcard-list-light" aria-label="Coberturas de seguro de vida">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fallecimiento natural y accidental</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Invalidez total y permanente</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Suma asegurada desde $500,000</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Planes Master y Premium</li>
         </ul>
+        <a href="vida.html" class="btn-more-info" aria-label="Cotizar seguro de vida">
+          <span>Cotizar ahora</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
         <div class="bcard-bg-num" aria-hidden="true">01</div>
       </article>
-      <article class="bcard bcard-inversion reveal reveal-delay-1" role="listitem">
-        <div class="bcard-icon bi-navy"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-        <h3>Inversión</h3>
-        <p>Haz que tu dinero trabaje para ti con estrategias a tu medida.</p>
-        <ul class="bcard-list" aria-label="Opciones de inversión">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fondos de inversión</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Portafolio diversificado</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Educación financiera</li>
+
+      <!-- 02 · GASTOS MÉDICOS MAYORES -->
+      <article class="bcard bcard-gmm reveal reveal-delay-1" role="listitem">
+        <div class="bcard-icon bi-rosa"><i class="fas fa-hospital" aria-hidden="true"></i></div>
+        <h3>Gastos Médicos Mayores</h3>
+        <p>Cubre hospitalizaciones, cirugías y emergencias sin descapitalizar tu patrimonio.</p>
+        <ul class="bcard-list" aria-label="Coberturas GMM">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Hospitalización y cirugías</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Maternidad y recién nacido</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Enfermedades crónicas</li>
         </ul>
+        <a href="gastos-medicos.html" class="btn-more-info" style="color:var(--rosa);border-color:rgba(183,110,121,.3);" aria-label="Más información sobre GMM">
+          <span>Más información</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
         <div class="bcard-bg-num" aria-hidden="true">02</div>
       </article>
-      <article class="bcard bcard-ahorro reveal reveal-delay-2" role="listitem">
-        <div class="bcard-icon bi-rosa"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
-        <h3>Ahorro</h3>
-        <p>El primer paso hacia tu libertad financiera. Construimos el hábito del ahorro contigo.</p>
-        <ul class="bcard-list" aria-label="Planes de ahorro">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Ahorro programado</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fondo de emergencia</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Metas a corto y largo plazo</li>
+
+      <!-- 03 · SEGURO DE AUTO -->
+      <article class="bcard bcard-auto reveal reveal-delay-2" role="listitem">
+        <div class="bcard-icon bi-navy"><i class="fas fa-car-side" aria-hidden="true"></i></div>
+        <h3>Seguro de Auto</h3>
+        <p>Protege tu vehículo y tu tranquilidad. Comparamos las mejores opciones del mercado para ti.</p>
+        <ul class="bcard-list" aria-label="Coberturas de auto">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Daños materiales y robo total</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Responsabilidad civil amplia</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Gastos médicos a ocupantes</li>
         </ul>
+        <a href="auto.html" class="btn-more-info" style="color:var(--navy);border-color:rgba(34,45,68,.25);" aria-label="Más información sobre seguro de auto">
+          <span>Más información</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
         <div class="bcard-bg-num" aria-hidden="true">03</div>
       </article>
-      <article class="bcard bcard-retiro reveal reveal-delay-1" role="listitem">
+
+      <!-- 04 · AHORRO + INVERSIÓN (combinado) -->
+      <article class="bcard bcard-ahorro-inv reveal reveal-delay-1" role="listitem">
+        <div class="ahorro-inv-inner">
+          <div>
+            <div class="bcard-icon bi-rosa"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
+            <h3>Ahorro</h3>
+            <p>El primer paso hacia tu libertad financiera. Construimos el hábito del ahorro contigo.</p>
+            <ul class="bcard-list" aria-label="Planes de ahorro">
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Ahorro programado</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fondo de emergencia</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Metas a corto y largo plazo</li>
+            </ul>
+          </div>
+          <div style="border-left:1px solid rgba(34,45,68,.1);padding-left:20px;">
+            <div class="bcard-icon bi-navy"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <h3>Inversión</h3>
+            <p>Haz que tu dinero trabaje para ti con estrategias a tu medida y perfil de riesgo.</p>
+            <ul class="bcard-list" aria-label="Opciones de inversión">
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fondos de inversión</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Portafolio diversificado</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i>Educación financiera</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bcard-bg-num" aria-hidden="true">04</div>
+      </article>
+
+      <!-- 05 · PLAN DE RETIRO -->
+      <article class="bcard bcard-retiro reveal reveal-delay-2" role="listitem">
         <div class="bcard-icon bi-white"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
         <h3>Plan de Retiro</h3>
         <p>Diseña hoy el retiro que mereces. Nunca es demasiado tarde (ni demasiado pronto) para empezar.</p>
-        <div class="bcard-bg-num" aria-hidden="true">04</div>
-      </article>
-      <article class="bcard bcard-empresa reveal reveal-delay-2" role="listitem">
-        <div class="bcard-icon bi-salvia"><i class="fas fa-building-columns" aria-hidden="true"></i></div>
-        <h3>Empresarial</h3>
-        <p>Protege a tu equipo y tu negocio con seguros corporativos y beneficios de salud para empleados.</p>
         <div class="bcard-bg-num" aria-hidden="true">05</div>
       </article>
+
+      <!-- CTA -->
       <article class="bcard bcard-cta reveal reveal-delay-3" role="listitem">
         <div class="bcard-cta-content">
           <div>
@@ -1164,6 +1232,7 @@
         </div>
         <div class="bcard-bg-num" aria-hidden="true">→</div>
       </article>
+
     </div>
   </div>
 </section>
@@ -1368,7 +1437,7 @@
           <a href="https://www.instagram.com/gfgfinanzas" class="soc-btn" aria-label="Instagram de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <a href="https://www.facebook.com/gfgfinanzas"  class="soc-btn" aria-label="Facebook de GFG Finanzas"  role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <a href="https://www.linkedin.com/company/gfgfinanzas" class="soc-btn" aria-label="LinkedIn de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="https://wa.me/523521641060" class="soc-btn" aria-label="WhatsApp de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="https://wa.me/527717021729" class="soc-btn" aria-label="WhatsApp de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -1390,14 +1459,14 @@
             <div class="cinfo-ico"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
             <div class="cinfo-text">
               <strong>WhatsApp directo</strong>
-              <span><a href="https://wa.me/523521641060" target="_blank" rel="noopener noreferrer">+52 352 164 1060</a></span>
+              <span><a href="https://wa.me/527717021729" target="_blank" rel="noopener noreferrer">+52 771 702 1729</a></span>
             </div>
           </div>
           <div class="cinfo-item" role="listitem">
             <div class="cinfo-ico"><i class="fas fa-phone" aria-hidden="true"></i></div>
             <div class="cinfo-text">
               <strong>Teléfono</strong>
-              <span><a href="tel:+523521641060">+52 352 164 1060</a></span>
+              <span><a href="tel:+527717021729">+52 771 702 1729</a></span>
             </div>
           </div>
           <div class="cinfo-item" role="listitem">
@@ -1428,47 +1497,44 @@
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name" />
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="given-name" />
               <span class="field-error" id="err-nombre" role="alert">Por favor ingresa tu nombre.</span>
             </div>
             <div class="form-group">
-              <label for="apellido">Apellido <span aria-hidden="true">*</span></label>
-              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required autocomplete="family-name" />
-              <span class="field-error" id="err-apellido" role="alert">Por favor ingresa tu apellido.</span>
+              <label for="edad">Edad <span aria-hidden="true">*</span></label>
+              <input type="number" id="edad" name="edad" placeholder="Tu edad" min="18" max="75" required inputmode="numeric" />
+              <span class="field-error" id="err-edad" role="alert">Ingresa tu edad (18–75 años).</span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
-              <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required autocomplete="tel" inputmode="numeric" />
-              <span class="field-error" id="err-telefono" role="alert">Ingresa un teléfono de 10 dígitos.</span>
-            </div>
-            <div class="form-group">
               <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
               <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email" />
-              <span class="field-error" id="err-email" role="alert">Ingresa un correo electrónico válido.</span>
+              <span class="field-error" id="err-email" role="alert">Ingresa un correo válido.</span>
+            </div>
+            <div class="form-group">
+              <label for="telefono">WhatsApp <span aria-hidden="true">*</span></label>
+              <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required autocomplete="tel" inputmode="numeric" />
+              <span class="field-error" id="err-telefono" role="alert">Ingresa un WhatsApp de 10 dígitos.</span>
             </div>
           </div>
           <div class="form-group">
             <label for="servicio">¿En qué te podemos ayudar? <span aria-hidden="true">*</span></label>
             <select id="servicio" name="servicio" required aria-required="true">
               <option value="" disabled selected>Selecciona una opción</option>
-              <option value="seguros">Seguros (médicos, vida, auto)</option>
+              <option value="vida">Seguro de vida</option>
+              <option value="gmm">Gastos médicos mayores</option>
+              <option value="auto">Seguro de auto</option>
               <option value="inversion">Inversión y fondos</option>
               <option value="ahorro">Plan de ahorro</option>
               <option value="retiro">Plan de retiro</option>
-              <option value="empresarial">Seguros empresariales</option>
               <option value="otro">Otro / No sé aún</option>
             </select>
             <span class="field-error" id="err-servicio" role="alert">Selecciona una opción.</span>
           </div>
-          <div class="form-group">
-            <label for="mensaje">Cuéntame un poco más (opcional)</label>
-            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Tu situación, dudas o lo que quieras compartir..."></textarea>
-          </div>
           <div class="form-privacy">
             <input type="checkbox" id="privacidad" name="privacidad" required />
-            <label for="privacidad">Acepto el aviso de privacidad y que GFG Finanzas me contacte para agendar mi asesoría.</label>
+            <label for="privacidad">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
           </div>
           <span class="field-error" id="err-privacidad" role="alert" style="display:none;margin-bottom:10px;">Debes aceptar el aviso de privacidad.</span>
           <button type="submit" class="btn btn-primary btn-full btn-lg">
@@ -1485,6 +1551,10 @@
           <div class="icon"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
           <h4>¡Listo! Tu solicitud fue enviada</h4>
           <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20en%20la%20web" class="btn btn-wa btn-full" style="margin-top:16px;" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            También escríbenos por WhatsApp
+          </a>
         </div>
       </div>
     </div>
@@ -1506,7 +1576,7 @@
           <a href="https://www.instagram.com/gfgfinanzas" class="fsoc" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <a href="https://www.facebook.com/gfgfinanzas"  class="fsoc" aria-label="Facebook"  target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <a href="https://www.linkedin.com/company/gfgfinanzas" class="fsoc" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="https://wa.me/523521641060" class="fsoc" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="https://wa.me/527717021729" class="fsoc" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
         </div>
       </div>
       <nav class="footer-col" aria-label="Servicios">
@@ -1523,8 +1593,8 @@
       <nav class="footer-col" aria-label="Contacto y empresa">
         <h4>Contacto</h4>
         <ul>
-          <li><a href="tel:+523521641060"><i class="fas fa-phone" aria-hidden="true" style="color:var(--rosa);margin-right:7px;font-size:.72rem;"></i>+52 352 164 1060</a></li>
-          <li><a href="https://wa.me/523521641060" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true" style="color:var(--rosa);margin-right:7px;font-size:.72rem;"></i>WhatsApp directo</a></li>
+          <li><a href="tel:+527717021729"><i class="fas fa-phone" aria-hidden="true" style="color:var(--rosa);margin-right:7px;font-size:.72rem;"></i>+52 771 702 1729</a></li>
+          <li><a href="https://wa.me/527717021729" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true" style="color:var(--rosa);margin-right:7px;font-size:.72rem;"></i>WhatsApp directo</a></li>
           <li><a href="#contacto"><i class="fas fa-envelope" aria-hidden="true" style="color:var(--rosa);margin-right:7px;font-size:.72rem;"></i>Formulario de contacto</a></li>
           <li><a href="#faq"><i class="fas fa-circle-question" aria-hidden="true" style="color:var(--rosa);margin-right:7px;font-size:.72rem;"></i>Preguntas frecuentes</a></li>
         </ul>
@@ -1542,7 +1612,7 @@
   </div>
 </footer>
 
-<a href="https://wa.me/523521641060" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+<a href="https://wa.me/527717021729" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
@@ -1609,6 +1679,10 @@ function closeMenu() {
 ham.addEventListener('click', () => drawer.classList.contains('open') ? closeMenu() : openMenu());
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeMenu(); });
 
+/* ===== SUPABASE ===== */
+const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
+
 /* ===== FORM VALIDATION ===== */
 const form = document.getElementById('lead-form');
 
@@ -1622,30 +1696,51 @@ function validateField(id, errId, checkFn) {
 }
 
 function validateAll() {
-  const n  = validateField('nombre',    'err-nombre',    el => el.value.trim().length > 0);
-  const a  = validateField('apellido',  'err-apellido',  el => el.value.trim().length > 0);
-  const t  = validateField('telefono',  'err-telefono',  el => /^\d{10}$/.test(el.value.replace(/\s/g, '')));
-  const em = validateField('email',     'err-email',     el => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
-  const s  = validateField('servicio',  'err-servicio',  el => el.value !== '');
+  const n  = validateField('nombre',   'err-nombre',   el => el.value.trim().length >= 2);
+  const ed = validateField('edad',     'err-edad',     el => { const v = parseInt(el.value); return Number.isFinite(v) && v >= 18 && v <= 75; });
+  const em = validateField('email',    'err-email',    el => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
+  const t  = validateField('telefono', 'err-telefono', el => /^\d{10}$/.test(el.value.replace(/\s/g, '')));
+  const s  = validateField('servicio', 'err-servicio', el => el.value !== '');
   const cb = document.getElementById('privacidad');
   const errCb = document.getElementById('err-privacidad');
   const p  = cb.checked;
   errCb.style.display = p ? 'none' : 'block';
-  return n && a && t && em && s && p;
+  return n && ed && em && t && s && p;
 }
 
 /* Clear error on input */
-['nombre','apellido','telefono','email','servicio'].forEach(id => {
+['nombre','edad','email','telefono','servicio'].forEach(id => {
   const el = document.getElementById(id);
+  if (!el) return;
   el.addEventListener('input', () => {
     el.classList.remove('error');
-    document.getElementById('err-' + id).classList.remove('show');
+    const errEl = document.getElementById('err-' + id);
+    if (errEl) errEl.classList.remove('show');
   });
 });
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
   if (!validateAll()) return;
+
+  /* Guardar en Supabase */
+  try {
+    const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    db.from('leads').insert([{
+      fuente:      'inicio',
+      nombre:      document.getElementById('nombre').value.trim(),
+      edad_actual: document.getElementById('edad').value.trim(),
+      correo:      document.getElementById('email').value.trim(),
+      whatsapp:    document.getElementById('telefono').value.trim(),
+      tipo_plan:   document.getElementById('servicio').value,
+      estatus:     'Nuevo',
+      notas:       ''
+    }]).then(() => {}).catch(() => {});
+  } catch(_) {}
+
+  /* Meta Pixel Lead event */
+  if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'inicio', content_category: 'Seguros' });
+
   this.style.display = 'none';
   document.getElementById('form-success').style.display = 'block';
   const n = Math.max(1, spots - 1);

@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>El Seguro Que Tu Familia Merece — GFG Finanzas | Cotización Gratuita</title>
+  <meta name="description" content="Descubre cómo proteger a tu familia con el mejor seguro al menor costo. Asesoría 100% gratuita, sin compromiso. +500 familias protegidas en México." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gfgfinanzas.com/seguros" />
+  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="El Seguro Que Tu Familia Merece — GFG Finanzas" />
+  <meta property="og:description" content="Asesoría de seguros 100% gratuita. Comparamos todas las aseguradoras para darte el mejor plan." />
+  <meta property="og:image"       content="https://gfgfinanzas.com/img/perfil.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','TU_PIXEL_ID');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+  /* ============================================================
+     TOKENS
+  ============================================================ */
+  :root {
+    --rosa:        #B76E79;
+    --rosa-dark:   #9a5862;
+    --rosa-light:  #d4929c;
+    --navy:        #222D44;
+    --navy-deep:   #161e2e;
+    --terracota:   #C48F7F;
+    --salvia:      #9FB8A6;
+    --hueso:       #EAE9E5;
+    --rosa-claro:  #F4DDD5;
+    --white:       #FFFFFF;
+    --texto:       #1e1e2e;
+    --texto-mid:   #4a4a5a;
+    --texto-soft:  #5c5c6c;
+    --amarillo:    #f9d67a;
+
+    --f-head: 'Cormorant Garamond', Georgia, serif;
+    --f-body: 'Poppins', sans-serif;
+
+    --w:        920px;
+    --r-sm:  12px; --r-md: 20px; --r-lg: 32px; --r-xl: 48px;
+    --shadow-sm: 0 2px 12px rgba(34,45,68,.07);
+    --shadow-md: 0 8px 32px rgba(34,45,68,.12);
+    --shadow-lg: 0 20px 64px rgba(34,45,68,.18);
+    --t: .28s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* ============================================================
+     RESET
+  ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body {
+    font-family: var(--f-body); color: var(--texto);
+    background: var(--hueso); line-height: 1.7;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a   { text-decoration: none; color: inherit; }
+  ul  { list-style: none; }
+  button { font-family: inherit; cursor: pointer; }
+
+  body::after {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: .018;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 128px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+
+  /* ============================================================
+     UTILITIES
+  ============================================================ */
+  .wrap { max-width: var(--w); margin: 0 auto; padding: 0 clamp(20px,5vw,40px); }
+
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 50px;
+    color: var(--rosa); background: rgba(183,110,121,.1); border: 1px solid rgba(183,110,121,.22);
+    margin-bottom: 16px;
+  }
+  .tag-light {
+    color: rgba(255,255,255,.85); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2);
+  }
+  .tag-gold {
+    color: var(--amarillo); background: rgba(249,214,122,.1); border-color: rgba(249,214,122,.25);
+  }
+
+  .h-display {
+    font-family: var(--f-head);
+    font-size: clamp(2.4rem,5.5vw,4rem); font-weight: 700;
+    line-height: 1.1; letter-spacing: -.01em;
+  }
+  .h-section {
+    font-family: var(--f-head);
+    font-size: clamp(1.9rem,4vw,3rem); font-weight: 600; line-height: 1.15;
+  }
+  .sub {
+    font-size: clamp(.9rem,2vw,1.05rem); color: var(--texto-mid);
+    line-height: 1.85; max-width: 640px; margin-top: 14px;
+  }
+  em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--rosa) 0%, var(--terracota) 55%, var(--rosa-dark) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: grad-shift 5s ease infinite;
+  }
+  @keyframes grad-shift {
+    0%  { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+  }
+  .em-gold { font-style: italic; color: var(--amarillo); }
+
+  /* ============================================================
+     BUTTONS
+  ============================================================ */
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 15px 30px; border-radius: 60px;
+    font-size: .9rem; font-weight: 700; border: none; cursor: pointer;
+    transition: var(--t); position: relative; overflow: hidden;
+    white-space: nowrap; letter-spacing: .02em;
+  }
+  .btn::after {
+    content: ''; position: absolute; inset: 0;
+    background: rgba(255,255,255,.12); opacity: 0; transition: var(--t);
+  }
+  .btn:hover::after { opacity: 1; }
+  .btn:focus-visible { outline: 3px solid var(--rosa); outline-offset: 3px; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%);
+    color: var(--white); box-shadow: 0 4px 24px rgba(183,110,121,.45);
+  }
+  .btn-primary::before {
+    content: ''; position: absolute; top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.22), transparent);
+    animation: shimmer 3.5s ease-in-out infinite;
+  }
+  @keyframes shimmer { 0%{left:-100%} 40%,100%{left:160%} }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(183,110,121,.6); }
+
+  .btn-xl  { padding: 20px 48px; font-size: 1.05rem; }
+  .btn-full{ width: 100%; justify-content: center; }
+
+  .btn-ghost-light {
+    background: rgba(255,255,255,.08); color: white;
+    border: 1.5px solid rgba(255,255,255,.25);
+  }
+  .btn-ghost-light:hover { background: rgba(255,255,255,.16); transform: translateY(-2px); }
+
+  /* ============================================================
+     URGENCY BAR
+  ============================================================ */
+  #urgency-bar {
+    background: linear-gradient(90deg, var(--navy-deep) 0%, #2a3550 100%);
+    color: rgba(255,255,255,.9); padding: 11px 0; text-align: center;
+    font-size: .8rem; font-weight: 500; position: relative; z-index: 1001;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .bar-inner { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .pulse-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #4ade80; box-shadow: 0 0 0 2px rgba(74,222,128,.3); flex-shrink: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .pulse-dot { animation: pulse-dot 1.5s infinite; }
+  }
+  @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.8)} }
+  #urgency-bar strong { color: var(--amarillo); }
+  .bar-cta { color: var(--rosa-light); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+  .bar-close {
+    position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: rgba(255,255,255,.45);
+    font-size: .95rem; cursor: pointer; padding: 6px; min-width: 32px; min-height: 32px;
+  }
+  .bar-close:hover { color: white; }
+
+  /* ============================================================
+     NAV MÍNIMO (VSL)
+  ============================================================ */
+  #nav-vsl {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(22,30,46,.96);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    transition: box-shadow var(--t);
+  }
+  #nav-vsl.shadow { box-shadow: 0 4px 32px rgba(0,0,0,.4); }
+  .nav-vsl-wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo img { height: 40px; width: auto; object-fit: contain; mix-blend-mode: screen; opacity: .92; }
+  .nav-right-vsl { display: flex; align-items: center; gap: 16px; }
+  .nav-phone-vsl {
+    display: flex; align-items: center; gap: 6px;
+    color: rgba(255,255,255,.65); font-size: .8rem; font-weight: 500;
+  }
+  .nav-phone-vsl i { color: var(--rosa); }
+  @media (max-width: 580px) { .nav-phone-vsl { display: none; } }
+
+  /* ============================================================
+     VSL HERO
+  ============================================================ */
+  #vsl-hero {
+    background: linear-gradient(155deg, var(--navy-deep) 0%, #1e2840 55%, #2a1f2e 100%);
+    padding: clamp(60px,11vh,100px) 0 clamp(52px,9vh,84px);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  #vsl-hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 65% at 50% -5%,  rgba(183,110,121,.25) 0%, transparent 55%),
+      radial-gradient(ellipse 45% 40% at 8%  80%, rgba(159,184,166,.14) 0%, transparent 50%),
+      radial-gradient(ellipse 45% 40% at 92% 80%, rgba(196,143,127,.12) 0%, transparent 50%);
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(183,110,121,.15); border: 1px solid rgba(183,110,121,.3);
+    border-radius: 50px; padding: 6px 18px;
+    font-size: .7rem; font-weight: 700; color: rgba(255,255,255,.85);
+    letter-spacing: .14em; text-transform: uppercase; margin-bottom: 24px;
+    position: relative; z-index: 1;
+  }
+  .hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rosa-light); }
+
+  .hero-headline { color: var(--white); margin-bottom: 18px; position: relative; z-index: 1; }
+  .hero-headline .yellow { color: var(--amarillo); font-style: normal; background: none; -webkit-background-clip: unset; }
+
+  .hero-sub {
+    font-size: clamp(.95rem,2vw,1.12rem); color: rgba(255,255,255,.62);
+    line-height: 1.85; max-width: 660px;
+    margin: 0 auto 40px; position: relative; z-index: 1;
+  }
+
+  /* Viewer pill */
+  .viewer-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50px; padding: 8px 18px;
+    font-size: .78rem; color: rgba(255,255,255,.65);
+    margin-bottom: 28px; position: relative; z-index: 1;
+  }
+  .viewer-pill strong { color: var(--amarillo); }
+  .viewer-pill .dot  { background: #4ade80; }
+
+  /* -------- VIDEO -------- */
+  .video-wrap {
+    position: relative; z-index: 1;
+    max-width: 740px; margin: 0 auto 28px;
+    border-radius: var(--r-lg); overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.07);
+  }
+  .video-box {
+    position: relative; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #1a2235 0%, #2a1f2e 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; overflow: hidden;
+  }
+  .video-box::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(183,110,121,.15) 0%, transparent 65%);
+  }
+  /* LIVE badge */
+  .video-live {
+    position: absolute; top: 16px; left: 16px;
+    background: #e74c3c; color: white;
+    font-size: .68rem; font-weight: 700; padding: 5px 11px;
+    border-radius: 5px; letter-spacing: .07em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 5px; z-index: 2;
+  }
+  .video-live .dot { width: 5px; height: 5px; border-radius: 50%; background: white; }
+  @media (prefers-reduced-motion: no-preference) {
+    .video-live .dot { animation: pulse-dot 1.5s infinite; }
+  }
+  /* Duration */
+  .video-duration {
+    position: absolute; bottom: 14px; right: 16px; z-index: 2;
+    background: rgba(0,0,0,.65); color: rgba(255,255,255,.85);
+    font-size: .72rem; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+  }
+  /* Play button */
+  .play-btn {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    box-shadow: 0 0 0 14px rgba(183,110,121,.18), 0 0 0 28px rgba(183,110,121,.08);
+    transition: var(--t);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .play-btn { animation: pulse-play 2.5s ease infinite; }
+    @keyframes pulse-play {
+      0%,100%{ box-shadow: 0 0 0 14px rgba(183,110,121,.18), 0 0 0 28px rgba(183,110,121,.08); }
+      50%    { box-shadow: 0 0 0 20px rgba(183,110,121,.12), 0 0 0 40px rgba(183,110,121,.05); }
+    }
+  }
+  .play-btn i { color: white; font-size: 2rem; margin-left: 7px; }
+  .play-btn:hover { transform: scale(1.1); }
+  .video-caption-txt {
+    font-size: .78rem; color: rgba(255,255,255,.85);
+    margin-top: 12px; position: relative; z-index: 2;
+    font-weight: 500;
+  }
+  .video-sub-txt {
+    font-size: .7rem; color: rgba(255,255,255,.4);
+    margin-top: 5px; position: relative; z-index: 2;
+  }
+
+  /* Below video */
+  .below-video {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 14px;
+    margin-top: 4px;
+  }
+  .below-note {
+    display: flex; align-items: center; gap: 7px;
+    font-size: .77rem; color: rgba(255,255,255,.4);
+  }
+  .below-note i { color: var(--salvia); font-size: .68rem; }
+
+  /* ============================================================
+     PROOF STRIP
+  ============================================================ */
+  #proof-strip {
+    background: var(--white);
+    border-bottom: 1px solid rgba(34,45,68,.07);
+    padding: 0;
+  }
+  .proof-grid {
+    display: grid; grid-template-columns: repeat(4,1fr);
+  }
+  .proof-item {
+    text-align: center; padding: clamp(22px,3vh,32px) 16px;
+    border-right: 1px solid rgba(34,45,68,.07);
+  }
+  .proof-item:last-child { border-right: none; }
+  .proof-num {
+    font-family: var(--f-head); font-size: clamp(2rem,4vw,2.8rem);
+    font-weight: 700; color: var(--rosa); line-height: 1;
+  }
+  .proof-label { font-size: .78rem; color: var(--texto-soft); margin-top: 4px; line-height: 1.5; }
+
+  /* ============================================================
+     MARCAS (grid estático)
+  ============================================================ */
+  #marcas {
+    padding: clamp(64px,11vh,96px) 0;
+    background: var(--hueso);
+  }
+  .marcas-header { text-align: center; margin-bottom: clamp(40px,6vh,60px); }
+  .marcas-header .h-section { color: var(--navy); }
+  .marcas-header .sub { margin: 12px auto 0; text-align: center; }
+  .marcas-intro {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(34,45,68,.06); border: 1px solid rgba(34,45,68,.1);
+    border-radius: 50px; padding: 8px 20px;
+    font-size: .76rem; font-weight: 600; color: var(--navy);
+    margin-top: 20px; margin-bottom: 0;
+  }
+  .marcas-intro i { color: var(--salvia); }
+
+  .brands-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .brand-card {
+    background: var(--white); border-radius: var(--r-md);
+    padding: 28px 20px; text-align: center;
+    border: 1.5px solid rgba(34,45,68,.07);
+    display: flex; flex-direction: column; align-items: center; gap: 11px;
+    transition: var(--t); position: relative; overflow: hidden;
+  }
+  .brand-card::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(183,110,121,.08) 0%, transparent 70%);
+    opacity: 0; transition: opacity .35s;
+  }
+  .brand-card:hover::before { opacity: 1; }
+  .brand-card:hover {
+    border-color: rgba(183,110,121,.3);
+    box-shadow: var(--shadow-md); transform: translateY(-5px);
+  }
+  .brand-ico {
+    width: 56px; height: 56px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+  }
+  .brand-name {
+    font-family: var(--f-head); font-size: 1.25rem; font-weight: 700; color: var(--navy);
+    line-height: 1.2;
+  }
+  .brand-desc  { font-size: .74rem; color: var(--texto-soft); line-height: 1.5; }
+  .brand-badge {
+    font-size: .65rem; font-weight: 700; padding: 3px 10px; border-radius: 50px;
+    background: rgba(159,184,166,.2); color: #4a7a5a;
+    letter-spacing: .06em; text-transform: uppercase;
+  }
+  /* Icon bg per brand */
+  .ico-rosa    { background: rgba(183,110,121,.1);  color: var(--rosa);      }
+  .ico-navy    { background: rgba(34,45,68,.08);    color: var(--navy);      }
+  .ico-terra   { background: rgba(196,143,127,.15); color: var(--terracota); }
+  .ico-salvia  { background: rgba(159,184,166,.2);  color: #5a8a6a;          }
+
+  /* "Trabaja con nosotros" total pill */
+  .brands-footer {
+    text-align: center; margin-top: 36px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-size: .84rem; color: var(--texto-soft);
+  }
+  .brands-footer i { color: var(--rosa); }
+
+  /* ============================================================
+     PROBLEMA
+  ============================================================ */
+  #problema {
+    padding: clamp(64px,11vh,100px) 0;
+    background: linear-gradient(155deg, var(--navy-deep) 0%, #1e2840 60%, #2a1f2e 100%);
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+  #problema::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 65% 60% at 70% 50%, rgba(183,110,121,.13) 0%, transparent 60%);
+  }
+  .prob-inner { position: relative; z-index: 1; }
+  .prob-inner .h-section { color: var(--white); margin-bottom: 14px; }
+  .prob-inner .sub { color: rgba(255,255,255,.58); margin: 0 auto 48px; text-align: center; }
+
+  .prob-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+  .prob-card {
+    background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.08);
+    border-radius: var(--r-md); padding: 28px 22px; text-align: left;
+    transition: var(--t);
+  }
+  .prob-card:hover { background: rgba(255,255,255,.08); border-color: rgba(183,110,121,.3); }
+  .prob-emoji { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+  .prob-card h3 { font-family: var(--f-head); font-size: 1.2rem; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .prob-card p  { font-size: .85rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .prob-stat {
+    display: inline-block; margin-top: 14px;
+    font-size: .78rem; font-weight: 700; color: var(--amarillo);
+    background: rgba(249,214,122,.1); padding: 4px 12px; border-radius: 50px;
+    border: 1px solid rgba(249,214,122,.2);
+  }
+
+  /* Divider question */
+  .prob-question {
+    margin-top: 52px; padding: 32px;
+    background: rgba(183,110,121,.12); border: 1px solid rgba(183,110,121,.25);
+    border-radius: var(--r-lg); position: relative; z-index: 1;
+  }
+  .prob-question h3 {
+    font-family: var(--f-head); font-size: clamp(1.5rem,3.5vw,2.2rem);
+    font-weight: 600; color: white; line-height: 1.3; margin-bottom: 10px;
+  }
+  .prob-question p { font-size: .92rem; color: rgba(255,255,255,.55); }
+
+  /* ============================================================
+     SOLUCIÓN
+  ============================================================ */
+  #solucion {
+    padding: clamp(64px,11vh,100px) 0;
+    background: var(--rosa-claro); position: relative; overflow: hidden;
+  }
+  .sol-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px,6vw,72px); align-items: center; }
+  .sol-photo-wrap { position: relative; }
+  .sol-frame { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .sol-frame img {
+    width: 100%; height: clamp(380px,50vh,540px);
+    object-fit: cover; object-position: center center; display: block;
+  }
+  .sol-badge {
+    position: absolute; bottom: -18px; right: -16px;
+    background: var(--white); border-radius: var(--r-md);
+    padding: 18px 22px; box-shadow: var(--shadow-md); text-align: center; max-width: 168px;
+  }
+  .sol-badge .big   { font-family: var(--f-head); font-size: 2.2rem; font-weight: 700; color: var(--rosa); line-height: 1; }
+  .sol-badge .small { font-size: .72rem; color: var(--texto-soft); margin-top: 3px; }
+  .sol-badge .stars { color: #f5b94e; font-size: .8rem; margin-bottom: 2px; }
+
+  .sol-content .h-section { color: var(--navy); margin-bottom: 14px; }
+  .sol-content .sub { max-width: 100%; }
+
+  .check-list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+  .check-item { display: flex; align-items: flex-start; gap: 13px; }
+  .check-ico {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+    background: rgba(183,110,121,.12); color: var(--rosa);
+    display: flex; align-items: center; justify-content: center; font-size: .72rem;
+  }
+  .check-item p { font-size: .9rem; color: var(--texto-mid); line-height: 1.65; }
+  .check-item strong { color: var(--navy); }
+
+  .sol-cta-row { display: flex; align-items: center; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+  .sol-trust { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--texto-soft); }
+  .sol-trust i { color: var(--salvia); }
+
+  /* ============================================================
+     OFERTA — QUÉ RECIBES
+  ============================================================ */
+  #oferta {
+    padding: clamp(64px,11vh,100px) 0;
+    background: var(--white);
+  }
+  .oferta-header { text-align: center; margin-bottom: clamp(44px,6vh,64px); }
+  .oferta-header .sub { margin: 12px auto 0; text-align: center; }
+
+  .oferta-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px,5vw,60px); align-items: start; }
+
+  .includes-list { display: flex; flex-direction: column; gap: 15px; }
+  .inc-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: var(--hueso); border-radius: var(--r-md); padding: 20px 22px;
+    border: 1.5px solid rgba(34,45,68,.07); transition: var(--t);
+  }
+  .inc-item:hover { border-color: rgba(183,110,121,.22); box-shadow: var(--shadow-sm); transform: translateX(4px); }
+  .inc-num {
+    width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--rosa), var(--terracota));
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .84rem;
+  }
+  .inc-item h4 { font-family: var(--f-head); font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .inc-item p  { font-size: .83rem; color: var(--texto-soft); line-height: 1.6; }
+
+  /* Countdown sticky card */
+  .cta-card {
+    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%);
+    border-radius: var(--r-xl); padding: clamp(28px,4vw,40px);
+    text-align: center; position: sticky; top: 100px;
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255,255,255,.05);
+  }
+  .cta-card-title { font-family: var(--f-head); font-size: 1.65rem; font-weight: 600; color: white; margin-bottom: 8px; }
+  .cta-card-sub   { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 24px; }
+
+  /* Countdown timer */
+  .countdown-timer { display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 22px; }
+  .cd-block { text-align: center; }
+  .cd-num {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px; padding: 10px 14px;
+    font-family: var(--f-head); font-size: 2rem; font-weight: 700; color: var(--rosa);
+    min-width: 56px; line-height: 1; display: flex; align-items: center; justify-content: center;
+  }
+  .cd-label { font-size: .62rem; color: rgba(255,255,255,.4); margin-top: 5px; letter-spacing: .08em; text-transform: uppercase; }
+  .cd-sep   { font-family: var(--f-head); font-size: 1.8rem; color: rgba(255,255,255,.25); padding-bottom: 12px; }
+
+  .spots-pill {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    background: rgba(183,110,121,.15); border: 1px solid rgba(183,110,121,.28);
+    border-radius: var(--r-md); padding: 10px 16px; margin-bottom: 20px;
+    font-size: .81rem; color: rgba(255,255,255,.8);
+  }
+  .spots-pill strong { color: var(--amarillo); }
+  .spots-pill i { color: var(--rosa-light); }
+
+  .guarantee-row {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    font-size: .73rem; color: rgba(255,255,255,.4); margin-top: 14px;
+  }
+  .guarantee-row i { color: var(--salvia); }
+
+  /* ============================================================
+     TESTIMONIOS VSL
+  ============================================================ */
+  #testimonios {
+    padding: clamp(64px,11vh,100px) 0;
+    background: var(--hueso);
+  }
+  .testi-header { text-align: center; margin-bottom: 52px; }
+  .testi-header .sub { margin: 12px auto 0; text-align: center; }
+
+  .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+  .tcard {
+    background: var(--white); border-radius: var(--r-lg);
+    padding: clamp(22px,3vw,32px); position: relative;
+    border: 1.5px solid rgba(34,45,68,.07);
+    display: flex; flex-direction: column;
+    transition: var(--t);
+  }
+  .tcard::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(183,110,121,.08) 0%, transparent 65%);
+    opacity: 0; transition: opacity .35s; pointer-events: none;
+  }
+  .tcard:hover::before { opacity: 1; }
+  .tcard:hover { border-color: rgba(183,110,121,.22); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+  .tcard.featured { background: var(--navy); }
+  .tcard.featured .tc-text { color: rgba(255,255,255,.78); }
+  .tcard.featured .tc-name { color: rgba(255,255,255,.9); }
+  .tcard.featured .tc-role { color: rgba(255,255,255,.4); }
+  .tcard.featured .tc-quote { color: rgba(255,255,255,.08); }
+
+  .tc-tag {
+    display: inline-block; font-size: .67rem; font-weight: 700;
+    background: rgba(183,110,121,.1); color: var(--rosa);
+    padding: 3px 10px; border-radius: 50px; margin-bottom: 12px;
+    letter-spacing: .06em; text-transform: uppercase;
+  }
+  .tcard.featured .tc-tag { background: rgba(255,255,255,.1); color: rgba(255,255,255,.7); }
+  .tc-stars { color: #f5b94e; font-size: .8rem; letter-spacing: 3px; margin-bottom: 14px; }
+  .tc-quote { position: absolute; top: 14px; right: 18px; font-size: 3rem; color: var(--rosa); opacity: .12; font-family: Georgia; line-height: 1; }
+  .tc-text  { font-size: .87rem; color: var(--texto-mid); line-height: 1.85; font-style: italic; margin-bottom: 20px; flex-grow: 1; }
+  .tc-author{ display: flex; align-items: center; gap: 10px; }
+  .tc-avatar{
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--rosa), var(--terracota));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: .82rem;
+  }
+  .tc-name { font-size: .85rem; font-weight: 700; color: var(--navy); }
+  .tcard.featured .tc-name { color: rgba(255,255,255,.9); }
+  .tc-role { font-size: .73rem; color: var(--texto-soft); }
+
+  /* ============================================================
+     FOMO URGENCY BLOCK
+  ============================================================ */
+  #fomo-urgencia {
+    padding: clamp(56px,9vh,88px) 0;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    position: relative; overflow: hidden; text-align: center;
+  }
+  #fomo-urgencia::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 65% 70% at 50% 50%, rgba(183,110,121,.16) 0%, transparent 60%);
+  }
+  .fomo-inner { position: relative; z-index: 1; }
+  .fomo-inner .h-section { color: white; margin-bottom: 12px; }
+  .fomo-inner .sub { color: rgba(255,255,255,.55); margin: 0 auto 44px; text-align: center; }
+
+  .fomo-counters { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+  .fomo-c {
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    border-radius: var(--r-md); padding: 22px 28px; text-align: center; min-width: 130px;
+    transition: var(--t);
+  }
+  .fomo-c:hover { background: rgba(255,255,255,.09); border-color: rgba(183,110,121,.3); }
+  .fomo-num { font-family: var(--f-head); font-size: 2.6rem; font-weight: 700; color: var(--rosa); line-height: 1; }
+  .fomo-lbl { font-size: .74rem; color: rgba(255,255,255,.48); margin-top: 5px; }
+
+  .fomo-alert {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: rgba(183,110,121,.15); border: 1px solid rgba(183,110,121,.3);
+    border-radius: var(--r-md); padding: 14px 24px; margin-bottom: 32px;
+    font-size: .88rem; color: rgba(255,255,255,.8);
+  }
+  .fomo-alert strong { color: var(--amarillo); }
+  .fomo-alert i { color: var(--rosa-light); }
+
+  /* ============================================================
+     FAQ
+  ============================================================ */
+  #faq-vsl {
+    padding: clamp(64px,11vh,100px) 0;
+    background: var(--white);
+  }
+  .faq-header { text-align: center; margin-bottom: 52px; }
+  .faq-header .sub { margin: 12px auto 0; }
+  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--hueso); border-radius: var(--r-md);
+    border: 1px solid rgba(34,45,68,.08); overflow: hidden;
+    transition: box-shadow var(--t);
+  }
+  .faq-item:hover { box-shadow: var(--shadow-sm); }
+  .faq-item summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 20px 24px; cursor: pointer; list-style: none;
+    font-size: .92rem; font-weight: 600; color: var(--navy); user-select: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+    font-size: .72rem; color: var(--rosa); flex-shrink: 0; transition: transform var(--t);
+  }
+  .faq-item[open] summary::after { transform: rotate(-180deg); }
+  .faq-item[open] { border-color: rgba(183,110,121,.22); box-shadow: 0 4px 16px rgba(183,110,121,.08); }
+  .faq-item[open] summary { color: var(--rosa); border-bottom: 1px solid rgba(183,110,121,.1); }
+  .faq-body { padding: 16px 24px 20px; font-size: .9rem; color: var(--texto-mid); line-height: 1.8; }
+
+  /* ============================================================
+     FINAL CTA
+  ============================================================ */
+  #final-cta {
+    padding: clamp(72px,13vh,120px) 0;
+    background: linear-gradient(155deg, var(--hueso) 0%, var(--rosa-claro) 100%);
+    text-align: center; position: relative; overflow: hidden;
+  }
+  #final-cta::before {
+    content: ''; position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(183,110,121,.12) 0%, transparent 70%);
+  }
+  .final-inner { position: relative; z-index: 1; }
+  .final-inner .h-section { color: var(--navy); margin-bottom: 16px; }
+  .final-inner .sub { margin: 0 auto 36px; text-align: center; }
+
+  .final-spots {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(183,110,121,.1); border: 1px solid rgba(183,110,121,.22);
+    border-radius: 50px; padding: 9px 22px;
+    font-size: .82rem; color: var(--texto-mid);
+    margin-top: 20px;
+  }
+  .final-spots strong { color: var(--rosa); }
+  .final-spots i      { color: var(--rosa); }
+
+  .guarantee-row-final {
+    display: flex; justify-content: center; align-items: center; gap: 22px;
+    flex-wrap: wrap; margin-top: 24px;
+  }
+  .gr-item { display: flex; align-items: center; gap: 6px; font-size: .79rem; color: var(--texto-soft); }
+  .gr-item i { color: var(--salvia); }
+
+  /* ============================================================
+     FOMO TOASTS
+  ============================================================ */
+  #fomo-container {
+    position: fixed; bottom: 90px; left: 20px; z-index: 888;
+    display: flex; flex-direction: column; gap: 10px;
+    pointer-events: none; max-width: 310px;
+  }
+  .fomo-toast {
+    background: var(--white); border-radius: var(--r-md);
+    padding: 12px 16px; box-shadow: 0 8px 32px rgba(34,45,68,.16);
+    border: 1px solid rgba(34,45,68,.06);
+    display: flex; align-items: center; gap: 12px; pointer-events: all;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .fomo-toast     { animation: toastIn  .4s cubic-bezier(.2,0,0,1) forwards; }
+    .fomo-toast.out { animation: toastOut .35s ease forwards; }
+  }
+  @keyframes toastIn  { from{opacity:0;transform:translateX(-32px) scale(.95)} to{opacity:1;transform:translateX(0) scale(1)} }
+  @keyframes toastOut { from{opacity:1;transform:translateX(0);max-height:100px} to{opacity:0;transform:translateX(-32px);max-height:0;padding:0;margin:0} }
+  .fomo-avatar { width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--rosa), var(--terracota)); display: flex; align-items: center; justify-content: center; font-size: .76rem; font-weight: 700; color: white; }
+  .fomo-body strong { display: block; font-size: .81rem; color: var(--navy); line-height: 1.3; }
+  .fomo-body span   { font-size: .72rem; color: var(--texto-soft); }
+  .fomo-close { margin-left: auto; flex-shrink: 0; background: none; border: none; color: var(--texto-soft); font-size: .82rem; cursor: pointer; padding: 4px; }
+  .fomo-close:hover { color: var(--navy); }
+
+  /* WhatsApp */
+  .wa-float {
+    position: fixed; bottom: 24px; right: 24px;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: #25D366; color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.45rem; z-index: 890;
+    box-shadow: 0 6px 24px rgba(37,211,102,.4); transition: var(--t);
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,.55); }
+
+  /* Live counter */
+  #live-counter {
+    position: fixed; bottom: 80px; right: 24px; z-index: 887;
+    background: rgba(34,45,68,.88); backdrop-filter: blur(10px);
+    color: white; border-radius: 50px; padding: 7px 14px;
+    display: flex; align-items: center; gap: 7px;
+    font-size: .74rem; font-weight: 600;
+    box-shadow: 0 4px 16px rgba(34,45,68,.3);
+  }
+  #live-counter .dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; }
+  @media (prefers-reduced-motion: no-preference) { #live-counter .dot { animation: pulse-dot 1.5s infinite; } }
+  #live-counter span   { color: rgba(255,255,255,.7); }
+  #live-counter strong { color: var(--amarillo); }
+
+  /* Footer */
+  footer {
+    background: var(--navy-deep); color: rgba(255,255,255,.45);
+    padding: 32px 0; text-align: center; font-size: .78rem;
+  }
+  footer p + p { margin-top: 8px; }
+  footer a { color: var(--rosa-light); }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+
+  /* ============================================================
+     RESPONSIVE
+  ============================================================ */
+  @media (max-width: 900px) {
+    .sol-grid   { grid-template-columns: 1fr; }
+    .sol-badge  { display: none; }
+    .oferta-grid{ grid-template-columns: 1fr; }
+    .cta-card   { position: static; }
+  }
+  @media (max-width: 768px) {
+    .proof-grid  { grid-template-columns: repeat(2,1fr); }
+    .proof-item  { border-right: none; border-bottom: 1px solid rgba(34,45,68,.07); }
+    .brands-grid { grid-template-columns: repeat(2,1fr); }
+    .prob-grid   { grid-template-columns: 1fr; }
+    .testi-grid  { grid-template-columns: 1fr; }
+    .fomo-counters { gap: 12px; }
+    .fomo-c      { min-width: 110px; padding: 16px 18px; }
+    #fomo-container { left: 12px; right: 12px; max-width: none; bottom: 158px; }
+    .wa-float    { bottom: 16px; right: 16px; }
+    #live-counter{ bottom: 86px; right: 16px; }
+    .countdown-timer { gap: 6px; }
+    .cd-num      { min-width: 48px; font-size: 1.7rem; }
+    .sol-cta-row { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 480px) {
+    .brands-grid { grid-template-columns: repeat(2,1fr); }
+    .fomo-counters { display: grid; grid-template-columns: repeat(2,1fr); }
+    .guarantee-row-final { gap: 12px; }
+  }
+  
+  /* === LEAD FORM SECTION === */
+  #lead-section{padding:clamp(64px,11vh,100px) 0;background:linear-gradient(160deg,var(--hueso) 0%,var(--rosa-claro) 100%);position:relative;overflow:hidden;}
+  #lead-section::before{content:"";position:absolute;bottom:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(183,110,121,.12) 0%,transparent 70%);pointer-events:none;}
+  .lead-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(32px,5vw,72px);align-items:start;position:relative;z-index:1;}
+  .lead-copy .h-section{color:var(--navy);margin-bottom:14px;}
+  .lead-copy .sub{max-width:100%;}
+  .lead-proofs{display:flex;flex-direction:column;gap:13px;margin-top:28px;}
+  .lp-item{display:flex;align-items:center;gap:12px;font-size:.87rem;color:var(--texto-mid);}
+  .lp-ico{width:32px;height:32px;border-radius:50%;background:rgba(183,110,121,.12);color:var(--rosa);display:flex;align-items:center;justify-content:center;font-size:.76rem;flex-shrink:0;}
+  .lead-card{background:var(--white);border-radius:var(--r-xl);padding:clamp(28px,4vw,44px);box-shadow:0 24px 72px rgba(34,45,68,.12);}
+  .lc-title{font-family:var(--f-head);font-size:1.7rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+  .lc-sub{font-size:.82rem;color:var(--texto-soft);margin-bottom:22px;}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .lf-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .lf-group label{font-size:.72rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.08em;}
+  .lf-group input{padding:12px 16px;border:1.5px solid rgba(34,45,68,.1);border-radius:10px;font-family:var(--f-body);font-size:.9rem;color:var(--texto);background:var(--hueso);outline:none;transition:var(--t);}
+  .lf-group input:focus{border-color:var(--rosa);box-shadow:0 0 0 3px rgba(183,110,121,.1);background:var(--white);}
+  .lf-group input.lferr{border-color:#e05c5c;}
+  .lf-err{font-size:.72rem;color:#c94444;margin-top:2px;display:none;}
+  .lf-err.show{display:block;}
+  .lf-privacy{display:flex;gap:9px;align-items:flex-start;font-size:.76rem;color:var(--texto-soft);margin-bottom:16px;}
+  .lf-privacy input{width:14px;height:14px;margin-top:2px;accent-color:var(--rosa);flex-shrink:0;}
+  .lf-badges{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:12px;}
+  .lf-badge{display:flex;align-items:center;gap:5px;font-size:.73rem;color:var(--texto-soft);}
+  .lf-badge i{color:var(--salvia);font-size:.68rem;}
+  .lf-success{display:none;text-align:center;padding:20px 0;}
+  .lfs-ico{font-size:2.8rem;color:var(--salvia);margin-bottom:12px;}
+  .lf-success h4{font-family:var(--f-head);font-size:1.6rem;color:var(--navy);margin-bottom:8px;}
+  .lf-success p{font-size:.88rem;color:var(--texto-soft);margin-bottom:18px;}
+  @media(max-width:900px){.lead-wrap{grid-template-columns:1fr;}}
+  @media(max-width:540px){.lf-row{grid-template-columns:1fr;}.lead-card{padding:24px 18px;}}
+  </style>
+</head>
+<body>
+
+<noscript>
+  <style>
+    .reveal { opacity: 1 !important; transform: none !important; }
+    #live-counter, #fomo-container { display: none !important; }
+  </style>
+</noscript>
+
+<!-- ====================================================
+     URGENCY BAR
+==================================================== -->
+<div id="urgency-bar" role="note" aria-label="Oferta limitada">
+  <div class="bar-inner">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    <span>Solo quedan <strong id="spots-count">5 lugares</strong> disponibles esta semana — <a href="#final-cta" class="bar-cta">Asegura el tuyo ahora →</a></span>
+  </div>
+  <button class="bar-close" id="bar-close" aria-label="Cerrar aviso">✕</button>
+</div>
+
+<!-- ====================================================
+     NAV MÍNIMO
+==================================================== -->
+<nav id="nav-vsl" aria-label="Navegación">
+  <div class="wrap nav-vsl-wrap">
+    <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
+      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="40" />
+    </a>
+    <div class="nav-right-vsl">
+      <a href="tel:+527717021729" class="nav-phone-vsl" aria-label="Llamar">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        <span>771 702 1729</span>
+      </a>
+      <a href="#final-cta" class="btn btn-primary" style="padding:11px 22px;font-size:.82rem;">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+        Asesoría gratuita
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ====================================================
+     HERO VSL
+==================================================== -->
+<section id="vsl-hero" aria-labelledby="vsl-title">
+  <div class="wrap">
+
+    <div class="hero-eyebrow">
+      <span class="dot" aria-hidden="true"></span>
+      Mensaje importante para familias mexicanas
+    </div>
+
+    <h1 class="h-display hero-headline" id="vsl-title">
+      ¿Qué pasaría con tu familia<br/>
+      si mañana <span class="yellow">ya no pudieras</span><br/>
+      protegerla?
+    </h1>
+
+    <p class="hero-sub">
+      En los próximos <strong style="color:rgba(255,255,255,.9)">8 minutos</strong> vas a descubrir por qué miles de familias mexicanas pagaban de más — o tenían seguros que no servían — y cómo lo resolvieron con una simple asesoría gratuita.
+    </p>
+
+    <!-- Viewer pill -->
+    <div class="viewer-pill" role="status" aria-live="polite">
+      <span class="pulse-dot dot" aria-hidden="true"></span>
+      <span><strong id="viewer-count">23</strong> personas viendo esto ahora mismo</span>
+    </div>
+
+    <!-- Video -->
+    <div class="video-wrap" aria-label="Video de presentación">
+      <div class="video-box" id="video-box" role="button" tabindex="0" aria-label="Reproducir video de presentación">
+        <div class="video-live" aria-hidden="true">
+          <span class="dot"></span>
+          REPRODUCIR
+        </div>
+        <div class="video-duration" aria-hidden="true">8:34</div>
+        <div class="play-btn" aria-hidden="true">
+          <i class="fas fa-play"></i>
+        </div>
+        <p class="video-caption-txt">
+          <i class="fas fa-lock" style="color:rgba(255,255,255,.4);font-size:.7rem;margin-right:5px;" aria-hidden="true"></i>
+          Video exclusivo — Guadalupe Flores, Asesora Certificada GFG Finanzas
+        </p>
+        <p class="video-sub-txt">Activa el sonido · Subtítulos disponibles</p>
+      </div>
+    </div>
+
+    <!-- Below video CTA -->
+    <div class="below-video">
+      <a href="#final-cta" class="btn btn-primary btn-xl">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+        Quiero mi asesoría gratuita ahora
+      </a>
+      <div class="below-note" aria-hidden="true">
+        <i class="fas fa-shield-alt"></i>
+        Sin costo · Sin compromiso · Sin letra chica
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================
+     PROOF STRIP
+==================================================== -->
+<div id="proof-strip" aria-label="Estadísticas">
+  <div class="wrap">
+    <div class="proof-grid" role="list">
+      <div class="proof-item reveal" role="listitem">
+        <div class="proof-num" aria-label="Más de 500 familias">+500</div>
+        <div class="proof-label">Familias<br/>protegidas</div>
+      </div>
+      <div class="proof-item reveal reveal-delay-1" role="listitem">
+        <div class="proof-num" aria-label="8 aseguradoras">8</div>
+        <div class="proof-label">Aseguradoras<br/>aliadas</div>
+      </div>
+      <div class="proof-item reveal reveal-delay-2" role="listitem">
+        <div class="proof-num" aria-label="Más de 8 años">+8</div>
+        <div class="proof-label">Años de<br/>experiencia</div>
+      </div>
+      <div class="proof-item reveal reveal-delay-3" role="listitem">
+        <div class="proof-num" aria-label="127 reseñas">127</div>
+        <div class="proof-label">Reseñas<br/>5 estrellas ★</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================
+     MARCAS (GRID ESTÁTICO)
+==================================================== -->
+<section id="marcas" aria-labelledby="marcas-title">
+  <div class="wrap">
+    <div class="marcas-header reveal">
+      <span class="tag"><i class="fas fa-handshake" aria-hidden="true"></i>Aseguradoras aliadas</span>
+      <h2 class="h-section" id="marcas-title">Comparamos <em>todas</em> las opciones<br/>para encontrar la mejor para ti</h2>
+      <p class="sub">No trabajamos para una sola aseguradora. Trabajamos para ti — buscando el plan que más conviene a tu familia y presupuesto real.</p>
+      <div class="marcas-intro">
+        <i class="fas fa-circle-check" aria-hidden="true"></i>
+        Trabajamos con las aseguradoras más importantes de México
+      </div>
+    </div>
+
+    <div class="brands-grid reveal" role="list" aria-label="Aseguradoras con las que trabajamos">
+
+      <div class="brand-card reveal" role="listitem">
+        <div class="brand-ico ico-rosa"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
+        <div class="brand-name">GNP Kaiser</div>
+        <div class="brand-desc">Seguros de gastos médicos mayores y vida con amplia red de hospitales</div>
+        <div class="brand-badge">Gastos médicos · Vida</div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-1" role="listitem">
+        <div class="brand-ico ico-navy"><i class="fas fa-star" aria-hidden="true"></i></div>
+        <div class="brand-name">AXA Seguros</div>
+        <div class="brand-desc">Cobertura nacional e internacional con planes flexibles para individuos y empresas</div>
+        <div class="brand-badge">Internacional · Auto</div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-2" role="listitem">
+        <div class="brand-ico ico-terra"><i class="fas fa-landmark" aria-hidden="true"></i></div>
+        <div class="brand-name">MetLife</div>
+        <div class="brand-desc">Líder global en seguros de vida y retiro con sólida presencia en México</div>
+        <div class="brand-badge">Vida · Retiro</div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-3" role="listitem">
+        <div class="brand-ico ico-salvia"><i class="fas fa-gem" aria-hidden="true"></i></div>
+        <div class="brand-name">SURA</div>
+        <div class="brand-desc">Soluciones integrales de seguros con enfoque en bienestar y calidad de vida</div>
+        <div class="brand-badge">GMM · Empresarial</div>
+      </div>
+
+      <div class="brand-card reveal" role="listitem">
+        <div class="brand-ico ico-navy"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+        <div class="brand-name">Allianz</div>
+        <div class="brand-desc">Grupo asegurador líder mundial con más de 130 años de experiencia comprobada</div>
+        <div class="brand-badge">Auto · Hogar · Vida</div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-1" role="listitem">
+        <div class="brand-ico ico-rosa"><i class="fas fa-building-columns" aria-hidden="true"></i></div>
+        <div class="brand-name">Banorte</div>
+        <div class="brand-desc">Seguros respaldados por el banco más mexicano con cobertura en todo el país</div>
+        <div class="brand-badge">Vida · Auto · Hogar</div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-2" role="listitem">
+        <div class="brand-ico ico-terra"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
+        <div class="brand-name">Mapfre</div>
+        <div class="brand-desc">Experiencia española y presencia global para proteger tu salud y patrimonio</div>
+        <div class="brand-badge">GMM · Auto · Vida</div>
+      </div>
+
+      <div class="brand-card reveal reveal-delay-3" role="listitem">
+        <div class="brand-ico ico-salvia"><i class="fas fa-coins" aria-hidden="true"></i></div>
+        <div class="brand-name">Principal</div>
+        <div class="brand-desc">Especialistas en ahorro, retiro e inversión para construir tu patrimonio a largo plazo</div>
+        <div class="brand-badge">Retiro · Inversión</div>
+      </div>
+
+    </div>
+
+    <div class="brands-footer reveal">
+      <i class="fas fa-shield-alt" aria-hidden="true"></i>
+      Comparamos todas las opciones para que <strong>tú elijas la mejor</strong>, sin presión y sin compromiso.
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     EL PROBLEMA
+==================================================== -->
+<section id="problema" aria-labelledby="problema-title">
+  <div class="wrap">
+    <div class="prob-inner">
+      <span class="tag tag-light"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i>La realidad que nadie te dice</span>
+      <h2 class="h-section" id="problema-title">El problema no es que no<br/>puedas tener un <em class="em-gold">buen seguro</em></h2>
+      <p class="sub">El problema es que nadie te ha explicado bien tus opciones — y eso te está costando caro.</p>
+
+      <div class="prob-grid reveal" role="list">
+
+        <div class="prob-card" role="listitem">
+          <span class="prob-emoji" aria-hidden="true">🏥</span>
+          <h3>Una hospitalización puede arruinarte</h3>
+          <p>El costo promedio de una cirugía en hospital privado en México supera los $200,000 pesos. Sin un seguro adecuado, esa deuda puede seguirte años.</p>
+          <div class="prob-stat">Promedio: $200,000+ MXN</div>
+        </div>
+
+        <div class="prob-card" role="listitem">
+          <span class="prob-emoji" aria-hidden="true">💸</span>
+          <h3>Estás pagando más de lo necesario</h3>
+          <p>El 67% de las personas con seguro contrató directamente con una sola aseguradora — y paga hasta un 35% más de lo que pagaría comparando opciones.</p>
+          <div class="prob-stat">Ahorro potencial: hasta 35%</div>
+        </div>
+
+        <div class="prob-card" role="listitem">
+          <span class="prob-emoji" aria-hidden="true">❓</span>
+          <h3>Tu seguro podría no cubrirte cuando lo necesitas</h3>
+          <p>Las pólizas mal asesoradas tienen exclusiones que muchos descubren hasta que van a reclamar. Ese momento es el peor para llevarse una sorpresa.</p>
+          <div class="prob-stat">8 de 10 clientes nos lo confirman</div>
+        </div>
+
+      </div>
+
+      <div class="prob-question reveal">
+        <h3>¿Y si pudieras tener el mejor seguro para tu familia <span class="em-gold">pagando solo lo justo</span> — sin trámites complicados y con alguien que te acompañe en cada paso?</h3>
+        <p>Eso es exactamente lo que hacemos en GFG Finanzas. Y la primera asesoría no te cuesta nada.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SOLUCIÓN
+==================================================== -->
+<section id="solucion" aria-labelledby="sol-title">
+  <div class="wrap">
+    <div class="sol-grid">
+
+      <div class="sol-photo-wrap reveal">
+        <div class="sol-frame">
+          <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora certificada de GFG Finanzas" loading="lazy" />
+        </div>
+        <div class="sol-badge" aria-hidden="true">
+          <div class="stars">★★★★★</div>
+          <div class="big">127</div>
+          <div class="small">Reseñas 5 estrellas</div>
+        </div>
+      </div>
+
+      <div class="sol-content reveal reveal-delay-1">
+        <span class="tag"><i class="fas fa-user-tie" aria-hidden="true"></i>La solución</span>
+        <h2 class="h-section" id="sol-title">Un asesor independiente<br/>que trabaja para <em>ti</em></h2>
+        <p class="sub">Soy Guadalupe, asesora financiera certificada. No soy empleada de ninguna aseguradora — trabajo para mis clientes, buscando siempre el mejor plan al mejor precio.</p>
+
+        <div class="check-list reveal" role="list">
+          <div class="check-item" role="listitem">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Análisis gratuito de tu situación real</strong> — revisamos lo que tienes (si ya tienes algo) y lo que realmente necesitas.</p>
+          </div>
+          <div class="check-item" role="listitem">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Comparamos 8 aseguradoras</strong> para encontrar la cobertura que más conviene a tu familia y presupuesto.</p>
+          </div>
+          <div class="check-item" role="listitem">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Te explicamos todo en lenguaje claro</strong> — sin tecnicismos, sin letra chica, sin presión de compra.</p>
+          </div>
+          <div class="check-item" role="listitem">
+            <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
+            <p><strong>Acompañamiento permanente</strong> — si algún día necesitas usar tu seguro, estoy ahí para guiarte en el proceso de reclamación.</p>
+          </div>
+        </div>
+
+        <div class="sol-cta-row">
+          <a href="#final-cta" class="btn btn-primary btn-xl">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i>
+            Quiero mi asesoría gratuita
+          </a>
+          <div class="sol-trust">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            Sin costo · Sin compromiso
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     OFERTA — QUÉ RECIBES
+==================================================== -->
+<section id="oferta" aria-labelledby="oferta-title">
+  <div class="wrap">
+    <div class="oferta-header reveal">
+      <span class="tag"><i class="fas fa-gift" aria-hidden="true"></i>Lo que recibes</span>
+      <h2 class="h-section" id="oferta-title">Todo esto <em>sin costo</em><br/>en tu asesoría gratuita</h2>
+      <p class="sub">Una consulta que normalmente costaría $1,500 pesos — completamente gratis para nuevos clientes esta semana.</p>
+    </div>
+
+    <div class="oferta-grid">
+      <div class="includes-list reveal">
+
+        <div class="inc-item">
+          <div class="inc-num">1</div>
+          <div>
+            <h4>Diagnóstico financiero personal</h4>
+            <p>Revisamos tu situación actual, tus metas y tu presupuesto real. Entendemos antes de recomendar.</p>
+          </div>
+        </div>
+
+        <div class="inc-item">
+          <div class="inc-num">2</div>
+          <div>
+            <h4>Comparativa de 8 aseguradoras</h4>
+            <p>Te mostramos las mejores opciones del mercado con coberturas y precios reales, lado a lado.</p>
+          </div>
+        </div>
+
+        <div class="inc-item">
+          <div class="inc-num">3</div>
+          <div>
+            <h4>Plan personalizado por escrito</h4>
+            <p>Recibes una propuesta clara en 24-48 horas: coberturas, precios, condiciones — sin sorpresas.</p>
+          </div>
+        </div>
+
+        <div class="inc-item">
+          <div class="inc-num">4</div>
+          <div>
+            <h4>Revisión de tu póliza actual (si tienes)</h4>
+            <p>Si ya tienes un seguro, lo analizamos honestamente y te decimos si conviene quedarte o mejorar.</p>
+          </div>
+        </div>
+
+        <div class="inc-item">
+          <div class="inc-num">5</div>
+          <div>
+            <h4>Acompañamiento de por vida</h4>
+            <p>No desaparezco después de la firma. Revisiones anuales y apoyo en reclamaciones, siempre.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Card con countdown -->
+      <div class="cta-card reveal reveal-delay-1">
+        <span class="tag tag-gold"><i class="fas fa-fire" aria-hidden="true"></i>Oferta con límite de tiempo</span>
+        <div class="cta-card-title">Tu asesoría gratuita expira en:</div>
+        <div class="cta-card-sub">Una vez que ocupen los lugares disponibles, no habrá más cupo hasta la siguiente semana.</div>
+
+        <div class="countdown-timer" role="timer" aria-label="Tiempo restante para la oferta">
+          <div class="cd-block">
+            <div class="cd-num" id="cd-h">23</div>
+            <div class="cd-label">Horas</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-m">59</div>
+            <div class="cd-label">Min</div>
+          </div>
+          <div class="cd-sep" aria-hidden="true">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-s">59</div>
+            <div class="cd-label">Seg</div>
+          </div>
+        </div>
+
+        <div class="spots-pill" role="note">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          Solo quedan <strong id="spots-card">5 lugares</strong> esta semana
+        </div>
+
+        <a href="#final-cta" class="btn btn-primary btn-full btn-xl">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i>
+          Reservar mi lugar ahora
+        </a>
+
+        <div class="guarantee-row">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          100% gratuito · Sin compromiso · Sin letra chica
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     TESTIMONIOS
+==================================================== -->
+<section id="testimonios" aria-labelledby="testi-title">
+  <div class="wrap">
+    <div class="testi-header reveal">
+      <span class="tag"><i class="fas fa-quote-left" aria-hidden="true"></i>Casos de éxito reales</span>
+      <h2 class="h-section" id="testi-title">Familias que ya tomaron la decisión<br/>de <em>proteger lo que más quieren</em></h2>
+      <p class="sub">No te pedimos que nos creas a nosotros. Escucha a quienes ya pasaron por el proceso.</p>
+    </div>
+
+    <div class="testi-grid" role="list">
+
+      <article class="tcard reveal" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">Gastos médicos</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Tenía un seguro que creía bueno hasta que Guadalupe me mostró que pagaba $3,800 al mes por coberturas que yo no necesitaba — y que me faltaban las más importantes. Cambiamos el plan y ahora pago $2,100 con mucho mejor cobertura."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">MR</div>
+          <div>
+            <div class="tc-name">María Rodríguez</div>
+            <div class="tc-role">Emprendedora · CDMX</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard featured reveal reveal-delay-1" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Seguro de vida</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Mi esposa tuvo un accidente y necesitamos cirugía de emergencia. Gracias al seguro que contratamos con GFG, el gasto fue de cero. Guadalupe nos acompañó en todo el proceso de reclamación. Eso no tiene precio."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">CA</div>
+          <div>
+            <div class="tc-name">Carlos Alvarado</div>
+            <div class="tc-role">Ingeniero · Jalisco</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="tcard reveal reveal-delay-2" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">Plan de retiro</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Tenía 42 años y creía que era tarde para planear mi retiro. Guadalupe me demostró que no — y hoy tengo un plan que me da tranquilidad. Además de un seguro de vida que nunca pensé poder pagar. Los números sí funcionan."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">LG</div>
+          <div>
+            <div class="tc-name">Laura González</div>
+            <div class="tc-role">Maestra · Michoacán</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FOMO URGENCIA
+==================================================== -->
+<section id="fomo-urgencia" aria-labelledby="fomo-title">
+  <div class="wrap">
+    <div class="fomo-inner">
+      <span class="tag tag-light"><i class="fas fa-clock" aria-hidden="true"></i>Disponibilidad limitada</span>
+      <h2 class="h-section" id="fomo-title">Cada semana solo atendemos<br/>un número <em class="em-gold">limitado</em> de consultas</h2>
+      <p class="sub">Para garantizar atención personalizada y de calidad, Guadalupe solo acepta un grupo reducido de nuevos clientes por semana. Esta semana queda muy poco espacio.</p>
+
+      <div class="fomo-alert" role="alert">
+        <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
+        En lo que llevas leyendo esta página, <strong id="registered-count">3 personas</strong> ya agendaron su asesoría.
+      </div>
+
+      <div class="fomo-counters" role="list">
+        <div class="fomo-c reveal" role="listitem">
+          <div class="fomo-num" id="fomo-semana">5</div>
+          <div class="fomo-lbl">Lugares restantes<br/>esta semana</div>
+        </div>
+        <div class="fomo-c reveal reveal-delay-1" role="listitem">
+          <div class="fomo-num">127</div>
+          <div class="fomo-lbl">Clientes satisfechos<br/>en los últimos 12 meses</div>
+        </div>
+        <div class="fomo-c reveal reveal-delay-2" role="listitem">
+          <div class="fomo-num">24h</div>
+          <div class="fomo-lbl">Respuesta máxima<br/>garantizada</div>
+        </div>
+        <div class="fomo-c reveal reveal-delay-3" role="listitem">
+          <div class="fomo-num">0</div>
+          <div class="fomo-lbl">Costo de la<br/>primera asesoría</div>
+        </div>
+      </div>
+
+      <a href="#final-cta" class="btn btn-primary btn-xl">
+        <i class="fas fa-bolt" aria-hidden="true"></i>
+        Quiero uno de esos lugares
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FAQ
+==================================================== -->
+<section id="faq-vsl" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="faq-header reveal">
+      <span class="tag"><i class="fas fa-circle-question" aria-hidden="true"></i>Preguntas frecuentes</span>
+      <h2 class="h-section" id="faq-title">Todo lo que quieres saber<br/>antes de <em>agendar</em></h2>
+      <p class="sub">Respondemos las dudas más comunes de quienes están considerando su primera asesoría.</p>
+    </div>
+
+    <div class="faq-list" role="list">
+
+      <details class="faq-item reveal" role="listitem">
+        <summary>¿De verdad es completamente gratuito? ¿Cuál es el truco?</summary>
+        <div class="faq-body">No hay truco. La asesoría es gratuita porque cobramos comisión a las aseguradoras cuando tú contratas un plan — no a ti. Eso significa que nuestros incentivos están alineados: si no te conviene ningún plan, no te ofrecemos ninguno. Si sí te conviene, ganas tú y ganamos nosotros.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1" role="listitem">
+        <summary>¿Me van a presionar para contratar algo?</summary>
+        <div class="faq-body">Absolutamente no. Si al final de la asesoría decides que no quieres ningún seguro, está bien. Nuestra reputación se basa en la confianza, no en la presión. De hecho, si revisamos tu situación y creemos que lo que tienes ya es lo mejor para ti, te lo decimos honestamente.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-2" role="listitem">
+        <summary>¿Puedo asistir si ya tengo un seguro con otra compañía?</summary>
+        <div class="faq-body">Sí, y es de las situaciones más comunes. Revisamos tu póliza actual sin costo y te explicamos qué cubre, qué no cubre, y si conviene quedarte o cambiar. Muchos clientes descubren que pueden tener mejor cobertura pagando menos.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-1" role="listitem">
+        <summary>¿Cuánto tiempo toma la asesoría?</summary>
+        <div class="faq-body">La sesión inicial dura entre 30 y 60 minutos, dependiendo de tu situación. Al terminar, en 24-48 horas recibes tu propuesta personalizada por escrito con opciones claras y precios reales.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-2" role="listitem">
+        <summary>¿Pueden atenderme fuera de mi ciudad?</summary>
+        <div class="faq-body">Sí. Atendemos de forma presencial en la zona de Michoacán y a través de videollamada en toda la República Mexicana. Tú eliges la modalidad que más te acomode.</div>
+      </details>
+
+      <details class="faq-item reveal reveal-delay-3" role="listitem">
+        <summary>¿Por qué GFG Finanzas y no ir directo con una aseguradora?</summary>
+        <div class="faq-body">Al ir directo con una aseguradora, solo te ofrecen sus propios productos — aunque no sean los mejores para ti. Con GFG Finanzas, comparamos 8 aseguradoras diferentes y encontramos la que más conviene a tu caso específico. Es como tener un agente de viajes que compara todas las aerolíneas, no solo una.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FINAL CTA
+==================================================== -->
+<section id="final-cta" aria-labelledby="final-title">
+  <div class="wrap">
+    <div class="final-inner">
+      <span class="tag"><i class="fas fa-calendar-check" aria-hidden="true"></i>Último paso</span>
+      <h2 class="h-section" id="final-title">Tu familia merece estar protegida.<br/><em>Empieza hoy, sin costo.</em></h2>
+      <p class="sub">Agenda ahora tu asesoría gratuita. En menos de 24 horas te contactamos para confirmar fecha, hora y modalidad. Sin compromiso, sin letra chica.</p>
+
+      <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20agendar%20mi%20asesoría%20gratuita%20de%20seguros" class="btn btn-primary btn-xl" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp para agendar">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        Agendar mi asesoría por WhatsApp
+      </a>
+
+      <div class="final-spots" role="note" aria-live="polite">
+        <i class="fas fa-users" aria-hidden="true"></i>
+        Solo quedan <strong id="spots-final">5 lugares</strong> disponibles esta semana
+      </div>
+
+      <div class="guarantee-row-final" aria-label="Garantías">
+        <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo alguno</div>
+        <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso de compra</div>
+        <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</div>
+        <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Certificada AMIB · CONDUSEF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ====================================================
+     FORMULARIO DE LEADS
+==================================================== -->
+<section id="lead-section" aria-labelledby="lead-form-title">
+  <div class="wrap">
+    <div class="lead-wrap">
+      <div class="lead-copy">
+        <span class="tag" style="margin-bottom:14px;"><i class="fas fa-paper-plane"></i>Primer paso</span>
+        <h2 class="h-section" id="lead-form-title">Solicita tu asesoría<br/>gratuita <em>hoy</em></h2>
+        <p class="sub">Sin costo, sin compromiso. Completa el formulario y Guadalupe te contacta en menos de 24 horas con un plan personalizado para ti.</p>
+        <div class="lead-proofs">
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Te contactamos en menos de 24 horas</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-users" aria-hidden="true"></i></div><span>+500 familias protegidas con GFG Finanzas</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas para encontrar el mejor plan</span></div>
+        </div>
+      </div>
+      <div class="lead-card">
+        <div class="lc-title">Agenda tu asesoría gratuita</div>
+        <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
+        <form id="mainLeadForm" novalidate>
+          <div class="lf-row">
+            <div class="lf-group">
+              <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input type="text" id="lf-nombre" placeholder="Tu nombre completo" required autocomplete="given-name" />
+              <span class="lf-err" id="err-lf-nombre" role="alert">Ingresa tu nombre.</span>
+            </div>
+            <div class="lf-group">
+              <label for="lf-edad">Edad <span aria-hidden="true">*</span></label>
+              <input type="number" id="lf-edad" placeholder="Tu edad" min="18" max="75" required inputmode="numeric" />
+              <span class="lf-err" id="err-lf-edad" role="alert">Ingresa tu edad (18–75).</span>
+            </div>
+          </div>
+          <div class="lf-row">
+            <div class="lf-group">
+              <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+              <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
+            </div>
+            <div class="lf-group">
+              <label for="lf-wa">WhatsApp <span aria-hidden="true">*</span></label>
+              <input type="tel" id="lf-wa" placeholder="10 dígitos" required inputmode="numeric" autocomplete="tel" />
+              <span class="lf-err" id="err-lf-wa" role="alert">Ingresa 10 dígitos válidos.</span>
+            </div>
+          </div>
+          <div class="lf-privacy">
+            <input type="checkbox" id="lf-priv" required />
+            <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Quiero mi asesoría gratuita
+          </button>
+          <div class="lf-badges">
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo</span>
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</span>
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</span>
+          </div>
+        </form>
+        <div class="lf-success" id="mainLeadSuccess">
+          <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+          <h4>¡Listo! Solicitud enviada</h4>
+          <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            También escríbenos ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ====================================================
+     FOOTER
+==================================================== -->
+<footer role="contentinfo">
+  <div class="wrap">
+    <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
+    <p>
+      <a href="index.html">Inicio</a> &nbsp;·&nbsp;
+      <a href="tel:+527717021729">771 702 1729</a> &nbsp;·&nbsp;
+      Hecho con <span style="color:var(--rosa)" aria-label="amor">♥</span> en México
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20información%20sobre%20seguros" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- FOMO toasts container -->
+<div id="fomo-container" aria-live="polite" aria-atomic="false"></div>
+
+<!-- Live counter -->
+<div id="live-counter" aria-live="polite">
+  <span class="dot" aria-hidden="true"></span>
+  <span><strong id="live-num">23</strong> personas leyendo ahora</span>
+</div>
+
+<!-- ====================================================
+     JAVASCRIPT
+==================================================== -->
+<script>
+/* ===== URGENCY BAR ===== */
+(function() {
+  if (localStorage.getItem('gfg-seg-bar') === '1') {
+    const b = document.getElementById('urgency-bar');
+    if (b) b.style.display = 'none';
+  }
+})();
+document.getElementById('bar-close').addEventListener('click', () => {
+  document.getElementById('urgency-bar').style.display = 'none';
+  localStorage.setItem('gfg-seg-bar', '1');
+});
+
+/* ===== NAV SHADOW ===== */
+const nav = document.getElementById('nav-vsl');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('shadow', window.scrollY > 20);
+}, { passive: true });
+
+/* ===== SPOTS COUNTER (sincronizado en toda la página) ===== */
+let spots = 5;
+function setSpots(n) {
+  const label = n + ' lugar' + (n === 1 ? '' : 'es');
+  ['spots-count','spots-card','spots-final','fomo-semana'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = (id === 'fomo-semana') ? n : label;
+  });
+}
+function scheduleSpotDecay() {
+  const delay = 240000 + Math.random() * 180000; // 4-7 min
+  setTimeout(() => {
+    if (spots > 1) { spots--; setSpots(spots); }
+    scheduleSpotDecay();
+  }, delay);
+}
+scheduleSpotDecay();
+
+/* ===== "X PERSONAS YA AGENDARON" ===== */
+let registered = 3;
+function bumpRegistered() {
+  registered++;
+  const el = document.getElementById('registered-count');
+  if (el) el.textContent = registered + ' personas';
+  setTimeout(bumpRegistered, 90000 + Math.random() * 120000); // cada 1.5-3.5 min
+}
+setTimeout(bumpRegistered, 95000 + Math.random() * 80000);
+
+/* ===== LIVE VIEWER COUNTER ===== */
+let viewers = 18 + Math.floor(Math.random() * 10);
+document.getElementById('viewer-count').textContent = viewers;
+document.getElementById('live-num').textContent = viewers;
+function updateViewers() {
+  viewers = Math.max(10, Math.min(35, viewers + (Math.random() < 0.5 ? -1 : 1)));
+  ['viewer-count','live-num'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = viewers;
+  });
+  setTimeout(updateViewers, 5000 + Math.random() * 5000);
+}
+setTimeout(updateViewers, 5000 + Math.random() * 5000);
+
+/* ===== COUNTDOWN TIMER (resetea a medianoche) ===== */
+function getEndOfDay() {
+  const stored = localStorage.getItem('gfg-cd-end');
+  if (stored) {
+    const ts = parseInt(stored);
+    if (ts > Date.now()) return ts;
+  }
+  const end = new Date();
+  end.setHours(23, 59, 59, 0);
+  localStorage.setItem('gfg-cd-end', end.getTime().toString());
+  return end.getTime();
+}
+const cdEnd = getEndOfDay();
+function tickCountdown() {
+  const diff = Math.max(0, cdEnd - Date.now());
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  const pad = n => String(n).padStart(2, '0');
+  document.getElementById('cd-h').textContent = pad(h);
+  document.getElementById('cd-m').textContent = pad(m);
+  document.getElementById('cd-s').textContent = pad(s);
+  if (diff > 0) setTimeout(tickCountdown, 1000);
+}
+tickCountdown();
+
+/* ===== FOMO TOASTS ===== */
+const fomoEvents = [
+  { i: 'MF', name: 'Martha F. de Guadalajara',   action: 'acaba de agendar su asesoría de seguros',       t: 'hace 2 min'  },
+  { i: 'RP', name: 'Roberto P. de CDMX',          action: 'contrató su seguro de gastos médicos mayores',   t: 'hace 5 min'  },
+  { i: 'SL', name: 'Sandra L. de Monterrey',      action: 'comparó 8 aseguradoras y eligió la mejor opción', t: 'hace 7 min'  },
+  { i: 'JC', name: 'Jorge C. de Querétaro',       action: 'solicitó cotización de seguro de vida familiar',  t: 'hace 10 min' },
+  { i: 'AN', name: 'Ana N. de Puebla',            action: 'acaba de reservar su asesoría gratuita',         t: 'hace 12 min' },
+  { i: 'DV', name: 'Diego V. de León',            action: 'cambió su seguro y ahorra $900 al mes',          t: 'hace 15 min' },
+  { i: 'LR', name: 'Laura R. de Tijuana',         action: 'contrató seguro de vida para su familia',        t: 'hace 17 min' },
+  { i: 'CM', name: 'Carlos M. de Michoacán',      action: 'protegió a su familia con GMM + seguro de vida', t: 'hace 20 min' },
+  { i: 'PG', name: 'Paola G. de Guadalajara',     action: 'agendó asesoría gratuita ahora mismo',           t: 'hace 1 min'  },
+  { i: 'HR', name: 'Hugo R. de Monterrey',        action: 'redujo su prima mensual un 28%',                 t: 'hace 22 min' },
+];
+let fomoIdx = 0, activeToast = null;
+
+function showToast() {
+  const d = fomoEvents[fomoIdx % fomoEvents.length]; fomoIdx++;
+  const container = document.getElementById('fomo-container');
+  if (activeToast) { activeToast.classList.add('out'); setTimeout(() => activeToast?.remove(), 400); }
+  const toast = document.createElement('div');
+  toast.className = 'fomo-toast';
+  toast.setAttribute('role', 'status');
+  toast.innerHTML = `
+    <div class="fomo-avatar" aria-hidden="true">${d.i}</div>
+    <div class="fomo-body">
+      <strong>${d.name}</strong>
+      <span>${d.action} · ${d.t}</span>
+    </div>
+    <button class="fomo-close" aria-label="Cerrar">✕</button>
+  `;
+  toast.querySelector('.fomo-close').addEventListener('click', () => {
+    toast.classList.add('out');
+    setTimeout(() => toast.remove(), 400);
+    if (activeToast === toast) activeToast = null;
+  });
+  container.appendChild(toast);
+  activeToast = toast;
+  setTimeout(() => {
+    if (toast.parentNode) { toast.classList.add('out'); setTimeout(() => toast.remove(), 400); if (activeToast === toast) activeToast = null; }
+  }, 5500);
+}
+function scheduleToast() {
+  setTimeout(() => { showToast(); scheduleToast(); }, 16000 + Math.random() * 10000);
+}
+setTimeout(() => { showToast(); scheduleToast(); }, 6000);
+
+/* ===== SCROLL REVEAL ===== */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ===== 3D TILT EN BRAND CARDS ===== */
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  document.querySelectorAll('.brand-card, .tcard, .fomo-c').forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+      const r  = card.getBoundingClientRect();
+      const x  = e.clientX - r.left;
+      const y  = e.clientY - r.top;
+      const rx = ((y - r.height / 2) / (r.height / 2)) * -6;
+      const ry = ((x - r.width  / 2) / (r.width  / 2)) * 6;
+      card.style.transition = 'transform .08s ease, box-shadow .15s ease';
+      card.style.transform  = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px) scale(1.02)`;
+      card.style.setProperty('--mx', (x / r.width  * 100) + '%');
+      card.style.setProperty('--my', (y / r.height * 100) + '%');
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transition = 'transform .5s cubic-bezier(.2,0,0,1), box-shadow .5s cubic-bezier(.2,0,0,1)';
+      card.style.transform  = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+      setTimeout(() => { card.style.transition = ''; card.style.transform = ''; }, 510);
+    });
+  });
+}
+
+/* ===== VIDEO PLACEHOLDER CLICK ===== */
+document.getElementById('video-box').addEventListener('click', () => {
+  /* Aquí se puede insertar el embed de YouTube/Vimeo cuando esté disponible */
+  /* Ejemplo: videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/TU_ID?autoplay=1" ...></iframe>'; */
+  alert('Inserta aquí el enlace de tu video. Puedes usar YouTube, Vimeo o un archivo mp4.');
+});
+document.getElementById('video-box').addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') e.currentTarget.click();
+});
+
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+var FUENTE_PAGE = "seguros";
+const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
+
+/* ===== LEAD FORM ===== */
+(function() {
+  var form = document.getElementById("mainLeadForm");
+  var success = document.getElementById("mainLeadSuccess");
+  if (!form) return;
+  function vf(id,errId,fn){var el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);el.classList.toggle("lferr",!ok);err.classList.toggle("show",!ok);return ok;}
+  function validateAll(){
+    var n=vf("lf-nombre","err-lf-nombre",function(el){return el.value.trim().length>=2;});
+    var e=vf("lf-edad","err-lf-edad",function(el){var v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=75;});
+    var c=vf("lf-correo","err-lf-correo",function(el){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value);});
+    var w=vf("lf-wa","err-lf-wa",function(el){return /^\\d{10}$/.test(el.value.replace(/\\s/g,""));});
+    return n&&e&&c&&w&&document.getElementById("lf-priv").checked;
+  }
+  ["lf-nombre","lf-edad","lf-correo","lf-wa"].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.addEventListener("input",function(){el.classList.remove("lferr");var err=document.getElementById("err-"+id);if(err)err.classList.remove("show");});
+  });
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    if(!validateAll()) return;
+    var data={nombre:document.getElementById("lf-nombre").value.trim(),edad:document.getElementById("lf-edad").value.trim(),correo:document.getElementById("lf-correo").value.trim(),whatsapp:document.getElementById("lf-wa").value.trim()};
+    try{var db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);db.from("leads").insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:"Nuevo",notas:""}]).then(function(){}).catch(function(){});}catch(_){}
+    if(typeof fbq==="function") fbq("track","Lead",{content_name:FUENTE_PAGE,content_category:"Seguros"});
+    form.style.display="none";
+    success.style.display="block";
+    success.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+})();
+</script>
+
+</body>
+</html>
