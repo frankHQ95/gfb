@@ -433,6 +433,152 @@
   .lf-success p{font-size:.88rem;color:var(--texto-soft);margin-bottom:18px;}
   @media(max-width:900px){.lead-wrap{grid-template-columns:1fr;}}
   @media(max-width:540px){.lf-row{grid-template-columns:1fr;}.lead-card{padding:24px 18px;}}
+  
+  
+  @media (max-width: 640px) {
+    .hero-grid         { grid-template-columns: 1fr; }
+    .results-grid      { grid-template-columns: 1fr; gap: 8px; }
+    .plans-grid        { grid-template-columns: 1fr; }
+    .benefits-grid     { grid-template-columns: 1fr; }
+    .benefit-cards     { grid-template-columns: 1fr; }
+    .compare-wrap      { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .compare-header,.compare-row { min-width: 480px; }
+    .lf-row            { grid-template-columns: 1fr; }
+    .lead-card         { padding: 24px 18px; }
+    .cotizador-card    { padding: 24px 18px; }
+    .gender-toggle     { flex-direction: column; border-radius: var(--r-md); }
+    .h-display         { font-size: clamp(2rem,8vw,2.6rem); }
+    .steps-grid        { grid-template-columns: 1fr; }
+    .steps-grid::before{ display: none; }
+  }
+
+  
+  /* ============================================================
+     MOBILE FIXES GLOBALES — touch targets + legibilidad
+  ============================================================ */
+  /* Touch targets mínimos 48px */
+  .btn      { min-height: 48px; }
+  .btn-lg   { min-height: 52px; }
+  .btn-xl   { min-height: 56px; }
+  .bar-close{ min-width: 44px; min-height: 44px; }
+  .wa-float { min-width: 54px; min-height: 54px; }
+
+  /* Inputs más cómodos en mobile */
+  @media (max-width: 768px) {
+    .lf-group input,
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .f-group input,
+    .ic-field input { font-size: 16px !important; /* Evita zoom en iOS */ min-height: 48px; }
+    .lf-group label,
+    .form-group label,
+    .f-group label { font-size: .74rem; }
+    /* Botones del form full-width en mobile */
+    .btn-full  { padding: 15px 20px; font-size: .9rem; }
+    /* Proof grid 2 columnas en mobile */
+    .proof-grid { grid-template-columns: 1fr 1fr !important; }
+    /* Steps conectadas */
+    .steps-grid::before { display: none; }
+    /* Urgency bar más compacto */
+    .bar-inner  { gap: 6px; }
+    #urgency-bar{ font-size: .75rem; padding: 8px 0; }
+    /* Countdown timer */
+    .countdown-timer { gap: 6px; }
+    .cd-num          { min-width: 44px; font-size: 1.6rem; padding: 8px 10px; }
+    /* Hero actions column */
+    .hero-actions    { flex-direction: column; align-items: flex-start; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    /* Nav más compacto */
+    .nav-wrap,.nav-vsl-wrap { height: 58px; }
+    /* Cards padding */
+    .bcard          { padding: clamp(20px,4vw,36px); }
+    .tcard,.tcard-vsl{ padding: 20px 18px; }
+    /* Brand cards */
+    .brand-card     { padding: 18px 14px; }
+    .brand-ico,.brand-name{ font-size:1rem; }
+    /* Pilar cards */
+    .pilar          { padding: 22px 18px; }
+    /* Pain cards */
+    .pain-card      { padding: 18px 16px; }
+    /* Proof items */
+    .proof-item     { padding: 18px 12px; }
+    .proof-num      { font-size: 1.8rem; }
+    .proof-label    { font-size: .72rem; }
+  }
+
+  @media (max-width: 480px) {
+    /* Typography scale down */
+    .h-display  { font-size: clamp(1.85rem,8.5vw,2.4rem) !important; }
+    .h-section  { font-size: clamp(1.55rem,7vw,2rem) !important; }
+    .sub        { font-size: .9rem; }
+    /* Stat numbers */
+    .stat-num   { font-size: 2rem; }
+    /* Brands 2 columnas forzado */
+    .brands-grid{ grid-template-columns: 1fr 1fr !important; }
+    /* Steps vertical */
+    .step-item  { padding: 18px 14px; gap: 12px; }
+    /* Pilares */
+    .pilar-num  { font-size: 2.4rem; }
+    /* Cards más compactos */
+    .lead-card-center,.hero-cot-card,.form-card,.cta-card,.cotizador-card { padding: 20px 16px; }
+    /* Chips */
+    .chip       { font-size: .7rem; padding: 5px 10px; }
+    /* Asesora chips */
+    .asesora-chips { gap: 6px; }
+    /* Modal */
+    .modal-box  { padding: 22px 18px; }
+    /* Final CTA actions */
+    .final-actions,.cta-actions,.contact-actions { flex-direction: column; align-items: center; }
+    .final-actions .btn,.cta-actions .btn,.contact-actions .btn { width: 100%; justify-content: center; }
+    /* Guarantee row */
+    .guarantee-row-final { gap: 10px; }
+    .gr-item    { font-size: .74rem; }
+    /* FAQ */
+    .faq-item summary { font-size: .86rem; padding: 16px 18px; }
+    .faq-body   { padding: 12px 18px 16px; font-size: .85rem; }
+    /* ISR calc */
+    .isr-calc   { padding: 22px 18px; }
+    /* Pilar lista */
+    .pilar-list li { font-size: .78rem; }
+    /* Proof faces */
+    .proof-faces span { width: 26px; height: 26px; font-size: .58rem; }
+    /* Countdown bar */
+    .countdown-bar { padding: 7px 14px; font-size: .72rem; }
+  }
+
+  /* ============================================================
+     STICKY MOBILE CTA BAR
+  ============================================================ */
+  .mobile-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
+    background: var(--white); border-top: 1px solid rgba(34,45,68,.1);
+    padding: 10px 16px 10px; gap: 10px;
+    box-shadow: 0 -4px 20px rgba(34,45,68,.12);
+  }
+  @media (max-width: 768px) {
+    .mobile-bar { display: flex; align-items: center; }
+    body { padding-bottom: 68px; }
+    /* WA float sube para no colisionar */
+    .wa-float   { bottom: 78px !important; }
+    #live-counter { bottom: 136px !important; }
+    #fomo-container { bottom: 168px !important; }
+  }
+  .mbar-btn {
+    flex: 1; background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%);
+    color: white; border: none; border-radius: 50px; cursor: pointer;
+    padding: 14px 16px; font-family: var(--f-body); font-size: .88rem;
+    font-weight: 700; display: flex; align-items: center; justify-content: center;
+    gap: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(183,110,121,.4);
+    min-height: 48px;
+  }
+  .mbar-wa {
+    width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+    background: #25D366; color: white; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; text-decoration: none;
+  }
   </style>
   <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
   <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","TU_PIXEL_ID");fbq("track","PageView");</script>
@@ -698,7 +844,8 @@
     </div>
 
     <!-- Comparison table -->
-    <div class="compare-wrap" data-reveal>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--r-lg);">
+    <div class="compare-wrap" data-reveal style="min-width:420px;">
       <div class="compare-header">
         <span>Cobertura</span>
         <span>Master</span>
@@ -734,6 +881,7 @@
         <span data-plan-col="master" style="font-size:.78rem;">Familia y patrimonio</span>
         <span data-plan-col="premium" style="font-size:.78rem;">Protección patrimonial</span>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1239,6 +1387,18 @@ window.addEventListener("pageshow", () => window.scrollTo({ top:0, behavior:"aut
 
 var FUENTE_PAGE = "vida";
 </script>
+
+<!-- STICKY MOBILE CTA BAR -->
+<div class="mobile-bar" aria-label="Acciones rápidas">
+  <a href="#contacto" class="mbar-btn">
+    <i class="fas fa-calendar-check" aria-hidden="true"></i>
+    Asesoría gratuita
+  </a>
+  <a href="https://wa.me/527717021729" class="mbar-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+</div>
+
 </body>
 </html>
 <!-- FORMULARIO DE LEADS -->

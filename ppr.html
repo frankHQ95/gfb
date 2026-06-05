@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Personal de Retiro (PPR) — GFG Finanzas | Asesoría Gratuita</title>
+  <meta name="description" content="Descubre cómo un PPR puede garantizarte un retiro tranquilo Y devolverte dinero del SAT cada año. Asesoría 100% gratuita — GFG Finanzas." />
+  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','TU_PIXEL_ID');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<style>
+/* ============================================================ TOKENS */
+:root {
+  --rosa:#B76E79; --rosa-dark:#9a5862; --rosa-light:#d4929c;
+  --navy:#222D44; --navy-deep:#161e2e;
+  --terracota:#C48F7F; --salvia:#9FB8A6;
+  --hueso:#EAE9E5; --rosa-claro:#F4DDD5;
+  --white:#FFFFFF; --texto:#1e1e2e;
+  --texto-mid:#4a4a5a; --texto-soft:#5c5c6c;
+  --amarillo:#f9d67a; --verde:#4ade80;
+  --f-head:'Cormorant Garamond',Georgia,serif;
+  --f-body:'Poppins',sans-serif;
+  --w:900px; /* VSL pages narrower for focus */
+  --r-sm:12px; --r-md:20px; --r-lg:32px; --r-xl:48px;
+  --shadow-sm:0 2px 12px rgba(34,45,68,.07);
+  --shadow-md:0 8px 32px rgba(34,45,68,.12);
+  --shadow-lg:0 20px 64px rgba(34,45,68,.18);
+  --t:.28s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:16px;}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth;}}
+body{font-family:var(--f-body);color:var(--texto);background:var(--hueso);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}[data-reveal]{opacity:1!important;transform:none!important;}}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px;}
+
+/* UTILS */
+.wrap{max-width:var(--w);margin:0 auto;padding:0 clamp(20px,5vw,40px);}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:50px;color:var(--rosa);background:rgba(183,110,121,.1);border:1px solid rgba(183,110,121,.22);margin-bottom:14px;}
+.tag-light{color:rgba(255,255,255,.85);background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);}
+.tag-gold{color:var(--amarillo);background:rgba(249,214,122,.1);border-color:rgba(249,214,122,.25);}
+.h-display{font-family:var(--f-head);font-size:clamp(2.4rem,5.5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-.01em;}
+.h-section{font-family:var(--f-head);font-size:clamp(1.9rem,4vw,3rem);font-weight:600;line-height:1.15;}
+.sub{font-size:clamp(.9rem,2vw,1.05rem);color:var(--texto-mid);line-height:1.85;margin-top:12px;}
+em{font-style:italic;background:linear-gradient(135deg,var(--rosa) 0%,var(--terracota) 55%,var(--rosa-dark) 100%);background-size:200% 200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gshift 5s ease infinite;}
+@keyframes gshift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.text-center{text-align:center;}
+.text-center .sub{margin:12px auto 0;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:60px;font-size:.9rem;font-weight:700;border:none;cursor:pointer;transition:var(--t);position:relative;overflow:hidden;white-space:nowrap;letter-spacing:.02em;}
+.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);opacity:0;transition:var(--t);}
+.btn:hover::after{opacity:1;}
+.btn:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;}
+.btn-primary{background:linear-gradient(135deg,var(--rosa) 0%,#c4727d 100%);color:var(--white);box-shadow:0 4px 24px rgba(183,110,121,.45);}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);animation:shimmer 3.5s ease-in-out infinite;}
+@keyframes shimmer{0%{left:-100%}40%,100%{left:160%}}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(183,110,121,.6);}
+.btn-wa{background:#25D366;color:white;}
+.btn-wa:hover{background:#1fbe5a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.4);}
+.btn-full{width:100%;justify-content:center;}
+.btn-xl{padding:20px 48px;font-size:1.05rem;}
+.btn-lg{padding:17px 36px;font-size:.95rem;}
+
+/* URGENCY BAR */
+#urgency-bar{background:linear-gradient(90deg,var(--navy-deep),#2a3550);color:rgba(255,255,255,.9);padding:11px 0;text-align:center;font-size:.8rem;font-weight:500;position:relative;z-index:1001;border-bottom:1px solid rgba(255,255,255,.06);}
+.bar-inner{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--verde);box-shadow:0 0 0 2px rgba(74,222,128,.3);flex-shrink:0;}
+@media(prefers-reduced-motion:no-preference){.pulse-dot{animation:pdot 1.5s infinite;}}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.8)}}
+#urgency-bar strong{color:var(--amarillo);}
+#urgency-bar a{color:var(--rosa-light);font-weight:700;text-decoration:underline;text-underline-offset:2px;}
+.bar-close{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.45);font-size:.95rem;cursor:pointer;padding:6px;min-width:32px;min-height:32px;}
+.bar-close:hover{color:white;}
+
+/* NAV */
+#nav{position:sticky;top:0;z-index:1000;background:rgba(22,30,46,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);transition:box-shadow var(--t);}
+#nav.shadow{box-shadow:0 4px 32px rgba(0,0,0,.4);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo img{height:40px;width:auto;object-fit:contain;mix-blend-mode:screen;opacity:.92;}
+.nav-right{display:flex;align-items:center;gap:14px;}
+.nav-phone{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.65);font-size:.8rem;font-weight:500;}
+.nav-phone i{color:var(--rosa);}
+@media(max-width:580px){.nav-phone{display:none;}}
+
+/* ============================================================ HERO */
+#hero{background:linear-gradient(155deg,var(--navy-deep) 0%,#1e2840 55%,#2a1f2e 100%);padding:clamp(56px,10vh,96px) 0 clamp(48px,8vh,80px);position:relative;overflow:hidden;text-align:center;}
+#hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 65% at 50% -5%,rgba(183,110,121,.25) 0%,transparent 55%),radial-gradient(ellipse 45% 40% at 8% 80%,rgba(159,184,166,.14) 0%,transparent 50%),radial-gradient(ellipse 45% 40% at 92% 80%,rgba(196,143,127,.12) 0%,transparent 50%);}
+
+/* Countdown timer */
+.countdown-bar{display:inline-flex;align-items:center;gap:14px;background:rgba(249,214,122,.12);border:1px solid rgba(249,214,122,.3);border-radius:50px;padding:8px 22px;margin-bottom:28px;font-size:.78rem;font-weight:700;color:var(--amarillo);letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:1;}
+.countdown-bar i{font-size:.8rem;}
+.cd-time{font-size:1rem;letter-spacing:.12em;}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(183,110,121,.15);border:1px solid rgba(183,110,121,.3);border-radius:50px;padding:6px 18px;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;position:relative;z-index:1;}
+.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--rosa-light);}
+
+.hero-title{color:var(--white);margin-bottom:20px;position:relative;z-index:1;max-width:780px;margin-left:auto;margin-right:auto;}
+.hero-sub{color:rgba(255,255,255,.65);font-size:clamp(.95rem,2vw,1.12rem);line-height:1.85;max-width:680px;margin:0 auto 36px;position:relative;z-index:1;}
+
+/* viewer pill */
+.viewer-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50px;padding:8px 18px;font-size:.78rem;color:rgba(255,255,255,.65);margin-bottom:28px;position:relative;z-index:1;}
+.viewer-pill strong{color:var(--amarillo);}
+.viewer-pill .dot{background:var(--verde);}
+
+/* Video */
+.video-wrap{position:relative;z-index:1;max-width:740px;margin:0 auto 28px;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.07);}
+.video-box{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#1a2235 0%,#2a1f2e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;}
+.video-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(183,110,121,.15) 0%,transparent 65%);}
+.video-live{position:absolute;top:16px;left:16px;background:#e74c3c;color:white;font-size:.68rem;font-weight:700;padding:5px 11px;border-radius:5px;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:5px;z-index:2;}
+.video-live .dot{width:5px;height:5px;border-radius:50%;background:white;}
+@media(prefers-reduced-motion:no-preference){.video-live .dot{animation:pdot 1.5s infinite;}}
+.video-duration{position:absolute;bottom:14px;right:16px;z-index:2;background:rgba(0,0,0,.65);color:rgba(255,255,255,.85);font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:6px;}
+.play-btn{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--rosa) 0%,#c4727d 100%);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;box-shadow:0 0 0 14px rgba(183,110,121,.18),0 0 0 28px rgba(183,110,121,.08);transition:var(--t);}
+@media(prefers-reduced-motion:no-preference){.play-btn{animation:ppulse 2.5s ease infinite;}@keyframes ppulse{0%,100%{box-shadow:0 0 0 14px rgba(183,110,121,.18),0 0 0 28px rgba(183,110,121,.08);}50%{box-shadow:0 0 0 20px rgba(183,110,121,.12),0 0 0 40px rgba(183,110,121,.05);}}}
+.play-btn i{color:white;font-size:2rem;margin-left:7px;}
+.play-btn:hover{transform:scale(1.1);}
+.video-caption{font-size:.78rem;color:rgba(255,255,255,.85);margin-top:12px;position:relative;z-index:2;font-weight:500;}
+.video-sub{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:5px;position:relative;z-index:2;}
+
+/* Below video */
+.below-video{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:4px;}
+.below-note{display:flex;align-items:center;gap:7px;font-size:.77rem;color:rgba(255,255,255,.4);}
+.below-note i{color:var(--salvia);font-size:.68rem;}
+
+/* PROOF STRIP */
+#proof-strip{background:var(--white);border-bottom:1px solid rgba(34,45,68,.07);}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.proof-item{text-align:center;padding:clamp(20px,3vh,30px) 16px;border-right:1px solid rgba(34,45,68,.07);}
+.proof-item:last-child{border-right:none;}
+.proof-num{font-family:var(--f-head);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--rosa);line-height:1;}
+.proof-label{font-size:.78rem;color:var(--texto-soft);margin-top:4px;line-height:1.5;}
+
+/* ============================================================ PAIN POINTS */
+#dolor{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+.dolor-intro{text-align:center;margin-bottom:clamp(40px,6vh,56px);}
+.pain-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.pain-card{background:var(--hueso);border-radius:var(--r-md);padding:22px 24px;border:1.5px solid rgba(34,45,68,.07);display:flex;align-items:flex-start;gap:14px;transition:var(--t);position:relative;overflow:hidden;}
+.pain-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.07) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
+.pain-card:hover::before{opacity:1;}
+.pain-card:hover{border-color:rgba(183,110,121,.25);transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.pain-emoji{font-size:1.6rem;flex-shrink:0;margin-top:2px;}
+.pain-card p{font-size:.9rem;color:var(--texto-mid);line-height:1.65;font-style:italic;}
+.pain-conclusion{margin-top:32px;padding:24px 28px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);border-radius:var(--r-lg);text-align:center;}
+.pain-conclusion h3{font-family:var(--f-head);font-size:clamp(1.4rem,3vw,2rem);font-weight:600;color:white;margin-bottom:8px;}
+.pain-conclusion p{font-size:.9rem;color:rgba(255,255,255,.6);}
+
+/* ============================================================ EL PROBLEMA */
+#problema{padding:clamp(64px,11vh,100px) 0;background:linear-gradient(155deg,var(--navy-deep) 0%,#1e2840 100%);position:relative;overflow:hidden;}
+#problema::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 60% at 70% 50%,rgba(183,110,121,.13) 0%,transparent 60%);}
+.prob-inner{position:relative;z-index:1;text-align:center;}
+.prob-inner .h-section{color:white;margin-bottom:14px;}
+.prob-inner .sub{color:rgba(255,255,255,.58);margin:0 auto 44px;text-align:center;}
+.financial-chaos{display:flex;flex-direction:column;gap:12px;max-width:520px;margin:0 auto 40px;}
+.chaos-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-md);padding:16px 20px;display:flex;align-items:center;gap:14px;font-size:.9rem;color:rgba(255,255,255,.7);}
+.chaos-item .ci-ico{font-size:1.3rem;flex-shrink:0;}
+.chaos-verdict{max-width:560px;margin:0 auto;padding:24px;background:rgba(183,110,121,.15);border:1px solid rgba(183,110,121,.3);border-radius:var(--r-lg);text-align:center;}
+.chaos-verdict h3{font-family:var(--f-head);font-size:1.5rem;font-weight:600;color:white;margin-bottom:8px;}
+.chaos-verdict p{font-size:.88rem;color:rgba(255,255,255,.65);}
+.chaos-verdict em{background:none;color:var(--amarillo);-webkit-background-clip:unset;animation:none;}
+
+/* ============================================================ QUÉ ES PPR */
+#que-es-ppr{padding:clamp(64px,11vh,100px) 0;background:var(--rosa-claro);}
+.ppr-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,72px);align-items:center;}
+.ppr-photo{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);position:relative;}
+.ppr-photo img{width:100%;height:clamp(380px,50vh,520px);object-fit:cover;object-position:center center;display:block;}
+.ppr-badge{position:absolute;bottom:-16px;right:-16px;background:var(--white);border-radius:var(--r-md);padding:18px 22px;box-shadow:var(--shadow-md);text-align:center;max-width:170px;}
+.ppr-badge .big{font-family:var(--f-head);font-size:1.8rem;font-weight:700;color:var(--rosa);line-height:1;}
+.ppr-badge .sml{font-size:.72rem;color:var(--texto-soft);margin-top:3px;line-height:1.4;}
+.ppr-badge .stars{color:#f5b94e;font-size:.8rem;margin-bottom:3px;}
+.ppr-copy .h-section{color:var(--navy);margin-bottom:14px;}
+.ppr-copy .sub{max-width:100%;}
+.ppr-benefits{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+.ppr-ben{display:flex;align-items:flex-start;gap:14px;background:rgba(255,255,255,.65);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.85);border-radius:var(--r-md);padding:16px 18px;transition:var(--t);}
+.ppr-ben:hover{background:rgba(255,255,255,.88);transform:translateX(4px);}
+.pb-ico{width:40px;height:40px;border-radius:10px;background:rgba(183,110,121,.12);color:var(--rosa);display:flex;align-items:center;justify-content:center;font-size:.92rem;flex-shrink:0;margin-top:2px;}
+.ppr-ben h4{font-family:var(--f-head);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.ppr-ben p{font-size:.83rem;color:var(--texto-mid);line-height:1.6;}
+
+/* ============================================================ DEDUCCIÓN ISR (TAX BENEFIT) */
+#isr{padding:clamp(64px,11vh,100px) 0;background:var(--navy-deep);position:relative;overflow:hidden;}
+#isr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(249,214,122,.08) 0%,transparent 60%);}
+.isr-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,72px);align-items:center;}
+.isr-copy .h-section{color:white;margin-bottom:14px;}
+.isr-copy .sub{color:rgba(255,255,255,.6);max-width:100%;}
+.isr-highlight{margin-top:28px;display:flex;flex-direction:column;gap:16px;}
+.isr-item{display:flex;align-items:flex-start;gap:14px;}
+.ii-ico{width:40px;height:40px;border-radius:10px;background:rgba(249,214,122,.12);color:var(--amarillo);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;margin-top:2px;}
+.isr-item h4{font-size:.9rem;font-weight:700;color:white;margin-bottom:3px;}
+.isr-item p{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6;}
+/* ISR calculator card */
+.isr-calc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:clamp(28px,4vw,40px);}
+.ic-title{font-family:var(--f-head);font-size:1.4rem;font-weight:700;color:white;margin-bottom:4px;}
+.ic-sub{font-size:.78rem;color:rgba(255,255,255,.45);margin-bottom:24px;}
+.ic-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.ic-field label{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;}
+.ic-field input{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 16px;font-family:var(--f-body);font-size:.9rem;color:white;outline:none;transition:var(--t);}
+.ic-field input:focus{border-color:var(--rosa);box-shadow:0 0 0 3px rgba(183,110,121,.15);}
+.ic-field input::placeholder{color:rgba(255,255,255,.25);}
+.ic-result{background:linear-gradient(135deg,rgba(183,110,121,.2),rgba(183,110,121,.08));border:1px solid rgba(183,110,121,.3);border-radius:var(--r-md);padding:20px;text-align:center;margin-top:4px;}
+.ic-result[hidden]{display:none;}
+.ic-result .ic-num{font-family:var(--f-head);font-size:2.8rem;font-weight:700;color:var(--rosa);line-height:1;margin-bottom:4px;}
+.ic-result .ic-lbl{font-size:.78rem;color:rgba(255,255,255,.55);}
+.ic-result .ic-note{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:8px;line-height:1.5;}
+
+/* ============================================================ PILARES */
+#pilares{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+.pilares-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;}
+.pilar{border-radius:var(--r-lg);padding:clamp(28px,3.5vw,40px);border:2px solid rgba(34,45,68,.08);transition:var(--t);position:relative;overflow:hidden;}
+.pilar::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.08) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
+.pilar:hover::before{opacity:1;}
+.pilar:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.pilar-ahorro{background:var(--rosa-claro);border-color:rgba(183,110,121,.15);}
+.pilar-proteccion{background:var(--navy);color:white;border-color:var(--navy);}
+.pilar-retiro{background:var(--hueso);}
+.pilar-num{font-family:var(--f-head);font-size:3.5rem;font-weight:700;opacity:.12;line-height:1;margin-bottom:16px;}
+.pilar-ahorro .pilar-num{color:var(--rosa);}
+.pilar-proteccion .pilar-num{color:white;}
+.pilar-retiro .pilar-num{color:var(--navy);}
+.pilar-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;}
+.pilar-ahorro .pilar-ico{background:rgba(183,110,121,.12);color:var(--rosa);}
+.pilar-proteccion .pilar-ico{background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);}
+.pilar-retiro .pilar-ico{background:rgba(34,45,68,.08);color:var(--navy);}
+.pilar h3{font-family:var(--f-head);font-size:1.6rem;font-weight:700;margin-bottom:10px;}
+.pilar-ahorro h3,.pilar-retiro h3{color:var(--navy);}
+.pilar-proteccion h3{color:white;}
+.pilar p{font-size:.84rem;line-height:1.75;}
+.pilar-ahorro p,.pilar-retiro p{color:var(--texto-mid);}
+.pilar-proteccion p{color:rgba(255,255,255,.6);}
+.pilar-list{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+.pilar-list li{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;line-height:1.5;}
+.pilar-ahorro .pilar-list li,.pilar-retiro .pilar-list li{color:var(--texto-mid);}
+.pilar-proteccion .pilar-list li{color:rgba(255,255,255,.65);}
+.pilar-ahorro .pilar-list li i,.pilar-retiro .pilar-list li i{color:var(--salvia);}
+.pilar-proteccion .pilar-list li i{color:var(--salvia);}
+
+/* ============================================================ PROCESO */
+#proceso{padding:clamp(64px,11vh,100px) 0;background:var(--hueso);}
+.steps{display:flex;flex-direction:column;gap:24px;margin-top:44px;max-width:720px;margin-left:auto;margin-right:auto;}
+.step-item{display:flex;gap:24px;align-items:flex-start;background:var(--white);border-radius:var(--r-lg);padding:28px 28px;border:1.5px solid rgba(34,45,68,.07);transition:var(--t);}
+.step-item:hover{border-color:rgba(183,110,121,.22);box-shadow:var(--shadow-md);transform:translateX(4px);}
+.step-num-circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--f-head);font-size:1.4rem;font-weight:700;flex-shrink:0;}
+.step-item:nth-child(1) .step-num-circle{background:rgba(183,110,121,.1);color:var(--rosa);border:2px solid rgba(183,110,121,.2);}
+.step-item:nth-child(2) .step-num-circle{background:rgba(34,45,68,.07);color:var(--navy);border:2px solid rgba(34,45,68,.12);}
+.step-item:nth-child(3) .step-num-circle{background:rgba(196,143,127,.12);color:var(--terracota);border:2px solid rgba(196,143,127,.2);}
+.step-item:nth-child(4) .step-num-circle{background:rgba(159,184,166,.18);color:#5a8a6a;border:2px solid rgba(159,184,166,.3);}
+.step-content h3{font-family:var(--f-head);font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.step-content p{font-size:.86rem;color:var(--texto-soft);line-height:1.7;}
+
+/* ============================================================ TESTIMONIOS */
+#testimonios{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.tcard{background:var(--hueso);border-radius:var(--r-lg);padding:clamp(22px,3vw,32px);position:relative;border:1.5px solid rgba(34,45,68,.07);display:flex;flex-direction:column;transition:var(--t);}
+.tcard::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.07) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
+.tcard:hover::before{opacity:1;}
+.tcard:hover{border-color:rgba(183,110,121,.22);box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.tcard.featured{background:var(--navy);}
+.tcard.featured .tc-text{color:rgba(255,255,255,.8);}
+.tcard.featured .tc-name{color:rgba(255,255,255,.9);}
+.tcard.featured .tc-role{color:rgba(255,255,255,.4);}
+.tcard.featured .tc-quote{color:rgba(255,255,255,.06);}
+.tc-tag{display:inline-block;font-size:.67rem;font-weight:700;background:rgba(183,110,121,.1);color:var(--rosa);padding:3px 10px;border-radius:50px;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase;}
+.tcard.featured .tc-tag{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);}
+.tc-stars{color:#f5b94e;font-size:.8rem;letter-spacing:3px;margin-bottom:14px;}
+.tc-quote{position:absolute;top:14px;right:18px;font-size:3rem;color:var(--rosa);opacity:.1;font-family:Georgia;line-height:1;}
+.tc-text{font-size:.86rem;color:var(--texto-mid);line-height:1.85;font-style:italic;margin-bottom:20px;flex-grow:1;}
+.tc-author{display:flex;align-items:center;gap:10px;}
+.tc-avatar{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--rosa),var(--terracota));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.82rem;}
+.tc-name{font-size:.85rem;font-weight:700;color:var(--navy);}
+.tcard.featured .tc-name{color:rgba(255,255,255,.9);}
+.tc-role{font-size:.73rem;color:var(--texto-soft);}
+
+/* ============================================================ ASESORA */
+#asesora{padding:clamp(64px,11vh,100px) 0;background:var(--rosa-claro);}
+.asesora-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(40px,6vw,72px);align-items:center;}
+.asesora-visual{position:relative;}
+.asesora-frame{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);}
+.asesora-frame img{width:100%;height:clamp(380px,50vh,520px);object-fit:cover;object-position:center center;display:block;}
+.asesora-deco-1{position:absolute;bottom:-12px;left:-12px;width:72px;height:72px;border-radius:16px;background:var(--rosa);opacity:.5;z-index:-1;}
+.asesora-deco-2{position:absolute;top:-8px;right:-8px;width:48px;height:48px;border-radius:10px;background:var(--salvia);opacity:.4;z-index:-1;}
+.asesora-copy .h-section{color:var(--navy);margin-bottom:14px;}
+.asesora-copy .sub{max-width:100%;}
+.asesora-quote{font-family:var(--f-head);font-size:1.25rem;font-style:italic;color:var(--navy);line-height:1.6;margin:24px 0;padding:20px 24px;background:rgba(255,255,255,.65);border-radius:var(--r-md);border-left:4px solid var(--rosa);}
+.asesora-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);color:var(--navy);padding:6px 14px;border-radius:50px;font-size:.76rem;font-weight:600;border:1px solid rgba(34,45,68,.1);}
+.chip i{color:var(--rosa);font-size:.72rem;}
+.commitments{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
+.commitment{display:flex;align-items:center;gap:10px;font-size:.87rem;color:var(--texto-mid);}
+.commitment i{color:var(--salvia);flex-shrink:0;}
+
+/* ============================================================ FORMULARIO DE LEADS */
+#lead-section {
+  padding: clamp(64px,11vh,100px) 0;
+  background: linear-gradient(160deg, var(--navy-deep) 0%, #1e2840 55%, #2a1f2e 100%);
+  position: relative; overflow: hidden;
+}
+#lead-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 65% at 50% 50%, rgba(183,110,121,.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+/* Header centrado */
+.lead-header {
+  text-align: center; max-width: 640px; margin: 0 auto 44px;
+  position: relative; z-index: 1;
+}
+.lead-header .h-section { color: white; margin-bottom: 12px; }
+.lead-header .sub { color: rgba(255,255,255,.6); margin: 12px auto 0; }
+/* Trust strip horizontal */
+.lead-trust-strip {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 24px;
+  margin-bottom: 44px; position: relative; z-index: 1;
+}
+.lts-item {
+  display: flex; align-items: center; gap: 9px;
+  font-size: .84rem; color: rgba(255,255,255,.7);
+}
+.lts-ico {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(183,110,121,.2); color: var(--rosa-light);
+  display: flex; align-items: center; justify-content: center; font-size: .74rem;
+}
+/* Form card centrado */
+.lead-card-center {
+  max-width: 640px; margin: 0 auto;
+  background: var(--white); border-radius: var(--r-xl);
+  padding: clamp(32px,5vw,52px);
+  box-shadow: 0 32px 80px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.06);
+  position: relative; z-index: 1;
+}
+.lc-title { font-family: var(--f-head); font-size: 1.9rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.lc-sub   { font-size: .82rem; color: var(--texto-soft); margin-bottom: 24px; }
+.lf-row   { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.lf-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+.lf-group label { font-size: .72rem; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .08em; }
+.lf-group input {
+  padding: 13px 16px; border: 1.5px solid rgba(34,45,68,.1); border-radius: 10px;
+  font-family: var(--f-body); font-size: .9rem; color: var(--texto);
+  background: var(--hueso); outline: none; transition: var(--t);
+}
+.lf-group input:focus { border-color: var(--rosa); box-shadow: 0 0 0 3px rgba(183,110,121,.1); background: var(--white); }
+.lf-group input.lferr { border-color: #e05c5c; }
+.lf-err { font-size: .72rem; color: #c94444; margin-top: 2px; display: none; }
+.lf-err.show { display: block; }
+.lf-privacy { display: flex; gap: 9px; align-items: flex-start; font-size: .76rem; color: var(--texto-soft); margin-bottom: 16px; }
+.lf-privacy input { width: 14px; height: 14px; margin-top: 2px; accent-color: var(--rosa); flex-shrink: 0; }
+.lf-badges { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 12px; }
+.lf-badge  { display: flex; align-items: center; gap: 5px; font-size: .73rem; color: var(--texto-soft); }
+.lf-badge i { color: var(--salvia); font-size: .68rem; }
+/* FOMO under card */
+.lead-fomo-bottom {
+  max-width: 640px; margin: 20px auto 0;
+  background: rgba(183,110,121,.12); border: 1px solid rgba(183,110,121,.25);
+  border-radius: var(--r-md); padding: 14px 20px;
+  display: flex; align-items: center; gap: 10px;
+  position: relative; z-index: 1;
+}
+.lead-fomo-bottom i { color: var(--rosa-light); flex-shrink: 0; }
+.lead-fomo-bottom p { font-size: .81rem; color: rgba(255,255,255,.7); line-height: 1.5; }
+.lead-fomo-bottom strong { color: var(--amarillo); }
+/* Success state */
+.lf-success { display: none; text-align: center; padding: 20px 0; }
+.lfs-ico    { font-size: 2.8rem; color: var(--salvia); margin-bottom: 12px; }
+.lf-success h4 { font-family: var(--f-head); font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
+.lf-success p  { font-size: .88rem; color: var(--texto-soft); margin-bottom: 18px; }
+@media(max-width:540px) { .lf-row { grid-template-columns: 1fr; } .lead-card-center { padding: 24px 18px; } }
+
+/* ============================================================ FAQ */
+#faq{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
+.faq-list{max-width:700px;margin:40px auto 0;display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:var(--hueso);border-radius:var(--r-md);border:1px solid rgba(34,45,68,.08);overflow:hidden;}
+.faq-item:hover{box-shadow:var(--shadow-sm);}
+.faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;cursor:pointer;list-style:none;font-size:.9rem;font-weight:600;color:var(--navy);user-select:none;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'\f078';font-family:'Font Awesome 6 Free';font-weight:900;font-size:.72rem;color:var(--rosa);flex-shrink:0;transition:transform var(--t);}
+.faq-item[open] summary::after{transform:rotate(-180deg);}
+.faq-item[open]{border-color:rgba(183,110,121,.22);}
+.faq-item[open] summary{color:var(--rosa);border-bottom:1px solid rgba(183,110,121,.1);}
+.faq-body{padding:14px 22px 18px;font-size:.88rem;color:var(--texto-mid);line-height:1.8;}
+
+/* ============================================================ FINAL CTA */
+#final-cta{padding:clamp(72px,13vh,120px) 0;background:linear-gradient(155deg,var(--navy-deep) 0%,#1e2840 60%,#2a1f2e 100%);position:relative;overflow:hidden;text-align:center;}
+#final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 65% at 50% 50%,rgba(183,110,121,.15) 0%,transparent 60%);}
+.final-inner{position:relative;z-index:1;}
+.final-inner .h-section{color:white;margin-bottom:14px;}
+.final-inner .sub{color:rgba(255,255,255,.58);margin:0 auto 36px;text-align:center;}
+.final-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.final-note{font-size:.78rem;color:rgba(255,255,255,.38);margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px;}
+.final-note i{color:var(--salvia);font-size:.7rem;}
+.spots-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(183,110,121,.15);border:1px solid rgba(183,110,121,.28);border-radius:50px;padding:9px 22px;font-size:.82rem;color:rgba(255,255,255,.8);margin-bottom:32px;}
+.spots-pill strong{color:var(--amarillo);}
+.spots-pill i{color:var(--rosa-light);}
+
+/* ============================================================ FOOTER */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.45);padding:28px 0;text-align:center;font-size:.78rem;}
+footer p+p{margin-top:7px;}
+footer a{color:var(--rosa-light);}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;width:54px;height:54px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:1.45rem;z-index:890;box-shadow:0 6px 24px rgba(37,211,102,.4);transition:var(--t);}
+.wa-float:hover{transform:scale(1.1);}
+
+/* FOMO TOASTS */
+#fomo-container{position:fixed;bottom:90px;left:20px;z-index:888;display:flex;flex-direction:column;gap:10px;pointer-events:none;max-width:310px;}
+.fomo-toast{background:var(--white);border-radius:var(--r-md);padding:12px 16px;box-shadow:0 8px 32px rgba(34,45,68,.16);border:1px solid rgba(34,45,68,.06);display:flex;align-items:center;gap:12px;pointer-events:all;}
+@media(prefers-reduced-motion:no-preference){.fomo-toast{animation:toastIn .4s cubic-bezier(.2,0,0,1) forwards;}.fomo-toast.out{animation:toastOut .35s ease forwards;}}
+@keyframes toastIn{from{opacity:0;transform:translateX(-32px) scale(.95)}to{opacity:1;transform:translateX(0) scale(1)}}
+@keyframes toastOut{from{opacity:1;transform:translateX(0);max-height:100px}to{opacity:0;transform:translateX(-32px);max-height:0;padding:0;margin:0}}
+.fomo-avatar{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--rosa),var(--terracota));display:flex;align-items:center;justify-content:center;font-size:.76rem;font-weight:700;color:white;}
+.fomo-body strong{display:block;font-size:.81rem;color:var(--navy);line-height:1.3;}
+.fomo-body span{font-size:.72rem;color:var(--texto-soft);}
+.fomo-close{margin-left:auto;flex-shrink:0;background:none;border:none;color:var(--texto-soft);font-size:.82rem;cursor:pointer;padding:4px;}
+
+/* Live counter */
+#live-counter{position:fixed;bottom:80px;right:24px;z-index:887;background:rgba(34,45,68,.88);backdrop-filter:blur(10px);color:white;border-radius:50px;padding:7px 14px;display:flex;align-items:center;gap:7px;font-size:.74rem;font-weight:600;box-shadow:0 4px 16px rgba(34,45,68,.3);}
+#live-counter .dot{width:6px;height:6px;border-radius:50%;background:var(--verde);}
+@media(prefers-reduced-motion:no-preference){#live-counter .dot{animation:pdot 1.5s infinite;}}
+#live-counter span{color:rgba(255,255,255,.7);}
+#live-counter strong{color:var(--amarillo);}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+[data-reveal].is-visible{opacity:1;transform:translateY(0);}
+
+/* ============================================================ RESPONSIVE */
+@media(max-width:900px){
+  .ppr-grid{grid-template-columns:1fr;}
+  .ppr-badge{display:none;}
+  .isr-inner{grid-template-columns:1fr;}
+  .asesora-grid{grid-template-columns:1fr;}
+  .asesora-deco-1,.asesora-deco-2{display:none;}
+  .lead-wrap{grid-template-columns:1fr;}
+  .pilares-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .pain-cards{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .proof-grid{grid-template-columns:repeat(2,1fr);}
+  .proof-item{border-right:none;border-bottom:1px solid rgba(34,45,68,.07);}
+  .step-item{flex-direction:column;gap:14px;}
+  #fomo-container{left:12px;right:12px;max-width:none;bottom:158px;}
+  .wa-float{bottom:16px;right:16px;}
+  #live-counter{bottom:86px;right:16px;}
+}
+@media(max-width:540px){
+  .lf-row{grid-template-columns:1fr;}
+  .lead-card{padding:24px 18px;}
+  .final-actions{flex-direction:column;align-items:center;}
+}
+
+  
+  @media (max-width: 640px) {
+    .pain-cards        { grid-template-columns: 1fr; }
+    .pilares-grid      { grid-template-columns: 1fr; }
+    .testi-grid        { grid-template-columns: 1fr; }
+    .asesora-grid      { grid-template-columns: 1fr; }
+    .ppr-grid          { grid-template-columns: 1fr; }
+    .isr-inner         { grid-template-columns: 1fr; }
+    .steps             { padding: 0 4px; }
+    .step-item         { padding: 20px 16px; flex-direction: column; gap: 12px; }
+    .proof-grid        { grid-template-columns: 1fr 1fr; }
+    .lf-row            { grid-template-columns: 1fr; }
+    .lead-card-center  { padding: 24px 18px; }
+    .countdown-bar     { flex-wrap: wrap; gap: 6px; text-align: center; justify-content: center; }
+    .financial-chaos   { max-width: 100%; }
+    .h-display         { font-size: clamp(2rem,8vw,2.6rem); }
+  }
+
+  
+  /* ============================================================
+     MOBILE FIXES GLOBALES — touch targets + legibilidad
+  ============================================================ */
+  /* Touch targets mínimos 48px */
+  .btn      { min-height: 48px; }
+  .btn-lg   { min-height: 52px; }
+  .btn-xl   { min-height: 56px; }
+  .bar-close{ min-width: 44px; min-height: 44px; }
+  .wa-float { min-width: 54px; min-height: 54px; }
+
+  /* Inputs más cómodos en mobile */
+  @media (max-width: 768px) {
+    .lf-group input,
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    .f-group input,
+    .ic-field input { font-size: 16px !important; /* Evita zoom en iOS */ min-height: 48px; }
+    .lf-group label,
+    .form-group label,
+    .f-group label { font-size: .74rem; }
+    /* Botones del form full-width en mobile */
+    .btn-full  { padding: 15px 20px; font-size: .9rem; }
+    /* Proof grid 2 columnas en mobile */
+    .proof-grid { grid-template-columns: 1fr 1fr !important; }
+    /* Steps conectadas */
+    .steps-grid::before { display: none; }
+    /* Urgency bar más compacto */
+    .bar-inner  { gap: 6px; }
+    #urgency-bar{ font-size: .75rem; padding: 8px 0; }
+    /* Countdown timer */
+    .countdown-timer { gap: 6px; }
+    .cd-num          { min-width: 44px; font-size: 1.6rem; padding: 8px 10px; }
+    /* Hero actions column */
+    .hero-actions    { flex-direction: column; align-items: flex-start; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    /* Nav más compacto */
+    .nav-wrap,.nav-vsl-wrap { height: 58px; }
+    /* Cards padding */
+    .bcard          { padding: clamp(20px,4vw,36px); }
+    .tcard,.tcard-vsl{ padding: 20px 18px; }
+    /* Brand cards */
+    .brand-card     { padding: 18px 14px; }
+    .brand-ico,.brand-name{ font-size:1rem; }
+    /* Pilar cards */
+    .pilar          { padding: 22px 18px; }
+    /* Pain cards */
+    .pain-card      { padding: 18px 16px; }
+    /* Proof items */
+    .proof-item     { padding: 18px 12px; }
+    .proof-num      { font-size: 1.8rem; }
+    .proof-label    { font-size: .72rem; }
+  }
+
+  @media (max-width: 480px) {
+    /* Typography scale down */
+    .h-display  { font-size: clamp(1.85rem,8.5vw,2.4rem) !important; }
+    .h-section  { font-size: clamp(1.55rem,7vw,2rem) !important; }
+    .sub        { font-size: .9rem; }
+    /* Stat numbers */
+    .stat-num   { font-size: 2rem; }
+    /* Brands 2 columnas forzado */
+    .brands-grid{ grid-template-columns: 1fr 1fr !important; }
+    /* Steps vertical */
+    .step-item  { padding: 18px 14px; gap: 12px; }
+    /* Pilares */
+    .pilar-num  { font-size: 2.4rem; }
+    /* Cards más compactos */
+    .lead-card-center,.hero-cot-card,.form-card,.cta-card,.cotizador-card { padding: 20px 16px; }
+    /* Chips */
+    .chip       { font-size: .7rem; padding: 5px 10px; }
+    /* Asesora chips */
+    .asesora-chips { gap: 6px; }
+    /* Modal */
+    .modal-box  { padding: 22px 18px; }
+    /* Final CTA actions */
+    .final-actions,.cta-actions,.contact-actions { flex-direction: column; align-items: center; }
+    .final-actions .btn,.cta-actions .btn,.contact-actions .btn { width: 100%; justify-content: center; }
+    /* Guarantee row */
+    .guarantee-row-final { gap: 10px; }
+    .gr-item    { font-size: .74rem; }
+    /* FAQ */
+    .faq-item summary { font-size: .86rem; padding: 16px 18px; }
+    .faq-body   { padding: 12px 18px 16px; font-size: .85rem; }
+    /* ISR calc */
+    .isr-calc   { padding: 22px 18px; }
+    /* Pilar lista */
+    .pilar-list li { font-size: .78rem; }
+    /* Proof faces */
+    .proof-faces span { width: 26px; height: 26px; font-size: .58rem; }
+    /* Countdown bar */
+    .countdown-bar { padding: 7px 14px; font-size: .72rem; }
+  }
+
+  
+  /* Hamburger menu (mobile) */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    padding: 6px; border: none; background: none;
+    min-width: 44px; min-height: 44px; align-items: center; justify-content: center;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: rgba(255,255,255,.8); border-radius: 2px; transition: var(--t);
+  }
+  .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.active span:nth-child(2) { opacity: 0; }
+  .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-drawer-mobile {
+    display: none; position: fixed; inset: 0;
+    background: var(--navy-deep); z-index: 999;
+    flex-direction: column; padding: 80px 32px 40px;
+  }
+  .nav-drawer-mobile.open { display: flex; }
+  .nav-drawer-mobile a {
+    display: block; padding: 16px 0;
+    font-family: var(--f-head); font-size: 1.5rem; font-weight: 600;
+    color: white; border-bottom: 1px solid rgba(255,255,255,.07); transition: color var(--t);
+  }
+  .nav-drawer-mobile a:hover { color: var(--rosa); }
+  .nav-drawer-mobile .btn { margin-top: 28px; width: 100%; justify-content: center; font-size: 1rem; }
+  @media (max-width: 640px) {
+    .nav-phone { display: none !important; }
+    .nav-right .btn:not(.btn-wa) { display: none; }
+    .hamburger { display: flex; }
+  }
+
+  /* ============================================================
+     STICKY MOBILE CTA BAR
+  ============================================================ */
+  .mobile-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 950;
+    background: var(--white); border-top: 1px solid rgba(34,45,68,.1);
+    padding: 10px 16px 10px; gap: 10px;
+    box-shadow: 0 -4px 20px rgba(34,45,68,.12);
+  }
+  @media (max-width: 768px) {
+    .mobile-bar { display: flex; align-items: center; }
+    body { padding-bottom: 68px; }
+    /* WA float sube para no colisionar */
+    .wa-float   { bottom: 78px !important; }
+    #live-counter { bottom: 136px !important; }
+    #fomo-container { bottom: 168px !important; }
+  }
+  .mbar-btn {
+    flex: 1; background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%);
+    color: white; border: none; border-radius: 50px; cursor: pointer;
+    padding: 14px 16px; font-family: var(--f-body); font-size: .88rem;
+    font-weight: 700; display: flex; align-items: center; justify-content: center;
+    gap: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(183,110,121,.4);
+    min-height: 48px;
+  }
+  .mbar-wa {
+    width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+    background: #25D366; color: white; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div id="urgency-bar" role="note" aria-label="Disponibilidad limitada">
+  <div class="bar-inner">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    <span>Solo quedan <strong id="spots-bar">5 lugares</strong> para asesoría de PPR esta semana — <a href="#lead-section">Reserva el tuyo →</a></span>
+  </div>
+  <button class="bar-close" id="bar-close" aria-label="Cerrar">✕</button>
+</div>
+
+<!-- NAV MÍNIMO -->
+<nav id="nav" aria-label="Navegación">
+  <div class="wrap nav-wrap">
+    <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
+      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="40" />
+    </a>
+    <div class="nav-right">
+      <a href="tel:+527717021729" class="nav-phone">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        <span>771 702 1729</span>
+      </a>
+      <a href="#lead-section" class="btn btn-primary" style="padding:10px 20px;font-size:.82rem;">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+        Asesoría gratuita
+      </a>
+    </div>
+  </div>
+</nav>
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer-mobile" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menú">
+  <a href="index.html" onclick="closeMobileNav()">Inicio</a>
+    <a href="#pilares" onclick="closeMobileNav()">¿Qué es un PPR?</a>
+    <a href="#isr" onclick="closeMobileNav()">Beneficio fiscal</a>
+    <a href="#testimonios" onclick="closeMobileNav()">Testimonios</a>
+    <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+    <a href="#lead-section" onclick="closeMobileNav()" class="btn btn-primary">Asesoría gratuita</a>
+</div>
+
+<main>
+
+<!-- ====================================================  HERO VSL  -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+
+    <!-- Countdown -->
+    <div class="countdown-bar" role="timer" aria-label="Tiempo restante para disponibilidad">
+      <i class="fas fa-bolt" aria-hidden="true"></i>
+      <span>Disponibilidad limitada — termina en:</span>
+      <span class="cd-time" id="cd-display">23:59:59</span>
+    </div>
+
+    <div class="hero-eyebrow">
+      <span class="dot" aria-hidden="true"></span>
+      Plan Personal de Retiro · PPR
+    </div>
+
+    <h1 class="h-display hero-title" id="hero-title">
+      Cada año que pasa sin un PPR<br/>es dinero que el <em>SAT podría devolverte</em>
+    </h1>
+
+    <p class="hero-sub">
+      Descubre en los próximos 7 minutos cómo un Plan Personal de Retiro te garantiza tranquilidad financiera cuando dejes de trabajar — y te da una deducción de impuestos que muy pocos conocen.
+    </p>
+
+    <!-- Live viewers -->
+    <div class="viewer-pill" role="status" aria-live="polite">
+      <span class="pulse-dot dot" aria-hidden="true"></span>
+      <span><strong id="viewer-count">27</strong> personas leyendo esto ahora mismo</span>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-wrap" aria-label="Video de presentación del PPR">
+      <div class="video-box" id="video-box" role="button" tabindex="0" aria-label="Reproducir video">
+        <div class="video-live" aria-hidden="true"><span class="dot"></span>REPRODUCIR</div>
+        <div class="video-duration" aria-hidden="true">7:12</div>
+        <div class="play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
+        <p class="video-caption">
+          <i class="fas fa-lock" style="color:rgba(255,255,255,.4);font-size:.7rem;margin-right:5px;" aria-hidden="true"></i>
+          Guadalupe Flores — Asesora Certificada · GFG Finanzas
+        </p>
+        <p class="video-sub">Activa el sonido · 7 minutos que pueden cambiar tu retiro</p>
+      </div>
+    </div>
+
+    <!-- CTA below video -->
+    <div class="below-video">
+      <a href="#lead-section" class="btn btn-primary btn-xl">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+        Quiero mi asesoría gratuita de PPR
+      </a>
+      <div class="below-note" aria-hidden="true">
+        <i class="fas fa-shield-alt"></i>
+        Sin costo · Sin compromiso · Sin letra chica
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div id="proof-strip" aria-label="Estadísticas">
+  <div class="wrap">
+    <div class="proof-grid" role="list">
+      <div class="proof-item" role="listitem"><div class="proof-num">+500</div><div class="proof-label">Familias<br/>asesoradas</div></div>
+      <div class="proof-item" role="listitem"><div class="proof-num">8</div><div class="proof-label">Aseguradoras<br/>comparadas</div></div>
+      <div class="proof-item" role="listitem"><div class="proof-num">+8</div><div class="proof-label">Años de<br/>experiencia</div></div>
+      <div class="proof-item" role="listitem"><div class="proof-num">100%</div><div class="proof-label">Asesoría<br/>gratuita</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================  DOLOR  -->
+<section id="dolor" aria-labelledby="dolor-title">
+  <div class="wrap">
+    <div class="dolor-intro" data-reveal>
+      <span class="tag"><i class="fas fa-circle-question" aria-hidden="true"></i>¿Te suena familiar?</span>
+      <h2 class="h-section" id="dolor-title">Ganas bien hoy.<br/>Pero <em>¿quién te paga</em> cuando dejes de trabajar?</h2>
+      <p class="sub">Puede que hoy todo parezca bajo control. Pero por dentro sabes que hay preguntas que sigues posponiendo:</p>
+    </div>
+
+    <div class="pain-cards" data-reveal>
+      <div class="pain-card">
+        <div class="pain-emoji" aria-hidden="true">🤔</div>
+        <p>"¿Cuánto necesito ahorrar para retirarme con la misma calidad de vida que tengo hoy?"</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji" aria-hidden="true">📉</div>
+        <p>"¿Mi AFORE realmente va a alcanzar? ¿O voy a trabajar hasta los 70 porque no me queda de otra?"</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji" aria-hidden="true">💸</div>
+        <p>"¿Estoy pagando demasiado de impuestos cuando podría estar usando ese dinero para mi retiro?"</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji" aria-hidden="true">⏳</div>
+        <p>"El retiro todavía está lejos... pero sé que cada año que paso sin planear me cuesta más caro."</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji" aria-hidden="true">😰</div>
+        <p>"¿Qué pasaría con mi familia si mañana yo ya no pudiera trabajar igual que hoy?"</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji" aria-hidden="true">🌀</div>
+        <p>"He visto opciones de PPR pero no entiendo cuál es la diferencia entre uno y otro — y no quiero contratar algo que después no sirva."</p>
+      </div>
+    </div>
+
+    <div class="pain-conclusion" data-reveal>
+      <h3>No es que no te importe tu futuro. Es que nadie te ha explicado <em style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">con claridad qué hacer.</em></h3>
+      <p>Tener ingresos no es lo mismo que tener una estrategia. Y eso es exactamente lo que vamos a resolver juntos — gratis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  EL PROBLEMA  -->
+<section id="problema" aria-labelledby="prob-title">
+  <div class="wrap">
+    <div class="prob-inner">
+      <span class="tag tag-light"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i>El problema real</span>
+      <h2 class="h-section" id="prob-title">La mayoría llega al retiro<br/>con una <em class="em-gold" style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">brecha financiera enorme</em></h2>
+      <p class="sub">El IMSS o ISSSTE cubren una fracción de tu ingreso actual. El resto lo tienes que generar tú — o resignarte a trabajar más años.</p>
+
+      <div class="financial-chaos" data-reveal>
+        <div class="chaos-item">
+          <span class="ci-ico" aria-hidden="true">💰</span>
+          <span>El AFORE promedio cubre apenas el 30-40% de tu último sueldo</span>
+        </div>
+        <div class="chaos-item">
+          <span class="ci-ico" aria-hidden="true">📈</span>
+          <span>La inflación reduce tu poder adquisitivo cada año que no actúas</span>
+        </div>
+        <div class="chaos-item">
+          <span class="ci-ico" aria-hidden="true">🏥</span>
+          <span>Los gastos médicos en la vejez son el mayor desequilibrio financiero</span>
+        </div>
+        <div class="chaos-item">
+          <span class="ci-ico" aria-hidden="true">📋</span>
+          <span>Sin protección patrimonial, un imprevisto puede acabar con años de ahorro</span>
+        </div>
+      </div>
+
+      <div class="chaos-verdict" data-reveal>
+        <h3>No necesitas ganar más. Necesitas <em style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">ordenar mejor</em> lo que ya tienes.</h3>
+        <p>Un PPR bien diseñado resuelve tres cosas a la vez: tu retiro, tu protección y tu carga fiscal — todo en un solo instrumento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  QUÉ ES UN PPR  -->
+<section id="que-es-ppr" aria-labelledby="ppr-title">
+  <div class="wrap">
+    <div class="ppr-grid">
+      <div class="ppr-photo" data-reveal>
+        <img src="img/perfil.jpeg" alt="Guadalupe Flores explicando el Plan Personal de Retiro" loading="lazy" />
+        <div class="ppr-badge" aria-hidden="true">
+          <div class="stars">★★★★★</div>
+          <div class="big">127</div>
+          <div class="sml">Reseñas 5<br/>estrellas</div>
+        </div>
+      </div>
+      <div class="ppr-copy" data-reveal>
+        <span class="tag"><i class="fas fa-seedling" aria-hidden="true"></i>La solución</span>
+        <h2 class="h-section" id="ppr-title">¿Qué es un PPR y<br/>por qué deberías tener uno <em>hoy</em>?</h2>
+        <p class="sub">Un Plan Personal de Retiro (PPR) es un instrumento financiero que combina ahorro, inversión y seguro de vida — con una ventaja fiscal que muy poca gente aprovecha.</p>
+        <div class="ppr-benefits">
+          <div class="ppr-ben">
+            <div class="pb-ico"><i class="fas fa-receipt" aria-hidden="true"></i></div>
+            <div>
+              <h4>Deducción de impuestos garantizada</h4>
+              <p>Puedes deducir hasta el 10% de tu ingreso anual en tu declaración del SAT. En la práctica, el gobierno te "regresa" parte del dinero que inviertes en tu retiro.</p>
+            </div>
+          </div>
+          <div class="ppr-ben">
+            <div class="pb-ico"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <div>
+              <h4>Rendimientos que crecen con el tiempo</h4>
+              <p>Tu dinero trabaja a tasas competitivas y se acumula con interés compuesto — el activo más poderoso del largo plazo.</p>
+            </div>
+          </div>
+          <div class="ppr-ben">
+            <div class="pb-ico"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
+            <div>
+              <h4>Seguro de vida incluido</h4>
+              <p>La mayoría de los PPR incluyen cobertura de vida o invalidez. Si algo te pasa, tu familia recibe la suma asegurada — no solo el ahorro acumulado.</p>
+            </div>
+          </div>
+          <div class="ppr-ben">
+            <div class="pb-ico"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
+            <div>
+              <h4>Renta garantizada al retiro</h4>
+              <p>Al llegar a la edad pactada, puedes convertir tu fondo en una renta mensual garantizada. Ingreso predecible, sin depender del mercado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  DEDUCCIÓN ISR (CALCULADORA)  -->
+<section id="isr" aria-labelledby="isr-title">
+  <div class="wrap">
+    <div class="isr-inner">
+      <div class="isr-copy" data-reveal>
+        <span class="tag tag-gold"><i class="fas fa-coins" aria-hidden="true"></i>Beneficio fiscal</span>
+        <h2 class="h-section" id="isr-title">El SAT te devuelve dinero<br/>por ahorrar para tu <em class="em-gold" style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">retiro</em></h2>
+        <p class="sub">Las aportaciones a un PPR son deducibles de impuestos conforme al Art. 151 LISR. Eso significa que una parte de lo que aportas regresa a tu bolsillo en tu declaración anual.</p>
+        <div class="isr-highlight">
+          <div class="isr-item">
+            <div class="ii-ico"><i class="fas fa-percent" aria-hidden="true"></i></div>
+            <div>
+              <h4>Hasta 10% de tu ingreso anual deducible</h4>
+              <p>Con un tope de 5 UMAs anuales. Entre más ganas, más recuperas en tu declaración.</p>
+            </div>
+          </div>
+          <div class="isr-item">
+            <div class="ii-ico"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i></div>
+            <div>
+              <h4>Tasa efectiva de hasta 35%</h4>
+              <p>Si estás en el tramo más alto del ISR, cada $1,000 que aportas puede regresar hasta $350 en devolución.</p>
+            </div>
+          </div>
+          <div class="isr-item">
+            <div class="ii-ico"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+            <div>
+              <h4>Beneficio año con año</h4>
+              <p>No es un beneficio de una sola vez. Mientras mantengas tu PPR, deduces cada año que declares.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculadora ISR -->
+      <div class="isr-calc" data-reveal>
+        <div class="ic-title">Calcula tu ahorro fiscal</div>
+        <div class="ic-sub">Estimación orientativa — tu asesora te da el cálculo exacto</div>
+        <div class="ic-field">
+          <label for="ic-ingreso">Ingreso mensual bruto (MXN)</label>
+          <input type="number" id="ic-ingreso" placeholder="Ej. 25000" inputmode="numeric" min="8000" max="500000" />
+        </div>
+        <div class="ic-field">
+          <label for="ic-aportacion">Aportación mensual al PPR (MXN)</label>
+          <input type="number" id="ic-aportacion" placeholder="Ej. 2000" inputmode="numeric" min="500" max="50000" />
+        </div>
+        <button type="button" id="btn-calc" class="btn btn-primary btn-full" style="margin-top:8px;">
+          <i class="fas fa-calculator" aria-hidden="true"></i>
+          Calcular mi ahorro fiscal
+        </button>
+        <div id="ic-result" class="ic-result" hidden>
+          <div class="ic-num" id="ic-num-output">$0</div>
+          <div class="ic-lbl">Devolución estimada de ISR por año</div>
+          <div class="ic-note" id="ic-note-output"></div>
+        </div>
+        <p style="font-size:.68rem;color:rgba(255,255,255,.25);text-align:center;margin-top:16px;">Estimación general. El monto exacto depende de tu situación fiscal y declaración anual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  LOS 3 PILARES  -->
+<section id="pilares" aria-labelledby="pilares-title">
+  <div class="wrap">
+    <div class="text-center" data-reveal>
+      <span class="tag"><i class="fas fa-layer-group" aria-hidden="true"></i>La estrategia</span>
+      <h2 class="h-section" id="pilares-title">Un PPR bien diseñado<br/>resuelve <em>tres problemas a la vez</em></h2>
+      <p class="sub">No es solo un ahorro. Es una estrategia financiera integrada que trabaja para ti en tres frentes simultáneamente.</p>
+    </div>
+    <div class="pilares-grid">
+      <div class="pilar pilar-ahorro" data-reveal>
+        <div class="pilar-num" aria-hidden="true">01</div>
+        <div class="pilar-ico"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
+        <h3>Ahorro con dirección</h3>
+        <p>Tu dinero ya no "queda" al final del mes — tiene una ruta clara y crece con interés compuesto año tras año.</p>
+        <ul class="pilar-list" role="list">
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Aportaciones programadas flexibles</li>
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Rendimientos garantizados o variables según perfil</li>
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Capital acumulado disponible al retiro</li>
+        </ul>
+      </div>
+      <div class="pilar pilar-proteccion" data-reveal>
+        <div class="pilar-num" aria-hidden="true">02</div>
+        <div class="pilar-ico"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
+        <h3>Protección real</h3>
+        <p>Identificamos los riesgos que podrían comprometer tu estabilidad financiera — y tu PPR los cubre mientras ahorras.</p>
+        <ul class="pilar-list" role="list">
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Seguro de vida incluido en el plan</li>
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Cobertura ante invalidez total y permanente</li>
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Tu familia protegida si algo te ocurre</li>
+        </ul>
+      </div>
+      <div class="pilar pilar-retiro" data-reveal>
+        <div class="pilar-num" aria-hidden="true">03</div>
+        <div class="pilar-ico"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
+        <h3>Retiro garantizado</h3>
+        <p>Construyes desde hoy la ruta que te permite vivir con tranquilidad cuando decidas dejar de trabajar.</p>
+        <ul class="pilar-list" role="list">
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Renta mensual garantizada al retiro</li>
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Complemento al AFORE y seguridad social</li>
+          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Independencia financiera en la vejez</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  PROCESO  -->
+<section id="proceso" aria-labelledby="proc-title">
+  <div class="wrap">
+    <div class="text-center" data-reveal>
+      <span class="tag"><i class="fas fa-route" aria-hidden="true"></i>Así funciona</span>
+      <h2 class="h-section" id="proc-title">Del "no sé por dónde empezar"<br/>a tu <em>PPR activo en días</em></h2>
+    </div>
+    <div class="steps" data-reveal>
+      <div class="step-item">
+        <div class="step-num-circle">1</div>
+        <div class="step-content">
+          <h3>Agenda tu asesoría gratuita</h3>
+          <p>Llena el formulario o escríbenos por WhatsApp. No hay costo, no hay compromiso, no hay trámite previo. Solo tú y Guadalupe.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-circle">2</div>
+        <div class="step-content">
+          <h3>Diagnóstico personalizado (45 min)</h3>
+          <p>Revisamos tu ingreso, edad, metas, capacidad de ahorro y situación fiscal real. Sin tecnicismos. Sin presión de compra. Solo claridad.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-circle">3</div>
+        <div class="step-content">
+          <h3>Tu propuesta en 24 horas</h3>
+          <p>Comparamos opciones de PPR en 8 aseguradoras y te presentamos la que más te conviene — con coberturas, rendimientos y costo real.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-circle">4</div>
+        <div class="step-content">
+          <h3>Emisión y acompañamiento continuo</h3>
+          <p>Una vez que decides, gestionamos todo. Y no desaparecemos: Guadalupe está contigo en cada revisión anual y en cualquier duda futura.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  TESTIMONIOS  -->
+<section id="testimonios" aria-labelledby="testi-title">
+  <div class="wrap">
+    <div class="text-center" data-reveal>
+      <span class="tag"><i class="fas fa-quote-left" aria-hidden="true"></i>Casos reales</span>
+      <h2 class="h-section" id="testi-title">Personas que ya tomaron<br/>la decisión de <em>planear su retiro</em></h2>
+    </div>
+    <div class="testi-grid" data-reveal role="list">
+
+      <article class="tcard" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">PPR · Guadalajara</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Tenía 42 años y creía que ya era tarde para pensar en mi retiro. Guadalupe me demostró que no solo no era tarde — sino que empezar ahora me da margen real para elegir cuándo quiero dejar de trabajar."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">MR</div>
+          <div><div class="tc-name">María Rodríguez</div><div class="tc-role">Directora Comercial · 44 años</div></div>
+        </div>
+      </article>
+
+      <article class="tcard featured" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">PPR + Deducción ISR</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Lo que más me sorprendió fue entender que mi PPR me devuelve dinero del SAT cada año. Llevo 3 años y ya recuperé más de $18,000 pesos solo en devoluciones — sin contar lo que tengo ahorrado para el retiro."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">CA</div>
+          <div><div class="tc-name">Carlos Alvarado</div><div class="tc-role">Ingeniero · 38 años</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">Retiro · Michoacán</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Hicimos el ejercicio de cuánto necesito ahorrar mensualmente para retirarme a los 60 con dignidad. Ese número fue revelador — y también tranquilizador, porque era mucho más alcanzable de lo que imaginaba."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">LG</div>
+          <div><div class="tc-name">Laura González</div><div class="tc-role">Maestra · 36 años</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">PPR · CDMX</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Ya había intentado contratar un PPR con otra empresa pero no me explicaron nada. Con Guadalupe el proceso fue clarísimo: supe qué estaba contratando, cuánto me iba a rendir y qué protección incluía. En 48 horas ya tenía mi póliza."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">NB</div>
+          <div><div class="tc-name">Norberto Barajas</div><div class="tc-role">Empresario · 47 años</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">Primera vez · Jalisco</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"Lo que me ayudó fue entender que sí puedo tener un retiro tranquilo si empiezo desde ahora. Me dio mucha paz tener claridad sobre mis metas. Hoy aporto $1,500 al mes y sé exactamente a dónde va ese dinero."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">DM</div>
+          <div><div class="tc-name">Daniela Meneses</div><div class="tc-role">Psicóloga · 31 años</div></div>
+        </div>
+      </article>
+
+      <article class="tcard" role="listitem">
+        <div class="tc-quote" aria-hidden="true">"</div>
+        <div class="tc-tag">Urgencia real · Querétaro</div>
+        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="tc-text">"En la asesoría me hizo click el tiempo — darme cuenta de que cada día que pasa es un día menos de planear mi futuro. Me da mucha tranquilidad saber que ya estoy haciendo algo concreto y no solo pensando en hacerlo."</p>
+        <div class="tc-author">
+          <div class="tc-avatar" aria-hidden="true">LH</div>
+          <div><div class="tc-name">Liliana Herrera</div><div class="tc-role">Contadora · 40 años</div></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  ASESORA  -->
+<section id="asesora" aria-labelledby="asesora-title">
+  <div class="wrap">
+    <div class="asesora-grid">
+      <div class="asesora-visual" data-reveal>
+        <div class="asesora-frame">
+          <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora de Plan Personal de Retiro GFG Finanzas" loading="lazy" />
+        </div>
+        <div class="asesora-deco-1" aria-hidden="true"></div>
+        <div class="asesora-deco-2" aria-hidden="true"></div>
+      </div>
+      <div class="asesora-copy" data-reveal>
+        <span class="tag"><i class="fas fa-user-tie" aria-hidden="true"></i>Tu asesora</span>
+        <h2 class="h-section" id="asesora-title">No vas a hablar con<br/>una plataforma. <em>Vas a hablar conmigo.</em></h2>
+        <p class="sub">Soy Guadalupe, asesora financiera certificada con más de 8 años en el sector. Mi misión es simple: que no salgas con más dudas. Que salgas con claridad y con un siguiente paso concreto.</p>
+        <div class="asesora-quote" aria-label="Cita de Guadalupe">
+          "El mejor PPR no es el más barato ni el más caro — es el que está diseñado para tu etapa de vida, tu ingreso y tus metas. Y eso solo se descubre hablando contigo."
+        </div>
+        <div class="commitments" role="list">
+          <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Te explico todo con claridad, sin tecnicismos</div>
+          <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>No tomas decisiones desde la presión — tú decides si y cuándo contratas</div>
+          <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Estoy contigo antes, durante y después de contratar</div>
+          <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Comparo 8 aseguradoras — no trabajo para una sola</div>
+        </div>
+        <div class="asesora-chips" role="list" aria-label="Certificaciones">
+          <span class="chip" role="listitem"><i class="fas fa-certificate" aria-hidden="true"></i>Certificada AMIB</span>
+          <span class="chip" role="listitem"><i class="fas fa-shield-alt" aria-hidden="true"></i>Agente CONDUSEF</span>
+          <span class="chip" role="listitem"><i class="fas fa-graduation-cap" aria-hidden="true"></i>+8 años de experiencia</span>
+          <span class="chip" role="listitem"><i class="fas fa-users" aria-hidden="true"></i>+500 familias asesoradas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  LEAD FORM  -->
+<section id="lead-section" aria-labelledby="lead-title">
+  <div class="wrap">
+
+    <!-- Header centrado -->
+    <div class="lead-header" data-reveal>
+      <span class="tag tag-light"><i class="fas fa-paper-plane" aria-hidden="true"></i>Primer paso</span>
+      <h2 class="h-section" id="lead-title">Agenda tu asesoría<br/>gratuita de <em>PPR hoy</em></h2>
+      <p class="sub">Sin costo. Sin compromiso. Solo claridad sobre cómo planear tu retiro y aprovechar los beneficios fiscales que ya existen para ti.</p>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="lead-trust-strip" data-reveal>
+      <div class="lts-item"><div class="lts-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita</span></div>
+      <div class="lts-item"><div class="lts-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Respuesta en &lt; 24 horas</span></div>
+      <div class="lts-item"><div class="lts-ico"><i class="fas fa-receipt" aria-hidden="true"></i></div><span>Calculamos tu deducción ISR</span></div>
+      <div class="lts-item"><div class="lts-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas</span></div>
+    </div>
+
+    <!-- Form card centrado -->
+    <div class="lead-card-center" data-reveal>
+      <div class="lc-title">Solicita tu asesoría gratuita de PPR</div>
+      <div class="lc-sub">Completa el formulario y Guadalupe te contacta en menos de 24 horas con tu diagnóstico personalizado.</div>
+      <form id="mainLeadForm" novalidate>
+        <div class="lf-row">
+          <div class="lf-group">
+            <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
+            <input type="text" id="lf-nombre" placeholder="Tu nombre completo" required autocomplete="given-name" />
+            <span class="lf-err" id="err-lf-nombre" role="alert">Ingresa tu nombre.</span>
+          </div>
+          <div class="lf-group">
+            <label for="lf-edad">Edad <span aria-hidden="true">*</span></label>
+            <input type="number" id="lf-edad" placeholder="Tu edad" min="18" max="65" required inputmode="numeric" />
+            <span class="lf-err" id="err-lf-edad" role="alert">Ingresa tu edad (18–65).</span>
+          </div>
+        </div>
+        <div class="lf-row">
+          <div class="lf-group">
+            <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+            <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
+          </div>
+          <div class="lf-group">
+            <label for="lf-wa">WhatsApp <span aria-hidden="true">*</span></label>
+            <input type="tel" id="lf-wa" placeholder="10 dígitos" required inputmode="numeric" autocomplete="tel" />
+            <span class="lf-err" id="err-lf-wa" role="alert">Ingresa 10 dígitos válidos.</span>
+          </div>
+        </div>
+        <div class="lf-privacy">
+          <input type="checkbox" id="lf-priv" required />
+          <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría de PPR.</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full btn-xl">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          Quiero mi asesoría gratuita de PPR
+        </button>
+        <div class="lf-badges">
+          <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo</span>
+          <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</span>
+          <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</span>
+        </div>
+      </form>
+      <div class="lf-success" id="mainLeadSuccess">
+        <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+        <h4>¡Listo! Solicitud enviada</h4>
+        <p>Guadalupe te contacta en menos de 24 horas con tu diagnóstico personalizado de PPR. ¡Gracias por confiar en GFG Finanzas!</p>
+        <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría%20de%20PPR" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer" style="margin-top:4px;">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          También escríbenos ahora por WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- FOMO bajo el card -->
+    <div class="lead-fomo-bottom" role="note" aria-live="polite">
+      <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
+      <p>Esta semana solo quedan <strong id="spots-form">5 lugares</strong> disponibles para asesoría personalizada de PPR. Una vez que se agoten, el siguiente turno es la próxima semana.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================  FAQ  -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="text-center" data-reveal>
+      <span class="tag"><i class="fas fa-circle-question" aria-hidden="true"></i>Preguntas frecuentes</span>
+      <h2 class="h-section" id="faq-title">Todo lo que quieres saber<br/>antes de <em>dar el primer paso</em></h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Necesito saber de finanzas para empezar?</summary>
+        <div class="faq-body">No. La asesoría está diseñada para explicarte todo desde cero, en lenguaje claro, sin tecnicismos. Si ya sabes de finanzas, mejor — pero no es requisito. Lo único que necesitas es querer ordenar tu futuro.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Tengo que contratar algo después de la asesoría?</summary>
+        <div class="faq-body">No. La asesoría es informativa y sin compromiso. Si al terminar decides que no quieres contratar nada, está perfecto. Si decides avanzar, Guadalupe te acompaña en el proceso. La decisión siempre es tuya.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Cuánto necesito ganar para tener un PPR?</summary>
+        <div class="faq-body">No hay un mínimo fijo. Hay PPR desde aportaciones de $500 MXN al mes. Lo importante es encontrar uno que sea sostenible para tu presupuesto actual. En la asesoría analizamos tu capacidad real de ahorro y encontramos la opción adecuada para ti.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿La deducción de ISR aplica para todos?</summary>
+        <div class="faq-body">Aplica para personas físicas que presentan declaración anual ante el SAT. Si trabajas por honorarios, eres independiente o tienes ingresos adicionales a tu empleo, es muy probable que califiques. En la asesoría revisamos tu situación específica.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Puedo tener un PPR si ya tengo AFORE?</summary>
+        <div class="faq-body">Sí, y de hecho es lo recomendable. El AFORE y el PPR son complementarios. Tu AFORE cubre una parte de tu retiro; el PPR cubre la brecha que queda — más la protección de vida y el beneficio fiscal. Son instrumentos distintos que trabajan mejor juntos.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Qué pasa con mi dinero si necesito retirarlo antes?</summary>
+        <div class="faq-body">Depende del plan y la aseguradora. Algunos PPR permiten retiros parciales después de cierto tiempo; otros tienen penalizaciones si retiras antes de la fecha pactada. Revisamos estas condiciones en la asesoría para que sepas exactamente qué estás firmando.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Puedo entrar si ya tengo un PPR con otra empresa?</summary>
+        <div class="faq-body">Sí. Revisamos tu póliza actual sin costo y te decimos honestamente si las condiciones son buenas, si conviene complementar lo que tienes, o si hay una mejor opción disponible. Muchas personas descubren que pueden mejorar su cobertura o sus rendimientos.</div>
+      </details>
+
+      <details class="faq-item" data-reveal role="listitem">
+        <summary>¿Cuánto tiempo tarda el proceso completo?</summary>
+        <div class="faq-body">La asesoría inicial dura 45 minutos aproximadamente. Tu propuesta personalizada la tienes en 24-48 horas. Una vez que decides avanzar, la emisión de la póliza toma entre 3 y 7 días hábiles dependiendo de la aseguradora.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  FINAL CTA  -->
+<section id="final-cta" aria-labelledby="final-title">
+  <div class="wrap">
+    <div class="final-inner">
+      <div class="spots-pill" role="note" aria-live="polite">
+        <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
+        Solo quedan <strong id="spots-final">5 lugares</strong> disponibles esta semana
+      </div>
+      <span class="tag tag-light"><i class="fas fa-calendar-check" aria-hidden="true"></i>Es el momento</span>
+      <h2 class="h-section" id="final-title">No necesitas tenerlo todo resuelto hoy.<br/>Solo necesitas <em class="em-gold" style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">dejar de postergarlo.</em></h2>
+      <p class="sub">Cada mes que pasa sin un PPR es dinero que el SAT podría devolverte, rendimientos que no se acumulan y retiro que se aleja. La asesoría es gratuita. El primer paso cuesta $0.</p>
+      <div class="final-actions">
+        <a href="#lead-section" class="btn btn-primary btn-xl">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+          Quiero mi asesoría gratuita
+        </a>
+        <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20información%20sobre%20el%20Plan%20Personal%20de%20Retiro%20(PPR)" class="btn btn-wa btn-xl" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          Escribir por WhatsApp
+        </a>
+      </div>
+      <div class="final-note">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        Asesoría 100% gratuita · Sin compromiso · Sin letra chica · Certificada AMIB · CONDUSEF
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="wrap">
+    <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
+    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a href="tel:+527717021729">771 702 1729</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)" aria-label="amor">♥</span> en México</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20información%20sobre%20el%20PPR" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<div id="fomo-container" aria-live="polite" aria-atomic="false"></div>
+
+<div id="live-counter" aria-live="polite">
+  <span class="dot" aria-hidden="true"></span>
+  <span><strong id="live-num">27</strong> leyendo ahora</span>
+</div>
+
+<script>
+const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
+const FUENTE_PAGE       = "ppr";
+
+/* ===== URGENCY BAR ===== */
+(function(){if(localStorage.getItem('gfg-ppr-bar')==='1'){const b=document.getElementById('urgency-bar');if(b)b.style.display='none';}})();
+document.getElementById('bar-close').addEventListener('click',()=>{document.getElementById('urgency-bar').style.display='none';localStorage.setItem('gfg-ppr-bar','1');});
+
+/* ===== NAV SHADOW ===== */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('shadow',scrollY>20),{passive:true});
+
+/* ===== SPOTS (sincronizados en toda la página) ===== */
+let spots=5;
+function setSpots(n){
+  const lbl=n+' lugar'+(n===1?'':'es');
+  ['spots-bar','spots-final'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=lbl;});
+  const sf=document.getElementById('spots-form');if(sf)sf.textContent=lbl;
+}
+function decaySpots(){setTimeout(()=>{if(spots>1){spots--;setSpots(spots);}decaySpots();},240000+Math.random()*180000);}
+decaySpots();
+
+/* ===== COUNTDOWN (resetea a medianoche) ===== */
+function getEndOfDay(){
+  const k='gfg-ppr-cd';const stored=localStorage.getItem(k);
+  if(stored){const ts=parseInt(stored);if(ts>Date.now())return ts;}
+  const end=new Date();end.setHours(23,59,59,0);
+  localStorage.setItem(k,end.getTime().toString());return end.getTime();
+}
+const cdEnd=getEndOfDay();
+function tickCountdown(){
+  const diff=Math.max(0,cdEnd-Date.now());
+  const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+  const pad=n=>String(n).padStart(2,'0');
+  const el=document.getElementById('cd-display');
+  if(el)el.textContent=pad(h)+':'+pad(m)+':'+pad(s);
+  if(diff>0)setTimeout(tickCountdown,1000);
+}
+tickCountdown();
+
+/* ===== LIVE VIEWERS ===== */
+let viewers=22+Math.floor(Math.random()*12);
+['viewer-count','live-num'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=viewers;});
+function updateViewers(){
+  viewers=Math.max(12,Math.min(42,viewers+(Math.random()<.5?-1:1)));
+  ['viewer-count','live-num'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=viewers;});
+  setTimeout(updateViewers,5000+Math.random()*5000);
+}
+setTimeout(updateViewers,5000+Math.random()*5000);
+
+/* ===== CALCULADORA ISR ===== */
+document.getElementById('btn-calc').addEventListener('click',function(){
+  const ingreso=parseFloat(document.getElementById('ic-ingreso').value)||0;
+  const aport=parseFloat(document.getElementById('ic-aportacion').value)||0;
+  if(ingreso<5000||aport<100){return;}
+  const anualIngreso=ingreso*12;
+  const anualAport=aport*12;
+  const maxDeducible=Math.min(anualAport,anualIngreso*0.10,102580.40);/* 5 UMAs ≈ 102580 */
+  const tasas=[{l:0,r:0},{l:7735.00,r:.064},{l:65651.07,r:.1088},{l:115375.90,r:.16},{l:134119.41,r:.1792},{l:160577.65,r:.2136},{l:323862.00,r:.2352},{l:510451.00,r:.30},{l:974535.03,r:.32},{l:1301337.22,r:.34},{l:Infinity,r:.35}];
+  const tasa=tasas.slice().reverse().find(t=>anualIngreso>t.l)?.r||0.10;
+  const devolucion=Math.round(maxDeducible*tasa);
+  const fmt=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:0}).format(n);
+  document.getElementById('ic-num-output').textContent=fmt(devolucion);
+  document.getElementById('ic-note-output').textContent=
+    `Basado en un ingreso anual de ${fmt(anualIngreso)}, aportación anual de ${fmt(anualAport)} y tasa estimada del ${Math.round(tasa*100)}% de ISR.`;
+  document.getElementById('ic-result').hidden=false;
+  if(typeof fbq==='function')fbq('track','ViewContent',{content_name:'calculadora-isr-ppr'});
+});
+
+/* ===== VIDEO PLACEHOLDER ===== */
+document.getElementById('video-box').addEventListener('click',function(){
+  /* Reemplaza el alert con tu embed de YouTube/Vimeo cuando esté disponible */
+  alert('Inserta aquí el link de tu video. Ejemplo YouTube:\nvideoBox.innerHTML = \'<iframe src="https://www.youtube.com/embed/TU_ID?autoplay=1" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen></iframe>\';');
+});
+document.getElementById('video-box').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')e.currentTarget.click();});
+
+/* ===== LEAD FORM ===== */
+(function(){
+  const form=document.getElementById('mainLeadForm');
+  const success=document.getElementById('mainLeadSuccess');
+  if(!form)return;
+  function vf(id,errId,fn){
+    const el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);
+    el.classList.toggle('lferr',!ok);err.classList.toggle('show',!ok);return ok;
+  }
+  function validateAll(){
+    const n=vf('lf-nombre','err-lf-nombre',el=>el.value.trim().length>=2);
+    const e=vf('lf-edad','err-lf-edad',el=>{const v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=65;});
+    const c=vf('lf-correo','err-lf-correo',el=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
+    const w=vf('lf-wa','err-lf-wa',el=>/^\d{10}$/.test(el.value.replace(/\s/g,'')));
+    return n&&e&&c&&w&&document.getElementById('lf-priv').checked;
+  }
+  ['lf-nombre','lf-edad','lf-correo','lf-wa'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.addEventListener('input',()=>{el.classList.remove('lferr');const err=document.getElementById('err-'+id);if(err)err.classList.remove('show');});
+  });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!validateAll())return;
+    const data={nombre:document.getElementById('lf-nombre').value.trim(),edad:document.getElementById('lf-edad').value.trim(),correo:document.getElementById('lf-correo').value.trim(),whatsapp:document.getElementById('lf-wa').value.trim()};
+    try{
+      const db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
+      db.from('leads').insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:'Nuevo',notas:'PPR'}]).then(()=>{}).catch(()=>{});
+    }catch(_){}
+    if(typeof fbq==='function')fbq('track','Lead',{content_name:FUENTE_PAGE,content_category:'Seguros'});
+    if(spots>1){spots--;setSpots(spots);}
+    form.style.display='none';
+    success.style.display='block';
+    success.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+
+/* ===== FOMO TOASTS ===== */
+const fomoEvents=[
+  {i:'LH',name:'Liliana H. de Monterrey',action:'acaba de agendar su asesoría de PPR',t:'hace 2 min'},
+  {i:'CM',name:'Carlos M. de Jalisco',action:'descubrió que puede deducir $18,000 del SAT con su PPR',t:'hace 5 min'},
+  {i:'MR',name:'María R. de CDMX',action:'contrató su Plan Personal de Retiro hoy',t:'hace 8 min'},
+  {i:'DV',name:'Diego V. de Querétaro',action:'calculó su ahorro fiscal con el simulador',t:'hace 11 min'},
+  {i:'AN',name:'Andrea N. de Puebla',action:'agendó su asesoría gratuita de PPR',t:'hace 14 min'},
+  {i:'HR',name:'Hugo R. de Guadalajara',action:'empezó su PPR con solo $1,500 al mes',t:'hace 17 min'},
+  {i:'SL',name:'Sandra L. de Mérida',action:'descubrió que su AFORE no era suficiente',t:'hace 20 min'},
+  {i:'JG',name:'Jorge G. de León',action:'recibió su propuesta personalizada de PPR',t:'hace 22 min'},
+];
+let fomoIdx=0,activeToast=null;
+function showToast(){
+  const d=fomoEvents[fomoIdx%fomoEvents.length];fomoIdx++;
+  const container=document.getElementById('fomo-container');
+  if(activeToast){activeToast.classList.add('out');setTimeout(()=>activeToast?.remove(),400);}
+  const toast=document.createElement('div');
+  toast.className='fomo-toast';toast.setAttribute('role','status');
+  toast.innerHTML=`<div class="fomo-avatar" aria-hidden="true">${d.i}</div><div class="fomo-body"><strong>${d.name}</strong><span>${d.action} · ${d.t}</span></div><button class="fomo-close" aria-label="Cerrar">✕</button>`;
+  toast.querySelector('.fomo-close').addEventListener('click',()=>{toast.classList.add('out');setTimeout(()=>toast.remove(),400);if(activeToast===toast)activeToast=null;});
+  container.appendChild(toast);activeToast=toast;
+  setTimeout(()=>{if(toast.parentNode){toast.classList.add('out');setTimeout(()=>toast.remove(),400);if(activeToast===toast)activeToast=null;}},5500);
+}
+function scheduleToast(){setTimeout(()=>{showToast();scheduleToast();},16000+Math.random()*10000);}
+setTimeout(()=>{showToast();scheduleToast();},7000);
+
+/* ===== SCROLL REVEAL ===== */
+if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+}else{document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-visible'));}
+
+/* ===== 3D TILT ===== */
+if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
+  document.querySelectorAll('.pain-card,.pilar,.tcard,.step-item').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      const rx=((y-r.height/2)/(r.height/2))*-5,ry=((x-r.width/2)/(r.width/2))*5;
+      card.style.transition='transform .08s ease,box-shadow .15s ease';
+      card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+      card.style.setProperty('--mx',(x/r.width*100)+'%');
+      card.style.setProperty('--my',(y/r.height*100)+'%');
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.transition='transform .5s cubic-bezier(.2,0,0,1),box-shadow .5s cubic-bezier(.2,0,0,1)';
+      card.style.transform='perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+      setTimeout(()=>{card.style.transition='';card.style.transform='';},510);
+    });
+  });
+}
+
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const target=document.querySelector(a.getAttribute('href'));
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+/* Mobile nav hamburger */
+(function() {
+  var ham = document.getElementById('ham-mobile');
+  var drawer = document.getElementById('mobileDrawer');
+  if (!ham || !drawer) return;
+  ham.addEventListener('click', function() {
+    var open = drawer.classList.contains('open');
+    if (open) closeMobileNav(); else openMobileNav();
+  });
+  function openMobileNav() {
+    drawer.classList.add('open');
+    ham.classList.add('active');
+    ham.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  window.closeMobileNav = function() {
+    drawer.classList.remove('open');
+    ham.classList.remove('active');
+    ham.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMobileNav(); });
+})();
+</script>
+
+<!-- STICKY MOBILE CTA BAR -->
+<div class="mobile-bar" aria-label="Acciones rápidas">
+  <a href="#lead-section" class="mbar-btn">
+    <i class="fas fa-calendar-check" aria-hidden="true"></i>
+    Asesoría gratuita
+  </a>
+  <a href="https://wa.me/527717021729" class="mbar-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+</div>
+
+</body>
+</html>
