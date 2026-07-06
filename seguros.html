@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','TU_PIXEL_ID');fbq('track','PageView');</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');window.META_PIXEL_ID='TU_PIXEL_ID';if(window.META_PIXEL_ID!=='TU_PIXEL_ID'){fbq('init',window.META_PIXEL_ID);fbq('track','PageView');}</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
   <style>
@@ -382,7 +382,7 @@
   .marcas-intro i { color: var(--salvia); }
 
   .brands-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
   .brand-card {
@@ -392,6 +392,12 @@
     display: flex; flex-direction: column; align-items: center; gap: 11px;
     transition: var(--t); position: relative; overflow: hidden;
   }
+  .brand-card.is-logo { min-height: 130px; justify-content: center; }
+  .brand-logo-img {
+    max-height: 58px; max-width: 155px; width: auto; object-fit: contain;
+    filter: grayscale(1); opacity: .72; transition: filter var(--t), opacity var(--t);
+  }
+  .brand-card:hover .brand-logo-img { filter: grayscale(0); opacity: 1; }
   .brand-card::before {
     content: ''; position: absolute; inset: 0; border-radius: inherit;
     background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(183,110,121,.08) 0%, transparent 70%);
@@ -1152,61 +1158,17 @@
 
     <div class="brands-grid reveal" role="list" aria-label="Aseguradoras con las que trabajamos">
 
-      <div class="brand-card reveal" role="listitem">
-        <div class="brand-ico ico-rosa"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
-        <div class="brand-name">GNP Kaiser</div>
-        <div class="brand-desc">Seguros de gastos médicos mayores y vida con amplia red de hospitales</div>
-        <div class="brand-badge">Gastos médicos · Vida</div>
-      </div>
+      <div class="brand-card is-logo reveal" role="listitem"><img class="brand-logo-img" src="img/brands/axa-logo.png" alt="AXA Seguros" loading="lazy" /></div>
 
-      <div class="brand-card reveal reveal-delay-1" role="listitem">
-        <div class="brand-ico ico-navy"><i class="fas fa-star" aria-hidden="true"></i></div>
-        <div class="brand-name">AXA Seguros</div>
-        <div class="brand-desc">Cobertura nacional e internacional con planes flexibles para individuos y empresas</div>
-        <div class="brand-badge">Internacional · Auto</div>
-      </div>
+      <div class="brand-card is-logo reveal reveal-delay-1" role="listitem"><img class="brand-logo-img" src="img/brands/allianz-distribuidor-autorizado.png" alt="Allianz" loading="lazy" /></div>
 
-      <div class="brand-card reveal reveal-delay-2" role="listitem">
-        <div class="brand-ico ico-terra"><i class="fas fa-landmark" aria-hidden="true"></i></div>
-        <div class="brand-name">MetLife</div>
-        <div class="brand-desc">Líder global en seguros de vida y retiro con sólida presencia en México</div>
-        <div class="brand-badge">Vida · Retiro</div>
-      </div>
+      <div class="brand-card is-logo reveal reveal-delay-2" role="listitem"><img class="brand-logo-img" src="img/brands/Mapfre_logo.webp" alt="Mapfre" loading="lazy" /></div>
 
-      <div class="brand-card reveal reveal-delay-3" role="listitem">
-        <div class="brand-ico ico-salvia"><i class="fas fa-gem" aria-hidden="true"></i></div>
-        <div class="brand-name">SURA</div>
-        <div class="brand-desc">Soluciones integrales de seguros con enfoque en bienestar y calidad de vida</div>
-        <div class="brand-badge">GMM · Empresarial</div>
-      </div>
+      <div class="brand-card is-logo reveal reveal-delay-3" role="listitem"><img class="brand-logo-img" src="img/brands/Prudential.webp" alt="Prudential" loading="lazy" /></div>
 
-      <div class="brand-card reveal" role="listitem">
-        <div class="brand-ico ico-navy"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
-        <div class="brand-name">Allianz</div>
-        <div class="brand-desc">Grupo asegurador líder mundial con más de 130 años de experiencia comprobada</div>
-        <div class="brand-badge">Auto · Hogar · Vida</div>
-      </div>
+      <div class="brand-card is-logo reveal" role="listitem"><img class="brand-logo-img" src="img/brands/qualitas-logo.webp" alt="Quálitas Seguros" loading="lazy" /></div>
 
-      <div class="brand-card reveal reveal-delay-1" role="listitem">
-        <div class="brand-ico ico-rosa"><i class="fas fa-building-columns" aria-hidden="true"></i></div>
-        <div class="brand-name">Banorte</div>
-        <div class="brand-desc">Seguros respaldados por el banco más mexicano con cobertura en todo el país</div>
-        <div class="brand-badge">Vida · Auto · Hogar</div>
-      </div>
-
-      <div class="brand-card reveal reveal-delay-2" role="listitem">
-        <div class="brand-ico ico-terra"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
-        <div class="brand-name">Mapfre</div>
-        <div class="brand-desc">Experiencia española y presencia global para proteger tu salud y patrimonio</div>
-        <div class="brand-badge">GMM · Auto · Vida</div>
-      </div>
-
-      <div class="brand-card reveal reveal-delay-3" role="listitem">
-        <div class="brand-ico ico-salvia"><i class="fas fa-coins" aria-hidden="true"></i></div>
-        <div class="brand-name">Principal</div>
-        <div class="brand-desc">Especialistas en ahorro, retiro e inversión para construir tu patrimonio a largo plazo</div>
-        <div class="brand-badge">Retiro · Inversión</div>
-      </div>
+      <div class="brand-card is-logo reveal reveal-delay-1" role="listitem"><img class="brand-logo-img" src="img/brands/skandia-logo.png" alt="Skandia" loading="lazy" /></div>
 
     </div>
 

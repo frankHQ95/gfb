@@ -164,7 +164,10 @@
 
   /* ASEGURADORAS */
   #marcas{padding:clamp(64px,11vh,100px) 0;background:var(--white);}
-  .brands-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
+  .brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+  .brand-card.is-logo{min-height:130px;justify-content:center;}
+  .brand-logo-img{max-height:56px;max-width:150px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter var(--t),opacity var(--t);}
+  .brand-card:hover .brand-logo-img{filter:grayscale(0);opacity:1;}
   .brand-card{background:var(--hueso);border-radius:var(--r-md);padding:24px 18px;text-align:center;border:1.5px solid rgba(34,45,68,.07);display:flex;flex-direction:column;align-items:center;gap:10px;transition:var(--t);position:relative;overflow:hidden;}
   .brand-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.07) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
   .brand-card:hover::before{opacity:1;}
@@ -457,7 +460,7 @@
   </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","TU_PIXEL_ID");fbq("track","PageView");</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");window.META_PIXEL_ID="TU_PIXEL_ID";if(window.META_PIXEL_ID!=="TU_PIXEL_ID"){fbq("init",window.META_PIXEL_ID);fbq("track","PageView");}</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
@@ -682,54 +685,9 @@
       <p class="sub">Trabajamos con las principales aseguradoras de México para encontrar la que más conviene a tu familia y presupuesto real.</p>
     </div>
     <div class="brands-grid" data-reveal role="list">
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-rosa"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
-        <div class="brand-name">GNP Kaiser</div>
-        <div class="brand-esp">Red hospitalaria líder en México con cobertura nacional e internacional</div>
-        <div class="brand-badge">GMM Premier</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-navy"><i class="fas fa-star" aria-hidden="true"></i></div>
-        <div class="brand-name">AXA Seguros</div>
-        <div class="brand-esp">Planes flexibles con acceso a hospitales de primer nivel en todo el mundo</div>
-        <div class="brand-badge">Keralty · Global</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-terra"><i class="fas fa-landmark" aria-hidden="true"></i></div>
-        <div class="brand-name">MetLife</div>
-        <div class="brand-esp">Cobertura amplia con sumas aseguradas altas para toda la familia</div>
-        <div class="brand-badge">Alianza · Premium</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-salvia"><i class="fas fa-gem" aria-hidden="true"></i></div>
-        <div class="brand-name">SURA</div>
-        <div class="brand-esp">Planes integrales con enfoque en bienestar y prevención de salud</div>
-        <div class="brand-badge">Vida Plus · Familiar</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-navy"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
-        <div class="brand-name">Allianz</div>
-        <div class="brand-esp">130 años de experiencia global con cobertura de alto nivel en México</div>
-        <div class="brand-badge">Top · Ejecutivo</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-rosa"><i class="fas fa-building-columns" aria-hidden="true"></i></div>
-        <div class="brand-name">Banorte</div>
-        <div class="brand-esp">Cobertura accesible respaldada por el banco más mexicano</div>
-        <div class="brand-badge">Salud · Familiar</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-terra"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
-        <div class="brand-name">Mapfre</div>
-        <div class="brand-esp">Amplia red de médicos y hospitales con cobertura integral de salud</div>
-        <div class="brand-badge">Integral · Plus</div>
-      </div>
-      <div class="brand-card" role="listitem">
-        <div class="brand-ico ico-salvia"><i class="fas fa-coins" aria-hidden="true"></i></div>
-        <div class="brand-name">Principal</div>
-        <div class="brand-esp">Planes combinados de salud e inversión para proteger y hacer crecer tu patrimonio</div>
-        <div class="brand-badge">Salud · Protección</div>
-      </div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/axa-logo.png" alt="AXA Seguros" loading="lazy" /></div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/allianz-distribuidor-autorizado.png" alt="Allianz" loading="lazy" /></div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/Mapfre_logo.webp" alt="Mapfre" loading="lazy" /></div>
     </div>
   </div>
 </section>

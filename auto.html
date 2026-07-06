@@ -189,6 +189,9 @@
   .brand-card::before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(183,110,121,.07) 0%,transparent 65%);opacity:0;transition:opacity .35s;pointer-events:none;}
   .brand-card:hover::before{opacity:1;}
   .brand-card:hover{border-color:rgba(183,110,121,.28);box-shadow:var(--shadow-md);transform:translateY(-4px);}
+  .brand-card.is-logo{min-height:130px;justify-content:center;}
+  .brand-logo-img{max-height:56px;max-width:150px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;transition:filter var(--t),opacity var(--t);}
+  .brand-card:hover .brand-logo-img{filter:grayscale(0);opacity:1;}
   .brand-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
   .ico-rosa{background:rgba(183,110,121,.1);color:var(--rosa);}
   .ico-navy{background:rgba(34,45,68,.08);color:var(--navy);}
@@ -472,7 +475,7 @@
   </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","TU_PIXEL_ID");fbq("track","PageView");</script>
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");window.META_PIXEL_ID="TU_PIXEL_ID";if(window.META_PIXEL_ID!=="TU_PIXEL_ID"){fbq("init",window.META_PIXEL_ID);fbq("track","PageView");}</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
@@ -731,14 +734,10 @@
       <h2 class="h-section" id="marcas-title">Trabajamos con las <em>mejores</em><br/>aseguradoras de auto en México</h2>
     </div>
     <div class="brands-grid" data-reveal role="list">
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-rosa"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><div class="brand-name">GNP Kaiser</div><div class="brand-esp">Auto Plus con asistencia vial y cobertura nacional</div><div class="brand-badge">Auto Plus</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-navy"><i class="fas fa-star" aria-hidden="true"></i></div><div class="brand-name">AXA Seguros</div><div class="brand-esp">Planes con auto sustituto y servicio 24/7</div><div class="brand-badge">Smart · Total</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-terra"><i class="fas fa-landmark" aria-hidden="true"></i></div><div class="brand-name">MetLife</div><div class="brand-esp">Cobertura integral con atención rápida en siniestros</div><div class="brand-badge">Amplia · Plus</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-salvia"><i class="fas fa-gem" aria-hidden="true"></i></div><div class="brand-name">SURA</div><div class="brand-esp">Innovación en coberturas y experiencia digital</div><div class="brand-badge">Auto Flex</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-navy"><i class="fas fa-circle-check" aria-hidden="true"></i></div><div class="brand-name">Allianz</div><div class="brand-esp">130 años de confianza con cobertura premium</div><div class="brand-badge">Global Auto</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-rosa"><i class="fas fa-building-columns" aria-hidden="true"></i></div><div class="brand-name">Banorte</div><div class="brand-esp">Cobertura accesible con la solidez del banco más mexicano</div><div class="brand-badge">Auto Protege</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-terra"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div><div class="brand-name">Mapfre</div><div class="brand-esp">Experiencia global y cobertura robusta en toda la república</div><div class="brand-badge">Auto Total</div></div>
-      <div class="brand-card" role="listitem"><div class="brand-ico ico-salvia"><i class="fas fa-coins" aria-hidden="true"></i></div><div class="brand-name">Principal</div><div class="brand-esp">Protección combinada con beneficios adicionales de salud</div><div class="brand-badge">Auto Salud</div></div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/qualitas-logo.webp" alt="Quálitas Seguros" loading="lazy" /></div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/axa-logo.png" alt="AXA Seguros" loading="lazy" /></div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/Mapfre_logo.webp" alt="Mapfre" loading="lazy" /></div>
+      <div class="brand-card is-logo" role="listitem"><img class="brand-logo-img" src="img/brands/allianz-distribuidor-autorizado.png" alt="Allianz" loading="lazy" /></div>
     </div>
   </div>
 </section>
