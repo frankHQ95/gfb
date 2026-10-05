@@ -6,22 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- SEO -->
-  <title>GFG Finanzas | Asesoría en Ahorro, Inversión y Seguros · Primera Consulta Gratis</title>
-  <meta name="description" content="GFG Finanzas: asesoría financiera personalizada en ahorro, inversión y seguros. +500 familias protegidas. Primera consulta 100% gratuita. Agenda hoy." />
+  <title>GFG Finanzas | Diagnóstico de Retiro, Ahorro y Seguros · Guadalupe F. Godínez</title>
+  <meta name="description" content="Calcula tu brecha de retiro y recibe un diagnóstico sin costo con Guadalupe F. Godínez. Asesoría personal en retiro, ahorro, inversión y seguros." />
   <meta name="keywords" content="seguros de vida, gastos médicos mayores, inversión, ahorro, asesor financiero, retiro, AFORE, seguro auto, México" />
   <meta name="author" content="GFG Finanzas" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#222D44" />
-  <link rel="canonical" href="https://gfgfinanzas.com/" />
-  <link rel="alternate" hreflang="es-MX" href="https://gfgfinanzas.com/" />
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/" />
+  <link rel="alternate" hreflang="es-MX" href="https://gfbfinanzas.vercel.app/" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="preload" as="image" href="img/perfil.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://gfgfinanzas.com/" />
+  <meta property="og:url"         content="https://gfbfinanzas.vercel.app/" />
   <meta property="og:title"       content="GFG Finanzas | Ahorro · Inversión · Seguros" />
-  <meta property="og:description" content="Asesoría financiera personalizada. +500 familias asesoradas. Primera consulta gratis." />
-  <meta property="og:image"       content="https://gfgfinanzas.com/img/perfil.jpeg" />
+  <meta property="og:description" content="Calcula tu brecha de retiro y recibe un diagnóstico sin costo. Asesoría personal con Guadalupe F. Godínez." />
+  <meta property="og:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
   <meta property="og:locale"      content="es_MX" />
   <meta property="og:site_name"   content="GFG Finanzas" />
 
@@ -29,7 +30,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="GFG Finanzas | Ahorro · Inversión · Seguros" />
   <meta name="twitter:description" content="Asesoría financiera personalizada. Primera consulta gratis." />
-  <meta name="twitter:image"       content="https://gfgfinanzas.com/img/perfil.jpeg" />
+  <meta name="twitter:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -39,10 +40,11 @@
       {
         "@type": "FinancialService",
         "name": "GFG Finanzas",
+        "founder": {"@type": "Person", "name": "Guadalupe F. Godínez"},
         "description": "Asesoría financiera personalizada en ahorro, inversión y seguros en México.",
-        "url": "https://gfgfinanzas.com",
-        "logo": "https://gfgfinanzas.com/img/logo.jpeg",
-        "image": "https://gfgfinanzas.com/img/perfil.jpeg",
+        "url": "https://gfbfinanzas.vercel.app",
+        "logo": "https://gfbfinanzas.vercel.app/img/logo.jpeg",
+        "image": "https://gfbfinanzas.vercel.app/img/perfil.jpeg",
         "telephone": "+52-771-702-1729",
         "priceRange": "Consulta gratuita",
         "areaServed": "México",
@@ -81,17 +83,6 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <!-- Meta Pixel — pon tu ID numérico real en META_PIXEL_ID (Meta Business > Eventos > Configuración).
-       Mientras diga 'TU_PIXEL_ID' el pixel NO se carga (evita peticiones rotas). -->
-  <script>
-  window.META_PIXEL_ID = 'TU_PIXEL_ID'; /* ← REEMPLAZA por tu ID real, ej: '1234567890123456' */
-  if (window.META_PIXEL_ID && window.META_PIXEL_ID !== 'TU_PIXEL_ID') {
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', window.META_PIXEL_ID); fbq('track','PageView');
-  }
-  </script>
 
   <style>
   /* ============================================================
@@ -463,90 +454,6 @@
   .strip-logo:hover img { filter: grayscale(0); opacity: 1; }
 
   /* ============================================================
-     CALCULADORA (LEAD MAGNET)
-  ============================================================ */
-  #calculadora {
-    padding: clamp(70px,12vh,110px) 0;
-    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
-    position: relative; overflow: hidden;
-  }
-  #calculadora::before {
-    content: ''; position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(ellipse 55% 60% at 12% 20%, rgba(183,110,121,.20) 0%, transparent 55%),
-      radial-gradient(ellipse 45% 50% at 90% 85%, rgba(159,184,166,.14) 0%, transparent 55%);
-  }
-  .calc-header { text-align: center; margin-bottom: clamp(32px,5vh,52px); position: relative; z-index: 1; }
-  .calc-header .tag { color: var(--rosa-light); background: rgba(183,110,121,.14); border-color: rgba(183,110,121,.3); }
-  .calc-header h2 { color: var(--white); }
-  .calc-header h2 em { -webkit-text-fill-color: transparent; }
-  .calc-header .sub { color: rgba(255,255,255,.7); margin: 12px auto 0; }
-  .calc-card {
-    position: relative; z-index: 1;
-    background: rgba(255,255,255,.97); border-radius: var(--r-xl);
-    box-shadow: 0 30px 80px rgba(0,0,0,.35);
-    display: grid; grid-template-columns: 1.1fr .9fr; overflow: hidden;
-    max-width: 940px; margin: 0 auto;
-  }
-  .calc-inputs { padding: clamp(28px,4vw,44px); }
-  .calc-field { margin-bottom: 26px; }
-  .calc-field-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
-  .calc-field-top label { font-size: .8rem; font-weight: 700; color: var(--navy); }
-  .calc-field-val { font-family: var(--f-head); font-size: 1.35rem; font-weight: 700; color: var(--rosa); }
-  .calc-range {
-    -webkit-appearance: none; appearance: none; width: 100%; height: 6px;
-    border-radius: 50px; background: rgba(34,45,68,.12); outline: none; cursor: pointer;
-  }
-  .calc-range::-webkit-slider-thumb {
-    -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--rosa), var(--terracota));
-    border: 3px solid var(--white); box-shadow: 0 2px 8px rgba(183,110,121,.5); cursor: pointer;
-  }
-  .calc-range::-moz-range-thumb {
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--rosa); border: 3px solid var(--white);
-    box-shadow: 0 2px 8px rgba(183,110,121,.5); cursor: pointer;
-  }
-  .calc-range:focus-visible { outline: 3px solid var(--rosa); outline-offset: 4px; }
-  .calc-hint { font-size: .72rem; color: var(--texto-soft); margin-top: 7px; }
-  .calc-result {
-    background: linear-gradient(160deg, var(--rosa-claro) 0%, var(--hueso) 100%);
-    padding: clamp(28px,4vw,40px); display: flex; flex-direction: column; justify-content: center;
-    border-left: 1px solid rgba(34,45,68,.06);
-  }
-  .calc-result-label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-soft); }
-  .calc-result-num {
-    font-family: var(--f-head); font-size: clamp(2.6rem,6vw,3.6rem); font-weight: 700;
-    color: var(--navy); line-height: 1.05; margin: 6px 0 4px;
-  }
-  .calc-result-sub { font-size: .82rem; color: var(--texto-mid); margin-bottom: 18px; }
-  .calc-breakdown { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
-  .calc-brk-row { display: flex; justify-content: space-between; align-items: center; font-size: .82rem; }
-  .calc-brk-row span { color: var(--texto-mid); }
-  .calc-brk-row strong { color: var(--navy); font-weight: 700; }
-  .calc-brk-row.accent strong { color: var(--rosa); }
-  .calc-capture { border-top: 1px dashed rgba(34,45,68,.15); padding-top: 18px; }
-  .calc-capture p { font-size: .82rem; color: var(--texto-mid); margin-bottom: 12px; line-height: 1.5; }
-  .calc-capture .lf-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
-  .calc-capture input {
-    padding: 12px 15px; border: 1.5px solid rgba(34,45,68,.12); border-radius: 10px;
-    font-family: var(--f-body); font-size: .9rem; background: var(--white); outline: none; transition: var(--t);
-  }
-  .calc-capture input:focus { border-color: var(--rosa); box-shadow: 0 0 0 3px rgba(183,110,121,.1); }
-  .calc-capture input.error { border-color: #e05c5c; box-shadow: 0 0 0 3px rgba(224,92,92,.1); }
-  .calc-capture .field-error { font-size: .72rem; color: #c94444; display: none; }
-  .calc-capture .field-error.show { display: block; }
-  .calc-disclaimer { font-size: .68rem; color: var(--texto-soft); margin-top: 10px; line-height: 1.5; }
-  #calc-success { display: none; text-align: center; padding: 12px 0; }
-  #calc-success .icon { font-size: 2.4rem; color: var(--salvia); margin-bottom: 8px; }
-  #calc-success h4 { font-family: var(--f-head); font-size: 1.3rem; color: var(--navy); margin-bottom: 6px; }
-  #calc-success p { font-size: .84rem; color: var(--texto-mid); }
-  @media (max-width: 768px) {
-    .calc-card { grid-template-columns: 1fr; }
-    .calc-result { border-left: none; border-top: 1px solid rgba(34,45,68,.08); }
-  }
-
-  /* ============================================================
      SINIESTROS / ACOMPAÑAMIENTO
   ============================================================ */
   #siniestros { padding: clamp(70px,12vh,110px) 0; background: var(--white); }
@@ -630,201 +537,6 @@
   .cf-step:hover .cf-num { transform: scale(1.08); }
   .cf-step h3 { font-family: var(--f-head); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
   .cf-step p  { font-size: .86rem; color: var(--texto-soft); line-height: 1.7; }
-
-  /* ============================================================
-     SERVICIOS — BENTO GRID
-  ============================================================ */
-  #servicios { padding: clamp(70px,12vh,110px) 0; background: var(--hueso); }
-  .sec-header { margin-bottom: clamp(40px,6vh,64px); }
-  .bento { display: grid; grid-template-columns: repeat(6,1fr); gap: 20px; }
-  .bcard {
-    border-radius: var(--r-lg); padding: clamp(28px,4vw,44px);
-    position: relative; overflow: hidden; transition: transform var(--t), box-shadow var(--t);
-  }
-  .bcard:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-
-  /* 3D tilt: capa de brillo especular que sigue el cursor */
-  .bcard::before {
-    content: ''; position: absolute; inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle at var(--mx, 50%) var(--my, 50%),
-      rgba(255,255,255,.18) 0%,
-      transparent 60%
-    );
-    opacity: 0; transition: opacity .35s ease;
-    pointer-events: none; z-index: 2;
-  }
-  .bcard:hover::before { opacity: 1; }
-
-  /* Borde degradado animado en hover para cada card */
-  .bcard-vida:hover      { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.4); }
-  .bcard-gmm:hover       { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.3); }
-  .bcard-auto:hover      { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(196,143,127,.35); }
-  .bcard-ahorro-inv:hover{ box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.3); }
-  .bcard-retiro:hover    { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(196,143,127,.4); }
-  .bcard-cta:hover       { box-shadow: var(--shadow-lg), 0 0 0 1.5px rgba(183,110,121,.35); }
-  /* Layout nuevo 6 columnas */
-  .bcard-vida      { grid-column: span 2; grid-row: span 2; background: var(--navy); color: white; }
-  .bcard-gmm       { grid-column: span 2; background: var(--rosa-claro); }
-  .bcard-auto      { grid-column: span 2; background: var(--white); }
-  .bcard-ahorro-inv{ grid-column: span 4; background: var(--hueso); }
-  .bcard-retiro    { grid-column: span 3; background: linear-gradient(135deg, var(--rosa) 0%, #c4727d 100%); color: white; }
-  .bcard-cta       { grid-column: span 3; background: var(--navy-deep); color: white; }
-  /* Ahorro+Inversión layout interno */
-  .ahorro-inv-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 100%; }
-  .ai-divider { width: 1px; background: rgba(34,45,68,.1); align-self: stretch; display: none; }
-  .bcard-vida .bcard-bg-num { color: white; opacity: .05; }
-  .bcard-icon {
-    width: 52px; height: 52px; border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; margin-bottom: 20px; flex-shrink: 0;
-  }
-  .bi-light { background: rgba(255,255,255,.12); color: rgba(255,255,255,.9); }
-  .bi-rosa  { background: rgba(183,110,121,.12); color: var(--rosa); }
-  .bi-navy  { background: rgba(34,45,68,.08);   color: var(--navy); }
-  .bi-white { background: rgba(255,255,255,.2);  color: white; }
-  .bi-salvia{ background: rgba(159,184,166,.25); color: #5a8a6a; }
-  .bcard h3 { font-family: var(--f-head); font-size: clamp(1.4rem,3vw,2rem); font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
-  .bcard p  { font-size: .88rem; line-height: 1.75; opacity: .75; margin-bottom: 20px; }
-  .bcard-list { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
-  .bcard-list li { display: flex; align-items: center; gap: 8px; font-size: .82rem; opacity: .8; }
-  .bcard-list li i { font-size: .68rem; color: var(--salvia); flex-shrink: 0; }
-  .bcard-list-light li i { color: rgba(255,255,255,.5); }
-  .bcard-bg-num {
-    position: absolute; bottom: -16px; right: 16px;
-    font-family: var(--f-head); font-size: 7rem; font-weight: 700;
-    opacity: .06; line-height: 1; pointer-events: none; user-select: none;
-  }
-  .bcard-seguros .bcard-bg-num { color: white; opacity: .05; }
-  .bcard-cta-content { display: flex; flex-direction: column; height: 100%; justify-content: space-between; }
-  .bcard-cta h3 { font-family: var(--f-head); font-size: 1.6rem; font-weight: 600; margin-bottom: 10px; }
-  .bcard-cta p  { font-size: .85rem; opacity: .65; margin-bottom: 24px; }
-  .btn-white {
-    background: white; color: var(--navy); font-size: .82rem; padding: 11px 20px;
-    border-radius: 50px; font-weight: 700;
-    display: inline-flex; align-items: center; gap: 7px; transition: var(--t);
-    border: none; cursor: pointer;
-  }
-  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
-  .btn-more-info {
-    display: inline-flex; align-items: center; gap: 8px; margin-top: 22px;
-    font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.75);
-    border-bottom: 1px solid rgba(255,255,255,.25);
-    padding-bottom: 2px; transition: var(--t); text-decoration: none;
-  }
-  .btn-more-info i { font-size: .75rem; transition: transform var(--t); }
-  .btn-more-info:hover { color: white; border-color: rgba(255,255,255,.7); }
-  .btn-more-info:hover i { transform: translateX(4px); }
-  .btn-more-info:focus-visible { outline: 2px solid var(--rosa); outline-offset: 4px; border-radius: 2px; }
-
-  /* ============================================================
-     SERVICIOS — REDISEÑO (destacado + grid uniforme)
-  ============================================================ */
-  /* --- Tarjeta destacada: Plan de Retiro (Nº1) --- */
-  .svc-featured {
-    position: relative; overflow: hidden;
-    border-radius: var(--r-lg); margin-bottom: 22px;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color: var(--white);
-    display: grid; grid-template-columns: 1.35fr 1fr;
-    box-shadow: var(--shadow-md);
-    transition: transform var(--t), box-shadow var(--t);
-  }
-  .svc-featured:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .svc-featured::before {
-    content: ''; position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(ellipse 55% 70% at 88% 18%, rgba(183,110,121,.38) 0%, transparent 60%),
-      radial-gradient(ellipse 40% 55% at 12% 92%, rgba(196,143,127,.18) 0%, transparent 55%);
-  }
-  .svc-feat-content { position: relative; z-index: 1; padding: clamp(30px,4vw,48px); }
-  .svc-badge {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: linear-gradient(135deg, var(--rosa) 0%, var(--terracota) 100%);
-    color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-    padding: 6px 14px; border-radius: 50px; margin-bottom: 18px;
-    box-shadow: 0 4px 16px rgba(183,110,121,.45);
-  }
-  .svc-badge i { font-size: .72rem; }
-  .svc-feat-content h3 { font-family: var(--f-head); font-size: clamp(1.9rem,3.6vw,2.8rem); font-weight: 600; line-height: 1.1; margin-bottom: 12px; color: #fff; }
-  .svc-feat-content > p { font-size: .95rem; line-height: 1.8; color: rgba(255,255,255,.82); max-width: 460px; margin-bottom: 26px; }
-  .svc-feat-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-  .svc-feat-actions .btn-white { font-size: .88rem; padding: 13px 24px; }
-  .btn-outline-light {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.3);
-    border-radius: 50px; padding: 13px 24px; font-size: .88rem; font-weight: 600; transition: var(--t);
-  }
-  .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); transform: translateY(-2px); }
-  .btn-outline-light i { transition: transform var(--t); }
-  .btn-outline-light:hover i { transform: translateX(3px); }
-  .svc-feat-side {
-    position: relative; z-index: 1;
-    background: rgba(255,255,255,.05);
-    border-left: 1px solid rgba(255,255,255,.1);
-    padding: clamp(26px,3.5vw,38px);
-    display: flex; flex-direction: column; justify-content: center; gap: 18px;
-  }
-  .svc-benefit { display: flex; align-items: flex-start; gap: 14px; }
-  .svc-benefit-ico {
-    width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-    background: rgba(183,110,121,.22); color: var(--rosa-light);
-    display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
-  }
-  .svc-benefit strong { display: block; font-size: .95rem; color: #fff; margin-bottom: 2px; }
-  .svc-benefit span { font-size: .8rem; color: rgba(255,255,255,.62); line-height: 1.5; }
-
-  /* --- Cuadrícula uniforme --- */
-  .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-  .svc-card {
-    position: relative; overflow: hidden;
-    background: var(--white); border: 1px solid rgba(34,45,68,.07);
-    border-radius: var(--r-lg); padding: clamp(24px,3vw,34px);
-    display: flex; flex-direction: column;
-    transition: transform var(--t), box-shadow var(--t), border-color var(--t);
-  }
-  .svc-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(183,110,121,.25); }
-  .svc-card-num {
-    position: absolute; top: 20px; right: 22px;
-    font-family: var(--f-head); font-size: 1rem; font-weight: 700; color: var(--texto-soft); opacity: .4;
-  }
-  .svc-card-ico {
-    width: 52px; height: 52px; border-radius: 14px; margin-bottom: 18px; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
-  }
-  .svc-ico-rosa   { background: rgba(183,110,121,.1);  color: var(--rosa); }
-  .svc-ico-navy   { background: rgba(34,45,68,.07);    color: var(--navy); }
-  .svc-ico-terra  { background: rgba(196,143,127,.14); color: var(--terracota); }
-  .svc-ico-salvia { background: rgba(159,184,166,.2);  color: #5a8a6a; }
-  .svc-card h4 { font-family: var(--f-head); font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-  .svc-card > p { font-size: .86rem; line-height: 1.7; color: var(--texto-mid); margin-bottom: 16px; }
-  .svc-card-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
-  .svc-card-list li { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--texto-mid); }
-  .svc-card-list li i { font-size: .66rem; color: var(--salvia); flex-shrink: 0; }
-  .svc-card-link {
-    margin-top: auto; display: inline-flex; align-items: center; gap: 7px;
-    font-size: .82rem; font-weight: 700; color: var(--rosa); transition: var(--t);
-  }
-  .svc-card-link i { font-size: .72rem; transition: transform var(--t); }
-  .svc-card-link:hover i { transform: translateX(4px); }
-  .svc-card-link:focus-visible { outline: 2px solid var(--rosa); outline-offset: 4px; border-radius: 2px; }
-  /* Card CTA (última celda) */
-  .svc-card-cta {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color: #fff; border-color: transparent; justify-content: center;
-  }
-  .svc-card-cta h4 { color: #fff; }
-  .svc-card-cta > p { color: rgba(255,255,255,.66); margin-bottom: 20px; }
-
-  @media (max-width: 900px) {
-    .svc-featured { grid-template-columns: 1fr; }
-    .svc-feat-side { border-left: none; border-top: 1px solid rgba(255,255,255,.1); }
-    .svc-grid { grid-template-columns: repeat(2,1fr); }
-  }
-  @media (max-width: 600px) {
-    .svc-grid { grid-template-columns: 1fr; }
-  }
 
   /* ============================================================
      STATS
@@ -1361,6 +1073,7 @@
     font-size: 1.3rem; text-decoration: none;
   }
   </style>
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
 </head>
 <body>
 
@@ -1368,18 +1081,17 @@
 <noscript>
   <style>
     .reveal { opacity: 1 !important; transform: none !important; }
-    #live-counter, #fomo-container { display: none !important; }
+    
   </style>
 </noscript>
 
 <!-- ====================================================
      URGENCY BAR
 ==================================================== -->
-<div id="urgency-bar" role="note" aria-label="Disponibilidad limitada">
+<div id="urgency-bar" role="note">
   <div class="wrap bar-inner">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Solo quedan <strong id="spots-count">4 lugares</strong> esta semana para asesoría gratuita.</span>
-    <a href="#contacto" class="bar-cta">Asegura el tuyo →</a>
+    <span>Primera asesoría sin costo y sin compromiso · presencial o por videollamada.</span>
+    <a href="#contacto" class="bar-cta">Agendar →</a>
   </div>
   <button class="bar-close" id="bar-close" aria-label="Cerrar aviso">✕</button>
 </div>
@@ -1391,14 +1103,14 @@
   <nav id="nav" aria-label="Navegación principal">
     <div class="wrap nav-wrap">
       <a href="#" class="nav-logo" aria-label="GFG Finanzas — Inicio">
-        <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="44" />
+        <span class="gfg-logo" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
       </a>
       <ul class="nav-links" role="list">
-        <li><a href="#como-funciona">¿Cómo funciona?</a></li>
-        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="ppr.html#calculadora">Calculadora</a></li>
+        <li><a href="#como-funciona">Método GFG</a></li>
+        <li><a href="ppr.html">Plan de retiro</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#faq">Dudas</a></li>
       </ul>
       <div class="nav-right">
         <a href="tel:+527717021729" class="nav-phone" aria-label="Llamar a GFG Finanzas">
@@ -1415,12 +1127,12 @@
 
   <!-- Mobile drawer -->
   <div class="nav-drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
-    <a href="#como-funciona" onclick="closeMenu()">¿Cómo funciona?</a>
-    <a href="#calculadora"   onclick="closeMenu()">Calculadora</a>
+    <a href="ppr.html#calculadora">Calculadora de brecha</a>
+    <a href="#como-funciona" onclick="closeMenu()">Método GFG</a>
+    <a href="ppr.html">Plan de retiro</a>
     <a href="#servicios"     onclick="closeMenu()">Servicios</a>
-    <a href="#testimonios"   onclick="closeMenu()">Testimonios</a>
-    <a href="#faq"           onclick="closeMenu()">FAQ</a>
-    <a href="#asesora"       onclick="closeMenu()">Tu Asesora</a>
+    <a href="#faq"           onclick="closeMenu()">Dudas frecuentes</a>
+    <a href="#asesora"       onclick="closeMenu()">Tu asesora</a>
     <a href="#contacto"      onclick="closeMenu()" class="btn btn-primary btn-lg">
       <i class="fas fa-calendar-check" aria-hidden="true"></i>
       Asesoría gratuita
@@ -1430,57 +1142,52 @@
 
 <main>
 
-<!-- ====================================================
-     HERO
-==================================================== -->
 <section id="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero-grid">
-      <div class="hero-content">
+      <div class="hero-content gfg-enter">
         <div class="hero-eyebrow">
           <span class="dot" aria-hidden="true"></span>
-          Ahorro · Inversión · Seguros
+          Retiro · Ahorro · Seguros
         </div>
         <h1 class="h-display hero-headline" id="hero-title">
-          Tu patrimonio merece una estrategia <em>inteligente</em>
+          Convierte los ingresos que hoy generas en <em>libertad</em> para tu futuro
         </h1>
         <p class="sub hero-sub">
-          En GFG Finanzas diseñamos un plan financiero a tu medida. Protegemos lo que más quieres, hacemos crecer tu dinero y construimos el futuro que mereces — juntos.
+          Descubre cuánto necesitas construir para mantener tu calidad de vida cuando decidas dejar de trabajar. Te ayudo a calcular tu brecha, revisar alternativas y diseñar una estrategia sostenible.
         </p>
         <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary btn-lg">
-            <i class="fas fa-calendar-check" aria-hidden="true"></i>
-            Agenda tu asesoría gratis
+          <a href="ppr.html#calculadora" class="btn btn-primary btn-lg">
+            <i class="fas fa-calculator" aria-hidden="true"></i>
+            Calcular mi brecha de retiro
           </a>
-          <a href="#como-funciona" class="btn btn-ghost btn-lg">
-            Ver cómo funciona
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20platicar%20sobre%20mi%20retiro" class="btn btn-ghost btn-lg" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Hablar con Guadalupe
           </a>
         </div>
-        <div class="hero-proof">
-          <div class="proof-faces" aria-hidden="true">
-            <span>MR</span><span>LA</span><span>CG</span><span>+</span>
-          </div>
-          <div class="proof-text">
-            <strong>+500 familias protegidas</strong>
-            <span>Primera consulta siempre gratuita</span>
-          </div>
-        </div>
+        <ul class="hero-trust" aria-label="Lo que incluye trabajar con GFG Finanzas">
+          <li><i class="fas fa-check" aria-hidden="true"></i>Atención personal</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Diagnóstico inicial sin costo</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Estrategia personalizada</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Acompañamiento continuo</li>
+        </ul>
       </div>
-      <div class="hero-visual" aria-hidden="true">
+      <div class="hero-visual gfg-enter-visual">
         <div class="hero-card-photo">
-          <img src="img/perfil.jpeg" alt="Guadalupe, asesora de GFG Finanzas"
-               loading="eager" fetchpriority="high" width="540" height="620" />
+          <img src="img/perfil.webp" alt="Guadalupe F. Godínez, asesora de GFG Finanzas"
+               loading="eager" fetchpriority="high" width="900" height="1352" />
         </div>
-        <div class="float-card float-card-1">
-          <div class="fc-icon"><i class="fas fa-award"></i></div>
+        <div class="float-card float-card-1" aria-hidden="true">
+          <div class="fc-icon"><i class="fas fa-user-check"></i></div>
           <div class="fc-text">
-            <strong>Asesoría certificada</strong>
-            <span>AMIB · CONDUSEF</span>
+            <strong>Guadalupe F. Godínez</strong>
+            <span>Tu asesora, de principio a fin</span>
           </div>
         </div>
-        <div class="float-card float-card-2">
-          <div class="fc-num">100%</div>
-          <div class="fc-label">Primera consulta<br/>gratuita</div>
+        <div class="float-card float-card-2" aria-hidden="true">
+          <div class="fc-num">$0</div>
+          <div class="fc-label">Diagnóstico<br/>inicial</div>
         </div>
       </div>
     </div>
@@ -1511,325 +1218,253 @@
   </div>
 </div>
 
-<!-- ====================================================
-     CÓMO FUNCIONA (NUEVA SECCIÓN)
-==================================================== -->
+
 <section id="como-funciona" aria-labelledby="cf-title">
   <div class="wrap">
     <div class="cf-header reveal">
-      <span class="tag"><i class="fas fa-route" aria-hidden="true"></i>El proceso</span>
-      <h2 class="h-section" id="cf-title">Así de simple es <em>empezar</em></h2>
-      <p class="sub">Cuatro pasos para pasar de la duda a tener un plan financiero real.</p>
-    </div>
-    <div class="cf-steps" role="list">
-      <div class="cf-step reveal" role="listitem">
-        <div class="cf-num" aria-hidden="true">1</div>
-        <h3>Agenda tu cita</h3>
-        <p>Llena el formulario o escríbenos por WhatsApp. Sin costos, sin trámites previos.</p>
-      </div>
-      <div class="cf-step reveal reveal-delay-1" role="listitem">
-        <div class="cf-num" aria-hidden="true">2</div>
-        <h3>Asesoría gratuita</h3>
-        <p>Reunión de 30-60 min donde entendemos tu situación, metas y presupuesto real.</p>
-      </div>
-      <div class="cf-step reveal reveal-delay-2" role="listitem">
-        <div class="cf-num" aria-hidden="true">3</div>
-        <h3>Tu plan personalizado</h3>
-        <p>En 24-48 horas recibes una propuesta clara, sin letra chica y sin presión de compra.</p>
-      </div>
-      <div class="cf-step reveal reveal-delay-3" role="listitem">
-        <div class="cf-num" aria-hidden="true">4</div>
-        <h3>Seguimiento continuo</h3>
-        <p>No desaparecemos. Revisamos tu plan periódicamente y te acompañamos cuando lo necesites.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================
-     CALCULADORA — LEAD MAGNET
-==================================================== -->
-<section id="calculadora" aria-labelledby="calc-title">
-  <div class="wrap">
-    <div class="calc-header reveal">
-      <span class="tag"><i class="fas fa-calculator" aria-hidden="true"></i>Calculadora gratuita</span>
-      <h2 class="h-section" id="calc-title">¿Cuánto puedes tener el día que <em>te retires</em>?</h2>
-      <p class="sub">Mueve las barras y descúbrelo en segundos. Sin registros ni letra chica: solo una idea real de lo que tu ahorro de hoy puede convertirse mañana.</p>
+      <span class="tag"><i class="fas fa-route" aria-hidden="true"></i>Método GFG</span>
+      <h2 class="h-section" id="cf-title">Retiro con <em>propósito</em>, paso a paso</h2>
+      <p class="sub">El producto es solo el vehículo. Lo que hace la diferencia es el método y tener a alguien que te acompañe todo el camino.</p>
     </div>
 
-    <div class="calc-card reveal reveal-delay-1">
-      <!-- Inputs -->
-      <div class="calc-inputs">
-        <div class="calc-field">
-          <div class="calc-field-top">
-            <label for="calc-edad">Tu edad hoy</label>
-            <span class="calc-field-val"><span id="calc-edad-val">30</span> años</span>
-          </div>
-          <input type="range" id="calc-edad" class="calc-range" min="18" max="60" value="30" step="1" aria-describedby="calc-edad-hint" />
-          <p class="calc-hint" id="calc-edad-hint">Entre más temprano empieces, más trabaja el interés compuesto a tu favor.</p>
-        </div>
+    <ol class="gfg-method reveal">
+      <li class="gm-step">
+        <span class="gm-dot" aria-hidden="true">1</span>
+        <h3>Claridad</h3>
+        <p>Definimos la vida que quieres y el ingreso que necesitas para sostenerla.</p>
+      </li>
+      <li class="gm-step">
+        <span class="gm-dot" aria-hidden="true">2</span>
+        <h3>Diagnóstico</h3>
+        <p>Inventario de tu ahorro, AFORE, protección, flujo y situación fiscal.</p>
+      </li>
+      <li class="gm-step">
+        <span class="gm-dot" aria-hidden="true">3</span>
+        <h3>Diseño</h3>
+        <p>Tres escenarios de aportación: esencial, ideal y acelerado.</p>
+      </li>
+      <li class="gm-step">
+        <span class="gm-dot" aria-hidden="true">4</span>
+        <h3>Protección</h3>
+        <p>Validamos beneficiarios, vida, invalidez y liquidez para imprevistos.</p>
+      </li>
+      <li class="gm-step">
+        <span class="gm-dot" aria-hidden="true">5</span>
+        <h3>Acompañamiento</h3>
+        <p>Revisión semestral y estrategia fiscal cada año. No desaparecemos.</p>
+      </li>
+    </ol>
 
-        <div class="calc-field">
-          <div class="calc-field-top">
-            <label for="calc-ahorro">Puedo ahorrar al mes</label>
-            <span class="calc-field-val">$<span id="calc-ahorro-val">2,000</span></span>
-          </div>
-          <input type="range" id="calc-ahorro" class="calc-range" min="500" max="20000" value="2000" step="500" aria-describedby="calc-ahorro-hint" />
-          <p class="calc-hint" id="calc-ahorro-hint">Puedes ajustarlo cuando quieras. Empezar con poco ya hace la diferencia.</p>
-        </div>
-
-        <div class="calc-field" style="margin-bottom:0;">
-          <div class="calc-field-top">
-            <label for="calc-retiro">Quiero retirarme a los</label>
-            <span class="calc-field-val"><span id="calc-retiro-val">65</span> años</span>
-          </div>
-          <input type="range" id="calc-retiro" class="calc-range" min="55" max="75" value="65" step="1" aria-describedby="calc-retiro-hint" />
-          <p class="calc-hint" id="calc-retiro-hint">Estimación con un rendimiento anual promedio del 9% (referencia PPR).</p>
-        </div>
+    <div class="gfg-deliver reveal">
+      <div class="gd-quote">
+        <span class="tag"><i class="fas fa-box-open" aria-hidden="true"></i>Qué recibes</span>
+        <blockquote>“No te entregaré solamente una proyección. Te ayudaré a construir, entender y mantener tu estrategia patrimonial.”</blockquote>
+        <cite>Guadalupe F. Godínez</cite>
+        <a href="#contacto" class="btn btn-primary">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i>
+          Agendar mi diagnóstico sin costo
+        </a>
       </div>
-
-      <!-- Resultado + captura -->
-      <div class="calc-result">
-        <div id="calc-live" aria-live="polite">
-          <div class="calc-result-label">Podrías acumular</div>
-          <div class="calc-result-num">$<span id="calc-total">0</span></div>
-          <div class="calc-result-sub">para el día que te retires</div>
-          <div class="calc-breakdown">
-            <div class="calc-brk-row"><span>Tú aportas en total</span><strong>$<span id="calc-aportado">0</span></strong></div>
-            <div class="calc-brk-row accent"><span>Rendimiento estimado</span><strong>+$<span id="calc-rendimiento">0</span></strong></div>
-          </div>
-
-          <div class="calc-capture">
-            <p><strong>Recibe tu proyección detallada</strong> y descubre cuánto podrías deducir de impuestos con un PPR. Te la mandamos por WhatsApp, sin compromiso.</p>
-            <form id="calc-form" novalidate>
-              <div class="lf-group">
-                <input type="text" id="calc-nombre" placeholder="Tu nombre" autocomplete="given-name" required />
-                <span class="field-error" id="err-calc-nombre" role="alert">Escribe tu nombre.</span>
-              </div>
-              <div class="lf-group">
-                <input type="tel" id="calc-whatsapp" placeholder="Tu WhatsApp (10 dígitos)" inputmode="numeric" autocomplete="tel" required />
-                <span class="field-error" id="err-calc-whatsapp" role="alert">Ingresa un WhatsApp de 10 dígitos.</span>
-              </div>
-              <button type="submit" class="btn btn-primary btn-full">
-                <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                Enviarme mi proyección
-              </button>
-            </form>
-            <p class="calc-disclaimer">*Cálculo estimado con fines informativos, no representa un rendimiento garantizado. Tu plan real lo diseñamos contigo en tu asesoría gratuita.</p>
-          </div>
-        </div>
-
-        <div id="calc-success" role="alert" aria-live="polite">
-          <div class="icon"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
-          <h4>¡Va en camino!</h4>
-          <p>En breve te contactamos por WhatsApp con tu proyección personalizada. 💛</p>
-        </div>
-      </div>
+      <ul class="gd-list">
+        <li><i class="fas fa-chart-simple" aria-hidden="true"></i><span><strong>Diagnóstico de tu brecha de retiro</strong>Cuánto tienes, cuánto necesitas y qué falta.</span></li>
+        <li><i class="fas fa-layer-group" aria-hidden="true"></i><span><strong>Tres escenarios de aportación</strong>Para que elijas el que sí puedes sostener.</span></li>
+        <li><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i><span><strong>Evaluación fiscal preliminar</strong>Qué podrías deducir según tu situación.</span></li>
+        <li><i class="fas fa-magnifying-glass-dollar" aria-hidden="true"></i><span><strong>Costos, restricciones y liquidez explicados</strong>Incluida la permanencia, antes de que firmes.</span></li>
+        <li><i class="fas fa-people-roof" aria-hidden="true"></i><span><strong>Orientación de beneficiarios</strong>Y revisión contigo de tu primer estado de cuenta.</span></li>
+        <li><i class="fas fa-rotate" aria-hidden="true"></i><span><strong>Seguimiento con calendario</strong>Revisión semestral, ajuste anual por inflación y recordatorio fiscal.</span></li>
+      </ul>
     </div>
   </div>
 </section>
+
+
 
 <!-- ====================================================
      SERVICIOS — BENTO GRID
 ==================================================== -->
 <section id="servicios" aria-labelledby="servicios-title">
   <div class="wrap">
-    <div class="sec-header reveal">
-      <span class="tag"><i class="fas fa-sparkles" aria-hidden="true"></i>Nuestros servicios</span>
-      <h2 class="h-section" id="servicios-title">Una solución para cada<br/>etapa de tu vida</h2>
-      <p class="sub">Desde proteger lo que ya construiste hasta planear el mañana que mereces.</p>
+    <div class="sv-header reveal">
+      <div>
+        <span class="tag"><i class="fas fa-layer-group" aria-hidden="true"></i>Nuestros servicios</span>
+        <h2 class="h-section" id="servicios-title">Una solución para cada <em>etapa de tu vida</em></h2>
+      </div>
+      <p class="sub">Empezamos por tu retiro y, alrededor de él, protegemos lo que ya construiste: tu familia, tu salud y tu patrimonio.</p>
     </div>
-    <!-- ★ DESTACADO Nº1 · PLAN DE RETIRO -->
-    <article class="svc-featured reveal" role="listitem" aria-label="Plan de Retiro — servicio destacado">
-      <div class="svc-feat-content">
-        <span class="svc-badge"><i class="fas fa-crown" aria-hidden="true"></i>Nº 1 · El más solicitado</span>
-        <h3>Plan de Retiro (PPR)</h3>
-        <p>Nuestro servicio estrella. Diseña hoy el retiro que mereces: deduce impuestos, genera rendimientos y asegura tu ingreso del futuro — empezando con lo que hoy sí puedes.</p>
-        <div class="svc-feat-actions">
-          <a href="#calculadora" class="btn-white"><i class="fas fa-calculator" aria-hidden="true"></i> Calcular mi retiro</a>
-          <a href="ppr.html" class="btn-outline-light">Conocer el PPR <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+
+    <div class="sv-grid" role="list">
+
+      <!-- Plan de Retiro: el servicio principal -->
+      <article class="sv-tile sv-ppr reveal" role="listitem">
+        <svg class="sv-ppr-curve" viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="svCurve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B76E79" stop-opacity=".55"/><stop offset="1" stop-color="#B76E79" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0 240 C120 232 190 214 270 176 C350 138 420 84 600 18 L600 260 L0 260 Z" fill="url(#svCurve)"/>
+          <path d="M0 240 C120 232 190 214 270 176 C350 138 420 84 600 18" fill="none" stroke="#D4929C" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <div class="sv-ppr-main">
+          <span class="sv-badge"><i class="fas fa-crown" aria-hidden="true"></i>Nuestra especialidad</span>
+          <h3>Plan Personal de Retiro</h3>
+          <p>Diseñamos contigo una estrategia de retiro de largo plazo, con aportaciones potencialmente deducibles y a tu ritmo: empiezas con lo que hoy sí puedes.</p>
+          <div class="sv-actions">
+            <a href="ppr.html#calculadora" class="btn-white"><i class="fas fa-calculator" aria-hidden="true"></i> Calcular mi brecha</a>
+            <a href="ppr.html" class="btn-outline-light">Conocer el PPR <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="svc-feat-side">
-        <div class="svc-benefit">
-          <div class="svc-benefit-ico"><i class="fas fa-hand-holding-dollar" aria-hidden="true"></i></div>
-          <div><strong>Deducible de ISR</strong><span>Recupera parte de tus impuestos en tu declaración anual.</span></div>
+        <ul class="sv-ppr-side" aria-label="Qué considera tu plan de retiro">
+          <li>
+            <span class="sv-glass-ico" aria-hidden="true"><i class="fas fa-hand-holding-dollar"></i></span>
+            <span><strong>Potencialmente deducible</strong>Conforme a la LISR y sujeto a requisitos fiscales.</span>
+          </li>
+          <li>
+            <span class="sv-glass-ico" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+            <span><strong>Crecimiento a largo plazo</strong>Sujeto al mercado, a los costos y a tu perfil de riesgo.</span>
+          </li>
+          <li>
+            <span class="sv-glass-ico" aria-hidden="true"><i class="fas fa-rotate"></i></span>
+            <span><strong>Revisión cada semestre</strong>Sabes cuánto necesitas y cómo vas, siempre.</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="sv-tile sv-vida reveal reveal-delay-1" role="listitem">
+        <div class="sv-top">
+          <span class="sv-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--vida" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path class="a" d="M24 6l14 5v11c0 9-6 15.5-14 19-8-3.5-14-10-14-19V11z"/><path class="ic-beat f" d="M24 31s-6.5-3.8-6.5-8.300a3.6 3.6 0 0 1 6.5-2.1 3.6 3.6 0 0 1 6.5 2.100c0 4.5-6.5 8.3-6.5 8.300z"/></svg></span>
+          <span class="sv-eyebrow">Protección</span>
         </div>
-        <div class="svc-benefit">
-          <div class="svc-benefit-ico"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-          <div><strong>Rendimientos que le ganan a la inflación</strong><span>Tu dinero crece, no se queda quieto.</span></div>
+        <h3>Seguro de Vida</h3>
+        <p>Protege el ingreso y el futuro de tu familia con un plan a la medida de tu etapa y tu presupuesto.</p>
+        <ul class="sv-chips" aria-label="Coberturas de seguro de vida"><li>Fallecimiento</li><li>Invalidez</li><li>Accidentes</li></ul>
+        <a href="vida.html" class="sv-link">Cotizar mi seguro<span class="sv-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span></a>
+      </article>
+      <article class="sv-tile sv-gmm reveal reveal-delay-2" role="listitem">
+        <div class="sv-top">
+          <span class="sv-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--gmm" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="a" x="8" y="8" width="32" height="32" rx="10"/><path class="ic-beat" stroke-width="4.2" d="M24 16v16M16 24h16"/></svg></span>
+          <span class="sv-eyebrow">Salud</span>
         </div>
-        <div class="svc-benefit">
-          <div class="svc-benefit-ico"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
-          <div><strong>Ingreso para tu retiro</strong><span>Vive esa etapa con tranquilidad y sin depender de nadie.</span></div>
+        <h3>Gastos Médicos Mayores</h3>
+        <p>Hospitalizaciones, cirugías y emergencias sin descapitalizar tu patrimonio.</p>
+        <ul class="sv-chips" aria-label="Coberturas de gastos médicos"><li>Hospitalización</li><li>Cirugías</li><li>Red de hospitales</li></ul>
+        <a href="gastos-medicos.html" class="sv-link">Comparar planes<span class="sv-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span></a>
+      </article>
+      <article class="sv-tile sv-auto reveal" role="listitem">
+        <div class="sv-top">
+          <span class="sv-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--auto" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><g class="ic-car"><path class="a" d="M8 29v-4.500l4-2 3.4-7.300a3 3 0 0 1 2.7-1.700h11.800a3 3 0 0 1 2.7 1.700L36 22.500l4 2V29a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z"/><path d="M14.5 22.500h19"/><circle class="f" cx="15.5" cy="31.5" r="3.4"/><circle class="f" cx="32.5" cy="31.5" r="3.4"/></g><path class="ic-road" stroke-dasharray="6 6" d="M4 40.500h40"/></svg></span>
+          <span class="sv-eyebrow">Patrimonio</span>
         </div>
-      </div>
-    </article>
-
-    <!-- Cuadrícula uniforme de servicios -->
-    <div class="svc-grid" role="list">
-
-      <!-- 02 · SEGURO DE VIDA -->
-      <article class="svc-card reveal" role="listitem">
-        <span class="svc-card-num" aria-hidden="true">02</span>
-        <div class="svc-card-ico svc-ico-rosa"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
-        <h4>Seguro de Vida</h4>
-        <p>Protege el ingreso y el futuro de tu familia con un plan a la medida de tu etapa y presupuesto.</p>
-        <ul class="svc-card-list" aria-label="Coberturas de seguro de vida">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fallecimiento y accidentes</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Invalidez total y permanente</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Suma asegurada desde $500,000</li>
-        </ul>
-        <a href="vida.html" class="svc-card-link" aria-label="Cotizar seguro de vida">Cotizar ahora <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <h3>Seguro de Auto</h3>
+        <p>Comparamos aseguradoras para que pagues lo justo por la cobertura que sí necesitas.</p>
+        <ul class="sv-chips" aria-label="Coberturas de auto"><li>Daños y robo</li><li>Responsabilidad civil</li></ul>
+        <a href="auto.html" class="sv-link">Cotizar mi auto<span class="sv-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span></a>
+      </article>
+      <article class="sv-tile sv-ahorro reveal reveal-delay-1" role="listitem">
+        <div class="sv-top">
+          <span class="sv-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--ahorro" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle class="ic-drop f" cx="25" cy="9.5" r="3.8"/><path class="a" d="M9 28c0-5.2 5.4-9.5 12-9.500h6c6.6 0 12 4.3 12 9.5 0 3-1.7 5.6-4.4 7.400V39h-5v-2.200c-.900.1-1.7.200-2.6.200h-6c-.900 0-1.8-.100-2.6-.200V39h-5v-3.600C10.7 33.6 9 31 9 28z"/><path d="M21 23h8"/><circle class="f" cx="33.5" cy="27" r="1.5" stroke="none"/></svg></span>
+          <span class="sv-eyebrow">Hábito</span>
+        </div>
+        <h3>Plan de Ahorro</h3>
+        <p>El primer paso: un ahorro programado con metas claras y un fondo para imprevistos.</p>
+        <ul class="sv-chips" aria-label="Opciones de ahorro"><li>Ahorro programado</li><li>Fondo de emergencia</li></ul>
+        <a href="#contacto" class="sv-link">Quiero empezar<span class="sv-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span></a>
+      </article>
+      <article class="sv-tile sv-inv reveal reveal-delay-2" role="listitem">
+        <div class="sv-top">
+          <span class="sv-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--inv" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="ic-bar f" style="--i:0;opacity:.5" x="8.5" y="28" width="8" height="12" rx="2.5" stroke="none"/><rect class="ic-bar f" style="--i:1;opacity:.75" x="20" y="20" width="8" height="20" rx="2.5" stroke="none"/><rect class="ic-bar f" style="--i:2" x="31.5" y="11" width="8" height="29" rx="2.5" stroke="none"/></svg></span>
+          <span class="sv-eyebrow">Crecimiento</span>
+        </div>
+        <h3>Inversión</h3>
+        <p>Estrategias acordes a tu perfil de riesgo, explicadas sin tecnicismos.</p>
+        <ul class="sv-chips" aria-label="Opciones de inversión"><li>Perfil de riesgo</li><li>Diversificación</li></ul>
+        <a href="#contacto" class="sv-link">Quiero invertir<span class="sv-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span></a>
       </article>
 
-      <!-- 03 · GASTOS MÉDICOS MAYORES -->
-      <article class="svc-card reveal reveal-delay-1" role="listitem">
-        <span class="svc-card-num" aria-hidden="true">03</span>
-        <div class="svc-card-ico svc-ico-terra"><i class="fas fa-hospital" aria-hidden="true"></i></div>
-        <h4>Gastos Médicos Mayores</h4>
-        <p>Cubre hospitalizaciones, cirugías y emergencias sin descapitalizar tu patrimonio.</p>
-        <ul class="svc-card-list" aria-label="Coberturas GMM">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Hospitalización y cirugías</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Maternidad y recién nacido</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Enfermedades crónicas</li>
-        </ul>
-        <a href="gastos-medicos.html" class="svc-card-link" aria-label="Más información sobre GMM">Más información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-
-      <!-- 04 · SEGURO DE AUTO -->
-      <article class="svc-card reveal reveal-delay-2" role="listitem">
-        <span class="svc-card-num" aria-hidden="true">04</span>
-        <div class="svc-card-ico svc-ico-navy"><i class="fas fa-car-side" aria-hidden="true"></i></div>
-        <h4>Seguro de Auto</h4>
-        <p>Protege tu vehículo y tu tranquilidad. Comparamos las mejores opciones del mercado para ti.</p>
-        <ul class="svc-card-list" aria-label="Coberturas de auto">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Daños materiales y robo total</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Responsabilidad civil amplia</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Gastos médicos a ocupantes</li>
-        </ul>
-        <a href="auto.html" class="svc-card-link" aria-label="Más información sobre seguro de auto">Más información <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-
-      <!-- 05 · AHORRO -->
-      <article class="svc-card reveal" role="listitem">
-        <span class="svc-card-num" aria-hidden="true">05</span>
-        <div class="svc-card-ico svc-ico-salvia"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
-        <h4>Plan de Ahorro</h4>
-        <p>El primer paso hacia tu libertad financiera. Construimos el hábito del ahorro contigo.</p>
-        <ul class="svc-card-list" aria-label="Planes de ahorro">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Ahorro programado</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fondo de emergencia</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Metas a corto y largo plazo</li>
-        </ul>
-        <a href="#contacto" class="svc-card-link" aria-label="Agendar asesoría de ahorro">Quiero empezar <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-
-      <!-- 06 · INVERSIÓN -->
-      <article class="svc-card reveal reveal-delay-1" role="listitem">
-        <span class="svc-card-num" aria-hidden="true">06</span>
-        <div class="svc-card-ico svc-ico-rosa"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-        <h4>Inversión</h4>
-        <p>Haz que tu dinero trabaje para ti con estrategias a tu medida y a tu perfil de riesgo.</p>
-        <ul class="svc-card-list" aria-label="Opciones de inversión">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Fondos de inversión</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Portafolio diversificado</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i>Educación financiera</li>
-        </ul>
-        <a href="#contacto" class="svc-card-link" aria-label="Agendar asesoría de inversión">Quiero invertir <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-      </article>
-
-      <!-- CTA -->
-      <article class="svc-card svc-card-cta reveal reveal-delay-2" role="listitem">
-        <div class="svc-card-ico" style="background:rgba(183,110,121,.2);color:var(--rosa-light);"><i class="fas fa-compass" aria-hidden="true"></i></div>
-        <h4>¿No sabes por dónde empezar?</h4>
-        <p>Agenda una sesión gratuita y armamos tu plan juntos, sin compromiso.</p>
-        <a href="#contacto" class="btn-white" style="align-self:flex-start;">
-          <i class="fas fa-calendar-check" aria-hidden="true"></i> Hablar con asesora
-        </a>
-      </article>
+      <!-- Cierre -->
+      <aside class="sv-cta reveal" role="listitem">
+        <span class="sv-glass-ico" aria-hidden="true"><i class="fas fa-compass"></i></span>
+        <div>
+          <h3>¿No sabes por dónde empezar?</h3>
+          <p>En una sesión sin costo revisamos tu situación y te digo, con honestidad, qué sí necesitas y qué no.</p>
+        </div>
+        <a href="#contacto" class="btn-white"><i class="fas fa-calendar-check" aria-hidden="true"></i> Hablar con Guadalupe</a>
+      </aside>
 
     </div>
   </div>
 </section>
 
 <!-- ====================================================
-     ESTADÍSTICAS
+     COMPROMISOS
 ==================================================== -->
-<section id="stats" aria-label="Estadísticas de GFG Finanzas">
+<section id="compromisos" aria-labelledby="cm-title">
   <div class="wrap">
-    <div class="stats-grid" role="list">
-      <div class="stat reveal" role="listitem">
-        <div class="stat-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
-        <div class="stat-num" aria-label="Más de 500 familias asesoradas">+500</div>
-        <div class="stat-label">Familias<br/>asesoradas</div>
-      </div>
-      <div class="stat reveal reveal-delay-1" role="listitem">
-        <div class="stat-icon" aria-hidden="true"><i class="fas fa-gift"></i></div>
-        <div class="stat-num" aria-label="100 por ciento gratuita">100%</div>
-        <div class="stat-label">Primera asesoría<br/>gratuita</div>
-      </div>
-      <div class="stat reveal reveal-delay-2" role="listitem">
-        <div class="stat-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
-        <div class="stat-num" aria-label="Más de 8 años de experiencia">+8</div>
-        <div class="stat-label">Años de<br/>experiencia</div>
-      </div>
-      <div class="stat reveal reveal-delay-3" role="listitem">
-        <div class="stat-icon" aria-hidden="true"><i class="fas fa-handshake-angle"></i></div>
-        <div class="stat-num" aria-label="Más de 6 aseguradoras aliadas">+6</div>
-        <div class="stat-label">Aseguradoras<br/>aliadas</div>
+    <h2 class="cm-title reveal" id="cm-title">Lo que sí te puedo prometer</h2>
+    <ul class="cm-grid" role="list">
+      <li class="cm-tile reveal">
+        <span class="cm-num">$0</span>
+        <strong>Primera asesoría y diagnóstico</strong>
+        <span>Sin costo y sin compromiso de contratar.</span>
+      </li>
+      <li class="cm-tile reveal reveal-delay-1">
+        <span class="cm-num">1 a 1</span>
+        <strong>Te atiendo yo</strong>
+        <span>Guadalupe, en persona o por videollamada. No un call center.</span>
+      </li>
+      <li class="cm-tile reveal reveal-delay-2">
+        <span class="cm-num">3</span>
+        <strong>Escenarios para elegir</strong>
+        <span>Esencial, ideal y acelerado, con costos y restricciones a la vista.</span>
+      </li>
+      <li class="cm-tile reveal reveal-delay-3">
+        <span class="cm-num">2</span>
+        <strong>Revisiones al año</strong>
+        <span>Tu plan se ajusta contigo; no te dejo sola ni solo después de firmar.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================================================
+     TU ASESORA
+==================================================== -->
+<section id="asesora" aria-labelledby="asesora-title">
+  <div class="wrap">
+    <div class="as-grid">
+      <figure class="as-photo reveal">
+        <img src="img/perfil.webp" alt="Guadalupe F. Godínez, fundadora y asesora principal de GFG Finanzas" loading="lazy" />
+        <figcaption>
+          <strong>Guadalupe F. Godínez</strong>
+          <span>Fundadora y asesora principal · GFG Finanzas</span>
+        </figcaption>
+      </figure>
+      <div class="as-body reveal reveal-delay-1">
+        <span class="tag"><i class="fas fa-user" aria-hidden="true"></i>Tu asesora</span>
+        <h2 class="h-section" id="asesora-title">No vendo productos.<br/>Construyo <em>estrategias</em> contigo.</h2>
+        <p class="as-bio">Llevo más de 8 años en el mundo de los seguros y las finanzas, y he visto lo mismo una y otra vez: gente trabajadora que gana bien, pero que llega a los 50 sin un plan y con la sensación de que “ya se le hizo tarde”. Nunca es tarde, y casi siempre es más fácil de lo que crees.</p>
+        <p class="as-bio">Por eso te lo explico como me hubiera gustado que me lo explicaran a mí: sin letra chica, sin tecnicismos y sin venderte algo que no necesitas.</p>
+        <ul class="as-points" role="list">
+          <li><i class="fas fa-user-check" aria-hidden="true"></i><strong>A tu medida</strong><span>Primero entiendo tu situación; después hablamos de productos.</span></li>
+          <li><i class="fas fa-scale-balanced" aria-hidden="true"></i><strong>Con todo a la vista</strong><span>Beneficios, costos, plazos y restricciones antes de que firmes.</span></li>
+          <li><i class="fas fa-infinity" aria-hidden="true"></i><strong>Contigo después</strong><span>Revisiones, ajustes y apoyo cuando necesites usar tu seguro.</span></li>
+        </ul>
+        <div class="as-foot">
+          <div class="asesora-chips" role="list" aria-label="Certificaciones y especialidades">
+            <span class="chip" role="listitem"><i class="fas fa-certificate" aria-hidden="true"></i>Certificada AMIB</span>
+            <span class="chip" role="listitem"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Finanzas Personales</span>
+            <span class="chip" role="listitem"><i class="fas fa-building-columns" aria-hidden="true"></i>Planeación Patrimonial</span>
+          </div>
+          <div class="asesora-socials" role="list" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/gfgfinanzas" class="soc-btn" aria-label="Instagram de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/gfgfinanzas"  class="soc-btn" aria-label="Facebook de GFG Finanzas"  role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/gfgfinanzas" class="soc-btn" aria-label="LinkedIn de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://wa.me/527717021729" class="soc-btn" aria-label="WhatsApp de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====================================================
-     ¿POR QUÉ GFG?
-==================================================== -->
-<section id="porque" aria-labelledby="porque-title">
-  <div class="wrap">
-    <div class="porque-grid">
-      <div class="porque-left reveal">
-        <div class="porque-frame">
-          <img src="img/perfil.jpeg" alt="Guadalupe atendiendo a una clienta en su oficina de GFG Finanzas" loading="lazy" />
-        </div>
-        <div class="porque-badge" aria-hidden="true">
-          <div class="stars">★★★★★</div>
-          <strong>"Cambió mi vida financiera"</strong>
-          <span>Alejandra M. — CDMX</span>
-        </div>
-      </div>
-      <div class="porque-right reveal reveal-delay-1">
-        <span class="tag"><i class="fas fa-shield-heart" aria-hidden="true"></i>¿Por qué elegirnos?</span>
-        <h2 class="h-section" id="porque-title">No vendemos productos.<br/>Construimos <em>estrategias</em>.</h2>
-        <p class="sub">En GFG Finanzas creemos que toda persona merece asesoría financiera honesta, clara y sin letra chica.</p>
-        <div class="features-list" role="list">
-          <div class="feature reveal reveal-delay-1" role="listitem">
-            <div class="feat-ico"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
-            <div>
-              <h4>Asesoría 100% personalizada</h4>
-              <p>Analizamos tu situación real antes de recomendar cualquier producto. Tu plan es único, como tú.</p>
-            </div>
-          </div>
-          <div class="feature reveal reveal-delay-2" role="listitem">
-            <div class="feat-ico"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
-            <div>
-              <h4>Total transparencia</h4>
-              <p>Te explicamos cada detalle en lenguaje claro, sin tecnicismos ni sorpresas. Lo que ves es lo que pagas.</p>
-            </div>
-          </div>
-          <div class="feature reveal reveal-delay-3" role="listitem">
-            <div class="feat-ico"><i class="fas fa-infinity" aria-hidden="true"></i></div>
-            <div>
-              <h4>Acompañamiento continuo</h4>
-              <p>No desaparecemos tras la firma. Estamos contigo en cada revisión y en cada momento importante.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
 
 <!-- ====================================================
      SINIESTROS / ACOMPAÑAMIENTO EN EL RECLAMO
@@ -1840,12 +1475,12 @@
       <div class="sin-content reveal">
         <span class="tag"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i>Cuando de verdad importa</span>
         <h2 class="h-section" id="siniestros-title">El seguro sirve el día que<br/>tienes que <em>usarlo</em></h2>
-        <p class="sub">Muchos asesores desaparecen después de la venta. Nosotros hacemos justo lo contrario: cuando pasa algo, damos la cara por ti y peleamos tu reclamación hasta el final.</p>
+        <p class="sub">Muchos asesores desaparecen después de la venta. Yo hago justo lo contrario: cuando pasa algo, te acompaño en tu reclamación de principio a fin.</p>
         <div class="sin-steps" role="list">
           <div class="sin-step reveal" role="listitem">
             <div class="sin-step-num" aria-hidden="true">1</div>
             <div>
-              <h4>Nos llamas a nosotros, no a un call center</h4>
+              <h4>Me llamas a mí, no a un call center</h4>
               <p>Tienes un contacto directo que ya conoce tu caso. Nada de esperar en línea ni repetir tu historia diez veces.</p>
             </div>
           </div>
@@ -1853,86 +1488,66 @@
             <div class="sin-step-num" aria-hidden="true">2</div>
             <div>
               <h4>Preparamos tu reclamación contigo</h4>
-              <p>Te decimos exactamente qué papeles necesitas y armamos el expediente para que la aseguradora no tenga pretextos.</p>
+              <p>Te digo exactamente qué papeles necesitas y armamos juntos el expediente, completo desde la primera vez.</p>
             </div>
           </div>
           <div class="sin-step reveal reveal-delay-2" role="listitem">
             <div class="sin-step-num" aria-hidden="true">3</div>
             <div>
-              <h4>Damos seguimiento hasta que te pagan</h4>
-              <p>Vigilamos cada paso del proceso y te mantenemos informado. Nuestro trabajo termina cuando tu problema queda resuelto.</p>
+              <h4>Doy seguimiento hasta que se resuelve</h4>
+              <p>Sigo cada paso del trámite con la aseguradora y te mantengo al tanto, para que no tengas que perseguir a nadie.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="sin-visual reveal reveal-delay-1">
-        <div class="sin-visual-inner">
-          <div class="quote-mark" aria-hidden="true">"</div>
-          <blockquote>"Cuando hospitalizaron a mi papá, Guadalupe se encargó de todo el papeleo con el seguro. Yo solo tuve que preocuparme por él."</blockquote>
-          <cite>
-            <strong>Carmen Alvarado</strong>
-            Docente · Michoacán
-          </cite>
-          <div class="sin-badge">
-            <i class="fas fa-shield-heart" aria-hidden="true"></i>
-            Acompañamiento en siniestros incluido, siempre
-          </div>
-        </div>
-      </div>
+      <aside class="sin-promise reveal reveal-delay-1" aria-labelledby="sin-promise-title">
+        <span class="tag tag-glass"><i class="fas fa-shield-heart" aria-hidden="true"></i>Mi compromiso</span>
+        <h3 id="sin-promise-title">Si un día necesitas usar tu seguro, no vas a resolverlo por tu cuenta.</h3>
+        <ul>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Un solo contacto que ya conoce tu póliza: yo.</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Te digo qué documentos reunir y cómo presentarlos.</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Doy seguimiento con la aseguradora y te aviso de cada avance.</li>
+          <li><i class="fas fa-check" aria-hidden="true"></i>Reviso contigo tu póliza cada año para que no haya sorpresas.</li>
+        </ul>
+        <p class="sin-nota">La resolución de cada reclamación depende de las condiciones de tu póliza y de la aseguradora.</p>
+        <a href="#contacto" class="btn-white"><i class="fas fa-file-shield" aria-hidden="true"></i> Revisar mi póliza actual sin costo</a>
+      </aside>
     </div>
   </div>
 </section>
 
 <!-- ====================================================
-     TESTIMONIOS
+     QUÉ PASA DESPUÉS
 ==================================================== -->
-<section id="testimonios" aria-labelledby="testimonios-title">
+<section id="siguiente" aria-labelledby="sg-title">
   <div class="wrap">
-    <div class="testi-header reveal">
-      <span class="tag"><i class="fas fa-quote-left" aria-hidden="true"></i>Testimonios</span>
-      <h2 class="h-section" id="testimonios-title">Lo que dicen quienes ya <em>confían</em> en nosotros</h2>
-      <p class="sub">Historias reales de personas que dieron el primer paso.</p>
+    <div class="sg-header reveal">
+      <span class="tag"><i class="fas fa-comments" aria-hidden="true"></i>Sin sorpresas</span>
+      <h2 class="h-section" id="sg-title">Qué pasa cuando <em>me escribes</em></h2>
+      <p class="sub">Nadie te va a llamar diez veces ni a presionarte. El proceso es este:</p>
     </div>
-    <div class="testi-grid" role="list">
-      <article class="tcard reveal" role="listitem">
-        <div class="tcard-quote" aria-hidden="true">"</div>
-        <div class="tcard-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tcard-text">"Llegué sin saber nada de seguros y me sentí abrumada. Guadalupe me lo explicó todo con tanta claridad que en una sesión tomé la decisión que llevaba años posponiendo. Hoy mi familia está protegida."</p>
-        <div class="tcard-author">
-          <div class="tcard-avatar" aria-hidden="true">MR</div>
-          <div>
-            <div class="tcard-name">María Rodríguez</div>
-            <div class="tcard-role">Emprendedora · CDMX</div>
-          </div>
-        </div>
-      </article>
-      <article class="tcard reveal reveal-delay-1" role="listitem">
-        <div class="tcard-quote" aria-hidden="true">"</div>
-        <div class="tcard-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tcard-text">"Pensaba que invertir era solo para gente con mucho dinero. Me demostró que con mis ingresos podía empezar un plan de retiro real. Llevo 2 años y ya veo los resultados."</p>
-        <div class="tcard-author">
-          <div class="tcard-avatar" aria-hidden="true">LG</div>
-          <div>
-            <div class="tcard-name">Luis García</div>
-            <div class="tcard-role">Ingeniero · Jalisco</div>
-          </div>
-        </div>
-      </article>
-      <article class="tcard reveal reveal-delay-2" role="listitem">
-        <div class="tcard-quote" aria-hidden="true">"</div>
-        <div class="tcard-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tcard-text">"Contraté un seguro médico para toda mi familia y cuando lo necesitamos, el proceso fue rapidísimo. Guadalupe nos acompañó en cada paso de la reclamación. Eso no tiene precio."</p>
-        <div class="tcard-author">
-          <div class="tcard-avatar" aria-hidden="true">CA</div>
-          <div>
-            <div class="tcard-name">Carmen Alvarado</div>
-            <div class="tcard-role">Docente · Michoacán</div>
-          </div>
-        </div>
-      </article>
-    </div>
+    <ol class="sg-steps" role="list">
+      <li class="sg-step reveal">
+        <span class="sg-time"><i class="far fa-clock" aria-hidden="true"></i>2 minutos</span>
+        <h3>Me cuentas qué necesitas</h3>
+        <p>Por el formulario o por WhatsApp. Solo te pido nombre, edad y en qué te puedo ayudar.</p>
+      </li>
+      <li class="sg-step reveal reveal-delay-1">
+        <span class="sg-time"><i class="far fa-clock" aria-hidden="true"></i>30 a 60 minutos</span>
+        <h3>Platicamos tú y yo</h3>
+        <p>En persona o por videollamada. Revisamos tus ingresos, tus metas y lo que ya tienes: AFORE, ahorro y seguros.</p>
+      </li>
+      <li class="sg-step reveal reveal-delay-2">
+        <span class="sg-time"><i class="far fa-clock" aria-hidden="true"></i>1 a 2 días después</span>
+        <h3>Recibes tu diagnóstico</h3>
+        <p>Con opciones comparadas, costos y restricciones explicados. Tú decides si contratas, cuándo y cuánto.</p>
+      </li>
+    </ol>
+    <p class="sg-nota reveal"><i class="fas fa-circle-info" aria-hidden="true"></i>La asesoría no tiene costo para ti. Si decides contratar, mi ingreso es la comisión que paga la aseguradora: no te cobro honorarios.</p>
   </div>
 </section>
+
+
 
 <!-- ====================================================
      FAQ (NUEVA SECCIÓN)
@@ -1973,44 +1588,6 @@
   </div>
 </section>
 
-<!-- ====================================================
-     ASESORA
-==================================================== -->
-<section id="asesora" aria-labelledby="asesora-title">
-  <div class="wrap">
-    <div class="asesora-grid">
-      <div class="asesora-photo-wrap reveal">
-        <div class="asesora-frame">
-          <img src="img/perfil.jpeg" alt="Guadalupe, fundadora y asesora principal de GFG Finanzas" loading="lazy" />
-        </div>
-        <div class="asesora-deco-1" aria-hidden="true"></div>
-        <div class="asesora-deco-2" aria-hidden="true"></div>
-      </div>
-      <div class="asesora-content reveal reveal-delay-1">
-        <span class="tag"><i class="fas fa-user" aria-hidden="true"></i>Tu asesora</span>
-        <h2 class="h-section" id="asesora-title">Hola,<br/>soy <em>Guadalupe</em></h2>
-        <p class="sub">Fundadora y asesora principal de GFG Finanzas</p>
-        <p class="asesora-bio">
-          Llevo más de 8 años en el mundo de los seguros y las finanzas, y en todo ese tiempo he visto lo mismo una y otra vez: gente trabajadora que gana bien, pero que llega a los 50 sin un plan y con la sensación de que "ya se le hizo tarde". Odio esa sensación. Nunca es tarde, y casi siempre es más fácil de lo que crees.
-          <br/><br/>
-          Por eso hago esto como me hubiera gustado que me lo explicaran a mí: sin letra chica, sin tecnicismos y sin venderte algo que no necesitas. Te siento del otro lado de la mesa como si fueras de mi familia, porque al final estamos hablando de proteger a la tuya.
-        </p>
-        <div class="asesora-chips" role="list" aria-label="Certificaciones y especialidades">
-          <span class="chip" role="listitem"><i class="fas fa-certificate" aria-hidden="true"></i>Certificada AMIB</span>
-          <span class="chip" role="listitem"><i class="fas fa-shield-alt" aria-hidden="true"></i>Agente CONDUSEF</span>
-          <span class="chip" role="listitem"><i class="fas fa-graduation-cap" aria-hidden="true"></i>Finanzas Personales</span>
-          <span class="chip" role="listitem"><i class="fas fa-building-columns" aria-hidden="true"></i>Planeación Patrimonial</span>
-        </div>
-        <div class="asesora-socials" role="list" aria-label="Redes sociales">
-          <a href="https://www.instagram.com/gfgfinanzas" class="soc-btn" aria-label="Instagram de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-          <a href="https://www.facebook.com/gfgfinanzas"  class="soc-btn" aria-label="Facebook de GFG Finanzas"  role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/company/gfgfinanzas" class="soc-btn" aria-label="LinkedIn de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="https://wa.me/527717021729" class="soc-btn" aria-label="WhatsApp de GFG Finanzas" role="listitem" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ====================================================
      CONTACTO
@@ -2052,9 +1629,9 @@
             </div>
           </div>
         </div>
-        <div class="countdown-block" role="note" aria-live="polite">
-          <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
-          <p>Esta semana solo hay <strong id="spots-inline">4 lugares</strong> para asesoría gratuita. <strong>¡Agenda ahora!</strong></p>
+        <div class="countdown-block" role="note">
+          <i class="fas fa-user-check" aria-hidden="true"></i>
+          <p>Te atiende <strong>Guadalupe personalmente</strong>, no un call center. Respondemos en horario de atención.</p>
         </div>
       </div>
 
@@ -2062,6 +1639,7 @@
         <h3 class="form-card-title">Solicita tu asesoría gratuita</h3>
         <p class="form-card-sub">Completa el formulario y te contactamos en menos de 24 horas.</p>
         <form id="lead-form" novalidate aria-label="Formulario de contacto">
+          <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
@@ -2076,8 +1654,8 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email" />
+              <label for="email">Correo electrónico <span class="lf-opt">(opcional)</span></label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
               <span class="field-error" id="err-email" role="alert">Ingresa un correo válido.</span>
             </div>
             <div class="form-group">
@@ -2102,7 +1680,7 @@
           </div>
           <div class="form-privacy">
             <input type="checkbox" id="privacidad" name="privacidad" required />
-            <label for="privacidad">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
+            <label for="privacidad">He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</label>
           </div>
           <span class="field-error" id="err-privacidad" role="alert" style="display:none;margin-bottom:10px;">Debes aceptar el aviso de privacidad.</span>
           <button type="submit" class="btn btn-primary btn-full btn-lg">
@@ -2119,7 +1697,7 @@
           <div class="icon"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
           <h4>¡Listo! Tu solicitud fue enviada</h4>
           <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
-          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20en%20la%20web" class="btn btn-wa btn-full" style="margin-top:16px;" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20en%20la%20web" class="btn btn-wa btn-full" data-gfg-agenda style="margin-top:16px;" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             También escríbenos por WhatsApp
           </a>
@@ -2152,9 +1730,17 @@
         <p id="news-msg" role="alert" aria-live="polite"></p>
       </div>
     </div>
+    <a href="cotizador.html" class="footer-app">
+      <span class="footer-app-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--calc" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="a" x="11" y="5.5" width="26" height="37" rx="7"/><path class="ic-draw" pathLength="1" d="M16.5 18.500l4.2-4.2 3.6 3 6.2-6"/><g class="f" stroke="none"><circle cx="18" cy="27.5" r="1.9"/><circle cx="24" cy="27.5" r="1.9"/><circle cx="30" cy="27.5" r="1.9"/><circle cx="18" cy="34.5" r="1.9"/><circle cx="24" cy="34.5" r="1.9"/><circle cx="30" cy="34.5" r="1.9"/></g></svg></span>
+      <span class="footer-app-txt">
+        <strong>Cotizador de Retiro y PPR</strong>
+        <span>Proyecta tu plan junto con tu AFORE, mira el desglose año por año y descarga tu cotización en PDF.</span>
+      </span>
+      <span class="footer-app-cta">Abrir cotizador <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+    </a>
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="44" loading="lazy" />
+        <span class="gfg-logo" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
         <p>Tu aliado financiero de confianza. Protegemos lo que más te importa y hacemos crecer tu patrimonio con estrategias claras y personalizadas.</p>
         <div class="footer-socials" aria-label="Redes sociales de GFG Finanzas">
           <a href="https://www.instagram.com/gfgfinanzas" class="fsoc" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -2172,6 +1758,7 @@
           <li><a href="#servicios">Plan de inversión</a></li>
           <li><a href="#servicios">Plan de ahorro</a></li>
           <li><a href="#servicios">Plan de retiro</a></li>
+          <li><a href="cotizador.html">Cotizador de retiro</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Contacto y empresa">
@@ -2191,7 +1778,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
-      <p>Hecho con <span style="color:var(--rosa)" aria-label="amor">♥</span> en México</p>
+      <p><a href="aviso-de-privacidad.html">Aviso de privacidad</a> · Hecho con <span style="color:var(--rosa)" aria-label="amor">♥</span> en México</p>
     </div>
   </div>
 </footer>
@@ -2200,388 +1787,11 @@
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
-<div id="fomo-container" aria-live="polite" aria-atomic="false"></div>
 
-<div id="live-counter" aria-live="polite">
-  <span class="dot" aria-hidden="true"></span>
-  <span><strong id="viewer-count">14</strong> viendo ahora</span>
-</div>
 
-<!-- ====================================================
-     JAVASCRIPT
-==================================================== -->
-<script>
-/* ===== URGENCY BAR: persiste cierre en localStorage ===== */
-(function() {
-  if (localStorage.getItem('gfg-bar-closed') === '1') {
-    const bar = document.getElementById('urgency-bar');
-    if (bar) bar.style.display = 'none';
-  }
-})();
-document.getElementById('bar-close').addEventListener('click', () => {
-  document.getElementById('urgency-bar').style.display = 'none';
-  localStorage.setItem('gfg-bar-closed', '1');
-});
-
-/* ===== NAVBAR SHADOW ===== */
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('shadow', window.scrollY > 20);
-}, { passive: true });
-
-/* ===== HAMBURGER + FOCUS TRAP ===== */
-const ham    = document.getElementById('ham');
-const drawer = document.getElementById('drawer');
-
-function getFocusable() {
-  return Array.from(drawer.querySelectorAll('a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'));
-}
-function trapFocus(e) {
-  if (e.key !== 'Tab') return;
-  const els = getFocusable();
-  const first = els[0], last = els[els.length - 1];
-  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-}
-function openMenu() {
-  drawer.classList.add('open');
-  ham.classList.add('active');
-  ham.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-  drawer.addEventListener('keydown', trapFocus);
-  const focusable = getFocusable();
-  if (focusable.length) focusable[0].focus();
-}
-function closeMenu() {
-  drawer.classList.remove('open');
-  ham.classList.remove('active');
-  ham.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-  drawer.removeEventListener('keydown', trapFocus);
-  ham.focus();
-}
-ham.addEventListener('click', () => drawer.classList.contains('open') ? closeMenu() : openMenu());
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeMenu(); });
-
-/* ===== SUPABASE ===== */
-const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
-
-/* ===== FORM VALIDATION ===== */
-const form = document.getElementById('lead-form');
-
-function validateField(id, errId, checkFn) {
-  const input = document.getElementById(id);
-  const err   = document.getElementById(errId);
-  const valid = checkFn(input);
-  input.classList.toggle('error', !valid);
-  err.classList.toggle('show', !valid);
-  return valid;
-}
-
-function validateAll() {
-  const n  = validateField('nombre',   'err-nombre',   el => el.value.trim().length >= 2);
-  const ed = validateField('edad',     'err-edad',     el => { const v = parseInt(el.value); return Number.isFinite(v) && v >= 18 && v <= 75; });
-  const em = validateField('email',    'err-email',    el => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
-  const t  = validateField('telefono', 'err-telefono', el => /^\d{10}$/.test(el.value.replace(/\s/g, '')));
-  const s  = validateField('servicio', 'err-servicio', el => el.value !== '');
-  const cb = document.getElementById('privacidad');
-  const errCb = document.getElementById('err-privacidad');
-  const p  = cb.checked;
-  errCb.style.display = p ? 'none' : 'block';
-  return n && ed && em && t && s && p;
-}
-
-/* Clear error on input */
-['nombre','edad','email','telefono','servicio'].forEach(id => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.addEventListener('input', () => {
-    el.classList.remove('error');
-    const errEl = document.getElementById('err-' + id);
-    if (errEl) errEl.classList.remove('show');
-  });
-});
-
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  if (!validateAll()) return;
-
-  /* Guardar en Supabase */
-  try {
-    const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    db.from('leads').insert([{
-      fuente:      'inicio',
-      nombre:      document.getElementById('nombre').value.trim(),
-      edad_actual: document.getElementById('edad').value.trim(),
-      correo:      document.getElementById('email').value.trim(),
-      whatsapp:    document.getElementById('telefono').value.trim(),
-      tipo_plan:   document.getElementById('servicio').value,
-      estatus:     'Nuevo',
-      notas:       ''
-    }]).then(() => {}).catch(() => {});
-  } catch(_) {}
-
-  /* Meta Pixel Lead event */
-  if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'inicio', content_category: 'Seguros' });
-
-  this.style.display = 'none';
-  document.getElementById('form-success').style.display = 'block';
-  const n = Math.max(1, spots - 1);
-  spots = n;
-  updateSpots(n);
-});
-
-/* ===== SPOTS COUNTER ===== */
-let spots = 4;
-function updateSpots(n) {
-  const label = n + ' lugar' + (n === 1 ? '' : 'es');
-  document.getElementById('spots-count').textContent  = label;
-  document.getElementById('spots-inline').textContent = label;
-}
-function scheduleDecay() {
-  const delay = 180000 + Math.random() * 180000;
-  setTimeout(() => {
-    if (spots > 1) { spots--; updateSpots(spots); }
-    scheduleDecay();
-  }, delay);
-}
-scheduleDecay();
-
-/* ===== SCROLL REVEAL ===== */
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-/* ===== FOMO TOASTS ===== */
-const fomoEvents = [
-  { i: 'MF', name: 'Martha F. de Guadalajara',  action: 'acaba de agendar su asesoría gratuita',    t: 'hace 2 min'  },
-  { i: 'RP', name: 'Roberto P. de CDMX',         action: 'contrató su seguro de gastos médicos',     t: 'hace 5 min'  },
-  { i: 'SL', name: 'Sandra L. de Monterrey',     action: 'empezó su plan de retiro hoy',             t: 'hace 7 min'  },
-  { i: 'JC', name: 'Jorge C. de Querétaro',      action: 'solicitó una cotización de seguro de vida', t: 'hace 9 min'  },
-  { i: 'AN', name: 'Ana N. de Puebla',           action: 'contrató un plan de ahorro programado',    t: 'hace 11 min' },
-  { i: 'DV', name: 'Diego V. de León',           action: 'agendó su asesoría financiera',             t: 'hace 14 min' },
-  { i: 'LR', name: 'Laura R. de Tijuana',        action: 'contrató seguro de vida para su familia',  t: 'hace 16 min' },
-  { i: 'CM', name: 'Carlos M. de Jalisco',       action: 'inició su plan de inversión',               t: 'hace 19 min' },
-];
-let fomoIdx = 0, activeToast = null;
-
-function showToast() {
-  const d = fomoEvents[fomoIdx % fomoEvents.length]; fomoIdx++;
-  const container = document.getElementById('fomo-container');
-  if (activeToast) { activeToast.classList.add('out'); setTimeout(() => activeToast?.remove(), 400); }
-  const toast = document.createElement('div');
-  toast.className = 'fomo-toast';
-  toast.setAttribute('role', 'status');
-  toast.innerHTML = `<div class="fomo-avatar" aria-hidden="true">${d.i}</div><div class="fomo-body"><strong>${d.name}</strong><span>${d.action} · ${d.t}</span></div><button class="fomo-close" aria-label="Cerrar">✕</button>`;
-  toast.querySelector('.fomo-close').addEventListener('click', () => {
-    toast.classList.add('out');
-    setTimeout(() => toast.remove(), 400);
-    if (activeToast === toast) activeToast = null;
-  });
-  container.appendChild(toast);
-  activeToast = toast;
-  setTimeout(() => {
-    if (toast.parentNode) { toast.classList.add('out'); setTimeout(() => toast.remove(), 400); if (activeToast === toast) activeToast = null; }
-  }, 5000);
-}
-function scheduleToast() {
-  setTimeout(() => { showToast(); scheduleToast(); }, 18000 + Math.random() * 10000);
-}
-setTimeout(() => { showToast(); scheduleToast(); }, 8000);
-
-/* ===== LIVE VIEWER COUNTER (recursive setTimeout) ===== */
-let viewers = 11 + Math.floor(Math.random() * 8);
-document.getElementById('viewer-count').textContent = viewers;
-function updateViewers() {
-  viewers = Math.max(8, Math.min(28, viewers + (Math.random() < 0.5 ? -1 : 1)));
-  document.getElementById('viewer-count').textContent = viewers;
-  setTimeout(updateViewers, 5000 + Math.random() * 5000);
-}
-setTimeout(updateViewers, 5000 + Math.random() * 5000);
-
-/* ===== SMOOTH SCROLL ===== */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-});
-
-/* ===== 3D CARD TILT ===== */
-if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-  document.querySelectorAll('.bcard, .tcard').forEach(card => {
-    card.addEventListener('mousemove', function(e) {
-      const r  = card.getBoundingClientRect();
-      const x  = e.clientX - r.left;
-      const y  = e.clientY - r.top;
-      const rx = ((y - r.height / 2) / (r.height / 2)) * -6;
-      const ry = ((x - r.width  / 2) / (r.width  / 2)) * 6;
-      card.style.transition = 'box-shadow .15s ease, transform .08s ease';
-      card.style.transform  = `perspective(960px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px) scale(1.015)`;
-      card.style.setProperty('--mx', (x / r.width  * 100) + '%');
-      card.style.setProperty('--my', (y / r.height * 100) + '%');
-    });
-    card.addEventListener('mouseleave', function() {
-      card.style.transition = 'transform .55s cubic-bezier(.2,0,0,1), box-shadow .55s cubic-bezier(.2,0,0,1)';
-      card.style.transform  = 'perspective(960px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
-      setTimeout(() => { card.style.transition = ''; card.style.transform = ''; }, 560);
-    });
-  });
-}
-
-/* ===== NUMBER COUNTER ANIMATION ===== */
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el  = entry.target;
-    const raw = el.textContent.trim();
-    const num = parseInt(raw.replace(/\D/g, ''));
-    if (!num) return;
-    const prefix = raw.startsWith('+') ? '+' : '';
-    const suffix = raw.endsWith('%') ? '%' : raw.endsWith('★') ? ' ★' : '';
-    let cur = 0;
-    const step = Math.ceil(num / 50);
-    const timer = setInterval(() => {
-      cur = Math.min(cur + step, num);
-      el.textContent = prefix + cur + suffix;
-      if (cur >= num) clearInterval(timer);
-    }, 20);
-    counterObs.unobserve(el);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-num').forEach(el => counterObs.observe(el));
-
-/* ===== CALCULADORA DE RETIRO (LEAD MAGNET) ===== */
-(function() {
-  const elEdad    = document.getElementById('calc-edad');
-  const elAhorro  = document.getElementById('calc-ahorro');
-  const elRetiro  = document.getElementById('calc-retiro');
-  if (!elEdad) return;
-
-  const RATE = 0.09; /* rendimiento anual promedio de referencia (PPR) */
-  const nf   = new Intl.NumberFormat('es-MX');
-
-  const outEdad   = document.getElementById('calc-edad-val');
-  const outAhorro = document.getElementById('calc-ahorro-val');
-  const outRetiro = document.getElementById('calc-retiro-val');
-  const outTotal  = document.getElementById('calc-total');
-  const outAport  = document.getElementById('calc-aportado');
-  const outRend   = document.getElementById('calc-rendimiento');
-
-  function fillRange(el) {
-    const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
-    el.style.background = `linear-gradient(90deg, var(--rosa) 0%, var(--terracota) ${pct}%, rgba(34,45,68,.12) ${pct}%)`;
-  }
-
-  function calc() {
-    const edad   = parseInt(elEdad.value);
-    const ahorro = parseInt(elAhorro.value);
-    let   retiro = parseInt(elRetiro.value);
-    if (retiro <= edad) retiro = edad + 1;
-
-    const n = (retiro - edad) * 12;          /* meses */
-    const i = RATE / 12;                       /* tasa mensual */
-    const fv = ahorro * ((Math.pow(1 + i, n) - 1) / i);
-    const aportado = ahorro * n;
-    const rendimiento = Math.max(0, fv - aportado);
-
-    outEdad.textContent   = edad;
-    outAhorro.textContent = nf.format(ahorro);
-    outRetiro.textContent = retiro;
-    outTotal.textContent  = nf.format(Math.round(fv));
-    outAport.textContent  = nf.format(Math.round(aportado));
-    outRend.textContent   = nf.format(Math.round(rendimiento));
-
-    [elEdad, elAhorro, elRetiro].forEach(fillRange);
-  }
-
-  [elEdad, elAhorro, elRetiro].forEach(el => el.addEventListener('input', calc));
-  calc();
-
-  /* Captura del formulario de la calculadora */
-  const cForm = document.getElementById('calc-form');
-  const cNom  = document.getElementById('calc-nombre');
-  const cWa   = document.getElementById('calc-whatsapp');
-
-  [cNom, cWa].forEach(el => el.addEventListener('input', () => {
-    el.classList.remove('error');
-    const err = document.getElementById('err-' + el.id.replace('calc-', 'calc-'));
-    if (err) err.classList.remove('show');
-  }));
-
-  cForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const okN = cNom.value.trim().length >= 2;
-    const okW = /^\d{10}$/.test(cWa.value.replace(/\s/g, ''));
-    cNom.classList.toggle('error', !okN);
-    document.getElementById('err-calc-nombre').classList.toggle('show', !okN);
-    cWa.classList.toggle('error', !okW);
-    document.getElementById('err-calc-whatsapp').classList.toggle('show', !okW);
-    if (!okN || !okW) return;
-
-    try {
-      const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      db.from('leads').insert([{
-        fuente:      'calculadora',
-        nombre:      cNom.value.trim(),
-        edad_actual: elEdad.value,
-        whatsapp:    cWa.value.trim(),
-        tipo_plan:   'retiro',
-        estatus:     'Nuevo',
-        notas:       `Proyección calculadora: ahorro $${elAhorro.value}/mes, retiro a los ${elRetiro.value}, estimado $${outTotal.textContent}`
-      }]).then(() => {}).catch(() => {});
-    } catch(_) {}
-
-    if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'calculadora', content_category: 'Retiro' });
-
-    document.getElementById('calc-live').style.display = 'none';
-    document.getElementById('calc-success').style.display = 'block';
-  });
-})();
-
-/* ===== NEWSLETTER (footer) ===== */
-(function() {
-  const nForm = document.getElementById('news-form');
-  if (!nForm) return;
-  const nEmail = document.getElementById('news-email');
-  const nMsg   = document.getElementById('news-msg');
-
-  nForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(nEmail.value.trim());
-    if (!ok) {
-      nEmail.classList.add('error');
-      nMsg.textContent = 'Escribe un correo válido, por favor.';
-      nMsg.className = 'bad';
-      return;
-    }
-    nEmail.classList.remove('error');
-
-    try {
-      const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-      db.from('leads').insert([{
-        fuente:   'newsletter',
-        correo:   nEmail.value.trim(),
-        estatus:  'Suscriptor',
-        notas:    'Alta desde newsletter del footer'
-      }]).then(() => {}).catch(() => {});
-    } catch(_) {}
-
-    if (typeof fbq === 'function') fbq('track', 'Subscribe', { content_name: 'newsletter' });
-
-    nForm.reset();
-    nMsg.textContent = '¡Listo! Revisa tu correo, te escribimos pronto. 💛';
-    nMsg.className = 'ok';
-  });
-})();
-</script>
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
+<script src="js/home.js?v=32"></script>
 
 <!-- STICKY MOBILE CTA BAR -->
 <div class="mobile-bar" aria-label="Acciones rápidas">

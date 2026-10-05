@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Cotizador de Retiro y PPR — GFG Finanzas</title>
+  <meta name="description" content="Calcula tu meta de retiro, proyecta tu Plan Personal de Retiro junto con tu AFORE y descarga tu cotización en PDF. GFG Finanzas." />
+  <meta name="theme-color" content="#222D44" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Cotizador GFG" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/cotizador.html" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
+  <link rel="stylesheet" href="css/cotizador.css?v=32" />
+</head>
+<body class="cz-body">
+
+<header class="cz-top">
+  <a href="index.html" class="cz-top-logo" aria-label="GFG Finanzas — Inicio">
+    <span class="gfg-logo gfg-logo--light" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
+  </a>
+  <h1 class="cz-top-titulo">Cotizador de retiro</h1>
+  <div class="cz-top-acciones">
+    <button type="button" class="cz-top-btn cz-solo-pro" id="cz-abrir-guardadas">
+      <i class="fas fa-folder-open" aria-hidden="true"></i><span>Guardadas</span><b id="cz-guardadas-n"></b>
+    </button>
+    <button type="button" class="cz-top-btn" id="cz-nueva">
+      <i class="fas fa-plus" aria-hidden="true"></i><span>Nueva</span>
+    </button>
+    <label class="cz-switch cz-switch--claro" title="Activa las herramientas de la asesora: guardar cotizaciones y enviarlas al cliente">
+      <input type="checkbox" id="cz-modo-asesora" />
+      <span class="cz-switch-pista" aria-hidden="true"></span>
+      <span class="cz-switch-texto">Modo asesora</span>
+    </label>
+  </div>
+</header>
+
+<main class="cz-app" id="cz-app">
+
+  <!-- ====================================================  DATOS  -->
+  <form class="cz-datos" id="cz-form" novalidate aria-label="Datos de la cotización">
+
+    <section class="cz-grupo" aria-labelledby="cz-g1">
+      <h2 class="cz-grupo-titulo" id="cz-g1"><span class="cz-paso">1</span>Meta de retiro</h2>
+      <div class="cz-lista">
+        <label class="cz-fila">
+          <span class="cz-fila-nombre">Nombre</span>
+          <input type="text" id="cz-nombre" autocomplete="name" placeholder="Nombre y apellido" />
+        </label>
+        <label class="cz-fila cz-solo-pro">
+          <span class="cz-fila-nombre">WhatsApp del cliente</span>
+          <input type="tel" id="cz-wa" inputmode="numeric" maxlength="14" placeholder="10 dígitos" />
+        </label>
+        <label class="cz-fila">
+          <span class="cz-fila-nombre">Edad actual</span>
+          <span class="cz-con-sufijo"><input type="number" id="cz-edad" inputmode="numeric" min="18" max="70" placeholder="35" /><i>años</i></span>
+        </label>
+        <div class="cz-fila cz-fila--rango">
+          <label class="cz-fila-nombre" for="cz-retiro">Edad de retiro</label>
+          <output class="cz-fila-valor" id="cz-retiro-val" for="cz-retiro">65 años</output>
+          <input type="range" id="cz-retiro" class="cz-rango" min="60" max="75" step="1" value="65" />
+        </div>
+        <label class="cz-fila">
+          <span class="cz-fila-nombre">Ingreso mensual deseado<small>En pesos de hoy</small></span>
+          <span class="cz-con-prefijo"><i>$</i><input type="text" id="cz-meta" data-cz-dinero inputmode="numeric" placeholder="30,000" /></span>
+        </label>
+      </div>
+
+      <div class="cz-lista">
+        <label class="cz-fila cz-fila--switch">
+          <span class="cz-fila-nombre">Incluir AFORE<small>Para ver cuánto ya cubre</small></span>
+          <span class="cz-switch"><input type="checkbox" id="cz-afore" /><span class="cz-switch-pista" aria-hidden="true"></span></span>
+        </label>
+        <div id="cz-afore-campos" hidden>
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Salario base de cotización<small>Mensual, ante el IMSS</small></span>
+            <span class="cz-con-prefijo"><i>$</i><input type="text" id="cz-sbc" data-cz-dinero inputmode="numeric" placeholder="25,000" /></span>
+          </label>
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Año de alta en el IMSS</span>
+            <input type="number" id="cz-alta" inputmode="numeric" min="1960" max="2100" placeholder="2010" />
+          </label>
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Saldo AFORE actual<small>Opcional</small></span>
+            <span class="cz-con-prefijo"><i>$</i><input type="text" id="cz-saldo" data-cz-dinero inputmode="numeric" placeholder="0" /></span>
+          </label>
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Semanas cotizadas<small>Opcional; si no, se estiman</small></span>
+            <input type="number" id="cz-semanas" inputmode="numeric" min="0" placeholder="—" />
+          </label>
+        </div>
+      </div>
+
+      <div class="cz-sugerida" id="cz-sugerida" hidden>
+        <i class="fas fa-bullseye" aria-hidden="true"></i>
+        <div>
+          <span class="cz-sugerida-etq">Aportación sugerida</span>
+          <strong id="cz-sugerida-monto">—</strong>
+          <p id="cz-sugerida-nota"></p>
+        </div>
+        <button type="button" class="cz-mini" id="cz-usar-sugerida">Usar</button>
+      </div>
+    </section>
+
+    <section class="cz-grupo" aria-labelledby="cz-g2">
+      <h2 class="cz-grupo-titulo" id="cz-g2"><span class="cz-paso">2</span>Plan PPR</h2>
+
+      <div class="cz-seg" role="radiogroup" aria-label="Forma de aportar">
+        <label><input type="radio" name="cz-modo" value="mensual" checked /><span>Mensual</span></label>
+        <label><input type="radio" name="cz-modo" value="unica" /><span>Aportación única</span></label>
+      </div>
+
+      <div class="cz-lista">
+        <label class="cz-fila" id="cz-campo-mensual">
+          <span class="cz-fila-nombre">Aportación mensual</span>
+          <span class="cz-con-prefijo"><i>$</i><input type="text" id="cz-mensual" data-cz-dinero inputmode="numeric" placeholder="3,000" /></span>
+        </label>
+        <label class="cz-fila" id="cz-campo-unica" hidden>
+          <span class="cz-fila-nombre">Aportación única<small>Una sola vez, al inicio</small></span>
+          <span class="cz-con-prefijo"><i>$</i><input type="text" id="cz-unica" data-cz-dinero inputmode="numeric" placeholder="250,000" /></span>
+        </label>
+        <div id="cz-bloque-mensual">
+          <div class="cz-fila cz-fila--rango">
+            <label class="cz-fila-nombre" for="cz-plazo">Plazo de aportación</label>
+            <output class="cz-fila-valor" id="cz-plazo-val" for="cz-plazo">20 años</output>
+            <input type="range" id="cz-plazo" class="cz-rango" min="10" max="25" step="1" value="20" />
+          </div>
+          <label class="cz-fila cz-fila--switch">
+            <span class="cz-fila-nombre">Incremento anual<small>La aportación sube con la inflación</small></span>
+            <span class="cz-switch"><input type="checkbox" id="cz-incremento" checked /><span class="cz-switch-pista" aria-hidden="true"></span></span>
+          </label>
+        </div>
+      </div>
+      <p class="cz-aviso" id="cz-aviso-minimo" role="status" hidden></p>
+      <p class="cz-aviso cz-aviso--info" id="cz-aviso-plazo" role="status" hidden></p>
+
+      <div class="cz-seg" role="radiogroup" aria-label="Tipo de plan">
+        <label><input type="radio" name="cz-tipo" value="no_deducible" checked /><span>No deducible<small>Art. 93</small></span></label>
+        <label><input type="radio" name="cz-tipo" value="deducible" /><span>Deducible<small>Art. 151</small></span></label>
+      </div>
+      <div class="cz-lista" id="cz-campo-isr" hidden>
+        <label class="cz-fila">
+          <span class="cz-fila-nombre">Tasa de ISR del cliente<small>Su tasa marginal</small></span>
+          <span class="cz-con-sufijo"><input type="number" id="cz-isr" inputmode="numeric" min="1" max="45" value="30" /><i>%</i></span>
+        </label>
+      </div>
+
+      <details class="cz-mas">
+        <summary>Aportaciones adicionales</summary>
+        <div class="cz-lista">
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Adicional al año<small>Aguinaldo, bonos, etc.</small></span>
+            <span class="cz-con-prefijo"><i>$</i><input type="text" id="cz-extra" data-cz-dinero inputmode="numeric" placeholder="0" /></span>
+          </label>
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Desde</span>
+            <select id="cz-extra-desde"></select>
+          </label>
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Hasta</span>
+            <select id="cz-extra-hasta"></select>
+          </label>
+        </div>
+      </details>
+
+      <details class="cz-mas">
+        <summary>Supuestos</summary>
+        <div class="cz-seg cz-seg--3" role="radiogroup" aria-label="Rendimiento anual">
+          <label><input type="radio" name="cz-tasa" id="cz-tasa-conservador" value="0.06" /><span>Conservador<small id="cz-tasa-conservador-val">6%</small></span></label>
+          <label><input type="radio" name="cz-tasa" id="cz-tasa-medio" value="0.08" checked /><span>Medio<small id="cz-tasa-medio-val">8%</small></span></label>
+          <label><input type="radio" name="cz-tasa" id="cz-tasa-crecimiento" value="0.10" /><span>Crecimiento<small id="cz-tasa-crecimiento-val">10%</small></span></label>
+        </div>
+        <div class="cz-lista">
+          <label class="cz-fila">
+            <span class="cz-fila-nombre">Inflación anual</span>
+            <span class="cz-con-sufijo"><input type="number" id="cz-inflacion" inputmode="decimal" min="0" max="15" step="0.1" value="4" /><i>%</i></span>
+          </label>
+        </div>
+        <ul class="cz-notas">
+          <li>Tasas anuales brutas e ilustrativas; el cálculo descuenta los cargos del plan de referencia.</li>
+          <li>El fondo se reparte hasta los 85 años para estimar la pensión.</li>
+          <li>AFORE: rendimiento de 10% anual, aportación de 6.5% del salario y renta vitalicia al 4.8%.</li>
+        </ul>
+      </details>
+    </section>
+  </form>
+
+  <!-- ====================================================  RESULTADO  -->
+  <section class="cz-salida" aria-live="polite" aria-label="Resultado de la cotización">
+
+    <div class="cz-vacio" id="cz-vacio">
+      <span class="cz-vacio-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--calc" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect class="a" x="11" y="5.5" width="26" height="37" rx="7"/><path class="ic-draw" pathLength="1" d="M16.5 18.500l4.2-4.2 3.6 3 6.2-6"/><g class="f" stroke="none"><circle cx="18" cy="27.5" r="1.9"/><circle cx="24" cy="27.5" r="1.9"/><circle cx="30" cy="27.5" r="1.9"/><circle cx="18" cy="34.5" r="1.9"/><circle cx="24" cy="34.5" r="1.9"/><circle cx="30" cy="34.5" r="1.9"/></g></svg></span>
+      <h2>Tu proyección aparece aquí</h2>
+      <p id="cz-vacio-texto">Captura edad, meta y aportación para ver la proyección.</p>
+    </div>
+
+    <div id="cz-resultado" hidden>
+      <header class="cz-r-cab">
+        <h2 id="cz-r-nombre">Plan de retiro</h2>
+        <p id="cz-r-resumen"></p>
+      </header>
+
+      <div class="cz-kpis">
+        <article class="cz-kpi cz-kpi--principal">
+          <span class="cz-kpi-etq">Pensión mensual estimada</span>
+          <strong id="cz-k-pension">$0</strong>
+          <small>en pesos de hoy</small>
+          <small id="cz-k-pension-fut"></small>
+        </article>
+        <article class="cz-kpi">
+          <span class="cz-kpi-etq">Fondo al retiro</span>
+          <strong id="cz-k-fondo">$0</strong>
+          <small id="cz-k-fondo-hoy"></small>
+        </article>
+        <article class="cz-kpi">
+          <span class="cz-kpi-etq">Total aportado</span>
+          <strong id="cz-k-aportado">$0</strong>
+          <small id="cz-k-crecimiento"></small>
+        </article>
+      </div>
+
+      <article class="cz-tarjeta" id="cz-cobertura" hidden>
+        <h3 id="cz-cobertura-titulo">Cobertura de la meta</h3>
+        <div class="cz-barra-meta" role="img" aria-labelledby="cz-cobertura-leyenda">
+          <span class="cz-seg-afore" id="cz-seg-afore"></span>
+          <span class="cz-seg-ppr" id="cz-seg-ppr"></span>
+          <span class="cz-seg-brecha" id="cz-seg-brecha"></span>
+        </div>
+        <p class="cz-leyenda" id="cz-cobertura-leyenda">
+          <span><i class="cz-k cz-seg-afore"></i>AFORE <b id="cz-l-afore">—</b></span>
+          <span><i class="cz-k cz-seg-ppr"></i>PPR <b id="cz-l-ppr">$0</b></span>
+          <span><i class="cz-k cz-seg-brecha"></i>Brecha <b id="cz-l-brecha">$0</b></span>
+        </p>
+        <p class="cz-nota" id="cz-afore-nota" hidden></p>
+      </article>
+
+      <article class="cz-tarjeta">
+        <h3>Evolución del fondo</h3>
+        <div class="cz-grafica"><canvas id="cz-grafica" aria-label="Gráfica del fondo proyectado y lo aportado por edad" role="img"></canvas></div>
+      </article>
+
+      <div class="cz-trio">
+        <article class="cz-tarjeta cz-tarjeta--fiscal" id="cz-t-fiscal" hidden>
+          <span class="cz-t-ico" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></span>
+          <h3>Beneficio fiscal estimado</h3>
+          <strong id="cz-fiscal-1">$0</strong><small>el primer año</small>
+          <p>Suma del plazo: <b id="cz-fiscal-total">$0</b></p>
+          <p class="cz-nota" id="cz-fiscal-nota"></p>
+        </article>
+        <article class="cz-tarjeta" id="cz-t-bono" hidden>
+          <span class="cz-t-ico" aria-hidden="true"><i class="fas fa-gift"></i></span>
+          <h3>Bono del primer año</h3>
+          <strong id="cz-bono-monto">$0</strong>
+          <p class="cz-nota" id="cz-bono-nota"></p>
+        </article>
+        <article class="cz-tarjeta" id="cz-t-espera" hidden>
+          <span class="cz-t-ico" aria-hidden="true"><i class="fas fa-hourglass-half"></i></span>
+          <h3>Si empieza 10 años después</h3>
+          <strong id="cz-espera-monto">$0</strong>
+          <p class="cz-nota" id="cz-espera-nota"></p>
+        </article>
+      </div>
+
+      <details class="cz-tarjeta cz-desglose">
+        <summary><h3>Desglose año por año</h3><i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+        <div class="cz-tabla-caja">
+          <table class="cz-tabla">
+            <thead><tr><th>Año</th><th>Edad</th><th>Aportación</th><th>Aportado</th><th>Fondo</th><th>En pesos de hoy</th><th id="cz-th-fiscal" hidden>Beneficio fiscal reinvertido</th></tr></thead>
+            <tbody id="cz-tabla-cuerpo"></tbody>
+          </table>
+        </div>
+      </details>
+
+      <article class="cz-tarjeta cz-vida" aria-labelledby="cz-vida-titulo">
+        <header class="cz-vida-cab">
+          <span class="cz-t-ico" aria-hidden="true"><svg class="gfg-ic gfg-ic--vida" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path class="a" d="M24 6l14 5v11c0 9-6 15.5-14 19-8-3.5-14-10-14-19V11z"/><path class="ic-beat f" d="M24 31s-6.5-3.8-6.5-8.300a3.6 3.6 0 0 1 6.5-2.1 3.6 3.6 0 0 1 6.5 2.100c0 4.5-6.5 8.3-6.5 8.300z"/></svg></span>
+          <div>
+            <h3 id="cz-vida-titulo">Blinda tu inversión</h3>
+            <p>Estás construyendo un patrimonio. Un seguro de vida asegura que llegue completo a tu familia, aunque tú no llegues.</p>
+          </div>
+          <div class="cz-seg cz-seg--mini" role="radiogroup" aria-label="Sexo, para la tarifa de vida">
+            <label><input type="radio" name="cz-genero" value="mujer" form="cz-form" checked /><span>Mujer</span></label>
+            <label><input type="radio" name="cz-genero" value="hombre" form="cz-form" /><span>Hombre</span></label>
+          </div>
+        </header>
+
+        <div class="cz-vida-cuerpo">
+          <div class="cz-vida-precio">
+            <span class="cz-vida-chip" id="cz-vida-chip">Tarifa para 35 años</span>
+            <p>desde <strong id="cz-vida-precio">$0.00</strong> <small>/ mes</small></p>
+            <p class="cz-vida-suma">por una suma asegurada de <b id="cz-vida-suma">$0</b></p>
+            <p class="cz-nota" id="cz-vida-meta"></p>
+          </div>
+          <ul class="cz-vida-niveles">
+            <li>
+              <span><strong>Protección amplia</strong>Fallecimiento, accidente e invalidez total y permanente.</span>
+              <b id="cz-vida-amplia">$0.00 / mes</b>
+            </li>
+            <li>
+              <span><strong>Máximo respaldo</strong>Suma pérdidas orgánicas y devolución de primas por permanencia.</span>
+              <b id="cz-vida-maxima">$0.00 / mes</b>
+            </li>
+          </ul>
+        </div>
+
+        <div class="cz-vida-relacion">
+          <div class="cz-vida-pista"><span id="cz-vida-barra"></span></div>
+          <p id="cz-vida-relacion"></p>
+        </div>
+
+        <p class="cz-vida-espera" id="cz-vida-espera" hidden><i class="fas fa-hourglass-half" aria-hidden="true"></i><span id="cz-vida-espera-txt"></span></p>
+
+        <footer class="cz-vida-pie">
+          <label class="cz-switch">
+            <input type="checkbox" id="cz-vida-incluir" form="cz-form" checked />
+            <span class="cz-switch-pista" aria-hidden="true"></span>
+            <span class="cz-switch-texto">Incluir en el PDF y el resumen</span>
+          </label>
+          <button type="button" class="cz-btn cz-btn--rosa" data-cz-accion="vida" disabled><i class="fas fa-shield-heart" aria-hidden="true"></i><span id="cz-vida-cta-texto">Quiero blindar mi inversión</span></button>
+        </footer>
+        <p class="cz-nota">Cifras de referencia para tu edad y sexo. La prima definitiva depende del producto elegido, cuestionario médico, ocupación, edad exacta y criterios de suscripción de la aseguradora.</p>
+      </article>
+
+      <p class="cz-legal">Simulación informativa basada en supuestos seleccionados. Los resultados son estimaciones, no garantizan rendimientos ni sustituyen una propuesta contractual, asesoría fiscal o evaluación de perfil. Inflación, costos, retiros, impuestos y comportamiento del mercado pueden modificar el resultado. La cotización formal la emite la aseguradora. <a href="aviso-de-privacidad.html#simulador">Términos del simulador</a>.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ====================================================  BARRA DE ACCIONES  -->
+<div class="cz-barra" role="toolbar" aria-label="Acciones de la cotización">
+  <div class="cz-barra-resumen">
+    <span>Pensión estimada</span>
+    <strong id="cz-barra-cifra">—</strong>
+  </div>
+  <div class="cz-barra-botones">
+    <button type="button" class="cz-btn cz-solo-pro" data-cz-accion="guardar" disabled><i class="fas fa-bookmark" aria-hidden="true"></i><span>Guardar</span></button>
+    <button type="button" class="cz-btn" data-cz-accion="copiar" disabled><i class="fas fa-copy" aria-hidden="true"></i><span>Copiar</span></button>
+    <button type="button" class="cz-btn" data-cz-accion="pdf" disabled><i class="fas fa-file-pdf" aria-hidden="true"></i><span>PDF</span></button>
+    <button type="button" class="cz-btn cz-btn--wa" data-cz-accion="whatsapp" disabled><i class="fab fa-whatsapp" aria-hidden="true"></i><span id="cz-wa-texto">Enviar a Guadalupe</span></button>
+  </div>
+</div>
+
+<!-- ====================================================  COTIZACIONES GUARDADAS  -->
+<div class="cz-panel" id="cz-panel" aria-hidden="true">
+  <div class="cz-panel-fondo" id="cz-panel-fondo"></div>
+  <aside class="cz-panel-hoja" role="dialog" aria-modal="true" aria-labelledby="cz-panel-titulo">
+    <header>
+      <h2 id="cz-panel-titulo">Cotizaciones guardadas</h2>
+      <button type="button" class="cz-panel-cerrar" id="cz-panel-cerrar" aria-label="Cerrar"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+    </header>
+    <p class="cz-nota">Se guardan solo en este dispositivo y este navegador.</p>
+    <p class="cz-panel-vacio" id="cz-guardadas-vacio">Aún no hay cotizaciones. Usa “Guardar” al terminar una.</p>
+    <ul class="cz-guardadas" id="cz-guardadas-lista"></ul>
+  </aside>
+</div>
+
+<div class="cz-toast" id="cz-toast" role="status" aria-live="polite"></div>
+
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="js/cotizador.js?v=32"></script>
+</body>
+</html>

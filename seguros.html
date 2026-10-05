@@ -6,24 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <title>El Seguro Que Tu Familia Merece — GFG Finanzas | Cotización Gratuita</title>
-  <meta name="description" content="Descubre cómo proteger a tu familia con el mejor seguro al menor costo. Asesoría 100% gratuita, sin compromiso. +500 familias protegidas en México." />
+  <meta name="description" content="Descubre cómo proteger a tu familia con el mejor seguro al menor costo. Asesoría inicial sin costo y sin compromiso con Guadalupe F. Godínez." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://gfgfinanzas.com/seguros" />
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/seguros.html" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
 
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content="El Seguro Que Tu Familia Merece — GFG Finanzas" />
   <meta property="og:description" content="Asesoría de seguros 100% gratuita. Comparamos todas las aseguradoras para darte el mejor plan." />
-  <meta property="og:image"       content="https://gfgfinanzas.com/img/perfil.jpeg" />
+  <meta property="og:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');window.META_PIXEL_ID='TU_PIXEL_ID';if(window.META_PIXEL_ID!=='TU_PIXEL_ID'){fbq('init',window.META_PIXEL_ID);fbq('track','PageView');}</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
   <style>
   /* ============================================================
@@ -1010,13 +1006,14 @@
     font-size: 1.3rem; text-decoration: none;
   }
   </style>
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
 </head>
-<body>
+<body class="pg-seg">
 
 <noscript>
   <style>
     .reveal { opacity: 1 !important; transform: none !important; }
-    #live-counter, #fomo-container { display: none !important; }
+    
   </style>
 </noscript>
 
@@ -1025,8 +1022,7 @@
 ==================================================== -->
 <div id="urgency-bar" role="note" aria-label="Oferta limitada">
   <div class="bar-inner">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Solo quedan <strong id="spots-count">5 lugares</strong> disponibles esta semana — <a href="#final-cta" class="bar-cta">Asegura el tuyo ahora →</a></span>
+    <span>Primera asesoría sin costo y sin compromiso · presencial o por videollamada. <a href="#lead-section" class="bar-cta">Agendar →</a></span>
   </div>
   <button class="bar-close" id="bar-close" aria-label="Cerrar aviso">✕</button>
 </div>
@@ -1037,7 +1033,7 @@
 <nav id="nav-vsl" aria-label="Navegación">
   <div class="wrap nav-vsl-wrap">
     <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
-      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="40" />
+      <span class="gfg-logo gfg-logo--light" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
     </a>
     <div class="nav-right-vsl">
       <a href="tel:+527717021729" class="nav-phone-vsl" aria-label="Llamar">
@@ -1072,14 +1068,9 @@
     </h1>
 
     <p class="hero-sub">
-      En los próximos <strong style="color:rgba(255,255,255,.9)">8 minutos</strong> vas a descubrir por qué miles de familias mexicanas pagaban de más — o tenían seguros que no servían — y cómo lo resolvieron con una simple asesoría gratuita.
+      Muchas familias pagan de más o tienen un seguro que no cubre lo que creen. En una asesoría sin costo revisamos tu caso y comparamos opciones contigo, sin presión.
     </p>
 
-    <!-- Viewer pill -->
-    <div class="viewer-pill" role="status" aria-live="polite">
-      <span class="pulse-dot dot" aria-hidden="true"></span>
-      <span><strong id="viewer-count">23</strong> personas viendo esto ahora mismo</span>
-    </div>
 
     <!-- Video -->
     <div class="video-wrap" aria-label="Video de presentación">
@@ -1094,7 +1085,7 @@
         </div>
         <p class="video-caption-txt">
           <i class="fas fa-lock" style="color:rgba(255,255,255,.4);font-size:.7rem;margin-right:5px;" aria-hidden="true"></i>
-          Video exclusivo — Guadalupe Flores, Asesora Certificada GFG Finanzas
+          Video exclusivo — Guadalupe F. Godínez, Asesora Certificada GFG Finanzas
         </p>
         <p class="video-sub-txt">Activa el sonido · Subtítulos disponibles</p>
       </div>
@@ -1118,29 +1109,6 @@
 <!-- ====================================================
      PROOF STRIP
 ==================================================== -->
-<div id="proof-strip" aria-label="Estadísticas">
-  <div class="wrap">
-    <div class="proof-grid" role="list">
-      <div class="proof-item reveal" role="listitem">
-        <div class="proof-num" aria-label="Más de 500 familias">+500</div>
-        <div class="proof-label">Familias<br/>protegidas</div>
-      </div>
-      <div class="proof-item reveal reveal-delay-1" role="listitem">
-        <div class="proof-num" aria-label="8 aseguradoras">8</div>
-        <div class="proof-label">Aseguradoras<br/>aliadas</div>
-      </div>
-      <div class="proof-item reveal reveal-delay-2" role="listitem">
-        <div class="proof-num" aria-label="Más de 8 años">+8</div>
-        <div class="proof-label">Años de<br/>experiencia</div>
-      </div>
-      <div class="proof-item reveal reveal-delay-3" role="listitem">
-        <div class="proof-num" aria-label="127 reseñas">127</div>
-        <div class="proof-label">Reseñas<br/>5 estrellas ★</div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ====================================================
      MARCAS (GRID ESTÁTICO)
 ==================================================== -->
@@ -1192,24 +1160,24 @@
       <div class="prob-grid reveal" role="list">
 
         <div class="prob-card" role="listitem">
-          <span class="prob-emoji" aria-hidden="true">🏥</span>
-          <h3>Una hospitalización puede arruinarte</h3>
-          <p>El costo promedio de una cirugía en hospital privado en México supera los $200,000 pesos. Sin un seguro adecuado, esa deuda puede seguirte años.</p>
-          <div class="prob-stat">Promedio: $200,000+ MXN</div>
+          <span class="prob-emoji" aria-hidden="true"><i class="fas fa-hospital"></i></span>
+          <h3>Una hospitalización puede descapitalizarte</h3>
+          <p>Una cirugía en hospital privado puede costar cientos de miles de pesos. Sin un seguro adecuado, esa deuda puede seguirte años.</p>
+          <div class="prob-stat">El riesgo: tu patrimonio</div>
         </div>
 
         <div class="prob-card" role="listitem">
-          <span class="prob-emoji" aria-hidden="true">💸</span>
-          <h3>Estás pagando más de lo necesario</h3>
-          <p>El 67% de las personas con seguro contrató directamente con una sola aseguradora — y paga hasta un 35% más de lo que pagaría comparando opciones.</p>
-          <div class="prob-stat">Ahorro potencial: hasta 35%</div>
+          <span class="prob-emoji" aria-hidden="true"><i class="fas fa-scale-unbalanced"></i></span>
+          <h3>Podrías estar pagando de más</h3>
+          <p>Quien contrata directo con una sola aseguradora solo ve una tarifa. Al comparar varias, es común encontrar la misma cobertura a mejor precio, o mejor cobertura por lo mismo.</p>
+          <div class="prob-stat">La salida: comparar</div>
         </div>
 
         <div class="prob-card" role="listitem">
-          <span class="prob-emoji" aria-hidden="true">❓</span>
+          <span class="prob-emoji" aria-hidden="true"><i class="fas fa-file-circle-question"></i></span>
           <h3>Tu seguro podría no cubrirte cuando lo necesitas</h3>
           <p>Las pólizas mal asesoradas tienen exclusiones que muchos descubren hasta que van a reclamar. Ese momento es el peor para llevarse una sorpresa.</p>
-          <div class="prob-stat">8 de 10 clientes nos lo confirman</div>
+          <div class="prob-stat">La salida: leerla contigo</div>
         </div>
 
       </div>
@@ -1232,12 +1200,7 @@
 
       <div class="sol-photo-wrap reveal">
         <div class="sol-frame">
-          <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora certificada de GFG Finanzas" loading="lazy" />
-        </div>
-        <div class="sol-badge" aria-hidden="true">
-          <div class="stars">★★★★★</div>
-          <div class="big">127</div>
-          <div class="small">Reseñas 5 estrellas</div>
+          <img src="img/perfil.webp" alt="Guadalupe F. Godínez, asesora certificada de GFG Finanzas" loading="lazy" />
         </div>
       </div>
 
@@ -1253,7 +1216,7 @@
           </div>
           <div class="check-item" role="listitem">
             <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
-            <p><strong>Comparamos 8 aseguradoras</strong> para encontrar la cobertura que más conviene a tu familia y presupuesto.</p>
+            <p><strong>Comparamos varias aseguradoras</strong> para encontrar la cobertura que más conviene a tu familia y presupuesto.</p>
           </div>
           <div class="check-item" role="listitem">
             <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
@@ -1289,7 +1252,7 @@
     <div class="oferta-header reveal">
       <span class="tag"><i class="fas fa-gift" aria-hidden="true"></i>Lo que recibes</span>
       <h2 class="h-section" id="oferta-title">Todo esto <em>sin costo</em><br/>en tu asesoría gratuita</h2>
-      <p class="sub">Una consulta que normalmente costaría $1,500 pesos — completamente gratis para nuevos clientes esta semana.</p>
+      <p class="sub">Sin costo y sin compromiso. Sales de la sesión sabiendo qué tienes, qué te falta y cuánto costaría cubrirlo.</p>
     </div>
 
     <div class="oferta-grid">
@@ -1306,7 +1269,7 @@
         <div class="inc-item">
           <div class="inc-num">2</div>
           <div>
-            <h4>Comparativa de 8 aseguradoras</h4>
+            <h4>Comparativa entre aseguradoras</h4>
             <p>Te mostramos las mejores opciones del mercado con coberturas y precios reales, lado a lado.</p>
           </div>
         </div>
@@ -1330,7 +1293,7 @@
         <div class="inc-item">
           <div class="inc-num">5</div>
           <div>
-            <h4>Acompañamiento de por vida</h4>
+            <h4>Acompañamiento mientras tengas tu póliza</h4>
             <p>No desaparezco después de la firma. Revisiones anuales y apoyo en reclamaciones, siempre.</p>
           </div>
         </div>
@@ -1339,35 +1302,15 @@
 
       <!-- CTA Card con countdown -->
       <div class="cta-card reveal reveal-delay-1">
-        <span class="tag tag-gold"><i class="fas fa-fire" aria-hidden="true"></i>Oferta con límite de tiempo</span>
-        <div class="cta-card-title">Tu asesoría gratuita expira en:</div>
-        <div class="cta-card-sub">Una vez que ocupen los lugares disponibles, no habrá más cupo hasta la siguiente semana.</div>
+        <span class="tag tag-gold"><i class="fas fa-gift" aria-hidden="true"></i>Sin costo</span>
+        <div class="cta-card-title">Agenda tu asesoría gratuita</div>
+        <div class="cta-card-sub">Elige el día y la modalidad que te acomoden: presencial o por videollamada.</div>
 
-        <div class="countdown-timer" role="timer" aria-label="Tiempo restante para la oferta">
-          <div class="cd-block">
-            <div class="cd-num" id="cd-h">23</div>
-            <div class="cd-label">Horas</div>
-          </div>
-          <div class="cd-sep" aria-hidden="true">:</div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-m">59</div>
-            <div class="cd-label">Min</div>
-          </div>
-          <div class="cd-sep" aria-hidden="true">:</div>
-          <div class="cd-block">
-            <div class="cd-num" id="cd-s">59</div>
-            <div class="cd-label">Seg</div>
-          </div>
-        </div>
 
-        <div class="spots-pill" role="note">
-          <i class="fas fa-users" aria-hidden="true"></i>
-          Solo quedan <strong id="spots-card">5 lugares</strong> esta semana
-        </div>
 
         <a href="#final-cta" class="btn btn-primary btn-full btn-xl">
           <i class="fas fa-calendar-check" aria-hidden="true"></i>
-          Reservar mi lugar ahora
+          Agendar mi asesoría
         </a>
 
         <div class="guarantee-row">
@@ -1380,105 +1323,8 @@
 </section>
 
 <!-- ====================================================
-     TESTIMONIOS
-==================================================== -->
-<section id="testimonios" aria-labelledby="testi-title">
-  <div class="wrap">
-    <div class="testi-header reveal">
-      <span class="tag"><i class="fas fa-quote-left" aria-hidden="true"></i>Casos de éxito reales</span>
-      <h2 class="h-section" id="testi-title">Familias que ya tomaron la decisión<br/>de <em>proteger lo que más quieren</em></h2>
-      <p class="sub">No te pedimos que nos creas a nosotros. Escucha a quienes ya pasaron por el proceso.</p>
-    </div>
-
-    <div class="testi-grid" role="list">
-
-      <article class="tcard reveal" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">Gastos médicos</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Tenía un seguro que creía bueno hasta que Guadalupe me mostró que pagaba $3,800 al mes por coberturas que yo no necesitaba — y que me faltaban las más importantes. Cambiamos el plan y ahora pago $2,100 con mucho mejor cobertura."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">MR</div>
-          <div>
-            <div class="tc-name">María Rodríguez</div>
-            <div class="tc-role">Emprendedora · CDMX</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tcard featured reveal reveal-delay-1" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Seguro de vida</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Mi esposa tuvo un accidente y necesitamos cirugía de emergencia. Gracias al seguro que contratamos con GFG, el gasto fue de cero. Guadalupe nos acompañó en todo el proceso de reclamación. Eso no tiene precio."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">CA</div>
-          <div>
-            <div class="tc-name">Carlos Alvarado</div>
-            <div class="tc-role">Ingeniero · Jalisco</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="tcard reveal reveal-delay-2" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">Plan de retiro</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Tenía 42 años y creía que era tarde para planear mi retiro. Guadalupe me demostró que no — y hoy tengo un plan que me da tranquilidad. Además de un seguro de vida que nunca pensé poder pagar. Los números sí funcionan."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">LG</div>
-          <div>
-            <div class="tc-name">Laura González</div>
-            <div class="tc-role">Maestra · Michoacán</div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================
      FOMO URGENCIA
 ==================================================== -->
-<section id="fomo-urgencia" aria-labelledby="fomo-title">
-  <div class="wrap">
-    <div class="fomo-inner">
-      <span class="tag tag-light"><i class="fas fa-clock" aria-hidden="true"></i>Disponibilidad limitada</span>
-      <h2 class="h-section" id="fomo-title">Cada semana solo atendemos<br/>un número <em class="em-gold">limitado</em> de consultas</h2>
-      <p class="sub">Para garantizar atención personalizada y de calidad, Guadalupe solo acepta un grupo reducido de nuevos clientes por semana. Esta semana queda muy poco espacio.</p>
-
-      <div class="fomo-alert" role="alert">
-        <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
-        En lo que llevas leyendo esta página, <strong id="registered-count">3 personas</strong> ya agendaron su asesoría.
-      </div>
-
-      <div class="fomo-counters" role="list">
-        <div class="fomo-c reveal" role="listitem">
-          <div class="fomo-num" id="fomo-semana">5</div>
-          <div class="fomo-lbl">Lugares restantes<br/>esta semana</div>
-        </div>
-        <div class="fomo-c reveal reveal-delay-1" role="listitem">
-          <div class="fomo-num">127</div>
-          <div class="fomo-lbl">Clientes satisfechos<br/>en los últimos 12 meses</div>
-        </div>
-        <div class="fomo-c reveal reveal-delay-2" role="listitem">
-          <div class="fomo-num">24h</div>
-          <div class="fomo-lbl">Respuesta máxima<br/>garantizada</div>
-        </div>
-        <div class="fomo-c reveal reveal-delay-3" role="listitem">
-          <div class="fomo-num">0</div>
-          <div class="fomo-lbl">Costo de la<br/>primera asesoría</div>
-        </div>
-      </div>
-
-      <a href="#final-cta" class="btn btn-primary btn-xl">
-        <i class="fas fa-bolt" aria-hidden="true"></i>
-        Quiero uno de esos lugares
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- ====================================================
      FAQ
@@ -1542,16 +1388,12 @@
         Agendar mi asesoría por WhatsApp
       </a>
 
-      <div class="final-spots" role="note" aria-live="polite">
-        <i class="fas fa-users" aria-hidden="true"></i>
-        Solo quedan <strong id="spots-final">5 lugares</strong> disponibles esta semana
-      </div>
 
       <div class="guarantee-row-final" aria-label="Garantías">
         <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo alguno</div>
         <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso de compra</div>
         <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</div>
-        <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Certificada AMIB · CONDUSEF</div>
+        <div class="gr-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Certificada AMIB</div>
       </div>
     </div>
   </div>
@@ -1571,14 +1413,15 @@
         <div class="lead-proofs">
           <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
           <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Te contactamos en menos de 24 horas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-users" aria-hidden="true"></i></div><span>+500 familias protegidas con GFG Finanzas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas para encontrar el mejor plan</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-user-check" aria-hidden="true"></i></div><span>Te atiende Guadalupe personalmente</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>Varias aseguradoras comparadas para encontrar el mejor plan</span></div>
         </div>
       </div>
       <div class="lead-card">
         <div class="lc-title">Agenda tu asesoría gratuita</div>
         <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
-        <form id="mainLeadForm" novalidate>
+        <form id="mainLeadForm" novalidate data-interes="seguros">
+          <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="lf-row">
             <div class="lf-group">
               <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
@@ -1593,8 +1436,8 @@
           </div>
           <div class="lf-row">
             <div class="lf-group">
-              <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
-              <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+              <label for="lf-correo">Correo electrónico <span class="lf-opt">(opcional)</span></label>
+              <input type="email" id="lf-correo" placeholder="tu@correo.com" autocomplete="email" />
               <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
             </div>
             <div class="lf-group">
@@ -1605,7 +1448,7 @@
           </div>
           <div class="lf-privacy">
             <input type="checkbox" id="lf-priv" required />
-            <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
+            <label for="lf-priv">He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</label>
           </div>
           <button type="submit" class="btn btn-primary btn-full btn-lg">
             <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -1621,7 +1464,7 @@
           <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
           <h4>¡Listo! Solicitud enviada</h4>
           <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
-          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" data-gfg-agenda target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             También escríbenos ahora
           </a>
@@ -1653,17 +1496,14 @@
 </a>
 
 <!-- FOMO toasts container -->
-<div id="fomo-container" aria-live="polite" aria-atomic="false"></div>
 
 <!-- Live counter -->
-<div id="live-counter" aria-live="polite">
-  <span class="dot" aria-hidden="true"></span>
-  <span><strong id="live-num">23</strong> personas leyendo ahora</span>
-</div>
 
 <!-- ====================================================
      JAVASCRIPT
 ==================================================== -->
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
 <script>
 /* ===== URGENCY BAR ===== */
 (function() {
@@ -1683,120 +1523,6 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('shadow', window.scrollY > 20);
 }, { passive: true });
 
-/* ===== SPOTS COUNTER (sincronizado en toda la página) ===== */
-let spots = 5;
-function setSpots(n) {
-  const label = n + ' lugar' + (n === 1 ? '' : 'es');
-  ['spots-count','spots-card','spots-final','fomo-semana'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = (id === 'fomo-semana') ? n : label;
-  });
-}
-function scheduleSpotDecay() {
-  const delay = 240000 + Math.random() * 180000; // 4-7 min
-  setTimeout(() => {
-    if (spots > 1) { spots--; setSpots(spots); }
-    scheduleSpotDecay();
-  }, delay);
-}
-scheduleSpotDecay();
-
-/* ===== "X PERSONAS YA AGENDARON" ===== */
-let registered = 3;
-function bumpRegistered() {
-  registered++;
-  const el = document.getElementById('registered-count');
-  if (el) el.textContent = registered + ' personas';
-  setTimeout(bumpRegistered, 90000 + Math.random() * 120000); // cada 1.5-3.5 min
-}
-setTimeout(bumpRegistered, 95000 + Math.random() * 80000);
-
-/* ===== LIVE VIEWER COUNTER ===== */
-let viewers = 18 + Math.floor(Math.random() * 10);
-document.getElementById('viewer-count').textContent = viewers;
-document.getElementById('live-num').textContent = viewers;
-function updateViewers() {
-  viewers = Math.max(10, Math.min(35, viewers + (Math.random() < 0.5 ? -1 : 1)));
-  ['viewer-count','live-num'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = viewers;
-  });
-  setTimeout(updateViewers, 5000 + Math.random() * 5000);
-}
-setTimeout(updateViewers, 5000 + Math.random() * 5000);
-
-/* ===== COUNTDOWN TIMER (resetea a medianoche) ===== */
-function getEndOfDay() {
-  const stored = localStorage.getItem('gfg-cd-end');
-  if (stored) {
-    const ts = parseInt(stored);
-    if (ts > Date.now()) return ts;
-  }
-  const end = new Date();
-  end.setHours(23, 59, 59, 0);
-  localStorage.setItem('gfg-cd-end', end.getTime().toString());
-  return end.getTime();
-}
-const cdEnd = getEndOfDay();
-function tickCountdown() {
-  const diff = Math.max(0, cdEnd - Date.now());
-  const h = Math.floor(diff / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  const pad = n => String(n).padStart(2, '0');
-  document.getElementById('cd-h').textContent = pad(h);
-  document.getElementById('cd-m').textContent = pad(m);
-  document.getElementById('cd-s').textContent = pad(s);
-  if (diff > 0) setTimeout(tickCountdown, 1000);
-}
-tickCountdown();
-
-/* ===== FOMO TOASTS ===== */
-const fomoEvents = [
-  { i: 'MF', name: 'Martha F. de Guadalajara',   action: 'acaba de agendar su asesoría de seguros',       t: 'hace 2 min'  },
-  { i: 'RP', name: 'Roberto P. de CDMX',          action: 'contrató su seguro de gastos médicos mayores',   t: 'hace 5 min'  },
-  { i: 'SL', name: 'Sandra L. de Monterrey',      action: 'comparó 8 aseguradoras y eligió la mejor opción', t: 'hace 7 min'  },
-  { i: 'JC', name: 'Jorge C. de Querétaro',       action: 'solicitó cotización de seguro de vida familiar',  t: 'hace 10 min' },
-  { i: 'AN', name: 'Ana N. de Puebla',            action: 'acaba de reservar su asesoría gratuita',         t: 'hace 12 min' },
-  { i: 'DV', name: 'Diego V. de León',            action: 'cambió su seguro y ahorra $900 al mes',          t: 'hace 15 min' },
-  { i: 'LR', name: 'Laura R. de Tijuana',         action: 'contrató seguro de vida para su familia',        t: 'hace 17 min' },
-  { i: 'CM', name: 'Carlos M. de Michoacán',      action: 'protegió a su familia con GMM + seguro de vida', t: 'hace 20 min' },
-  { i: 'PG', name: 'Paola G. de Guadalajara',     action: 'agendó asesoría gratuita ahora mismo',           t: 'hace 1 min'  },
-  { i: 'HR', name: 'Hugo R. de Monterrey',        action: 'redujo su prima mensual un 28%',                 t: 'hace 22 min' },
-];
-let fomoIdx = 0, activeToast = null;
-
-function showToast() {
-  const d = fomoEvents[fomoIdx % fomoEvents.length]; fomoIdx++;
-  const container = document.getElementById('fomo-container');
-  if (activeToast) { activeToast.classList.add('out'); setTimeout(() => activeToast?.remove(), 400); }
-  const toast = document.createElement('div');
-  toast.className = 'fomo-toast';
-  toast.setAttribute('role', 'status');
-  toast.innerHTML = `
-    <div class="fomo-avatar" aria-hidden="true">${d.i}</div>
-    <div class="fomo-body">
-      <strong>${d.name}</strong>
-      <span>${d.action} · ${d.t}</span>
-    </div>
-    <button class="fomo-close" aria-label="Cerrar">✕</button>
-  `;
-  toast.querySelector('.fomo-close').addEventListener('click', () => {
-    toast.classList.add('out');
-    setTimeout(() => toast.remove(), 400);
-    if (activeToast === toast) activeToast = null;
-  });
-  container.appendChild(toast);
-  activeToast = toast;
-  setTimeout(() => {
-    if (toast.parentNode) { toast.classList.add('out'); setTimeout(() => toast.remove(), 400); if (activeToast === toast) activeToast = null; }
-  }, 5500);
-}
-function scheduleToast() {
-  setTimeout(() => { showToast(); scheduleToast(); }, 16000 + Math.random() * 10000);
-}
-setTimeout(() => { showToast(); scheduleToast(); }, 6000);
-
 /* ===== SCROLL REVEAL ===== */
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -1807,7 +1533,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 /* ===== 3D TILT EN BRAND CARDS ===== */
 if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-  document.querySelectorAll('.brand-card, .tcard, .fomo-c').forEach(card => {
+  document.querySelectorAll('.brand-card').forEach(card => {
     card.addEventListener('mousemove', function(e) {
       const r  = card.getBoundingClientRect();
       const x  = e.clientX - r.left;
@@ -1827,16 +1553,6 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
   });
 }
 
-/* ===== VIDEO PLACEHOLDER CLICK ===== */
-document.getElementById('video-box').addEventListener('click', () => {
-  /* Aquí se puede insertar el embed de YouTube/Vimeo cuando esté disponible */
-  /* Ejemplo: videoBox.innerHTML = '<iframe src="https://www.youtube.com/embed/TU_ID?autoplay=1" ...></iframe>'; */
-  alert('Inserta aquí el enlace de tu video. Puedes usar YouTube, Vimeo o un archivo mp4.');
-});
-document.getElementById('video-box').addEventListener('keydown', e => {
-  if (e.key === 'Enter' || e.key === ' ') e.currentTarget.click();
-});
-
 /* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -1845,38 +1561,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-var FUENTE_PAGE = "seguros";
-const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
 
-/* ===== LEAD FORM ===== */
-(function() {
-  var form = document.getElementById("mainLeadForm");
-  var success = document.getElementById("mainLeadSuccess");
-  if (!form) return;
-  function vf(id,errId,fn){var el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);el.classList.toggle("lferr",!ok);err.classList.toggle("show",!ok);return ok;}
-  function validateAll(){
-    var n=vf("lf-nombre","err-lf-nombre",function(el){return el.value.trim().length>=2;});
-    var e=vf("lf-edad","err-lf-edad",function(el){var v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=75;});
-    var c=vf("lf-correo","err-lf-correo",function(el){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value);});
-    var w=vf("lf-wa","err-lf-wa",function(el){return /^\\d{10}$/.test(el.value.replace(/\\s/g,""));});
-    return n&&e&&c&&w&&document.getElementById("lf-priv").checked;
-  }
-  ["lf-nombre","lf-edad","lf-correo","lf-wa"].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el) el.addEventListener("input",function(){el.classList.remove("lferr");var err=document.getElementById("err-"+id);if(err)err.classList.remove("show");});
-  });
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!validateAll()) return;
-    var data={nombre:document.getElementById("lf-nombre").value.trim(),edad:document.getElementById("lf-edad").value.trim(),correo:document.getElementById("lf-correo").value.trim(),whatsapp:document.getElementById("lf-wa").value.trim()};
-    try{var db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);db.from("leads").insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:"Nuevo",notas:""}]).then(function(){}).catch(function(){});}catch(_){}
-    if(typeof fbq==="function") fbq("track","Lead",{content_name:FUENTE_PAGE,content_category:"Seguros"});
-    form.style.display="none";
-    success.style.display="block";
-    success.scrollIntoView({behavior:"smooth",block:"center"});
-  });
-})();
 </script>
 
 

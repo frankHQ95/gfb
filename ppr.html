@@ -4,16 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plan Personal de Retiro (PPR) — GFG Finanzas | Asesoría Gratuita</title>
-  <meta name="description" content="Descubre cómo un PPR puede garantizarte un retiro tranquilo Y devolverte dinero del SAT cada año. Asesoría 100% gratuita — GFG Finanzas." />
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <meta name="description" content="Conoce cómo funciona un Plan Personal de Retiro, sus beneficios, costos y restricciones. Diagnóstico inicial sin costo con Guadalupe F. Godínez — GFG Finanzas." />
+  <meta name="theme-color" content="#222D44" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/ppr.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://gfbfinanzas.vercel.app/ppr.html" />
+  <meta property="og:title"       content="Plan Personal de Retiro (PPR) — GFG Finanzas" />
+  <meta property="og:description" content="Cómo funciona un PPR, sus beneficios, costos y restricciones. Diagnóstico inicial sin costo con Guadalupe F. Godínez." />
+  <meta property="og:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
+  <meta property="og:locale"      content="es_MX" />
+  <meta property="og:site_name"   content="GFG Finanzas" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="preload" as="image" href="img/hero/retiro.webp" type="image/webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');window.META_PIXEL_ID='TU_PIXEL_ID';if(window.META_PIXEL_ID!=='TU_PIXEL_ID'){fbq('init',window.META_PIXEL_ID);fbq('track','PageView');}</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 
 <style>
 /* ============================================================ TOKENS */
@@ -638,14 +644,14 @@ footer a{color:var(--rosa-light);}
     font-size: 1.3rem; text-decoration: none;
   }
   </style>
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
 </head>
-<body>
+<body class="pg-ppr">
 
 <!-- URGENCY BAR -->
-<div id="urgency-bar" role="note" aria-label="Disponibilidad limitada">
+<div id="urgency-bar" role="note">
   <div class="bar-inner">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Solo quedan <strong id="spots-bar">5 lugares</strong> para asesoría de PPR esta semana — <a href="#lead-section">Reserva el tuyo →</a></span>
+    <span>Primera asesoría sin costo y sin compromiso · presencial o por videollamada. <a href="#lead-section" class="bar-cta">Agendar →</a></span>
   </div>
   <button class="bar-close" id="bar-close" aria-label="Cerrar">✕</button>
 </div>
@@ -654,7 +660,7 @@ footer a{color:var(--rosa-light);}
 <nav id="nav" aria-label="Navegación">
   <div class="wrap nav-wrap">
     <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
-      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="40" />
+      <span class="gfg-logo gfg-logo--light" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
     </a>
     <div class="nav-right">
       <a href="tel:+527717021729" class="nav-phone">
@@ -671,9 +677,9 @@ footer a{color:var(--rosa-light);}
 <!-- MOBILE DRAWER -->
 <div class="nav-drawer-mobile" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menú">
   <a href="index.html" onclick="closeMobileNav()">Inicio</a>
-    <a href="#pilares" onclick="closeMobileNav()">¿Qué es un PPR?</a>
+    <a href="#calculadora" onclick="closeMobileNav()">Calculadora de brecha</a>
+    <a href="#que-es-ppr" onclick="closeMobileNav()">¿Qué es un PPR?</a>
     <a href="#isr" onclick="closeMobileNav()">Beneficio fiscal</a>
-    <a href="#testimonios" onclick="closeMobileNav()">Testimonios</a>
     <a href="#faq" onclick="closeMobileNav()">FAQ</a>
     <a href="#lead-section" onclick="closeMobileNav()" class="btn btn-primary">Asesoría gratuita</a>
 </div>
@@ -681,15 +687,9 @@ footer a{color:var(--rosa-light);}
 <main>
 
 <!-- ====================================================  HERO VSL  -->
-<section id="hero" aria-labelledby="hero-title">
+<section id="hero" class="gfg-hero-bg gfg-hero-center gfg-hero--retiro" aria-labelledby="hero-title">
   <div class="wrap">
 
-    <!-- Countdown -->
-    <div class="countdown-bar" role="timer" aria-label="Tiempo restante para disponibilidad">
-      <i class="fas fa-bolt" aria-hidden="true"></i>
-      <span>Disponibilidad limitada — termina en:</span>
-      <span class="cd-time" id="cd-display">23:59:59</span>
-    </div>
 
     <div class="hero-eyebrow">
       <span class="dot" aria-hidden="true"></span>
@@ -697,18 +697,13 @@ footer a{color:var(--rosa-light);}
     </div>
 
     <h1 class="h-display hero-title" id="hero-title">
-      Cada año que pasa sin un PPR<br/>es dinero que el <em>SAT podría devolverte</em>
+      Que tu retiro no dependa<br/><em>solo de tu AFORE</em>
     </h1>
 
     <p class="hero-sub">
-      Descubre en los próximos 7 minutos cómo un Plan Personal de Retiro te garantiza tranquilidad financiera cuando dejes de trabajar — y te da una deducción de impuestos que muy pocos conocen.
+      Un Plan Personal de Retiro te ayuda a construir el ingreso que tu pensión no va a cubrir. Empieza por saber cuánto te falta: te toma un minuto y no te pido ningún dato.
     </p>
 
-    <!-- Live viewers -->
-    <div class="viewer-pill" role="status" aria-live="polite">
-      <span class="pulse-dot dot" aria-hidden="true"></span>
-      <span><strong id="viewer-count">27</strong> personas leyendo esto ahora mismo</span>
-    </div>
 
     <!-- VIDEO -->
     <div class="video-wrap" aria-label="Video de presentación del PPR">
@@ -718,7 +713,7 @@ footer a{color:var(--rosa-light);}
         <div class="play-btn" aria-hidden="true"><i class="fas fa-play"></i></div>
         <p class="video-caption">
           <i class="fas fa-lock" style="color:rgba(255,255,255,.4);font-size:.7rem;margin-right:5px;" aria-hidden="true"></i>
-          Guadalupe Flores — Asesora Certificada · GFG Finanzas
+          Guadalupe F. Godínez — Asesora Certificada · GFG Finanzas
         </p>
         <p class="video-sub">Activa el sonido · 7 minutos que pueden cambiar tu retiro</p>
       </div>
@@ -726,70 +721,20 @@ footer a{color:var(--rosa-light);}
 
     <!-- CTA below video -->
     <div class="below-video">
-      <a href="#lead-section" class="btn btn-primary btn-xl">
-        <i class="fas fa-calendar-check" aria-hidden="true"></i>
-        Quiero mi asesoría gratuita de PPR
-      </a>
-      <div class="below-note" aria-hidden="true">
-        <i class="fas fa-shield-alt"></i>
-        Sin costo · Sin compromiso · Sin letra chica
+      <div class="hero-cta-row">
+        <a href="#calculadora" class="btn btn-primary btn-xl">
+          <i class="fas fa-calculator" aria-hidden="true"></i>
+          Calcular mi brecha de retiro
+        </a>
+        <a href="#lead-section" class="btn-outline-light">
+          Hablar con Guadalupe <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROOF STRIP -->
-<div id="proof-strip" aria-label="Estadísticas">
-  <div class="wrap">
-    <div class="proof-grid" role="list">
-      <div class="proof-item" role="listitem"><div class="proof-num">+500</div><div class="proof-label">Familias<br/>asesoradas</div></div>
-      <div class="proof-item" role="listitem"><div class="proof-num">8</div><div class="proof-label">Aseguradoras<br/>comparadas</div></div>
-      <div class="proof-item" role="listitem"><div class="proof-num">+8</div><div class="proof-label">Años de<br/>experiencia</div></div>
-      <div class="proof-item" role="listitem"><div class="proof-num">100%</div><div class="proof-label">Asesoría<br/>gratuita</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ====================================================  DOLOR  -->
-<section id="dolor" aria-labelledby="dolor-title">
-  <div class="wrap">
-    <div class="dolor-intro" data-reveal>
-      <span class="tag"><i class="fas fa-circle-question" aria-hidden="true"></i>¿Te suena familiar?</span>
-      <h2 class="h-section" id="dolor-title">Ganas bien hoy.<br/>Pero <em>¿quién te paga</em> cuando dejes de trabajar?</h2>
-      <p class="sub">Puede que hoy todo parezca bajo control. Pero por dentro sabes que hay preguntas que sigues posponiendo:</p>
-    </div>
-
-    <div class="pain-cards" data-reveal>
-      <div class="pain-card">
-        <div class="pain-emoji" aria-hidden="true">🤔</div>
-        <p>"¿Cuánto necesito ahorrar para retirarme con la misma calidad de vida que tengo hoy?"</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-emoji" aria-hidden="true">📉</div>
-        <p>"¿Mi AFORE realmente va a alcanzar? ¿O voy a trabajar hasta los 70 porque no me queda de otra?"</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-emoji" aria-hidden="true">💸</div>
-        <p>"¿Estoy pagando demasiado de impuestos cuando podría estar usando ese dinero para mi retiro?"</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-emoji" aria-hidden="true">⏳</div>
-        <p>"El retiro todavía está lejos... pero sé que cada año que paso sin planear me cuesta más caro."</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-emoji" aria-hidden="true">😰</div>
-        <p>"¿Qué pasaría con mi familia si mañana yo ya no pudiera trabajar igual que hoy?"</p>
-      </div>
-      <div class="pain-card">
-        <div class="pain-emoji" aria-hidden="true">🌀</div>
-        <p>"He visto opciones de PPR pero no entiendo cuál es la diferencia entre uno y otro — y no quiero contratar algo que después no sirva."</p>
-      </div>
-    </div>
-
-    <div class="pain-conclusion" data-reveal>
-      <h3>No es que no te importe tu futuro. Es que nadie te ha explicado <em style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">con claridad qué hacer.</em></h3>
-      <p>Tener ingresos no es lo mismo que tener una estrategia. Y eso es exactamente lo que vamos a resolver juntos — gratis.</p>
+      <ul class="hero-facts" aria-label="Lo que incluye">
+        <li><i class="fas fa-check" aria-hidden="true"></i>Diagnóstico inicial sin costo</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i>Aportaciones potencialmente deducibles</li>
+        <li><i class="fas fa-check" aria-hidden="true"></i>Costos y restricciones a la vista</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -804,26 +749,207 @@ footer a{color:var(--rosa-light);}
 
       <div class="financial-chaos" data-reveal>
         <div class="chaos-item">
-          <span class="ci-ico" aria-hidden="true">💰</span>
-          <span>El AFORE promedio cubre apenas el 30-40% de tu último sueldo</span>
+          <span class="ci-ico" aria-hidden="true"><i class="fas fa-piggy-bank"></i></span>
+          <span>Para muchas personas, la pensión del AFORE cubre solo una parte de su último sueldo</span>
         </div>
         <div class="chaos-item">
-          <span class="ci-ico" aria-hidden="true">📈</span>
-          <span>La inflación reduce tu poder adquisitivo cada año que no actúas</span>
+          <span class="ci-ico" aria-hidden="true"><i class="fas fa-arrow-trend-down"></i></span>
+          <span>La inflación reduce cada año lo que puedes comprar con el mismo dinero</span>
         </div>
         <div class="chaos-item">
-          <span class="ci-ico" aria-hidden="true">🏥</span>
-          <span>Los gastos médicos en la vejez son el mayor desequilibrio financiero</span>
+          <span class="ci-ico" aria-hidden="true"><i class="fas fa-hospital"></i></span>
+          <span>Los gastos médicos suelen crecer justo cuando el ingreso baja</span>
         </div>
         <div class="chaos-item">
-          <span class="ci-ico" aria-hidden="true">📋</span>
+          <span class="ci-ico" aria-hidden="true"><i class="fas fa-file-shield"></i></span>
           <span>Sin protección patrimonial, un imprevisto puede acabar con años de ahorro</span>
         </div>
       </div>
 
       <div class="chaos-verdict" data-reveal>
         <h3>No necesitas ganar más. Necesitas <em style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">ordenar mejor</em> lo que ya tienes.</h3>
-        <p>Un PPR bien diseñado resuelve tres cosas a la vez: tu retiro, tu protección y tu carga fiscal — todo en un solo instrumento.</p>
+        <p>Un PPR bien diseñado te ayuda a ordenar tres frentes: tu retiro, tu protección y tu estrategia fiscal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================  CALCULADORA DE BRECHA  -->
+<section id="calculadora" aria-labelledby="calc-title">
+  <div class="wrap">
+    <div class="calc-header" data-reveal>
+      <span class="tag"><i class="fas fa-calculator" aria-hidden="true"></i>Calculadora de brecha</span>
+      <h2 class="h-section" id="calc-title">¿Cuánto te falta para el retiro <em>que quieres</em>?</h2>
+      <p class="sub">Mueve las barras y mira tu resultado al instante, sin registrarte. Es una simulación educativa: tu plan real lo diseñamos contigo.</p>
+    </div>
+
+    <div class="calc-card gfg-calc" data-reveal>
+      <!-- Entradas -->
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label for="gc-edad">Tu edad hoy</label>
+            <span class="calc-field-val"><output id="gc-edad-val" for="gc-edad">35</output> años</span>
+          </div>
+          <input type="range" id="gc-edad" class="calc-range" min="18" max="60" value="35" step="1" />
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label for="gc-retiro">Quiero retirarme a los</label>
+            <span class="calc-field-val"><output id="gc-retiro-val" for="gc-retiro">65</output> años</span>
+          </div>
+          <input type="range" id="gc-retiro" class="calc-range" min="50" max="75" value="65" step="1" />
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label for="gc-meta">Ingreso mensual que quiero al retirarme</label>
+            <span class="calc-field-val">$<output id="gc-meta-val" for="gc-meta">30,000</output></span>
+          </div>
+          <input type="range" id="gc-meta" class="calc-range" min="10000" max="150000" value="30000" step="1000" aria-describedby="gc-meta-hint" />
+          <p class="calc-hint" id="gc-meta-hint">En pesos de hoy: lo que necesitarías si te retiraras mañana.</p>
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label for="gc-ahorro">Ya tengo ahorrado para mi retiro</label>
+            <span class="calc-field-val">$<output id="gc-ahorro-val" for="gc-ahorro">100,000</output></span>
+          </div>
+          <input type="range" id="gc-ahorro" class="calc-range" min="0" max="3000000" value="100000" step="25000" aria-describedby="gc-ahorro-hint" />
+          <p class="calc-hint" id="gc-ahorro-hint">Sin contar tu AFORE.</p>
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-top">
+            <label for="gc-aporte">Puedo aportar al mes</label>
+            <span class="calc-field-val">$<output id="gc-aporte-val" for="gc-aporte">3,000</output></span>
+          </div>
+          <input type="range" id="gc-aporte" class="calc-range" min="500" max="30000" value="3000" step="500" />
+        </div>
+
+        <div class="calc-field" style="margin-bottom:0;">
+          <div class="calc-field-top">
+            <label for="gc-pension">Pensión / AFORE que espero al mes</label>
+            <span class="calc-field-val">$<output id="gc-pension-val" for="gc-pension">8,000</output></span>
+          </div>
+          <input type="range" id="gc-pension" class="calc-range" min="0" max="60000" value="8000" step="1000" aria-describedby="gc-pension-hint" />
+          <label class="gc-nose">
+            <input type="checkbox" id="gc-nose" />
+            <span>No lo sé</span>
+          </label>
+          <p class="calc-hint" id="gc-pension-hint">Si no lo sabes, la estimamos contigo con tu estado de cuenta de AFORE.</p>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="calc-result" aria-live="polite">
+        <fieldset class="gc-scen">
+          <legend>Escenario de rendimiento</legend>
+          <label><input type="radio" name="gc-escenario" value="conservador" /><span><b>Conservador</b><i id="gc-tasa-conservador">6%</i></span></label>
+          <label><input type="radio" name="gc-escenario" value="medio" checked /><span><b>Medio</b><i id="gc-tasa-medio">8%</i></span></label>
+          <label><input type="radio" name="gc-escenario" value="crecimiento" /><span><b>Crecimiento</b><i id="gc-tasa-crecimiento">10%</i></span></label>
+        </fieldset>
+
+        <div class="calc-result-label" id="gc-titulo">Tu brecha mensual estimada</div>
+        <div class="calc-result-num"><span id="gc-brecha">$0</span></div>
+        <div class="calc-result-sub" id="gc-sub">en pesos de hoy, cada mes de tu retiro</div>
+
+        <div class="gc-bar" role="img" aria-labelledby="gc-bar-desc">
+          <span class="gc-seg gc-seg-pension" id="gc-seg-pension"></span>
+          <span class="gc-seg gc-seg-plan" id="gc-seg-plan"></span>
+          <span class="gc-seg gc-seg-brecha" id="gc-seg-brecha"></span>
+        </div>
+        <p class="gc-legend" id="gc-bar-desc">
+          <span><i class="gc-k gc-k-pension"></i>Pensión <b id="gc-l-pension">$0</b></span>
+          <span><i class="gc-k gc-k-plan"></i>Tu plan <b id="gc-l-plan">$0</b></span>
+          <span><i class="gc-k gc-k-brecha"></i>Brecha <b id="gc-l-brecha">$0</b></span>
+        </p>
+
+        <div class="calc-breakdown">
+          <div class="calc-brk-row"><span>Capital al retiro (pesos futuros)</span><strong id="gc-nominal">$0</strong></div>
+          <div class="calc-brk-row accent"><span>Equivale hoy a</span><strong id="gc-real">$0</strong></div>
+          <div class="calc-brk-row"><span>Tú aportas en total</span><strong id="gc-aportado">$0</strong></div>
+          <div class="calc-brk-row"><span>Crecimiento estimado</span><strong id="gc-crecimiento">$0</strong></div>
+        </div>
+
+        <div class="gc-cierre" id="gc-cierre">
+          <i class="fas fa-bullseye" aria-hidden="true"></i>
+          <p>Para cerrar la brecha en este escenario necesitarías aportar cerca de <strong id="gc-necesario">$0</strong> al mes.</p>
+        </div>
+      </div>
+
+      <!-- Supuestos + captura -->
+      <div class="gc-foot">
+        <details class="gc-supuestos">
+          <summary>Supuestos de esta simulación</summary>
+          <ul>
+            <li>Inflación anual de <span id="gc-s-inflacion">4</span>%. “Pesos de hoy” descuenta esa inflación.</li>
+            <li>Tasas anuales brutas e ilustrativas, antes de los costos del producto.</li>
+            <li>Tu aportación mensual se mantiene igual todos los años.</li>
+            <li>Tu capital se reparte en <span id="gc-s-anios">20</span> años de retiro, sin rendimiento adicional.</li>
+            <li>No incluye bonos, beneficios fiscales ni impuestos al retirar.</li>
+          </ul>
+        </details>
+        <p class="calc-disclaimer">Simulación informativa basada en supuestos seleccionados. Los resultados son estimaciones, no garantizan rendimientos ni sustituyen una propuesta contractual, asesoría fiscal o evaluación de perfil. Inflación, costos, retiros, impuestos y comportamiento del mercado pueden modificar el resultado.</p>
+
+        <a href="cotizador.html" class="gc-pro-link"><i class="fas fa-file-pdf" aria-hidden="true"></i><span><strong>¿Quieres el detalle?</strong> Abre el cotizador completo: AFORE, beneficio fiscal, desglose año por año y PDF.</span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+
+        <div class="gc-capture" id="gc-capture">
+          <div class="gc-capture-copy">
+            <h3>Recibe tu diagnóstico ampliado</h3>
+            <p>Guadalupe revisa tus números y te envía por WhatsApp tres escenarios de aportación y una evaluación fiscal preliminar. Sin costo.</p>
+          </div>
+          <form id="calc-form" novalidate>
+            <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="gc-row">
+              <div class="lf-group">
+                <label for="calc-nombre">Nombre</label>
+                <input type="text" id="calc-nombre" autocomplete="given-name" required />
+                <span class="field-error" id="err-calc-nombre" role="alert">Escribe tu nombre.</span>
+              </div>
+              <div class="lf-group">
+                <label for="calc-whatsapp">WhatsApp</label>
+                <input type="tel" id="calc-whatsapp" placeholder="10 dígitos" inputmode="numeric" autocomplete="tel" required />
+                <span class="field-error" id="err-calc-whatsapp" role="alert">Ingresa un WhatsApp de 10 dígitos.</span>
+              </div>
+            </div>
+            <div class="gc-row">
+              <div class="lf-group">
+                <label for="calc-correo">Correo <span class="lf-opt">(opcional)</span></label>
+                <input type="email" id="calc-correo" autocomplete="email" />
+                <span class="field-error" id="err-calc-correo" role="alert">Revisa tu correo.</span>
+              </div>
+              <div class="lf-group">
+                <label for="calc-preocupacion">¿Qué te preocupa más?</label>
+                <select id="calc-preocupacion">
+                  <option value="No me va a alcanzar">Que no me alcance</option>
+                  <option value="No sé por dónde empezar">No sé por dónde empezar</option>
+                  <option value="Pagar menos impuestos">Pagar menos impuestos</option>
+                  <option value="Proteger a mi familia">Proteger a mi familia</option>
+                  <option value="Ya tengo un plan y quiero revisarlo">Ya tengo un plan y quiero revisarlo</option>
+                </select>
+              </div>
+            </div>
+            <label class="gc-consent" id="calc-consent-wrap">
+              <input type="checkbox" id="calc-consent" required />
+              <span>He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</span>
+            </label>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Quiero mi diagnóstico
+            </button>
+          </form>
+          <div id="calc-success" role="status">
+            <div class="icon"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+            <h4>¡Recibido!</h4>
+            <p>Guadalupe revisa tus números y te escribe por WhatsApp. Si quieres adelantar, agenda de una vez.</p>
+            <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20usar%20la%20calculadora%20de%20brecha%20y%20quiero%20agendar%20mi%20diagn%C3%B3stico" class="btn btn-primary" data-gfg-agenda target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              Agendar por WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -833,46 +959,39 @@ footer a{color:var(--rosa-light);}
 <section id="que-es-ppr" aria-labelledby="ppr-title">
   <div class="wrap">
     <div class="ppr-grid">
-      <div class="ppr-photo" data-reveal>
-        <img src="img/perfil.jpeg" alt="Guadalupe Flores explicando el Plan Personal de Retiro" loading="lazy" />
-        <div class="ppr-badge" aria-hidden="true">
-          <div class="stars">★★★★★</div>
-          <div class="big">127</div>
-          <div class="sml">Reseñas 5<br/>estrellas</div>
-        </div>
-      </div>
-      <div class="ppr-copy" data-reveal>
+      <div class="ppr-head" data-reveal>
         <span class="tag"><i class="fas fa-seedling" aria-hidden="true"></i>La solución</span>
-        <h2 class="h-section" id="ppr-title">¿Qué es un PPR y<br/>por qué deberías tener uno <em>hoy</em>?</h2>
-        <p class="sub">Un Plan Personal de Retiro (PPR) es un instrumento financiero que combina ahorro, inversión y seguro de vida — con una ventaja fiscal que muy poca gente aprovecha.</p>
-        <div class="ppr-benefits">
-          <div class="ppr-ben">
-            <div class="pb-ico"><i class="fas fa-receipt" aria-hidden="true"></i></div>
-            <div>
-              <h4>Deducción de impuestos garantizada</h4>
-              <p>Puedes deducir hasta el 10% de tu ingreso anual en tu declaración del SAT. En la práctica, el gobierno te "regresa" parte del dinero que inviertes en tu retiro.</p>
-            </div>
+        <h2 class="h-section" id="ppr-title">¿Qué es un PPR y<br/><em>cómo funciona</em>?</h2>
+        <p class="sub">Un Plan Personal de Retiro (PPR) es un instrumento financiero que combina ahorro de largo plazo e inversión, con un tratamiento fiscal que poca gente aprovecha. Algunos planes suman protección por fallecimiento o invalidez.</p>
+        <a href="#transparencia" class="ppr-more">Ver costos y restricciones <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
+      </div>
+      <div class="ppr-benefits" data-reveal>
+        <div class="ppr-ben">
+          <div class="pb-ico"><i class="fas fa-receipt" aria-hidden="true"></i></div>
+          <div>
+            <h4>Aportaciones potencialmente deducibles</h4>
+            <p>Conforme a la LISR, tus aportaciones pueden deducirse hasta por el 10% de tu ingreso anual, con tope de 5 UMA anuales y sujetas a requisitos fiscales. Eso puede reducir tu base gravable y, según tu situación, contribuir a un saldo a favor.</p>
           </div>
-          <div class="ppr-ben">
-            <div class="pb-ico"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
-            <div>
-              <h4>Rendimientos que crecen con el tiempo</h4>
-              <p>Tu dinero trabaja a tasas competitivas y se acumula con interés compuesto — el activo más poderoso del largo plazo.</p>
-            </div>
+        </div>
+        <div class="ppr-ben">
+          <div class="pb-ico"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+          <div>
+            <h4>Potencial de crecimiento a largo plazo</h4>
+            <p>Alternativas con potencial de crecimiento, sujetas al mercado, a los costos del plan y a tu perfil de riesgo. El interés compuesto rinde más entre más tiempo le das.</p>
           </div>
-          <div class="ppr-ben">
-            <div class="pb-ico"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
-            <div>
-              <h4>Seguro de vida incluido</h4>
-              <p>La mayoría de los PPR incluyen cobertura de vida o invalidez. Si algo te pasa, tu familia recibe la suma asegurada — no solo el ahorro acumulado.</p>
-            </div>
+        </div>
+        <div class="ppr-ben">
+          <div class="pb-ico"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
+          <div>
+            <h4>Protección que puede acompañar tu plan</h4>
+            <p>Algunos planes incorporan protección por fallecimiento o invalidez. Revisamos contigo las condiciones y la suma asegurada antes de que decidas.</p>
           </div>
-          <div class="ppr-ben">
-            <div class="pb-ico"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
-            <div>
-              <h4>Renta garantizada al retiro</h4>
-              <p>Al llegar a la edad pactada, puedes convertir tu fondo en una renta mensual garantizada. Ingreso predecible, sin depender del mercado.</p>
-            </div>
+        </div>
+        <div class="ppr-ben">
+          <div class="pb-ico"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
+          <div>
+            <h4>Opciones de liquidación al retiro</h4>
+            <p>Al llegar a la edad pactada eliges cómo recibir tu fondo, de acuerdo con las condiciones y la disponibilidad de tu plan.</p>
           </div>
         </div>
       </div>
@@ -886,28 +1005,28 @@ footer a{color:var(--rosa-light);}
     <div class="isr-inner">
       <div class="isr-copy" data-reveal>
         <span class="tag tag-gold"><i class="fas fa-coins" aria-hidden="true"></i>Beneficio fiscal</span>
-        <h2 class="h-section" id="isr-title">El SAT te devuelve dinero<br/>por ahorrar para tu <em class="em-gold" style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">retiro</em></h2>
-        <p class="sub">Las aportaciones a un PPR son deducibles de impuestos conforme al Art. 151 LISR. Eso significa que una parte de lo que aportas regresa a tu bolsillo en tu declaración anual.</p>
+        <h2 class="h-section" id="isr-title">Ahorrar para tu retiro<br/>puede bajar tu <em class="em-gold" style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">base gravable</em></h2>
+        <p class="sub">Las aportaciones a un PPR son deducibles de impuestos conforme al Art. 151 LISR. Eso puede reducir tu base gravable y, según tu situación fiscal, contribuir a un saldo a favor en tu declaración anual.</p>
         <div class="isr-highlight">
           <div class="isr-item">
             <div class="ii-ico"><i class="fas fa-percent" aria-hidden="true"></i></div>
             <div>
               <h4>Hasta 10% de tu ingreso anual deducible</h4>
-              <p>Con un tope de 5 UMAs anuales. Entre más ganas, más recuperas en tu declaración.</p>
+              <p>Con un tope de 5 UMA anuales y sujeto a los requisitos de la LISR.</p>
             </div>
           </div>
           <div class="isr-item">
             <div class="ii-ico"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i></div>
             <div>
-              <h4>Tasa efectiva de hasta 35%</h4>
-              <p>Si estás en el tramo más alto del ISR, cada $1,000 que aportas puede regresar hasta $350 en devolución.</p>
+              <h4>Depende de tu tasa marginal</h4>
+              <p>El efecto fiscal depende de tu tasa marginal, retenciones, otras deducciones y situación individual. Por eso lo calculamos contigo y no con una regla general.</p>
             </div>
           </div>
           <div class="isr-item">
             <div class="ii-ico"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
             <div>
               <h4>Beneficio año con año</h4>
-              <p>No es un beneficio de una sola vez. Mientras mantengas tu PPR, deduces cada año que declares.</p>
+              <p>Mientras mantengas tu plan y cumplas los requisitos, puedes aplicar la deducción en cada declaración anual.</p>
             </div>
           </div>
         </div>
@@ -931,58 +1050,62 @@ footer a{color:var(--rosa-light);}
         </button>
         <div id="ic-result" class="ic-result" hidden>
           <div class="ic-num" id="ic-num-output">$0</div>
-          <div class="ic-lbl">Devolución estimada de ISR por año</div>
+          <div class="ic-lbl">Efecto fiscal estimado por año</div>
           <div class="ic-note" id="ic-note-output"></div>
         </div>
-        <p style="font-size:.68rem;color:rgba(255,255,255,.25);text-align:center;margin-top:16px;">Estimación general. El monto exacto depende de tu situación fiscal y declaración anual.</p>
+        <p style="font-size:.68rem;color:rgba(255,255,255,.25);text-align:center;margin-top:16px;">Simulación informativa basada en supuestos seleccionados. Los resultados son estimaciones, no garantizan rendimientos ni sustituyen una propuesta contractual, asesoría fiscal o evaluación de perfil. Inflación, costos, retiros, impuestos y comportamiento del mercado pueden modificar el resultado.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ====================================================  LOS 3 PILARES  -->
-<section id="pilares" aria-labelledby="pilares-title">
+<!-- ====================================================  TRANSPARENCIA  -->
+<section id="transparencia" class="gfg-transp" aria-labelledby="transp-title">
   <div class="wrap">
     <div class="text-center" data-reveal>
-      <span class="tag"><i class="fas fa-layer-group" aria-hidden="true"></i>La estrategia</span>
-      <h2 class="h-section" id="pilares-title">Un PPR bien diseñado<br/>resuelve <em>tres problemas a la vez</em></h2>
-      <p class="sub">No es solo un ahorro. Es una estrategia financiera integrada que trabaja para ti en tres frentes simultáneamente.</p>
+      <span class="tag"><i class="fas fa-scale-balanced" aria-hidden="true"></i>Con las cartas sobre la mesa</span>
+      <h2 class="h-section" id="transp-title">Lo bueno, lo que cuesta<br/>y lo que <em>debes saber antes</em></h2>
+      <p class="sub">Un PPR es una herramienta de largo plazo. Funciona muy bien para unas personas y no tanto para otras. Esto es lo que revisamos contigo antes de que decidas.</p>
     </div>
-    <div class="pilares-grid">
-      <div class="pilar pilar-ahorro" data-reveal>
-        <div class="pilar-num" aria-hidden="true">01</div>
-        <div class="pilar-ico"><i class="fas fa-piggy-bank" aria-hidden="true"></i></div>
-        <h3>Ahorro con dirección</h3>
-        <p>Tu dinero ya no "queda" al final del mes — tiene una ruta clara y crece con interés compuesto año tras año.</p>
-        <ul class="pilar-list" role="list">
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Aportaciones programadas flexibles</li>
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Rendimientos garantizados o variables según perfil</li>
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Capital acumulado disponible al retiro</li>
+    <div class="gt-grid" data-reveal>
+      <article class="gt-card">
+        <div class="gt-ico gt-ok"><i class="fas fa-seedling" aria-hidden="true"></i></div>
+        <h3>Beneficios</h3>
+        <ul>
+          <li>Ahorro con disciplina y un horizonte claro.</li>
+          <li>Aportaciones potencialmente deducibles conforme a la LISR.</li>
+          <li>Potencial de crecimiento a largo plazo.</li>
         </ul>
-      </div>
-      <div class="pilar pilar-proteccion" data-reveal>
-        <div class="pilar-num" aria-hidden="true">02</div>
-        <div class="pilar-ico"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
-        <h3>Protección real</h3>
-        <p>Identificamos los riesgos que podrían comprometer tu estabilidad financiera — y tu PPR los cubre mientras ahorras.</p>
-        <ul class="pilar-list" role="list">
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Seguro de vida incluido en el plan</li>
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Cobertura ante invalidez total y permanente</li>
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Tu familia protegida si algo te ocurre</li>
+      </article>
+      <article class="gt-card">
+        <div class="gt-ico"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+        <h3>Riesgos</h3>
+        <ul>
+          <li>El valor de tu fondo sube y baja con el mercado.</li>
+          <li>Rendimientos pasados no aseguran rendimientos futuros.</li>
+          <li>La inflación reduce el poder de compra de lo ahorrado.</li>
         </ul>
-      </div>
-      <div class="pilar pilar-retiro" data-reveal>
-        <div class="pilar-num" aria-hidden="true">03</div>
-        <div class="pilar-ico"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
-        <h3>Retiro garantizado</h3>
-        <p>Construyes desde hoy la ruta que te permite vivir con tranquilidad cuando decidas dejar de trabajar.</p>
-        <ul class="pilar-list" role="list">
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Renta mensual garantizada al retiro</li>
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Complemento al AFORE y seguridad social</li>
-          <li role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Independencia financiera en la vejez</li>
+      </article>
+      <article class="gt-card">
+        <div class="gt-ico"><i class="fas fa-receipt" aria-hidden="true"></i></div>
+        <h3>Costos</h3>
+        <ul>
+          <li>Cada plan tiene cargos de administración y gestión.</li>
+          <li>Cambian según la aseguradora y el producto.</li>
+          <li>Te los mostramos por escrito antes de firmar.</li>
         </ul>
-      </div>
+      </article>
+      <article class="gt-card">
+        <div class="gt-ico"><i class="fas fa-hourglass-half" aria-hidden="true"></i></div>
+        <h3>Permanencia y liquidez</h3>
+        <ul>
+          <li>Para conservar el beneficio fiscal, el plan se mantiene hasta los 65 años o en caso de invalidez.</li>
+          <li>Retirar antes puede generar retención de ISR y cargos del producto.</li>
+          <li>Por eso primero revisamos tu fondo de emergencia.</li>
+        </ul>
+      </article>
     </div>
+    <p class="gt-nota" data-reveal>Información general con fines educativos. No sustituye asesoría fiscal ni las condiciones generales del producto, que prevalecen sobre cualquier texto de esta página.</p>
   </div>
 </section>
 
@@ -991,7 +1114,7 @@ footer a{color:var(--rosa-light);}
   <div class="wrap">
     <div class="text-center" data-reveal>
       <span class="tag"><i class="fas fa-route" aria-hidden="true"></i>Así funciona</span>
-      <h2 class="h-section" id="proc-title">Del "no sé por dónde empezar"<br/>a tu <em>PPR activo en días</em></h2>
+      <h2 class="h-section" id="proc-title">Del "no sé por dónde empezar"<br/>a tu <em>plan en marcha</em></h2>
     </div>
     <div class="steps" data-reveal>
       <div class="step-item">
@@ -1011,96 +1134,17 @@ footer a{color:var(--rosa-light);}
       <div class="step-item">
         <div class="step-num-circle">3</div>
         <div class="step-content">
-          <h3>Tu propuesta en 24 horas</h3>
-          <p>Comparamos opciones de PPR en 8 aseguradoras y te presentamos la que más te conviene — con coberturas, rendimientos y costo real.</p>
+          <h3>Tu propuesta en 1 a 2 días</h3>
+          <p>Comparamos opciones de PPR entre varias aseguradoras y te presentamos la que más te conviene — con coberturas, rendimientos y costo real.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num-circle">4</div>
         <div class="step-content">
           <h3>Emisión y acompañamiento continuo</h3>
-          <p>Una vez que decides, gestionamos todo. Y no desaparecemos: Guadalupe está contigo en cada revisión anual y en cualquier duda futura.</p>
+          <p>Iniciamos tu solicitud y te acompañamos durante su evaluación y emisión. Y no desaparecemos: Guadalupe está contigo en cada revisión anual y en cualquier duda futura.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================================================  TESTIMONIOS  -->
-<section id="testimonios" aria-labelledby="testi-title">
-  <div class="wrap">
-    <div class="text-center" data-reveal>
-      <span class="tag"><i class="fas fa-quote-left" aria-hidden="true"></i>Casos reales</span>
-      <h2 class="h-section" id="testi-title">Personas que ya tomaron<br/>la decisión de <em>planear su retiro</em></h2>
-    </div>
-    <div class="testi-grid" data-reveal role="list">
-
-      <article class="tcard" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">PPR · Guadalajara</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Tenía 42 años y creía que ya era tarde para pensar en mi retiro. Guadalupe me demostró que no solo no era tarde — sino que empezar ahora me da margen real para elegir cuándo quiero dejar de trabajar."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">MR</div>
-          <div><div class="tc-name">María Rodríguez</div><div class="tc-role">Directora Comercial · 44 años</div></div>
-        </div>
-      </article>
-
-      <article class="tcard featured" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">PPR + Deducción ISR</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Lo que más me sorprendió fue entender que mi PPR me devuelve dinero del SAT cada año. Llevo 3 años y ya recuperé más de $18,000 pesos solo en devoluciones — sin contar lo que tengo ahorrado para el retiro."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">CA</div>
-          <div><div class="tc-name">Carlos Alvarado</div><div class="tc-role">Ingeniero · 38 años</div></div>
-        </div>
-      </article>
-
-      <article class="tcard" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">Retiro · Michoacán</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Hicimos el ejercicio de cuánto necesito ahorrar mensualmente para retirarme a los 60 con dignidad. Ese número fue revelador — y también tranquilizador, porque era mucho más alcanzable de lo que imaginaba."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">LG</div>
-          <div><div class="tc-name">Laura González</div><div class="tc-role">Maestra · 36 años</div></div>
-        </div>
-      </article>
-
-      <article class="tcard" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">PPR · CDMX</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Ya había intentado contratar un PPR con otra empresa pero no me explicaron nada. Con Guadalupe el proceso fue clarísimo: supe qué estaba contratando, cuánto me iba a rendir y qué protección incluía. En 48 horas ya tenía mi póliza."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">NB</div>
-          <div><div class="tc-name">Norberto Barajas</div><div class="tc-role">Empresario · 47 años</div></div>
-        </div>
-      </article>
-
-      <article class="tcard" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">Primera vez · Jalisco</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"Lo que me ayudó fue entender que sí puedo tener un retiro tranquilo si empiezo desde ahora. Me dio mucha paz tener claridad sobre mis metas. Hoy aporto $1,500 al mes y sé exactamente a dónde va ese dinero."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">DM</div>
-          <div><div class="tc-name">Daniela Meneses</div><div class="tc-role">Psicóloga · 31 años</div></div>
-        </div>
-      </article>
-
-      <article class="tcard" role="listitem">
-        <div class="tc-quote" aria-hidden="true">"</div>
-        <div class="tc-tag">Urgencia real · Querétaro</div>
-        <div class="tc-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="tc-text">"En la asesoría me hizo click el tiempo — darme cuenta de que cada día que pasa es un día menos de planear mi futuro. Me da mucha tranquilidad saber que ya estoy haciendo algo concreto y no solo pensando en hacerlo."</p>
-        <div class="tc-author">
-          <div class="tc-avatar" aria-hidden="true">LH</div>
-          <div><div class="tc-name">Liliana Herrera</div><div class="tc-role">Contadora · 40 años</div></div>
-        </div>
-      </article>
-
     </div>
   </div>
 </section>
@@ -1111,7 +1155,7 @@ footer a{color:var(--rosa-light);}
     <div class="asesora-grid">
       <div class="asesora-visual" data-reveal>
         <div class="asesora-frame">
-          <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora de Plan Personal de Retiro GFG Finanzas" loading="lazy" />
+          <img src="img/perfil.webp" alt="Guadalupe F. Godínez, asesora de Plan Personal de Retiro GFG Finanzas" loading="lazy" />
         </div>
         <div class="asesora-deco-1" aria-hidden="true"></div>
         <div class="asesora-deco-2" aria-hidden="true"></div>
@@ -1127,13 +1171,11 @@ footer a{color:var(--rosa-light);}
           <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Te explico todo con claridad, sin tecnicismos</div>
           <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>No tomas decisiones desde la presión — tú decides si y cuándo contratas</div>
           <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Estoy contigo antes, durante y después de contratar</div>
-          <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Comparo 8 aseguradoras — no trabajo para una sola</div>
+          <div class="commitment" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i>Comparo varias aseguradoras — no trabajo para una sola</div>
         </div>
         <div class="asesora-chips" role="list" aria-label="Certificaciones">
           <span class="chip" role="listitem"><i class="fas fa-certificate" aria-hidden="true"></i>Certificada AMIB</span>
-          <span class="chip" role="listitem"><i class="fas fa-shield-alt" aria-hidden="true"></i>Agente CONDUSEF</span>
           <span class="chip" role="listitem"><i class="fas fa-graduation-cap" aria-hidden="true"></i>+8 años de experiencia</span>
-          <span class="chip" role="listitem"><i class="fas fa-users" aria-hidden="true"></i>+500 familias asesoradas</span>
         </div>
       </div>
     </div>
@@ -1156,14 +1198,15 @@ footer a{color:var(--rosa-light);}
       <div class="lts-item"><div class="lts-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita</span></div>
       <div class="lts-item"><div class="lts-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Respuesta en &lt; 24 horas</span></div>
       <div class="lts-item"><div class="lts-ico"><i class="fas fa-receipt" aria-hidden="true"></i></div><span>Calculamos tu deducción ISR</span></div>
-      <div class="lts-item"><div class="lts-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas</span></div>
+      <div class="lts-item"><div class="lts-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>Varias aseguradoras comparadas</span></div>
     </div>
 
     <!-- Form card centrado -->
     <div class="lead-card-center" data-reveal>
       <div class="lc-title">Solicita tu asesoría gratuita de PPR</div>
       <div class="lc-sub">Completa el formulario y Guadalupe te contacta en menos de 24 horas con tu diagnóstico personalizado.</div>
-      <form id="mainLeadForm" novalidate>
+      <form id="mainLeadForm" novalidate data-interes="retiro">
+          <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <div class="lf-row">
           <div class="lf-group">
             <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
@@ -1178,8 +1221,8 @@ footer a{color:var(--rosa-light);}
         </div>
         <div class="lf-row">
           <div class="lf-group">
-            <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
-            <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+            <label for="lf-correo">Correo electrónico <span class="lf-opt">(opcional)</span></label>
+            <input type="email" id="lf-correo" placeholder="tu@correo.com" autocomplete="email" />
             <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
           </div>
           <div class="lf-group">
@@ -1190,7 +1233,7 @@ footer a{color:var(--rosa-light);}
         </div>
         <div class="lf-privacy">
           <input type="checkbox" id="lf-priv" required />
-          <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría de PPR.</label>
+          <label for="lf-priv">He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</label>
         </div>
         <button type="submit" class="btn btn-primary btn-full btn-xl">
           <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -1206,18 +1249,13 @@ footer a{color:var(--rosa-light);}
         <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
         <h4>¡Listo! Solicitud enviada</h4>
         <p>Guadalupe te contacta en menos de 24 horas con tu diagnóstico personalizado de PPR. ¡Gracias por confiar en GFG Finanzas!</p>
-        <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría%20de%20PPR" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer" style="margin-top:4px;">
+        <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría%20de%20PPR" class="btn btn-wa btn-full" data-gfg-agenda target="_blank" rel="noopener noreferrer" style="margin-top:4px;">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
           También escríbenos ahora por WhatsApp
         </a>
       </div>
     </div>
 
-    <!-- FOMO bajo el card -->
-    <div class="lead-fomo-bottom" role="note" aria-live="polite">
-      <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
-      <p>Esta semana solo quedan <strong id="spots-form">5 lugares</strong> disponibles para asesoría personalizada de PPR. Una vez que se agoten, el siguiente turno es la próxima semana.</p>
-    </div>
 
   </div>
 </section>
@@ -1279,13 +1317,9 @@ footer a{color:var(--rosa-light);}
 <section id="final-cta" aria-labelledby="final-title">
   <div class="wrap">
     <div class="final-inner">
-      <div class="spots-pill" role="note" aria-live="polite">
-        <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
-        Solo quedan <strong id="spots-final">5 lugares</strong> disponibles esta semana
-      </div>
       <span class="tag tag-light"><i class="fas fa-calendar-check" aria-hidden="true"></i>Es el momento</span>
       <h2 class="h-section" id="final-title">No necesitas tenerlo todo resuelto hoy.<br/>Solo necesitas <em class="em-gold" style="color:var(--amarillo);background:none;-webkit-background-clip:unset;animation:none;">dejar de postergarlo.</em></h2>
-      <p class="sub">Cada mes que pasa sin un PPR es dinero que el SAT podría devolverte, rendimientos que no se acumulan y retiro que se aleja. La asesoría es gratuita. El primer paso cuesta $0.</p>
+      <p class="sub">Cada mes que pasa es tiempo que el interés compuesto deja de trabajar a tu favor. La asesoría es gratuita. El primer paso cuesta $0.</p>
       <div class="final-actions">
         <a href="#lead-section" class="btn btn-primary btn-xl">
           <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -1298,7 +1332,7 @@ footer a{color:var(--rosa-light);}
       </div>
       <div class="final-note">
         <i class="fas fa-shield-alt" aria-hidden="true"></i>
-        Asesoría 100% gratuita · Sin compromiso · Sin letra chica · Certificada AMIB · CONDUSEF
+        Asesoría 100% gratuita · Sin compromiso · Sin letra chica · Certificada AMIB
       </div>
     </div>
   </div>
@@ -1309,7 +1343,7 @@ footer a{color:var(--rosa-light);}
 <footer role="contentinfo">
   <div class="wrap">
     <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
-    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a href="tel:+527717021729">771 702 1729</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)" aria-label="amor">♥</span> en México</p>
+    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a href="aviso-de-privacidad.html">Aviso de privacidad</a> &nbsp;·&nbsp; <a href="tel:+527717021729">771 702 1729</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)" aria-label="amor">♥</span> en México</p>
   </div>
 </footer>
 
@@ -1317,17 +1351,12 @@ footer a{color:var(--rosa-light);}
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
-<div id="fomo-container" aria-live="polite" aria-atomic="false"></div>
 
-<div id="live-counter" aria-live="polite">
-  <span class="dot" aria-hidden="true"></span>
-  <span><strong id="live-num">27</strong> leyendo ahora</span>
-</div>
 
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
+<script src="js/calc-brecha.js?v=32"></script>
 <script>
-const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
-const FUENTE_PAGE       = "ppr";
 
 /* ===== URGENCY BAR ===== */
 (function(){if(localStorage.getItem('gfg-ppr-bar')==='1'){const b=document.getElementById('urgency-bar');if(b)b.style.display='none';}})();
@@ -1337,44 +1366,6 @@ document.getElementById('bar-close').addEventListener('click',()=>{document.getE
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('shadow',scrollY>20),{passive:true});
 
-/* ===== SPOTS (sincronizados en toda la página) ===== */
-let spots=5;
-function setSpots(n){
-  const lbl=n+' lugar'+(n===1?'':'es');
-  ['spots-bar','spots-final'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=lbl;});
-  const sf=document.getElementById('spots-form');if(sf)sf.textContent=lbl;
-}
-function decaySpots(){setTimeout(()=>{if(spots>1){spots--;setSpots(spots);}decaySpots();},240000+Math.random()*180000);}
-decaySpots();
-
-/* ===== COUNTDOWN (resetea a medianoche) ===== */
-function getEndOfDay(){
-  const k='gfg-ppr-cd';const stored=localStorage.getItem(k);
-  if(stored){const ts=parseInt(stored);if(ts>Date.now())return ts;}
-  const end=new Date();end.setHours(23,59,59,0);
-  localStorage.setItem(k,end.getTime().toString());return end.getTime();
-}
-const cdEnd=getEndOfDay();
-function tickCountdown(){
-  const diff=Math.max(0,cdEnd-Date.now());
-  const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
-  const pad=n=>String(n).padStart(2,'0');
-  const el=document.getElementById('cd-display');
-  if(el)el.textContent=pad(h)+':'+pad(m)+':'+pad(s);
-  if(diff>0)setTimeout(tickCountdown,1000);
-}
-tickCountdown();
-
-/* ===== LIVE VIEWERS ===== */
-let viewers=22+Math.floor(Math.random()*12);
-['viewer-count','live-num'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=viewers;});
-function updateViewers(){
-  viewers=Math.max(12,Math.min(42,viewers+(Math.random()<.5?-1:1)));
-  ['viewer-count','live-num'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=viewers;});
-  setTimeout(updateViewers,5000+Math.random()*5000);
-}
-setTimeout(updateViewers,5000+Math.random()*5000);
-
 /* ===== CALCULADORA ISR ===== */
 document.getElementById('btn-calc').addEventListener('click',function(){
   const ingreso=parseFloat(document.getElementById('ic-ingreso').value)||0;
@@ -1382,86 +1373,17 @@ document.getElementById('btn-calc').addEventListener('click',function(){
   if(ingreso<5000||aport<100){return;}
   const anualIngreso=ingreso*12;
   const anualAport=aport*12;
-  const maxDeducible=Math.min(anualAport,anualIngreso*0.10,102580.40);/* 5 UMAs ≈ 102580 */
+  const maxDeducible=Math.min(anualAport,anualIngreso*0.10,5*GFG.config.umaAnual);/* tope: 5 UMA anuales */
   const tasas=[{l:0,r:0},{l:7735.00,r:.064},{l:65651.07,r:.1088},{l:115375.90,r:.16},{l:134119.41,r:.1792},{l:160577.65,r:.2136},{l:323862.00,r:.2352},{l:510451.00,r:.30},{l:974535.03,r:.32},{l:1301337.22,r:.34},{l:Infinity,r:.35}];
   const tasa=tasas.slice().reverse().find(t=>anualIngreso>t.l)?.r||0.10;
   const devolucion=Math.round(maxDeducible*tasa);
   const fmt=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:0}).format(n);
   document.getElementById('ic-num-output').textContent=fmt(devolucion);
   document.getElementById('ic-note-output').textContent=
-    `Basado en un ingreso anual de ${fmt(anualIngreso)}, aportación anual de ${fmt(anualAport)} y tasa estimada del ${Math.round(tasa*100)}% de ISR.`;
+    `Basado en un ingreso anual de ${fmt(anualIngreso)}, aportación anual de ${fmt(anualAport)} y una tasa marginal estimada del ${Math.round(tasa*100)}%. No es una devolución garantizada.`;
   document.getElementById('ic-result').hidden=false;
-  if(typeof fbq==='function')fbq('track','ViewContent',{content_name:'calculadora-isr-ppr'});
+  GFG.track('calculator_complete',{calculadora:'isr-ppr'});
 });
-
-/* ===== VIDEO PLACEHOLDER ===== */
-document.getElementById('video-box').addEventListener('click',function(){
-  /* Reemplaza el alert con tu embed de YouTube/Vimeo cuando esté disponible */
-  alert('Inserta aquí el link de tu video. Ejemplo YouTube:\nvideoBox.innerHTML = \'<iframe src="https://www.youtube.com/embed/TU_ID?autoplay=1" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen></iframe>\';');
-});
-document.getElementById('video-box').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')e.currentTarget.click();});
-
-/* ===== LEAD FORM ===== */
-(function(){
-  const form=document.getElementById('mainLeadForm');
-  const success=document.getElementById('mainLeadSuccess');
-  if(!form)return;
-  function vf(id,errId,fn){
-    const el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);
-    el.classList.toggle('lferr',!ok);err.classList.toggle('show',!ok);return ok;
-  }
-  function validateAll(){
-    const n=vf('lf-nombre','err-lf-nombre',el=>el.value.trim().length>=2);
-    const e=vf('lf-edad','err-lf-edad',el=>{const v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=65;});
-    const c=vf('lf-correo','err-lf-correo',el=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value));
-    const w=vf('lf-wa','err-lf-wa',el=>/^\d{10}$/.test(el.value.replace(/\s/g,'')));
-    return n&&e&&c&&w&&document.getElementById('lf-priv').checked;
-  }
-  ['lf-nombre','lf-edad','lf-correo','lf-wa'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el)el.addEventListener('input',()=>{el.classList.remove('lferr');const err=document.getElementById('err-'+id);if(err)err.classList.remove('show');});
-  });
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!validateAll())return;
-    const data={nombre:document.getElementById('lf-nombre').value.trim(),edad:document.getElementById('lf-edad').value.trim(),correo:document.getElementById('lf-correo').value.trim(),whatsapp:document.getElementById('lf-wa').value.trim()};
-    try{
-      const db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
-      db.from('leads').insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:'Nuevo',notas:'PPR'}]).then(()=>{}).catch(()=>{});
-    }catch(_){}
-    if(typeof fbq==='function')fbq('track','Lead',{content_name:FUENTE_PAGE,content_category:'Seguros'});
-    if(spots>1){spots--;setSpots(spots);}
-    form.style.display='none';
-    success.style.display='block';
-    success.scrollIntoView({behavior:'smooth',block:'center'});
-  });
-})();
-
-/* ===== FOMO TOASTS ===== */
-const fomoEvents=[
-  {i:'LH',name:'Liliana H. de Monterrey',action:'acaba de agendar su asesoría de PPR',t:'hace 2 min'},
-  {i:'CM',name:'Carlos M. de Jalisco',action:'descubrió que puede deducir $18,000 del SAT con su PPR',t:'hace 5 min'},
-  {i:'MR',name:'María R. de CDMX',action:'contrató su Plan Personal de Retiro hoy',t:'hace 8 min'},
-  {i:'DV',name:'Diego V. de Querétaro',action:'calculó su ahorro fiscal con el simulador',t:'hace 11 min'},
-  {i:'AN',name:'Andrea N. de Puebla',action:'agendó su asesoría gratuita de PPR',t:'hace 14 min'},
-  {i:'HR',name:'Hugo R. de Guadalajara',action:'empezó su PPR con solo $1,500 al mes',t:'hace 17 min'},
-  {i:'SL',name:'Sandra L. de Mérida',action:'descubrió que su AFORE no era suficiente',t:'hace 20 min'},
-  {i:'JG',name:'Jorge G. de León',action:'recibió su propuesta personalizada de PPR',t:'hace 22 min'},
-];
-let fomoIdx=0,activeToast=null;
-function showToast(){
-  const d=fomoEvents[fomoIdx%fomoEvents.length];fomoIdx++;
-  const container=document.getElementById('fomo-container');
-  if(activeToast){activeToast.classList.add('out');setTimeout(()=>activeToast?.remove(),400);}
-  const toast=document.createElement('div');
-  toast.className='fomo-toast';toast.setAttribute('role','status');
-  toast.innerHTML=`<div class="fomo-avatar" aria-hidden="true">${d.i}</div><div class="fomo-body"><strong>${d.name}</strong><span>${d.action} · ${d.t}</span></div><button class="fomo-close" aria-label="Cerrar">✕</button>`;
-  toast.querySelector('.fomo-close').addEventListener('click',()=>{toast.classList.add('out');setTimeout(()=>toast.remove(),400);if(activeToast===toast)activeToast=null;});
-  container.appendChild(toast);activeToast=toast;
-  setTimeout(()=>{if(toast.parentNode){toast.classList.add('out');setTimeout(()=>toast.remove(),400);if(activeToast===toast)activeToast=null;}},5500);
-}
-function scheduleToast(){setTimeout(()=>{showToast();scheduleToast();},16000+Math.random()*10000);}
-setTimeout(()=>{showToast();scheduleToast();},7000);
 
 /* ===== SCROLL REVEAL ===== */
 if('IntersectionObserver' in window){
@@ -1471,7 +1393,7 @@ if('IntersectionObserver' in window){
 
 /* ===== 3D TILT ===== */
 if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
-  document.querySelectorAll('.pain-card,.pilar,.tcard,.step-item').forEach(card=>{
+  document.querySelectorAll('.step-item').forEach(card=>{
     card.addEventListener('mousemove',e=>{
       const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
       const rx=((y-r.height/2)/(r.height/2))*-5,ry=((x-r.width/2)/(r.width/2))*5;

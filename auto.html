@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seguro de Auto — GFG Finanzas | Cotiza sin costo</title>
   <meta name="description" content="Protege tu vehículo comparando las mejores aseguradoras de auto en México. Asesoría 100% gratuita, sin compromiso — GFG Finanzas." />
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <meta name="theme-color" content="#222D44" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/auto.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://gfbfinanzas.vercel.app/auto.html" />
+  <meta property="og:title"       content="Seguro de Auto — GFG Finanzas" />
+  <meta property="og:description" content="Compara aseguradoras de auto con asesoría personal y sin costo. Guadalupe F. Godínez — GFG Finanzas." />
+  <meta property="og:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
+  <meta property="og:locale"      content="es_MX" />
+  <meta property="og:site_name"   content="GFG Finanzas" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="preload" as="image" href="img/hero/auto-3.webp" type="image/webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -473,18 +483,14 @@
     font-size: 1.3rem; text-decoration: none;
   }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");window.META_PIXEL_ID="TU_PIXEL_ID";if(window.META_PIXEL_ID!=="TU_PIXEL_ID"){fbq("init",window.META_PIXEL_ID);fbq("track","PageView");}</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
 </head>
-<body>
+<body class="pg-seg">
 
 <!-- URGENCY BAR -->
 <div id="urgency-bar" role="note">
   <div class="bar-inner">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Solo quedan <strong>4 lugares</strong> para asesoría gratuita esta semana — <a href="#cta-final" style="color:var(--rosa-light);font-weight:700;text-decoration:underline;">Cotiza ahora →</a></span>
+    <span>Primera asesoría sin costo y sin compromiso · presencial o por videollamada. <a href="#lead-section" class="bar-cta">Agendar →</a></span>
   </div>
   <button class="bar-close" id="bar-close" aria-label="Cerrar">✕</button>
 </div>
@@ -493,7 +499,7 @@
 <nav id="nav" aria-label="Navegación">
   <div class="wrap nav-wrap">
     <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
-      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="44" />
+      <span class="gfg-logo" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
     </a>
     <div class="nav-right">
       <a href="tel:+527717021729" class="nav-phone">
@@ -520,7 +526,7 @@
 <main>
 
 <!-- HERO + COTIZADOR RÁPIDO -->
-<section id="hero" aria-labelledby="hero-title">
+<section id="hero" class="gfg-hero-bg gfg-hero-side gfg-hero--auto" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero-grid">
 
@@ -534,7 +540,7 @@
           Tu auto protegido.<br/>Tu bolsillo, <em>también</em>.
         </h1>
         <p class="hero-lead">
-          Comparamos 8 aseguradoras para encontrar el mejor seguro de auto para tu vehículo, uso y presupuesto. No trabajamos para una sola aseguradora — trabajamos para ti.
+          Comparamos varias aseguradoras para encontrar el mejor seguro de auto para tu vehículo, uso y presupuesto. No trabajamos para una sola aseguradora — trabajamos para ti.
         </p>
         <div class="hero-actions">
           <a href="#cta-final" class="btn btn-primary btn-lg">
@@ -547,7 +553,7 @@
           </a>
         </div>
         <div class="hero-proof">
-          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>8 aseguradoras comparadas</div>
+          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Varias aseguradoras comparadas</div>
           <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo ni compromiso</div>
           <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Respuesta en 24 horas</div>
         </div>
@@ -562,13 +568,13 @@
         <div class="cover-selector" role="group" aria-label="Tipo de cobertura">
           <label class="cover-opt selected">
             <input type="radio" name="cover" value="amplia" checked />
-            <div class="cover-opt-ico">🛡️</div>
+            <div class="cover-opt-ico" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
             <div class="cover-opt-name">Amplia</div>
             <div class="cover-opt-desc">Daños propios, robo y RC</div>
           </label>
           <label class="cover-opt">
             <input type="radio" name="cover" value="rc" />
-            <div class="cover-opt-ico">⚡</div>
+            <div class="cover-opt-ico" aria-hidden="true"><i class="fas fa-car-burst"></i></div>
             <div class="cover-opt-name">RC Limitada</div>
             <div class="cover-opt-desc">Solo daños a terceros</div>
           </label>
@@ -625,18 +631,6 @@
   </div>
 </section>
 
-<!-- PROOF STRIP -->
-<div id="proof-strip">
-  <div class="wrap">
-    <div class="proof-grid" role="list">
-      <div class="proof-item" role="listitem"><div class="proof-num">+500</div><div class="proof-label">Familias<br/>protegidas</div></div>
-      <div class="proof-item" role="listitem"><div class="proof-num">8</div><div class="proof-label">Aseguradoras<br/>comparadas</div></div>
-      <div class="proof-item" role="listitem"><div class="proof-num">+8</div><div class="proof-label">Años de<br/>experiencia</div></div>
-      <div class="proof-item" role="listitem"><div class="proof-num">24h</div><div class="proof-label">Cotización<br/>personalizada</div></div>
-    </div>
-  </div>
-</div>
-
 <!-- PLANES DE AUTO -->
 <section id="coberturas" aria-labelledby="cob-title">
   <div class="wrap">
@@ -676,7 +670,7 @@
         <p>Para quienes quieren la mayor tranquilidad posible. Suma coberturas adicionales como auto sustituto, cristales y accidentes del conductor.</p>
         <div class="plan-features">
           <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Todo lo de Cobertura Amplia</div>
-          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Auto sustituto incluido</div>
+          <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Auto sustituto (según plan)</div>
           <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Rotura de cristales</div>
           <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>Accidentes del conductor</div>
           <div class="pf"><i class="fas fa-check-circle yes" aria-hidden="true"></i>RC ampliada hasta $5M</div>
@@ -691,7 +685,7 @@
   <div class="wrap">
     <div class="ben-grid">
       <div class="ben-photo" data-reveal>
-        <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora de seguros de auto GFG Finanzas" loading="lazy" />
+        <img src="img/perfil.webp" alt="Guadalupe F. Godínez, asesora de seguros de auto GFG Finanzas" loading="lazy" />
       </div>
       <div class="ben-copy" data-reveal>
         <span class="tag"><i class="fas fa-scale-balanced" aria-hidden="true"></i>Por qué asesorarte con GFG</span>
@@ -704,7 +698,7 @@
           </div>
           <div class="check-item">
             <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
-            <p><strong>Comparativa de 8 aseguradoras</strong> — cobertura, deducibles, primas y servicio lado a lado.</p>
+            <p><strong>Comparativa entre aseguradoras</strong> — cobertura, deducibles, primas y servicio lado a lado.</p>
           </div>
           <div class="check-item">
             <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
@@ -751,9 +745,9 @@
     </div>
     <div class="steps-grid">
       <div class="step" data-reveal><div class="step-num">1</div><h3>Cotización gratuita</h3><p>Nos compartes los datos de tu vehículo y uso. Sin costo, sin compromiso, en minutos.</p></div>
-      <div class="step" data-reveal><div class="step-num">2</div><h3>Comparativa real</h3><p>Comparamos 8 aseguradoras y te presentamos las mejores opciones con cobertura y precio claros.</p></div>
+      <div class="step" data-reveal><div class="step-num">2</div><h3>Comparativa real</h3><p>Comparamos varias aseguradoras y te presentamos las mejores opciones con cobertura y precio claros.</p></div>
       <div class="step" data-reveal><div class="step-num">3</div><h3>Tú decides</h3><p>Sin presión. Elige el plan que más te convenza — o no eliges nada. La asesoría siempre es gratuita.</p></div>
-      <div class="step" data-reveal><div class="step-num">4</div><h3>Póliza en 24h</h3><p>Una vez que decides, gestionamos todo. Tu póliza activa en menos de 24 horas.</p></div>
+      <div class="step" data-reveal><div class="step-num">4</div><h3>Emisión acompañada</h3><p>Una vez que decides, gestionamos la emisión con la aseguradora y te avisamos en cuanto tu póliza esté activa.</p></div>
     </div>
   </div>
 </section>
@@ -800,7 +794,7 @@
     <div class="cta-inner">
       <span class="tag tag-light"><i class="fas fa-car-side" aria-hidden="true"></i>Siguiente paso</span>
       <h2 class="h-section" id="cta-title">Tu auto merece el mejor seguro.<br/><em>Cotiza hoy, sin costo.</em></h2>
-      <p class="sub">Comparte los datos de tu vehículo y en menos de 24 horas tienes una comparativa real de las 8 mejores opciones del mercado.</p>
+      <p class="sub">Comparte los datos de tu vehículo y en menos de 24 horas tienes una comparativa real de las mejores opciones del mercado.</p>
       <div class="cta-actions">
         <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20cotizar%20mi%20seguro%20de%20auto" class="btn btn-wa btn-lg" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -833,14 +827,15 @@
         <div class="lead-proofs">
           <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
           <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Te contactamos en menos de 24 horas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-users" aria-hidden="true"></i></div><span>+500 familias protegidas con GFG Finanzas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas para encontrar el mejor plan</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-user-check" aria-hidden="true"></i></div><span>Te atiende Guadalupe personalmente</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>Varias aseguradoras comparadas para encontrar el mejor plan</span></div>
         </div>
       </div>
       <div class="lead-card">
         <div class="lc-title">Agenda tu asesoría gratuita</div>
         <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
-        <form id="mainLeadForm" novalidate>
+        <form id="mainLeadForm" novalidate data-interes="auto">
+          <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="lf-row">
             <div class="lf-group">
               <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
@@ -855,8 +850,8 @@
           </div>
           <div class="lf-row">
             <div class="lf-group">
-              <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
-              <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+              <label for="lf-correo">Correo electrónico <span class="lf-opt">(opcional)</span></label>
+              <input type="email" id="lf-correo" placeholder="tu@correo.com" autocomplete="email" />
               <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
             </div>
             <div class="lf-group">
@@ -867,7 +862,7 @@
           </div>
           <div class="lf-privacy">
             <input type="checkbox" id="lf-priv" required />
-            <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
+            <label for="lf-priv">He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</label>
           </div>
           <button type="submit" class="btn btn-primary btn-full btn-lg">
             <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -883,7 +878,7 @@
           <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
           <h4>¡Listo! Solicitud enviada</h4>
           <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
-          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" data-gfg-agenda target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             También escríbenos ahora
           </a>
@@ -898,7 +893,7 @@
 <footer role="contentinfo">
   <div class="wrap">
     <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
-    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
+    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a href="aviso-de-privacidad.html">Aviso de privacidad</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
   </div>
 </footer>
 
@@ -906,6 +901,8 @@
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
 <script>
 /* Nav */
 (function(){if(localStorage.getItem('gfg-auto-bar')==='1'){const b=document.getElementById('urgency-bar');if(b)b.style.display='none';}})();
@@ -935,11 +932,12 @@ document.getElementById('autoForm').addEventListener('submit', e => {
   const err   = document.getElementById('autoFormError');
 
   if (!marca){ err.textContent = 'Selecciona la marca de tu vehículo.'; return; }
-  if (!anio || anio < 2000 || anio > 2025){ err.textContent = 'Ingresa un año válido entre 2000 y 2025.'; return; }
+  const anioMax = new Date().getFullYear() + 1;
+  if (!anio || anio < 2000 || anio > anioMax){ err.textContent = `Ingresa un año válido entre 2000 y ${anioMax}.`; return; }
   if (!uso){ err.textContent = 'Selecciona el uso del vehículo.'; return; }
   err.textContent = '';
 
-  const age   = 2025 - anio;
+  const age   = Math.max(0, new Date().getFullYear() - anio);
   const range = rangeRef[cover];
   const base  = range.min + Math.floor((range.max - range.min) * (age / 25));
   const mult  = uso === 'uber' ? 1.4 : uso === 'comercial' ? 1.2 : 1;
@@ -953,6 +951,7 @@ document.getElementById('autoForm').addEventListener('submit', e => {
   const msg = `Hola Guadalupe, quiero cotizar mi seguro de auto:\nMarca: ${marca}\nAño: ${anio}\nUso: ${uso}\nCobertura: ${cover === 'amplia' ? 'Amplia' : 'RC Limitada'}`;
   document.getElementById('qrWA').href = `https://wa.me/527717021729?text=${encodeURIComponent(msg)}`;
   document.getElementById('autoResult').hidden = false;
+  GFG.track('calculator_complete', { calculadora: 'auto', cobertura: cover });
   document.getElementById('autoResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 });
 
@@ -981,38 +980,7 @@ if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
   });
 }
 
-var FUENTE_PAGE = "auto";
-const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
 
-/* ===== LEAD FORM ===== */
-(function() {
-  var form = document.getElementById("mainLeadForm");
-  var success = document.getElementById("mainLeadSuccess");
-  if (!form) return;
-  function vf(id,errId,fn){var el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);el.classList.toggle("lferr",!ok);err.classList.toggle("show",!ok);return ok;}
-  function validateAll(){
-    var n=vf("lf-nombre","err-lf-nombre",function(el){return el.value.trim().length>=2;});
-    var e=vf("lf-edad","err-lf-edad",function(el){var v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=75;});
-    var c=vf("lf-correo","err-lf-correo",function(el){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value);});
-    var w=vf("lf-wa","err-lf-wa",function(el){return /^\\d{10}$/.test(el.value.replace(/\\s/g,""));});
-    return n&&e&&c&&w&&document.getElementById("lf-priv").checked;
-  }
-  ["lf-nombre","lf-edad","lf-correo","lf-wa"].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el) el.addEventListener("input",function(){el.classList.remove("lferr");var err=document.getElementById("err-"+id);if(err)err.classList.remove("show");});
-  });
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!validateAll()) return;
-    var data={nombre:document.getElementById("lf-nombre").value.trim(),edad:document.getElementById("lf-edad").value.trim(),correo:document.getElementById("lf-correo").value.trim(),whatsapp:document.getElementById("lf-wa").value.trim()};
-    try{var db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);db.from("leads").insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:"Nuevo",notas:""}]).then(function(){}).catch(function(){});}catch(_){}
-    if(typeof fbq==="function") fbq("track","Lead",{content_name:FUENTE_PAGE,content_category:"Seguros"});
-    form.style.display="none";
-    success.style.display="block";
-    success.scrollIntoView({behavior:"smooth",block:"center"});
-  });
-})();
 
 /* Mobile nav hamburger */
 (function() {

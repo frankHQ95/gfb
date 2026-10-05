@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gastos Médicos Mayores — GFG Finanzas | Cotiza sin costo</title>
-  <meta name="description" content="Protege a tu familia de los altos costos hospitalarios. Gastos Médicos Mayores comparando 8 aseguradoras. Asesoría 100% gratuita — GFG Finanzas." />
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <meta name="description" content="Protege a tu familia de los altos costos hospitalarios. Gastos Médicos Mayores comparando varias aseguradoras. Asesoría 100% gratuita — GFG Finanzas." />
+  <meta name="theme-color" content="#222D44" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/gastos-medicos.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://gfbfinanzas.vercel.app/gastos-medicos.html" />
+  <meta property="og:title"       content="Gastos Médicos Mayores — GFG Finanzas" />
+  <meta property="og:description" content="Compara planes de Gastos Médicos Mayores con asesoría personal y sin costo. Guadalupe F. Godínez — GFG Finanzas." />
+  <meta property="og:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
+  <meta property="og:locale"      content="es_MX" />
+  <meta property="og:site_name"   content="GFG Finanzas" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="preload" as="image" href="img/hero/gmm.webp" type="image/webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -458,18 +468,14 @@
     font-size: 1.3rem; text-decoration: none;
   }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");window.META_PIXEL_ID="TU_PIXEL_ID";if(window.META_PIXEL_ID!=="TU_PIXEL_ID"){fbq("init",window.META_PIXEL_ID);fbq("track","PageView");}</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
 </head>
-<body>
+<body class="pg-seg">
 
 <!-- URGENCY BAR -->
 <div id="urgency-bar" role="note">
   <div class="bar-inner">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Solo quedan <strong id="spots-bar">4 lugares</strong> para asesoría gratuita esta semana — <a href="#cta-final" style="color:var(--rosa-light);font-weight:700;text-decoration:underline;">Asegura el tuyo →</a></span>
+    <span>Primera asesoría sin costo y sin compromiso · presencial o por videollamada. <a href="#lead-section" class="bar-cta">Agendar →</a></span>
   </div>
   <button class="bar-close" id="bar-close" aria-label="Cerrar">✕</button>
 </div>
@@ -478,7 +484,7 @@
 <nav id="nav" aria-label="Navegación">
   <div class="wrap nav-wrap">
     <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
-      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="44" />
+      <span class="gfg-logo" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
     </a>
     <div class="nav-right">
       <a href="tel:+527717021729" class="nav-phone">
@@ -505,7 +511,7 @@
 <main>
 
 <!-- HERO -->
-<section id="hero" aria-labelledby="hero-title">
+<section id="hero" class="gfg-hero-bg gfg-hero-side gfg-hero--gmm" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero-grid">
       <div>
@@ -517,7 +523,7 @@
           Una hospitalización no debería<br/>costarte el <em>patrimonio de tu familia</em>
         </h1>
         <p class="hero-lead">
-          El costo promedio de una cirugía en hospital privado supera los $200,000 pesos. Un Seguro de Gastos Médicos Mayores bien diseñado absorbe ese impacto — y la primera asesoría para encontrarlo no te cuesta nada.
+          Una cirugía en hospital privado puede costar cientos de miles de pesos. Un Seguro de Gastos Médicos Mayores bien diseñado absorbe ese impacto — y la primera asesoría para encontrarlo no te cuesta nada.
         </p>
         <div class="hero-actions">
           <a href="#cta-final" class="btn btn-primary btn-lg">
@@ -530,51 +536,19 @@
           </a>
         </div>
         <div class="hero-proof">
-          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>8 aseguradoras comparadas</div>
+          <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Varias aseguradoras comparadas</div>
           <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Asesoría 100% gratuita</div>
           <div class="hproof-item"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</div>
-        </div>
-        <div class="fomo-strip" role="note">
-          <i class="fas fa-fire-flame-curved" aria-hidden="true"></i>
-          <p>Esta semana solo quedan <strong id="spots-fomo">4 lugares</strong> disponibles para asesoría personalizada de GMM.</p>
         </div>
       </div>
       <div class="hero-visual-gmm">
         <div class="hero-img-frame">
-          <img src="img/perfil.jpeg" alt="Guadalupe Flores, asesora de seguros de gastos médicos GFG Finanzas" loading="eager" fetchpriority="high" />
-        </div>
-        <div class="hero-float-stat" aria-hidden="true">
-          <div class="hfs-num">+500</div>
-          <div class="hfs-lbl">Familias con GMM<br/>asesoradas</div>
+          <img src="img/perfil.webp" alt="Guadalupe F. Godínez, asesora de seguros de gastos médicos GFG Finanzas" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- PROOF STRIP -->
-<div id="proof-strip">
-  <div class="wrap">
-    <div class="proof-grid" role="list">
-      <div class="proof-item" role="listitem">
-        <div class="proof-num">+500</div>
-        <div class="proof-label">Familias<br/>protegidas</div>
-      </div>
-      <div class="proof-item" role="listitem">
-        <div class="proof-num">8</div>
-        <div class="proof-label">Aseguradoras<br/>comparadas</div>
-      </div>
-      <div class="proof-item" role="listitem">
-        <div class="proof-num">+8</div>
-        <div class="proof-label">Años de<br/>experiencia</div>
-      </div>
-      <div class="proof-item" role="listitem">
-        <div class="proof-num">24h</div>
-        <div class="proof-label">Propuesta<br/>personalizada</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- QUÉ CUBRE -->
 <section id="coberturas" aria-labelledby="cob-title">
@@ -582,7 +556,7 @@
     <div class="sec-header center" data-reveal>
       <span class="tag"><i class="fas fa-shield-heart" aria-hidden="true"></i>Qué está cubierto</span>
       <h2 class="h-section" id="cob-title">No es solo un seguro: es la red que<br/><em>atrapa</em> lo que ningún ahorro alcanza</h2>
-      <p class="sub">Un GMM bien diseñado cubre lo inesperado desde el primer peso — hospitalizaciones, cirugías, maternidad, enfermedades crónicas y mucho más.</p>
+      <p class="sub">Un GMM bien diseñado te respalda ante lo inesperado: hospitalizaciones, cirugías y enfermedades graves, de acuerdo con el deducible, el coaseguro y las condiciones de tu póliza.</p>
     </div>
     <div class="coberturas-grid">
       <div class="cob-card" data-reveal>
@@ -592,7 +566,7 @@
         <div class="cob-nota"><i class="fas fa-circle-check" aria-hidden="true"></i>Disponible en todos los planes</div>
       </div>
       <div class="cob-card" data-reveal>
-        <div class="cob-icon"><i class="fas fa-scalpel" aria-hidden="true"></i></div>
+        <div class="cob-icon"><i class="fas fa-kit-medical" aria-hidden="true"></i></div>
         <h3>Cirugías y emergencias</h3>
         <p>Cirugías programadas y de urgencia, sala de operaciones, anestesiólogo y recuperación cubiertos hasta la suma asegurada elegida.</p>
         <div class="cob-nota"><i class="fas fa-circle-check" aria-hidden="true"></i>Disponible en todos los planes</div>
@@ -630,7 +604,7 @@
   <div class="wrap">
     <div class="compare-intro" data-reveal>
       <div class="compare-intro-img">
-        <img src="img/perfil.jpeg" alt="Guadalupe explicando planes de gastos médicos" loading="lazy" />
+        <img src="img/perfil.webp" alt="Guadalupe explicando planes de gastos médicos" loading="lazy" />
       </div>
       <div class="compare-intro-copy">
         <span class="tag"><i class="fas fa-scale-balanced" aria-hidden="true"></i>¿Por qué asesorarte con GFG?</span>
@@ -643,7 +617,7 @@
           </div>
           <div class="check-item">
             <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
-            <p><strong>Comparativa de 8 aseguradoras</strong> — coberturas, primas, deducibles y exclusiones lado a lado.</p>
+            <p><strong>Comparativa entre aseguradoras</strong> — coberturas, primas, deducibles y exclusiones lado a lado.</p>
           </div>
           <div class="check-item">
             <div class="check-ico"><i class="fas fa-check" aria-hidden="true"></i></div>
@@ -664,15 +638,15 @@
         <span>Plan Básico</span>
         <span>Plan Amplio</span>
       </div>
-      <div class="ct-row"><span>Hospitalización ilimitada</span><span class="c-yes">✓</span><span class="c-yes">✓</span></div>
+      <div class="ct-row"><span>Hospitalización</span><span class="c-yes">✓</span><span class="c-yes">✓</span></div>
       <div class="ct-row"><span>Cirugías de urgencia</span><span class="c-yes">✓</span><span class="c-yes">✓</span></div>
       <div class="ct-row"><span>Médico a domicilio</span><span class="c-no">—</span><span class="c-yes">✓</span></div>
-      <div class="ct-row"><span>Maternidad</span><span class="c-no">Rider opcional</span><span class="c-yes">Incluida</span></div>
+      <div class="ct-row"><span>Maternidad</span><span class="c-no">Cobertura opcional</span><span class="c-yes">Según plan y periodo de espera</span></div>
       <div class="ct-row"><span>Enfermedades crónicas</span><span class="c-no">Limitado</span><span class="c-yes">Amplio</span></div>
       <div class="ct-row"><span>Red de hospitales</span><span>Nacional</span><span class="c-yes">Nacional + Internacional</span></div>
       <div class="ct-row"><span>Suma asegurada</span><span>Hasta $5M</span><span class="c-yes">Hasta $50M</span></div>
     </div></div>
-    <p style="text-align:center;font-size:.76rem;color:var(--texto-soft);margin-top:14px;">* Las coberturas exactas dependen de la aseguradora y el plan seleccionado. Guadalupe te explica cada detalle en tu asesoría.</p>
+    <p style="text-align:center;font-size:.76rem;color:var(--texto-soft);margin-top:14px;">* Tabla ilustrativa. Las coberturas, sumas aseguradas, deducible, coaseguro, tabulador, red hospitalaria, periodos de espera y exclusiones por preexistencias dependen de la aseguradora y del plan. Guadalupe te explica cada detalle en tu asesoría.</p>
   </div>
 </section>
 
@@ -708,7 +682,7 @@
       <div class="step" data-reveal>
         <div class="step-num">2</div>
         <h3>Comparativa real</h3>
-        <p>Comparamos 8 aseguradoras y te presentamos las mejores opciones con coberturas y precios claros.</p>
+        <p>Comparamos varias aseguradoras y te presentamos las mejores opciones con coberturas y precios claros.</p>
       </div>
       <div class="step" data-reveal>
         <div class="step-num">3</div>
@@ -766,7 +740,7 @@
     <div class="cta-inner">
       <span class="tag tag-light"><i class="fas fa-calendar-check" aria-hidden="true"></i>Primer paso</span>
       <h2 class="h-section" id="cta-title">Protege la salud de tu familia.<br/><em>Empieza hoy, sin costo.</em></h2>
-      <p class="sub">Agenda tu asesoría gratuita. Comparamos las 8 mejores opciones del mercado y te presentamos la que más conviene a tu familia en menos de 24 horas.</p>
+      <p class="sub">Agenda tu asesoría gratuita. Comparamos las mejores opciones del mercado y te presentamos la que más conviene a tu familia en menos de 24 horas.</p>
       <div class="cta-actions">
         <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20quiero%20asesoría%20para%20Gastos%20Médicos%20Mayores" class="btn btn-wa btn-lg" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
@@ -799,14 +773,15 @@
         <div class="lead-proofs">
           <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
           <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Te contactamos en menos de 24 horas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-users" aria-hidden="true"></i></div><span>+500 familias protegidas con GFG Finanzas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>8 aseguradoras comparadas para encontrar el mejor plan</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-user-check" aria-hidden="true"></i></div><span>Te atiende Guadalupe personalmente</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-handshake" aria-hidden="true"></i></div><span>Varias aseguradoras comparadas para encontrar el mejor plan</span></div>
         </div>
       </div>
       <div class="lead-card">
         <div class="lc-title">Agenda tu asesoría gratuita</div>
         <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
-        <form id="mainLeadForm" novalidate>
+        <form id="mainLeadForm" novalidate data-interes="gmm">
+          <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="lf-row">
             <div class="lf-group">
               <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
@@ -821,8 +796,8 @@
           </div>
           <div class="lf-row">
             <div class="lf-group">
-              <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
-              <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
+              <label for="lf-correo">Correo electrónico <span class="lf-opt">(opcional)</span></label>
+              <input type="email" id="lf-correo" placeholder="tu@correo.com" autocomplete="email" />
               <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
             </div>
             <div class="lf-group">
@@ -833,7 +808,7 @@
           </div>
           <div class="lf-privacy">
             <input type="checkbox" id="lf-priv" required />
-            <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
+            <label for="lf-priv">He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</label>
           </div>
           <button type="submit" class="btn btn-primary btn-full btn-lg">
             <i class="fas fa-paper-plane" aria-hidden="true"></i>
@@ -849,7 +824,7 @@
           <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
           <h4>¡Listo! Solicitud enviada</h4>
           <p>Te contactamos en menos de 24 horas. ¡Gracias por confiar en GFG Finanzas!</p>
-          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20asesoría" class="btn btn-wa btn-full" data-gfg-agenda target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             También escríbenos ahora
           </a>
@@ -864,7 +839,7 @@
 <footer role="contentinfo">
   <div class="wrap">
     <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
-    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
+    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a href="aviso-de-privacidad.html">Aviso de privacidad</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
   </div>
 </footer>
 
@@ -872,6 +847,8 @@
   <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
 
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
 <script>
 (function(){if(localStorage.getItem('gfg-gmm-bar')==='1'){const b=document.getElementById('urgency-bar');if(b)b.style.display='none';}})();
 document.getElementById('bar-close').addEventListener('click',()=>{document.getElementById('urgency-bar').style.display='none';localStorage.setItem('gfg-gmm-bar','1');});
@@ -899,38 +876,7 @@ if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
   });
 }
 
-var FUENTE_PAGE = "gastos-medicos";
-const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
 
-/* ===== LEAD FORM ===== */
-(function() {
-  var form = document.getElementById("mainLeadForm");
-  var success = document.getElementById("mainLeadSuccess");
-  if (!form) return;
-  function vf(id,errId,fn){var el=document.getElementById(id),err=document.getElementById(errId),ok=fn(el);el.classList.toggle("lferr",!ok);err.classList.toggle("show",!ok);return ok;}
-  function validateAll(){
-    var n=vf("lf-nombre","err-lf-nombre",function(el){return el.value.trim().length>=2;});
-    var e=vf("lf-edad","err-lf-edad",function(el){var v=parseInt(el.value);return Number.isFinite(v)&&v>=18&&v<=75;});
-    var c=vf("lf-correo","err-lf-correo",function(el){return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(el.value);});
-    var w=vf("lf-wa","err-lf-wa",function(el){return /^\\d{10}$/.test(el.value.replace(/\\s/g,""));});
-    return n&&e&&c&&w&&document.getElementById("lf-priv").checked;
-  }
-  ["lf-nombre","lf-edad","lf-correo","lf-wa"].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el) el.addEventListener("input",function(){el.classList.remove("lferr");var err=document.getElementById("err-"+id);if(err)err.classList.remove("show");});
-  });
-  form.addEventListener("submit",function(e){
-    e.preventDefault();
-    if(!validateAll()) return;
-    var data={nombre:document.getElementById("lf-nombre").value.trim(),edad:document.getElementById("lf-edad").value.trim(),correo:document.getElementById("lf-correo").value.trim(),whatsapp:document.getElementById("lf-wa").value.trim()};
-    try{var db=supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);db.from("leads").insert([{fuente:FUENTE_PAGE,nombre:data.nombre,edad_actual:data.edad,correo:data.correo,whatsapp:data.whatsapp,estatus:"Nuevo",notas:""}]).then(function(){}).catch(function(){});}catch(_){}
-    if(typeof fbq==="function") fbq("track","Lead",{content_name:FUENTE_PAGE,content_category:"Seguros"});
-    form.style.display="none";
-    success.style.display="block";
-    success.scrollIntoView({behavior:"smooth",block:"center"});
-  });
-})();
 
 /* Mobile nav hamburger */
 (function() {

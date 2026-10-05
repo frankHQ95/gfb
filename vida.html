@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seguro de Vida — GFG Finanzas | Cotiza en 5 minutos</title>
+  <title>Seguro de Vida — GFG Finanzas | Cotización de referencia</title>
   <meta name="description" content="Cotiza tu seguro de vida en minutos. Protege a tu familia con el mejor plan al mejor precio. Asesoría 100% gratuita — GFG Finanzas." />
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
+  <meta name="theme-color" content="#222D44" />
+  <link rel="canonical" href="https://gfbfinanzas.vercel.app/vida.html" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://gfbfinanzas.vercel.app/vida.html" />
+  <meta property="og:title"       content="Seguro de Vida — GFG Finanzas" />
+  <meta property="og:description" content="Protege a tu familia con un seguro de vida a tu medida. Asesoría inicial sin costo con Guadalupe F. Godínez." />
+  <meta property="og:image"       content="https://gfbfinanzas.vercel.app/img/perfil.jpeg" />
+  <meta property="og:locale"      content="es_MX" />
+  <meta property="og:site_name"   content="GFG Finanzas" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="preload" as="image" href="img/hero/vida-2.webp" type="image/webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
   <style>
   /* ============================================================  TOKENS  */
@@ -127,12 +135,12 @@
   @media (max-width:640px) { .nav-phone { display:none; } }
 
   /* ============================================================  HERO  */
-  #hero {
+  #inicio {
     background: linear-gradient(155deg, var(--navy-deep) 0%, #1e2840 55%, #2a1f2e 100%);
     padding: clamp(56px,10vh,96px) 0 clamp(48px,8vh,80px);
     position: relative; overflow: hidden;
   }
-  #hero::before {
+  #inicio::before {
     content:''; position:absolute; inset:0; pointer-events:none;
     background:
       radial-gradient(ellipse 80% 65% at 85% 10%, rgba(183,110,121,.22) 0%, transparent 55%),
@@ -580,17 +588,14 @@
     font-size: 1.3rem; text-decoration: none;
   }
   </style>
-  <!-- Meta Pixel — reemplaza TU_PIXEL_ID con tu ID real de Meta Business -->
-  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");window.META_PIXEL_ID="TU_PIXEL_ID";if(window.META_PIXEL_ID!=="TU_PIXEL_ID"){fbq("init",window.META_PIXEL_ID);fbq("track","PageView");}</script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=TU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+  <link rel="stylesheet" href="css/gfg.css?v=32" />
 </head>
-<body>
+<body class="pg-seg">
 
 <!-- ====================================================  URGENCY BAR  -->
 <div id="urgency-bar" role="note">
   <div class="bar-inner">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Cotiza hoy — solo quedan <strong id="spots-bar">4 lugares</strong> para asesoría gratuita esta semana</span>
+    <span>Primera asesoría sin costo y sin compromiso · presencial o por videollamada. <a href="#lead-section" class="bar-cta">Agendar →</a></span>
   </div>
   <button class="bar-close" id="bar-close" aria-label="Cerrar">✕</button>
 </div>
@@ -599,7 +604,7 @@
 <nav id="nav" aria-label="Navegación">
   <div class="wrap nav-wrap">
     <a href="index.html" class="nav-logo" aria-label="GFG Finanzas — Inicio">
-      <img src="img/logo.jpeg" alt="GFG Finanzas" width="120" height="44" />
+      <span class="gfg-logo" role="img" aria-label="GFG Finanzas"><span class="gl-mark">GFG</span><span class="gl-word">Finanzas</span></span>
     </a>
     <div class="nav-right">
       <a href="tel:+527717021729" class="nav-phone">
@@ -615,7 +620,7 @@
 </nav>
 
 <!-- ====================================================  HERO + COTIZADOR  -->
-<section id="inicio" aria-labelledby="hero-title">
+<section id="inicio" class="gfg-hero-bg gfg-hero-side gfg-hero--vida" aria-labelledby="hero-title">
   <div class="wrap">
     <div class="hero-grid">
 
@@ -979,10 +984,82 @@
   </div>
 </section>
 
+<!-- FORMULARIO DE LEADS -->
+<section id="lead-section" aria-labelledby="lead-form-title">
+  <div class="wrap">
+    <div class="lead-wrap">
+      <div class="lead-copy">
+        <span class="tag" style="margin-bottom:14px;"><i class="fas fa-paper-plane"></i>Solicita asesoría</span>
+        <h2 class="h-section" id="lead-form-title">¿Quieres una propuesta<br/>real y <em>personalizada</em>?</h2>
+        <p class="sub">Deja tus datos y Guadalupe te prepara una propuesta de seguro de vida a tu medida — sin costo, sin compromiso, en menos de 24 horas.</p>
+        <div class="lead-proofs">
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Propuesta personalizada en menos de 24 horas</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-user-check" aria-hidden="true"></i></div><span>Te atiende Guadalupe personalmente</span></div>
+          <div class="lp-item"><div class="lp-ico"><i class="fas fa-layer-group" aria-hidden="true"></i></div><span>Planes Master y Premium comparados para ti</span></div>
+        </div>
+      </div>
+      <div class="lead-card">
+        <div class="lc-title">Solicita tu propuesta</div>
+        <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
+        <form id="mainLeadForm" novalidate data-interes="vida">
+          <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="lf-row">
+            <div class="lf-group">
+              <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input type="text" id="lf-nombre" placeholder="Tu nombre completo" required autocomplete="given-name" />
+              <span class="lf-err" id="err-lf-nombre" role="alert">Ingresa tu nombre.</span>
+            </div>
+            <div class="lf-group">
+              <label for="lf-edad">Edad <span aria-hidden="true">*</span></label>
+              <input type="number" id="lf-edad" placeholder="Tu edad" min="18" max="75" required inputmode="numeric" />
+              <span class="lf-err" id="err-lf-edad" role="alert">Ingresa tu edad (18-75).</span>
+            </div>
+          </div>
+          <div class="lf-row">
+            <div class="lf-group">
+              <label for="lf-correo">Correo electrónico <span class="lf-opt">(opcional)</span></label>
+              <input type="email" id="lf-correo" placeholder="tu@correo.com" autocomplete="email" />
+              <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
+            </div>
+            <div class="lf-group">
+              <label for="lf-wa">WhatsApp <span aria-hidden="true">*</span></label>
+              <input type="tel" id="lf-wa" placeholder="10 dígitos" required inputmode="numeric" autocomplete="tel" />
+              <span class="lf-err" id="err-lf-wa" role="alert">Ingresa 10 dígitos válidos.</span>
+            </div>
+          </div>
+          <div class="lf-privacy">
+            <input type="checkbox" id="lf-priv" required />
+            <label for="lf-priv">He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud.</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Quiero mi propuesta gratuita
+          </button>
+          <div class="lf-badges">
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo</span>
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</span>
+            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</span>
+          </div>
+        </form>
+        <div class="lf-success" id="mainLeadSuccess">
+          <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+          <h4>¡Listo! Solicitud enviada</h4>
+          <p>Te contactamos en menos de 24 horas con tu propuesta personalizada.</p>
+          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20seguro%20de%20vida" class="btn btn-wa btn-full" data-gfg-agenda target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            También escríbenos ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer role="contentinfo">
   <div class="wrap">
     <p>© 2026 GFG Finanzas · Ahorro · Inversión · Seguros. Todos los derechos reservados.</p>
-    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
+    <p><a href="index.html">← Volver al inicio</a> &nbsp;·&nbsp; <a href="aviso-de-privacidad.html">Aviso de privacidad</a> &nbsp;·&nbsp; Hecho con <span style="color:var(--rosa-light)">♥</span> en México</p>
   </div>
 </footer>
 
@@ -1027,10 +1104,9 @@
 </div>
 
 <!-- ====================================================  JAVASCRIPT  -->
+<script src="js/gfg-config.js?v=32"></script>
+<script src="js/gfg.js?v=32"></script>
 <script>
-/* ===== SUPABASE ===== */
-const SUPABASE_URL      = "https://waojkmqvyorojgaymnee.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA";
 
 /* ===== ELEMENTOS ===== */
 const quoteForm               = document.querySelector("#quoteForm");
@@ -1286,19 +1362,10 @@ function validateLead() {
 }
 
 function saveLeadToSupabase(data) {
-  try {
-    const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    db.from("leads").insert([{
-      fuente:      "vida",
-      nombre:      data.nombre    || "",
-      whatsapp:    data.whatsapp  || "",
-      correo:      data.correo    || "",
-      edad_actual: data.edad      || "",
-      tipo_plan:   data.genero    || "",
-      estatus:     "Nuevo",
-      notas:       ""
-    }]).then(() => {}).catch(() => {});
-  } catch (_) {}
+  /* El cotizador ya mostró su resultado; el guardado ocurre en segundo plano. */
+  GFG.saveLead({ fuente: "vida", nombre: data.nombre, whatsapp: data.whatsapp, correo: data.correo,
+                 edad: data.edad, tipoPlan: "vida", notas: data.genero ? "Género: " + data.genero : "" })
+    .then(r => GFG.track(r.ok ? "lead_success" : "lead_error", { fuente: "vida-cotizador" }));
 }
 
 leadForm.addEventListener("submit", e => {
@@ -1322,7 +1389,6 @@ leadForm.addEventListener("submit", e => {
     genero:   getGender()    || ""
   });
 
-  if (typeof fbq === "function") fbq("track", "Lead", { content_name: "vida", content_category: "Seguros" });
 
   const should = pendingQuoteRequest;
   closeLeadModal();
@@ -1385,7 +1451,6 @@ hideResults();
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 window.addEventListener("pageshow", () => window.scrollTo({ top:0, behavior:"auto" }));
 
-var FUENTE_PAGE = "vida";
 </script>
 
 <!-- STICKY MOBILE CTA BAR -->
@@ -1401,75 +1466,5 @@ var FUENTE_PAGE = "vida";
 
 </body>
 </html>
-<!-- FORMULARIO DE LEADS -->
-<section id="lead-section" aria-labelledby="lead-form-title">
-  <div class="wrap">
-    <div class="lead-wrap">
-      <div class="lead-copy">
-        <span class="tag" style="margin-bottom:14px;"><i class="fas fa-paper-plane"></i>Solicita asesoría</span>
-        <h2 class="h-section" id="lead-form-title">¿Quieres una propuesta<br/>real y <em>personalizada</em>?</h2>
-        <p class="sub">Deja tus datos y Guadalupe te prepara una propuesta de seguro de vida a tu medida — sin costo, sin compromiso, en menos de 24 horas.</p>
-        <div class="lead-proofs">
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><span>Asesoría 100% gratuita — sin costo ni compromiso</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-clock" aria-hidden="true"></i></div><span>Propuesta personalizada en menos de 24 horas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-users" aria-hidden="true"></i></div><span>+500 familias protegidas con GFG Finanzas</span></div>
-          <div class="lp-item"><div class="lp-ico"><i class="fas fa-layer-group" aria-hidden="true"></i></div><span>Planes Master y Premium comparados para ti</span></div>
-        </div>
-      </div>
-      <div class="lead-card">
-        <div class="lc-title">Solicita tu propuesta</div>
-        <div class="lc-sub">Completa el formulario y te contactamos en menos de 24 horas.</div>
-        <form id="mainLeadForm" novalidate>
-          <div class="lf-row">
-            <div class="lf-group">
-              <label for="lf-nombre">Nombre <span aria-hidden="true">*</span></label>
-              <input type="text" id="lf-nombre" placeholder="Tu nombre completo" required autocomplete="given-name" />
-              <span class="lf-err" id="err-lf-nombre" role="alert">Ingresa tu nombre.</span>
-            </div>
-            <div class="lf-group">
-              <label for="lf-edad">Edad <span aria-hidden="true">*</span></label>
-              <input type="number" id="lf-edad" placeholder="Tu edad" min="18" max="75" required inputmode="numeric" />
-              <span class="lf-err" id="err-lf-edad" role="alert">Ingresa tu edad (18-75).</span>
-            </div>
-          </div>
-          <div class="lf-row">
-            <div class="lf-group">
-              <label for="lf-correo">Correo electrónico <span aria-hidden="true">*</span></label>
-              <input type="email" id="lf-correo" placeholder="tu@correo.com" required autocomplete="email" />
-              <span class="lf-err" id="err-lf-correo" role="alert">Ingresa un correo válido.</span>
-            </div>
-            <div class="lf-group">
-              <label for="lf-wa">WhatsApp <span aria-hidden="true">*</span></label>
-              <input type="tel" id="lf-wa" placeholder="10 dígitos" required inputmode="numeric" autocomplete="tel" />
-              <span class="lf-err" id="err-lf-wa" role="alert">Ingresa 10 dígitos válidos.</span>
-            </div>
-          </div>
-          <div class="lf-privacy">
-            <input type="checkbox" id="lf-priv" required />
-            <label for="lf-priv">Acepto que GFG Finanzas me contacte para dar seguimiento a mi solicitud de asesoría.</label>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full btn-lg">
-            <i class="fas fa-paper-plane" aria-hidden="true"></i>
-            Quiero mi propuesta gratuita
-          </button>
-          <div class="lf-badges">
-            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin costo</span>
-            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin compromiso</span>
-            <span class="lf-badge"><i class="fas fa-check-circle" aria-hidden="true"></i>Sin letra chica</span>
-          </div>
-        </form>
-        <div class="lf-success" id="mainLeadSuccess">
-          <div class="lfs-ico"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
-          <h4>¡Listo! Solicitud enviada</h4>
-          <p>Te contactamos en menos de 24 horas con tu propuesta personalizada.</p>
-          <a href="https://wa.me/527717021729?text=Hola%20Guadalupe%2C%20acabo%20de%20enviar%20mi%20solicitud%20de%20seguro%20de%20vida" class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            También escríbenos ahora
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 

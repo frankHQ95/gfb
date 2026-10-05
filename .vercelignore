@@ -1,0 +1,9 @@
+# No publicar material interno
+_respaldo
+gfg-next
+.claude
+.playwright-mcp
+CLAUDE.md
+*.pages
+*.pdf
+.DS_Store

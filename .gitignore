@@ -1,0 +1,8 @@
+# Material interno: no forma parte del sitio
+_respaldo/
+gfg-next/
+.claude/
+.playwright-mcp/
+CLAUDE.md
+*.pdf
+.DS_Store
