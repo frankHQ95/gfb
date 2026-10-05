@@ -8,17 +8,15 @@ window.GFG_CONFIG = {
   whatsapp: '527717021729',
 
   /* ---- Captura de prospectos ----
-     Supabase: URL del proyecto y clave pública (anon). La tabla `leads` debe
-     tener RLS activo con una política que permita SOLO insertar al rol anon
-     (nunca leer). Si el proyecto está pausado o borrado, los formularios
-     ofrecen enviar la solicitud por WhatsApp en vez de fingir éxito. */
-  supabaseUrl: 'https://waojkmqvyorojgaymnee.supabase.co',
-  supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indhb2prbXF2eW9yb2pnYXltbmVlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDYyODMsImV4cCI6MjA5NDE4MjI4M30.HNwmN_fw5_5a2Mmimqlc1s0crCtO9YGX5K0s0ulZNoA',
-
-  /* Opcional: webhook (Make, Zapier, n8n…) que recibe cada prospecto en JSON.
-     Sirve para avisarle a Guadalupe al instante. Si se configura, basta con
-     que Supabase O el webhook respondan bien para confirmar el envío. */
-  leadWebhook: '',
+     Cada formulario y el cotizador mandan el prospecto a la cartera de
+     Guadalupe en Punto25 (su panel de seguimiento). `clave` es la puerta de
+     entrada de esa cartera: sólo permite agregar prospectos, no leerlos.
+     Se crea o se apaga desde Punto25 (convex/entradas.ts). Si el envío falla,
+     el formulario ofrece mandar la solicitud por WhatsApp en vez de fingir éxito. */
+  punto25: {
+    url: 'https://secret-goldfish-155.convex.site/leads',
+    clave: ''
+  },
 
   /* ---- Medición ----
      Vacío = no se carga nada. GA4: 'G-XXXXXXXXXX'. Pixel: solo números. */

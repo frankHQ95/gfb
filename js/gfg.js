@@ -112,38 +112,23 @@
   }
 
   /**
-   * Guarda un prospecto. Resuelve { ok: true } SOLO si algún destino confirmó
-   * el registro; cualquier fallo de red o de permisos resuelve { ok: false }.
+   * Manda un prospecto a la cartera en Punto25. Resuelve { ok: true } SOLO si
+   * el servidor confirmó el registro; cualquier fallo de red, de clave o de
+   * validación resuelve { ok: false }.
    */
   GFG.saveLead = function (lead) {
-    var fila = {
+    var destino = C.punto25 || {};
+    if (!destino.url || !destino.clave) return Promise.resolve({ ok: false });
+    return post(destino.url, { 'Content-Type': 'application/json' }, {
+      clave: destino.clave,
       fuente: lead.fuente || GFG.pagina(),
-      nombre: lead.nombre || null,
-      correo: lead.correo || null,
-      whatsapp: soloDigitos(lead.whatsapp) || null,
-      edad_actual: lead.edad ? String(lead.edad) : null,
-      tipo_plan: lead.tipoPlan || null,
-      estatus: lead.estatus || 'Nuevo',
+      nombre: lead.nombre || '',
+      telefono: soloDigitos(lead.whatsapp),
+      correo: lead.correo || '',
+      edad: lead.edad ? String(lead.edad) : '',
+      interes: lead.tipoPlan || '',
       notas: [lead.notas, GFG.atribucion()].filter(Boolean).join(' | ')
-    };
-
-    var envios = [];
-    if (C.supabaseUrl && C.supabaseKey) {
-      envios.push(post(C.supabaseUrl + '/rest/v1/leads', {
-        'Content-Type': 'application/json',
-        apikey: C.supabaseKey,
-        Authorization: 'Bearer ' + C.supabaseKey,
-        Prefer: 'return=minimal'
-      }, [fila]));
-    }
-    if (C.leadWebhook) {
-      envios.push(post(C.leadWebhook, { 'Content-Type': 'application/json' }, fila));
-    }
-    if (!envios.length) return Promise.resolve({ ok: false });
-
-    return Promise.all(envios).then(function (res) {
-      return { ok: res.some(Boolean) };
-    });
+    }).then(function (ok) { return { ok: ok }; });
   };
 
   /** Mensaje de WhatsApp con los datos ya escritos, para no perder al prospecto. */

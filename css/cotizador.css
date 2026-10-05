@@ -360,3 +360,26 @@ a { color: inherit; text-decoration: none; }
   .cz-tarjeta:hover .cz-t-ico i { transform: scale(1.15) rotate(-6deg); }
   .cz-btn:hover:not(:disabled) i { transform: translateY(-2px); }
 }
+
+/* ---------------------------------------------------------- contacto antes del PDF */
+.cz-panel--centro { display: grid; place-items: center; padding: 16px; }
+.cz-contacto-hoja {
+  position: relative; width: min(440px, 100%); padding: 26px; border-radius: 28px; display: grid; gap: 12px;
+  background: var(--white); box-shadow: 0 30px 80px rgba(22,30,46,.35);
+  transform: translateY(24px) scale(.97); opacity: 0; transition: transform .35s var(--gfg-ease), opacity .25s;
+}
+.cz-panel.is-on .cz-contacto-hoja { transform: none; opacity: 1; }
+.cz-contacto-hoja h2 { font-family: var(--f-head); font-size: 1.6rem; font-weight: 600; color: var(--navy); line-height: 1.2; }
+.cz-contacto-hoja > p { font-size: .86rem; color: var(--texto-mid); line-height: 1.55; }
+.cz-campo { display: grid; gap: 5px; }
+.cz-campo span { font-size: .76rem; font-weight: 600; color: var(--navy); }
+.cz-campo input { min-height: 48px; padding: 0 14px; font-size: 1rem; color: var(--navy); background: rgba(118,118,128,.09); border: 1.5px solid transparent; border-radius: 14px; outline: none; transition: background .2s, border-color .2s, box-shadow .2s; }
+.cz-campo input:focus { background: #fff; border-color: var(--rosa); box-shadow: 0 0 0 4px rgba(183,110,121,.14); }
+.cz-contacto-error { font-size: .8rem !important; color: #b23b3b !important; }
+.cz-consent { display: flex; gap: 10px; align-items: flex-start; font-size: .78rem; color: var(--texto-soft); line-height: 1.5; cursor: pointer; }
+.cz-consent input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--rosa); flex-shrink: 0; }
+.cz-consent a { color: var(--rosa-dark); text-decoration: underline; text-underline-offset: 2px; }
+.cz-btn--ancho { width: 100%; min-height: 52px; }
+.cz-btn--ancho span { display: inline !important; }
+.cz-contacto-saltar { min-height: 40px; font-size: .84rem; font-weight: 600; color: var(--texto-soft); }
+.cz-contacto-saltar:hover { color: var(--navy); }

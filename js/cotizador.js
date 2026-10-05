@@ -319,6 +319,7 @@
   /* ---------------------------------------------------------- pintado */
   let ultimo = null;   // { s, r }
   let grafica = null, datosGrafica = null;
+  let contactoDado = false;   // ya dejó su contacto en esta visita
 
   function texto(id, v) { const el = $(id); if (el) el.textContent = v; }
   /** Cifra que cuenta hasta su nuevo valor en vez de cambiar de golpe. */
@@ -555,6 +556,30 @@
     return l.join('\n');
   }
 
+  /* ---------------------------------------------------------- prospecto a la cartera */
+  /** Lo esencial de la cotización, para que llegue junto con el contacto. */
+  function notaDeCotizacion() {
+    const { s, r } = ultimo;
+    return [
+      s.meta > 0 ? 'Meta ' + pesos(s.meta) + '/mes' : '',
+      r.unica ? 'aportación única ' + pesos(s.unica) : 'aporta ' + pesos(s.mensual) + '/mes por ' + r.aniosAporte + ' años',
+      'retiro a los ' + s.retiro,
+      s.tipo === 'deducible' ? 'deducible' : 'no deducible',
+      'fondo ' + pesos(r.sim.nominal),
+      'pensión ' + pesos(r.pensionHoy) + ' de hoy',
+      s.conVida ? 'vida ref. ' + pesos2(r.vida.amplia) + '/mes' : ''
+    ].filter(Boolean).join(' · ');
+  }
+
+  /** Manda el contacto a la cartera de Guadalupe. Nunca interrumpe lo que la persona estaba haciendo. */
+  function enviarProspecto(nombre, whatsapp, origen) {
+    if (!GFG.saveLead || !ultimo || !ultimo.r.ok || !ultimo.r.hayAporte) return Promise.resolve({ ok: false });
+    return GFG.saveLead({
+      fuente: 'cotizador', nombre, whatsapp, edad: ultimo.s.edad, tipoPlan: 'retiro',
+      notas: (origen ? origen + ' · ' : '') + notaDeCotizacion()
+    }).then((res) => { if (res.ok && GFG.track) GFG.track('lead_success', { fuente: 'cotizador' }); return res; });
+  }
+
   /* ---------------------------------------------------------- avisos breves */
   let avisoT;
   function aviso(msg, accion) {
@@ -610,7 +635,15 @@
     if (!s.nombre) { $('cz-nombre').focus(); aviso('Escribe el nombre del cliente para guardar'); return; }
     const lista = guardadas().filter((c) => !(c.s.nombre === s.nombre && c.s.whatsapp === s.whatsapp));
     lista.unshift({ id: Date.now().toString(36), fecha: Date.now(), s, fondo: Math.round(r.sim.nominal), pension: Math.round(r.pensionHoy) });
-    if (persistir(lista)) { pintarGuardadas(); aviso('Guardada en este dispositivo'); confirmar(document.querySelector('[data-cz-accion="guardar"]'), 'fas fa-check'); GFG.track && GFG.track('quote_saved'); }
+    if (persistir(lista)) {
+      pintarGuardadas();
+      /* Con WhatsApp del cliente, la cotización también entra a la cartera de seguimiento. */
+      if (s.whatsapp.length === 10 && (CFG.punto25 || {}).clave) {
+        aviso('Guardada. Enviando a tu cartera…');
+        enviarProspecto(s.nombre, s.whatsapp, 'Cotizada por la asesora').then((res) =>
+          aviso(res.ok ? 'Guardada y enviada a tu cartera' : 'Guardada aquí; no se pudo enviar a tu cartera'));
+      } else aviso((CFG.punto25 || {}).clave ? 'Guardada aquí. Con su WhatsApp también entra a tu cartera' : 'Guardada en este dispositivo'); confirmar(document.querySelector('[data-cz-accion="guardar"]'), 'fas fa-check'); GFG.track && GFG.track('quote_saved');
+    }
     else aviso('Este navegador no permite guardar');
   }
 
@@ -813,7 +846,16 @@
 
     /* Acciones */
     const acciones = {
-      pdf: (b) => descargarPdf(b),
+      pdf: (b) => {
+        /* Quien cotiza por su cuenta deja su contacto antes del PDF, una vez por visita. */
+        /* Sin destino configurado no se pide nada: no se recaban datos que no van a ningún lado. */
+        const hayDestino = !!((CFG.punto25 || {}).url && (CFG.punto25 || {}).clave);
+        if (document.body.classList.contains('cz-pro') || contactoDado || !hayDestino) return descargarPdf(b);
+        $('cz-c-nombre').value = ultimo.s.nombre;
+        ver('cz-c-error', false);
+        $('cz-contacto').classList.add('is-on'); $('cz-contacto').setAttribute('aria-hidden', 'false');
+        ($('cz-c-nombre').value ? $('cz-c-wa') : $('cz-c-nombre')).focus();
+      },
       whatsapp: () => {
         const pro = document.body.classList.contains('cz-pro');
         const { s } = ultimo;
@@ -869,10 +911,30 @@
     aplicarModo(store.get(CLAVE_MODO) === '1');
     modo.addEventListener('change', () => { store.set(CLAVE_MODO, modo.checked ? '1' : '0'); aplicarModo(modo.checked); });
 
+    /* Hoja de contacto previa al PDF */
+    const cerrarContacto = () => { $('cz-contacto').classList.remove('is-on'); $('cz-contacto').setAttribute('aria-hidden', 'true'); };
+    $('cz-contacto-fondo').addEventListener('click', cerrarContacto);
+    $('cz-c-cerrar').addEventListener('click', cerrarContacto);
+    $('cz-contacto-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nombre = $('cz-c-nombre').value.trim();
+      const wa = $('cz-c-wa').value.replace(/\D/g, '');
+      const falta = nombre.length < 2 ? 'Escribe tu nombre.' : wa.length !== 10 ? 'Tu WhatsApp debe tener 10 dígitos.'
+        : !$('cz-c-ok').checked ? 'Acepta el aviso de privacidad para continuar.' : '';
+      ver('cz-c-error', !!falta);
+      if (falta) { texto('cz-c-error', falta); return; }
+      const trampa = e.target.querySelector('.gfg-hp');
+      contactoDado = true;
+      if (!$('cz-nombre').value.trim()) { $('cz-nombre').value = nombre; pintar(); }
+      cerrarContacto();
+      if (!(trampa && trampa.value)) enviarProspecto(nombre, wa, 'Descargó su cotización');
+      descargarPdf(document.querySelector('[data-cz-accion="pdf"]'));
+    });
+
     $('cz-abrir-guardadas').addEventListener('click', abrirPanel);
     $('cz-panel-cerrar').addEventListener('click', cerrarPanel);
     $('cz-panel-fondo').addEventListener('click', cerrarPanel);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarPanel(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { cerrarPanel(); cerrarContacto(); } });
 
     pintar();
   }

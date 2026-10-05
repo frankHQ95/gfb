@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/gfg.css?v=32" />
-  <link rel="stylesheet" href="css/cotizador.css?v=32" />
+  <link rel="stylesheet" href="css/gfg.css?v=33" />
+  <link rel="stylesheet" href="css/cotizador.css?v=33" />
 </head>
 <body class="cz-body">
 
@@ -358,11 +358,27 @@
   </aside>
 </div>
 
+<!-- ====================================================  CONTACTO ANTES DEL PDF  -->
+<div class="cz-panel cz-panel--centro" id="cz-contacto" aria-hidden="true">
+  <div class="cz-panel-fondo" id="cz-contacto-fondo"></div>
+  <form class="cz-contacto-hoja" id="cz-contacto-form" role="dialog" aria-modal="true" aria-labelledby="cz-contacto-titulo" novalidate>
+    <h2 id="cz-contacto-titulo">¿A quién le preparo la cotización?</h2>
+    <p>Tu PDF se descarga enseguida. Con tu WhatsApp, Guadalupe puede resolverte dudas sobre estos números; no te va a llamar diez veces.</p>
+    <input type="text" class="gfg-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <label class="cz-campo"><span>Nombre</span><input type="text" id="cz-c-nombre" autocomplete="name" required /></label>
+    <label class="cz-campo"><span>WhatsApp</span><input type="tel" id="cz-c-wa" inputmode="numeric" maxlength="14" placeholder="10 dígitos" autocomplete="tel" required /></label>
+    <p class="cz-contacto-error" id="cz-c-error" role="alert" hidden></p>
+    <label class="cz-consent"><input type="checkbox" id="cz-c-ok" required /><span>He leído el <a href="aviso-de-privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que GFG Finanzas me contacte para dar seguimiento.</span></label>
+    <button type="submit" class="cz-btn cz-btn--rosa cz-btn--ancho"><i class="fas fa-file-pdf" aria-hidden="true"></i><span>Descargar mi cotización</span></button>
+    <button type="button" class="cz-contacto-saltar" id="cz-c-cerrar">Ahora no</button>
+  </form>
+</div>
+
 <div class="cz-toast" id="cz-toast" role="status" aria-live="polite"></div>
 
-<script src="js/gfg-config.js?v=32"></script>
-<script src="js/gfg.js?v=32"></script>
+<script src="js/gfg-config.js?v=33"></script>
+<script src="js/gfg.js?v=33"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="js/cotizador.js?v=32"></script>
+<script src="js/cotizador.js?v=33"></script>
 </body>
 </html>
